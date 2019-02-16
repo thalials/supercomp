@@ -1,3 +1,4 @@
-Este repositório contém os arquivos da Disciplina *SuperComputação* do INSPER oferecida em 2018/2. 
+# supercomp
+Arquivos para a disciplina de Supercomputação
 
-Para consultar os arquivos de oferecimentos antigos visite o branch correspondente (ex. 2018/01).
+**Arquivo da edição 2018-2 da disciplina. Este branch não é mais atualizado.**
