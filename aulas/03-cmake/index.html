@@ -1,0 +1,776 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>03 - CMake e Debugging no VSCode - 7s - SuperComputação - Insper 2020/1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#03-cmake-e-debugging-no-vscode" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+    window.site_url = "";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="/css/cabecalho.png">
+  <img class="logo" src="/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> SuperComputação </div>
+    <div class="professor"> Igor Montagner </div>
+    <div class="semestre"> 2020/1 </div>
+  </div>
+</div>
+<header class="md-header" data-md-component="header">
+
+
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+
+      <!-- Link to home -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.."
+            title="7s - SuperComputação - Insper 2020/1"
+            class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>      
+      <!-- Button to toggle drawer -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
+      </div>
+      <!-- Header title -->
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              7s - SuperComputação - Insper 2020/1
+            </span>
+            <span class="md-header-nav__topic">
+              
+                03 - CMake e Debugging no VSCode
+              
+            </span>
+          
+        </div>
+      </div>
+
+      <!-- Button to open search dialogue -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button"
+              for="__search"></label>
+
+          <!-- Search interface -->
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+
+      <!-- Repository containing source -->
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../00-organizacao/" class="md-tabs__link md-tabs__link--active">
+          Aulas
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../projetos/" class="md-tabs__link">
+          Projetos
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="7s - SuperComputação - Insper 2020/1" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    7s - SuperComputação - Insper 2020/1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sobre/" title="Sobre" class="md-nav__link">
+      Sobre
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../00-organizacao/" title="Organização do repositório" class="md-nav__link">
+      Organização do repositório
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-intro-cpp/" title="01 - Introdução a C++" class="md-nav__link">
+      01 - Introdução a C++
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02-stl/" title="02 - Templates e STL" class="md-nav__link">
+      02 - Templates e STL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        03 - CMake e Debugging no VSCode
+      </label>
+    
+    <a href="./" title="03 - CMake e Debugging no VSCode" class="md-nav__link md-nav__link--active">
+      03 - CMake e Debugging no VSCode
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
+    Gerenciamento de projetos com CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opcoes-de-compilacao" class="md-nav__link">
+    Opções de compilação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
+    Projeto 0 - Benchmarking e comparações de desempenho
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dicas" class="md-nav__link">
+    Dicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
+    Extra 01 - Debugando seu projeto
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-nav__link">
+      04 - SIMD: Autovetorização
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-simd-intrinsics/" title="05 - SIMD: Funções Intrínsecas" class="md-nav__link">
+      05 - SIMD: Funções Intrínsecas
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Projetos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Projetos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/" title="Índice" class="md-nav__link">
+      Índice
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/projeto-multi-core/" title="Multi-core" class="md-nav__link">
+      Multi-core
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
+    Gerenciamento de projetos com CMake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opcoes-de-compilacao" class="md-nav__link">
+    Opções de compilação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
+    Projeto 0 - Benchmarking e comparações de desempenho
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dicas" class="md-nav__link">
+    Dicas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
+    Extra 01 - Debugando seu projeto
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="03-cmake-e-debugging-no-vscode">03 - CMake e Debugging no VSCode<a class="headerlink" href="#03-cmake-e-debugging-no-vscode" title="Permanent link">&para;</a></h1>
+<p>Até o momento todos nossos arquivos eram compilados em uma só linha usando <code>g++</code>. Conforme projetos ficam maiores e são divididos em vários módulos isto se torna inviável. Neste roteiro iremos usar o CMake, uma ferramenta de gerenciamento de projetos em C++. No fim, iremos configurar o VSCode para abrir projetos CMake.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenção</p>
+<p>Usar ferramentas adequadas aumenta consideravelmente a produtividade e também facilita encontrar erros no código. A partir desta aula será obrigatório já ter debugado o programa antes de tirar dúvidas. </p>
+</div>
+<h2 id="gerenciamento-de-projetos-com-cmake">Gerenciamento de projetos com CMake<a class="headerlink" href="#gerenciamento-de-projetos-com-cmake" title="Permanent link">&para;</a></h2>
+<p>O <a href="http://www.cmake.org">CMake</a> é uma das ferramentas mais usadas para gerenciar projetos C/C++. Outras ferramentas comumente usadas são <a href="https://ninja-build.org/manual.html">ninja</a> e <a href="https://mesonbuild.com/">meson</a>. </p>
+<p>Em <em>CMake</em>, um projeto é definido por um arquivo nomeado <em>CMakeLists.txt</em>. Este arquivo contém definições como nome do projeto, quais dependências (bibliotecas externas e subprojetos) são usadas e o quais arquivos serão gerados pelo projeto. Cada arquivo gerado é chamado de <em>target</em> na nomenclatura usada pelo CMake e pode ser um executável ou uma biblioteca (estática ou dinâmica). </p>
+<p>Um arquivo <em>CMakeLists.txt</em> básico pode conter apenas três linhas (pasta <a href="https://github.com/insper/supercomp/code/03-cmake">03-cmake</a>):</p>
+<div class="codehilite"><pre><span></span>cmake_minimum_required(VERSION 3.12)
+project (projeto_basico)
+add_executable(hello hello.cpp) 
+</pre></div>
+
+<p>Este arquivo somente descreve o projeto. Para efetivamente compilarmos o programa precisamos passar pela fase de <em>configuração</em>, em que o <em>CMake</em> checa se todas as dependências foram encontradas e se os compiladores necessários estão instalados. Se tudo estiver em ordem podemos gerar um <em>Makefile</em> (para Linux) ou um projeto do Visual Studio (para Windows). </p>
+<p>Para fazer a configuração do projeto basta rodar o comando <code>cmake</code> mais o caminho para a pasta do projeto. Você só precisará refazer a configuração do projeto se modificar o arquivo <em>CMakeLists.txt</em>.  É boa prática fazer a compilação do código em uma pasta separada, como na sequência de comandos abaixo.</p>
+<div class="codehilite"><pre><span></span>mkdir build
+cd build
+cmake ..
+</pre></div>
+
+
+<p>Estes comandos devem ter gerado uma série de arquivos na pasta <em>build</em>, incluindo um <em>Makefile</em>. Para compilar o projeto basta rodar</p>
+<div class="codehilite"><pre><span></span>make
+</pre></div>
+
+
+<p>E um executável de nome <em>hello</em> deverá aparecer na pasta <em>build</em>. </p>
+<div class="admonition note">
+<p class="admonition-title">Exercício</p>
+<p>Crie um arquivo <em>CMakeLists.txt</em> para o projeto 0. Você deverá adicionar um <em>target</em> chamado <code>vector_ops</code>. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercício</p>
+<p>Separe as funções matemáticas testadas em arquivos <em>.cpp/h</em> e use-os no seu projeto. A diretiva <code>add_executable</code> aceita vários arquivos <em>.cpp</em> para criar um executável. </p>
+</div>
+<h2 id="opcoes-de-compilacao">Opções de compilação<a class="headerlink" href="#opcoes-de-compilacao" title="Permanent link">&para;</a></h2>
+<p>Além da criação de executáveis o CMake também permite adicionar opções de compilação específicas para cada <em>target</em> com a diretiva <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options</code></a>. No contexto desta matéria isto será especialmente interessante pois o <code>g++</code> oferece flags para ativar otimizações que podem melhorar significativamente o desempenho de nosso programa. Portanto, podemos facilmente compilar o mesmo programa com e sem otimizações no mesmo projeto! O exemplo abaixo ativa a flag <code>O3</code> no <em>target</em> <code>hello</code> criado no exemplo anterior. </p>
+<div class="codehilite"><pre><span></span>target_compile_options(hello O3)
+</pre></div>
+
+
+<p>Podemos também usar <code>#define</code> para fazer compilação condicional do nosso código. Usar a <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html">diretiva abaixo</a> equivale e colocar um <code>#define OPT</code> no topo de cada arquivo do target <code>hello</code>.</p>
+<div class="codehilite"><pre><span></span>target_compile_definitions(hello OPT)
+</pre></div>
+
+
+<div class="admonition bug">
+<p class="admonition-title">Exercício</p>
+<p>Modifique seu <em>target</em> <code>vector_ops</code> para que ele use a opção de compilação <code>O2</code>.</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Exercício</p>
+<p>Crie um novo <em>target</em> <code>vector_ops_no_opt</code> que compile os mesmos arquivos de <code>vector_ops</code> mas use a opção de compilação <code>O0</code>.</p>
+</div>
+<h2 id="projeto-0-benchmarking-e-comparacoes-de-desempenho">Projeto 0 - Benchmarking e comparações de desempenho<a class="headerlink" href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" title="Permanent link">&para;</a></h2>
+<p>Vamos agora fazer um pequeno resumo dos resultados dos experimentos. Este resumo deverá conter os seguintes itens e deverá ser entregue em formato <em>PDF</em>. </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> uma breve descrição do programa testado (um parágrafo); </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os nomes dos executáveis testados e qual a diferença entre eles</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os tamanhos de entrada usados e a máquina usada para seus testes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> gráficos ilustrando a diferença de desempenho para cada função testada</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> comentários sobre os resultados mostrados nos gráficos</li>
+</ul>
+<h3 id="dicas">Dicas<a class="headerlink" href="#dicas" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Ferramentas como <a href="http://mpastell.com/pweave">PWeave</a> ou Jupyter Notebook ajudam muito a criar textos que misturam código para criar gráficos, rodar programas automaticamente e interpretar sua saída. </li>
+<li>Tente automatizar o máximo possível a geração de gráficos de desempenho. Isso facilitará muito sua vida em projetos posteriores. </li>
+</ol>
+<h2 id="extra-01-debugando-seu-projeto">Extra 01 - Debugando seu projeto<a class="headerlink" href="#extra-01-debugando-seu-projeto" title="Permanent link">&para;</a></h2>
+<p>Agora iremos abrir nosso projeto um ambiente de desenvolvimento em vez de continuar trabalhando na linha de comando. Adotaremos o VSCode como ambiente padrão. </p>
+<p>O VSCode não vem com suporte por padrão a projetos CMake, mas a extensão <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/index.html"><em>Cmake Tools</em></a> possui um bom suporte. Instale-a e carregue o projeto. A extensão possui uma documentação tanto para a etapa de <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html#configuring-your-project">configuração e compilação</a> quanto para <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html">execução dos programas e debugging</a>. </p>
+<p>Para executar os programas você pode usar a opção "Run in terminal" disponível no menu do botão direito de cada <em>target</em>. </p>
+<hr />
+<p>Supondo que a etapa anterior funcionou, vamos agora rodar o nosso programa usando um debugger. Isto permite parar a execução no meio do programa e examinar o valor das variáveis. </p>
+<ol>
+<li>coloque um ou mais <em>breakpoints</em> no código. Basta clicar ao lado do número da linha. Um círculo vermelho indica que a execução será interrompida quando chegar nesta linha.</li>
+<li>botão direito no target -&gt; "Run with debugger".</li>
+<li>quando o programa parar teremos as seguintes opções:<ul>
+<li><strong>Continue</strong>: roda até o próximo <em>breakpoint</em></li>
+<li><strong>Step Over</strong>: roda a linha atual e passa para a próxima.</li>
+<li><strong>Step Into</strong>: se a linha atual tem uma chamada de função, continua o debug dentro da função chamada.</li>
+<li><strong>Step Out</strong>: executa até o fim da função atual e para logo após o retorno.</li>
+</ul>
+</li>
+<li>Também podemos colocar o mouse em cima de cada variável para ver seu valor. O explorador de variáveis (que mostra todas as válidas na função atual) aparece no painel esquerdo, dentro da view <em>debug</em>.</li>
+</ol>
+<div class="admonition bug">
+<p class="admonition-title">Exercício</p>
+<p>Abra sua atividade e rode-a com o debugger. Pause a execução no meio e verifique os tempos de execução. </p>
+</div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../02-stl/" title="02 - Templates e STL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                02 - Templates e STL
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                04 - SIMD: Autovetorização
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>
