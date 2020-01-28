@@ -36,17 +36,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://insper.github.io/supercomp/aulas/05-simd-intrinsics/</loc>
-     <lastmod>2020-01-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://insper.github.io/supercomp/projetos/</loc>
-     <lastmod>2020-01-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://insper.github.io/supercomp/projetos/projeto-multi-core/</loc>
      <lastmod>2020-01-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
