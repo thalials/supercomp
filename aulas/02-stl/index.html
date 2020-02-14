@@ -596,39 +596,37 @@ funções da STL. </p>
 <p><strong>shared_ptr</strong>: Um smart pointer para um único objeto e pode ter vários donos. Ou seja, este smart pointer aponta para um objeto que pode ter vários apontamentos de cada vez. Ao realizarmos atribuições adicionamos uma nova referência a este dado. Quando não existem mais referências o dado é automaticamente liberado usando <code>delete</code></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Corrija o uso de memória absurdo do programa abaixo (arquivo <em>tarefa1.cpp</em>) usando smart pointers.</p>
+<p>O programa abaixo (<em>tarefa1.cpp</em>) tem problemas de memória devido a alocação feita na função <code>cria_vetor</code> e não liberada a cada iteração do for. Conserte o programa usando <code>shared_ptr</code> para que a memória alocada por <code>cria_vetor</code> seja liberada automaticamente. 
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="kt">double</span> <span class="o">*</span><span class="nf">cria_vetor</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">prt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">processa</span><span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">f</span><span class="o">&lt;</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="p">;</span><span class="n">f</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;valor final = &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Corrija o uso de memória absurdo do programa abaixo (arquivo <em>tarefa2.cpp</em>) usando smart pointers.</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="o">*</span><span class="n">vec</span> <span class="o">=</span> <span class="n">cria_vetor</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">processa</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+        <span class="c1">// vetor não é deletado no fim do main!</span>
+    <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">vec1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">f</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span><span class="n">f</span><span class="o">++</span><span class="p">)</span> <span class="n">vec1</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">=</span><span class="n">f</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">vec2</span> <span class="o">=</span> <span class="n">vec1</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">vec1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">vec1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">+</span><span class="n">vec1</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">-</span><span class="n">vec1</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
-    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">f</span><span class="o">&lt;</span><span class="mi">1024</span><span class="o">*</span><span class="mi">1024</span><span class="o">*</span><span class="mi">512</span><span class="p">;</span><span class="n">f</span><span class="o">++</span><span class="p">)</span>  <span class="n">tmp</span> <span class="o">+=</span> <span class="n">foo</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">tmp</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+</pre></div></p>
 </div>
 <h2 id="strings-e-vector">Strings e Vector<a class="headerlink" href="#strings-e-vector" title="Permanent link">&para;</a></h2>
 <p>Nesta seção iremos trabalhar com dois conteiners muito usados da STL: <a href="http://www.cplusplus.com/reference/string/">string</a> e <a href="http://www.cplusplus.com/reference/vector/vector/">vector</a>. O objetivo é acostumá-los a consultar a documentação de C++ e entendê-la com autonomia. A STL tem uma quantidade enorme de recursos e aprender a pesquisar como usá-los é importante para sua proficiência. </p>
