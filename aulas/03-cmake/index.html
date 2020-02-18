@@ -664,12 +664,12 @@ cmake ..
 </div>
 <h2 id="opcoes-de-compilacao">Opções de compilação<a class="headerlink" href="#opcoes-de-compilacao" title="Permanent link">&para;</a></h2>
 <p>Além da criação de executáveis o CMake também permite adicionar opções de compilação específicas para cada <em>target</em> com a diretiva <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options</code></a>. No contexto desta matéria isto será especialmente interessante pois o <code>g++</code> oferece flags para ativar otimizações que podem melhorar significativamente o desempenho de nosso programa. Portanto, podemos facilmente compilar o mesmo programa com e sem otimizações no mesmo projeto! O exemplo abaixo ativa a flag <code>O3</code> no <em>target</em> <code>hello</code> criado no exemplo anterior. </p>
-<div class="codehilite"><pre><span></span>target_compile_options(hello O3)
+<div class="codehilite"><pre><span></span>target_compile_options(hello PUBLIC O3)
 </pre></div>
 
 
 <p>Podemos também usar <code>#define</code> para fazer compilação condicional do nosso código. Usar a <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html">diretiva abaixo</a> equivale e colocar um <code>#define OPT</code> no topo de cada arquivo do target <code>hello</code>.</p>
-<div class="codehilite"><pre><span></span>target_compile_definitions(hello OPT)
+<div class="codehilite"><pre><span></span>target_compile_definitions(hello PUBLIC OPT)
 </pre></div>
 
 
