@@ -635,7 +635,7 @@
 <p>O <a href="http://www.cmake.org">CMake</a> é uma das ferramentas mais usadas para gerenciar projetos C/C++. Outras ferramentas comumente usadas são <a href="https://ninja-build.org/manual.html">ninja</a> e <a href="https://mesonbuild.com/">meson</a>. </p>
 <p>Em <em>CMake</em>, um projeto é definido por um arquivo nomeado <em>CMakeLists.txt</em>. Este arquivo contém definições como nome do projeto, quais dependências (bibliotecas externas e subprojetos) são usadas e o quais arquivos serão gerados pelo projeto. Cada arquivo gerado é chamado de <em>target</em> na nomenclatura usada pelo CMake e pode ser um executável ou uma biblioteca (estática ou dinâmica). </p>
 <p>Um arquivo <em>CMakeLists.txt</em> básico pode conter apenas três linhas (pasta <a href="https://github.com/insper/supercomp/code/03-cmake">03-cmake</a>):</p>
-<div class="codehilite"><pre><span></span>cmake_minimum_required(VERSION 3.12)
+<div class="codehilite"><pre><span></span>cmake_minimum_required(VERSION 3.10)
 project (projeto_basico)
 add_executable(hello hello.cpp) 
 </pre></div>
