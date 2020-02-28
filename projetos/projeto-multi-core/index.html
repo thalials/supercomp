@@ -464,6 +464,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
+      Requisitos básicos de projeto
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -525,8 +537,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#parte-1-estrategias-de-resolucao" class="md-nav__link">
-    Parte 1: estratégias de resolução
+  <a href="#parte-1-estrategias-de-resolucao-1603" class="md-nav__link">
+    Parte 1: estratégias de resolução (16/03)
   </a>
   
 </li>
@@ -546,6 +558,13 @@
         <li class="md-nav__item">
   <a href="#avaliacao" class="md-nav__link">
     Avaliação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
   </a>
   
 </li>
@@ -625,7 +644,7 @@ pa1 pa2 pa3 ... pa(n_alunos)
 <p class="admonition-title">Avisos</p>
 <ul>
 <li>Se existirem duas soluções com mesma satisfação qualquer uma pode ser retornada.  </li>
-<li>Informações de <em>debug</em> devem ser enviadas para a saída de erros. </li>
+<li>Informações de <em>debug</em> devem ser enviadas para a saída de erros. A saída de seu programa deverá estar <strong>exatamente</strong> no formato mostrado na seção anterior.</li>
 </ul>
 </div>
 <h3 id="simplificacoes">Simplificações:<a class="headerlink" href="#simplificacoes" title="Permanent link">&para;</a></h3>
@@ -636,11 +655,13 @@ pa1 pa2 pa3 ... pa(n_alunos)
 </ol>
 <p>Isto facilita muito o problema, pois nunca conseguimos montar uma solução inválida nem precisamos levar em conta a distribuição de alunos ao criar soluções.</p>
 <h2 id="entregas">Entregas<a class="headerlink" href="#entregas" title="Permanent link">&para;</a></h2>
-<p>Para facilitar a realização deste projeto ele será dividido em duas partes. A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++. A segunda parte tratará da paralelização destes métodos usando as técnicas mostradas em sala de aula. </p>
-<h3 id="parte-1-estrategias-de-resolucao">Parte 1: estratégias de resolução<a class="headerlink" href="#parte-1-estrategias-de-resolucao" title="Permanent link">&para;</a></h3>
+<p>Para facilitar a realização deste projeto ele será dividido em duas partes. </p>
+<p>A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++. </p>
+<p>A segunda parte tratará da paralelização destes métodos usando as técnicas mostradas em sala de aula. O programa deverá ser escrito usando OpenMP e deverá escalar o mais naturalmente possível conforme o número de cores aumenta.</p>
+<h3 id="parte-1-estrategias-de-resolucao-1603">Parte 1: estratégias de resolução (16/03)<a class="headerlink" href="#parte-1-estrategias-de-resolucao-1603" title="Permanent link">&para;</a></h3>
 <p>O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>. </p>
 <p><strong>Implementação em C++</strong>: </p>
-<p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte será </p>
+<p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte será implementar soluções para o problema sem nós preocuparmos com paralelismo e o primeiro passo para isso é implementar o algoritmo que está em Python em C++.</p>
 <p><strong>Busca local</strong>:</p>
 <p>A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,</p>
 <ol>
@@ -662,11 +683,22 @@ pa1 pa2 pa3 ... pa(n_alunos)
 </ol>
 <p>A implementação deste algoritmo resulta em um programa que encontra soluções razoáveis muito rapidamente. </p>
 <p><strong>Branch and Bound</strong>:</p>
-<p>lkasdjaslkjkl</p>
+<p>O algoritmo </p>
 <p><strong>Heurísticas de busca</strong>:</p>
+<p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução. </p>
+<p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução. </p>
+<p>Será obrigatório implementar este item em cima do branch and bound.</p>
 <h3 id="parte-2-paralelismo">Parte 2: Paralelismo<a class="headerlink" href="#parte-2-paralelismo" title="Permanent link">&para;</a></h3>
-<p>A parte 2 será liberada após a entega da parte 1. </p>
+<p>Cada item da parte anterior deverá ser paralelizado usando OpenMP. Isto deverá ser feito da maneira mais escalável possível: o tempo de execução do programa deverá diminuir conforme o número de cores aumenta. </p>
+<p>Este item é o principal da entrega, mas ele se apoia inteiramente em cima dos itens da primeira entrega. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Os projetos da disciplina consideram que não é razoável tentar paralelizar um problema que vocês não sejam capazes de resolver sequencialmente. </p>
+</div>
 <h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
+<p>Rodar. No monstrao</p>
+<p>Melhor que o código do professor</p>
                 
                   
                 
