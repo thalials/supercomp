@@ -40,7 +40,7 @@
     
     
       
-        <title>Multi-core - 7s - SuperComputação - Insper 2020/1</title>
+        <title>Multi-core: C++ e OpenMP - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#multi-core" tabindex="1" class="md-skip">
+      <a href="#multi-core-c-e-openmp" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -167,7 +167,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Multi-core
+                Multi-core: C++ e OpenMP
               
             </span>
           
@@ -242,14 +242,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -276,7 +278,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link md-tabs__link--active">
           Projetos
         </a>
       
@@ -475,10 +477,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Projetos
@@ -514,6 +518,89 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../projeto-pfe/" title="Projeto semestral - Alocação de alunos para o PFE" class="md-nav__link">
+      Projeto semestral - Alocação de alunos para o PFE
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Multi-core: C++ e OpenMP
+      </label>
+    
+    <a href="./" title="Multi-core: C++ e OpenMP" class="md-nav__link md-nav__link--active">
+      Multi-core: C++ e OpenMP
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-estrategias-de-resolucao" class="md-nav__link">
+    Parte 1: estratégias de resolução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-paralelismo" class="md-nav__link">
+    Parte 2: Paralelismo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -540,56 +627,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#justificativa" class="md-nav__link">
-    Justificativa
+  <a href="#parte-1-estrategias-de-resolucao" class="md-nav__link">
+    Parte 1: estratégias de resolução
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrada-e-saida" class="md-nav__link">
-    Entrada e saída
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#simplificacoes" class="md-nav__link">
-    Simplificações:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entregas" class="md-nav__link">
-    Entregas
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parte-1-estrategias-de-resolucao-1603" class="md-nav__link">
-    Parte 1: estratégias de resolução (16/03)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#parte-2-paralelismo" class="md-nav__link">
     Parte 2: Paralelismo
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -626,77 +673,11 @@
                   <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/projeto-multi-core.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="multi-core">Multi-core<a class="headerlink" href="#multi-core" title="Permanent link">&para;</a></h1>
-<p>Neste semeste trabalharemos com um problema bastante familiar para os alunos do 8/9 semestre: a atribuição de alunos a projetos no Projeto Final de Engenharia. </p>
-<ul>
-<li>Cada aluno escolhe cinco opções de projetos de acordo com sua preferência. </li>
-<li>Cada projeto receberá exatamente três alunos. </li>
-</ul>
-<p>Uma solução para este problema é uma atribuição de três alunos para cada projeto. Claramente algumas soluções são melhores pois maior quantidade de alunos está alocada em projetos que tem maior preferência. Para quantificar esta qualidade de cada solução vamos adotar a seguinte estratégia:</p>
-<ul>
-<li>a satisfação individual de um aluno, dada sua atribuição a um projeto é <ol>
-<li><span><span class="MathJax_Preview">5^2 = 25</span><script type="math/tex">5^2 = 25</script></span> se foi colocado em sua primeira opção</li>
-<li>....</li>
-<li><span><span class="MathJax_Preview">2^2 = 4</span><script type="math/tex">2^2 = 4</script></span> se foi colocado em sua quarta opção</li>
-<li><span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> se foi colocado em sua última opção</li>
-<li><span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> se não foi possível colocá-lo em nenhuma de suas opções. </li>
-</ol>
-</li>
-<li>a satisfação "global" de uma solução é a soma da satisfação individual de todos alunos. </li>
-</ul>
-<p>Desta maneira, gostaríamos de encontrar a melhor solução (a que possui maior satisfação global) dados o número de alunos, o número de projetos e até 5 opções de projetos em ordem de preferência para cada aluno.</p>
-<h2 id="justificativa">Justificativa<a class="headerlink" href="#justificativa" title="Permanent link">&para;</a></h2>
-<p>Apesar de parecer simples, este problema é <em>NP-completo</em>: não existe um método que encontra a solução com maior satisfação global em tempo polinomial. Além disso, não existe uma maneira que verifique se uma solução é a melhor possível em tempo polinomial. Ou seja, trabalhar com este problema invariavelmente envolverá enumerar todas as possibilidades. Claramente este é um problema em que SuperComputação é necessária! Veremos que técnicas de computação paralela podem diminuir consideravelmente o tempo de execução de nosso programa. </p>
-<p>Outra fonte de ideias para acelerar a resolução deste problema é a utilização de técnicas de otimização discreta, que são nada mais do que explorar alguma característica do problema que estamos tratando para melhorar nossas soluções. Podemos usá-las para encontrar boas soluções sem enumerar todas ou para evitar enumerar soluções que com certeza não são as ótimas. Porém, nem sempre é fácil paralelizar estas técnicas e este será um dos desafios dos conceitos mais avançados neste projeto. </p>
-<p>Em resumo, este projeto tem como objetivo encontrar as seguintes situações:</p>
-<ul>
-<li>paralelizar um programa que use uma técnica de resolução ruim não resultará em grandes ganhos de tempo</li>
-<li>paralelizar um programa que use uma técnica de resolução inteligente pode ser difícil, mas retorna ganhos muito mais significativos</li>
-</ul>
-<p>É provável vermos um programa single-core inteligente sendo mais rápido que um programa multi-core simplório. </p>
-<h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
-<p>O formato de entrada do programa estará no formato abaixo.</p>
-<div class="codehilite"><pre><span></span>n_alunos n_projetos
-p1 p2 p3 p4 p5
-..... # repetido n_alunos vezes
-</pre></div>
-
-<ul>
-<li><code>n_alunos</code> é o número de alunos</li>
-<li><code>n_projetos</code> é o número de projetos existentes</li>
-<li>cada linha seguinte representa as cinco prioridades de um aluno.    </li>
-<li><code>p1, ..., p5</code> é um número entre <code>0</code> e <code>n_projetos-1</code>, sem repetições</li>
-</ul>
-<p>A saída do programa deverá estar no formato abaixo.</p>
-<div class="codehilite"><pre><span></span>satisfacao opt
-pa1 pa2 pa3 ... pa(n_alunos)
-</pre></div>
-
-<ul>
-<li><code>satisfacao</code></li>
-<li><code>opt</code> é <code>1</code> se a solução encontrada é a melhor possível, <code>0</code> caso contrário</li>
-<li><code>pa(i)</code> contém a qual projeto o aluno <code>i</code> foi atribuído</li>
-</ul>
-<p>A pasta <a href="...">code/projeto</a> contém exemplos de entradas e saída esperadas. Seu programa deverá funcionar com estas entradas e produzir saídas <strong>exatamente</strong> neste formato. </p>
-<div class="admonition note">
-<p class="admonition-title">Avisos</p>
-<ul>
-<li>Se existirem duas soluções com mesma satisfação qualquer uma pode ser retornada.  </li>
-<li>Informações de <em>debug</em> devem ser enviadas para a saída de erros. A saída de seu programa deverá estar <strong>exatamente</strong> no formato mostrado na seção anterior.</li>
-</ul>
-</div>
-<h3 id="simplificacoes">Simplificações:<a class="headerlink" href="#simplificacoes" title="Permanent link">&para;</a></h3>
-<p>Seu programa pode assumir o seguinte:</p>
-<ol>
-<li><code>n_alunos</code> é divisível por 3</li>
-<li><code>n_projetos</code> é exatamente <code>n_alunos/3</code></li>
-</ol>
-<p>Isto facilita muito o problema, pois nunca conseguimos montar uma solução inválida nem precisamos levar em conta a distribuição de alunos ao criar soluções.</p>
-<h2 id="entregas">Entregas<a class="headerlink" href="#entregas" title="Permanent link">&para;</a></h2>
-<p>Para facilitar a realização deste projeto ele será dividido em duas partes. </p>
+                <h1 id="multi-core-c-e-openmp">Multi-core: C++ e OpenMP<a class="headerlink" href="#multi-core-c-e-openmp" title="Permanent link">&para;</a></h1>
+<p>O primeiro projeto consiste em implementar uma solução multi-core para o problema da <a href="../projeto-pfe/">Alocação de alunos do PFE</a>. Para facilitar sua ele será dividido em duas partes. </p>
 <p>A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++. </p>
 <p>A segunda parte tratará da paralelização destes métodos usando as técnicas mostradas em sala de aula. O programa deverá ser escrito usando OpenMP e deverá escalar o mais naturalmente possível conforme o número de cores aumenta.</p>
-<h3 id="parte-1-estrategias-de-resolucao-1603">Parte 1: estratégias de resolução (16/03)<a class="headerlink" href="#parte-1-estrategias-de-resolucao-1603" title="Permanent link">&para;</a></h3>
+<h3 id="parte-1-estrategias-de-resolucao">Parte 1: estratégias de resolução<a class="headerlink" href="#parte-1-estrategias-de-resolucao" title="Permanent link">&para;</a></h3>
 <p>O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>. </p>
 <p><strong>Implementação em C++</strong>: </p>
 <p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte será implementar soluções para o problema sem nós preocuparmos com paralelismo e o primeiro passo para isso é implementar o algoritmo que está em Python em C++.</p>
@@ -719,9 +700,26 @@ pa1 pa2 pa3 ... pa(n_alunos)
 </ul>
 </li>
 </ol>
-<p>A implementação deste algoritmo resulta em um programa que encontra soluções razoáveis muito rapidamente. </p>
+<p>Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca <strong>local</strong> pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo <strong>global</strong> no fim do processo.  </p>
 <p><strong>Branch and Bound</strong>:</p>
-<p>O algoritmo </p>
+<p>Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (<em>branches</em>) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação: </p>
+<ul>
+<li>em um certo momento temos uma solução  com valor <span><span class="MathJax_Preview">200</span><script type="math/tex">200</script></span></li>
+<li>ainda faltam 3 alunos para serem alocados. </li>
+<li>a melhor solução já encontrada tem valor <span><span class="MathJax_Preview">300</span><script type="math/tex">300</script></span>.</li>
+</ul>
+<p>Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor <span><span class="MathJax_Preview">275 &lt; 300</span><script type="math/tex">275 < 300</script></span>. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!</p>
+<p>Um <strong>bound</strong> é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar <em>X</em> alunos e tenho uma solução de valor <em>Y</em>, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor <span><span class="MathJax_Preview">&lt; Y + 25X</span><script type="math/tex">< Y + 25X</script></span>). </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Um bound é uma <strong>estimativa otimista</strong>. Ou seja, pode não existir uma solução com este valor! </p>
+</div>
+<p>Um algoritmo <strong>branch and bound</strong> leva em conta essas estimativas em seu funcionamento: </p>
+<ul>
+<li>se o <strong>bound</strong> da solução atual for pior que a solução ótima atual, retorna</li>
+<li>continue a recursão caso contrário</li>
+</ul>
+<p>Esta técnica evita que nossa recursão entre em <em>branches</em> que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).</p>
 <p><strong>Heurísticas de busca</strong>:</p>
 <p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução. </p>
 <p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução. </p>
@@ -734,9 +732,19 @@ pa1 pa2 pa3 ... pa(n_alunos)
 <p>Os projetos da disciplina consideram que não é razoável tentar paralelizar um problema que vocês não sejam capazes de resolver sequencialmente. </p>
 </div>
 <h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<p>A entrega será dividida em duas partes:</p>
+<ol>
+<li>entrega do algoritmo sequencial em <em>C++</em>, comparando-o com a implementação em Python (20/03) </li>
+<li>entrega final (antes da prova)</li>
+</ol>
+<p>Na primeira entrega são esperados os seguintes itens:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../checklist/">Requisitos básicos</a> cumpridos</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório comparando desempenho Python vs C++</li>
+</ul>
+<p>Na segunda entrega seu relatório deverá estar completo, levando em conta também as paralelizações feitas na Parte 2. A rubrica de avaliação será publicada logo após a entrega sequencial. </p>
 <h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
-<p>Rodar. No monstrao</p>
-<p>Melhor que o código do professor</p>
+<p>Teremos uma competição de desempenho no Monstrão. Mais detalhes virão após 20/03. </p>
                 
                   
                 
@@ -754,6 +762,27 @@ pa1 pa2 pa3 ... pa(n_alunos)
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../projeto-pfe/" title="Projeto semestral - Alocação de alunos para o PFE" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Projeto semestral - Alocação de alunos para o PFE
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
