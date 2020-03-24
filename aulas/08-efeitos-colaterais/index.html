@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/00-organizacao/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/08-efeitos-colaterais/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -40,7 +40,7 @@
     
     
       
-        <title>Organização do repositório - 7s - SuperComputação - Insper 2020/1</title>
+        <title>08 - Efeitos colaterais - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#organizacao-do-repositorio" tabindex="0" class="md-skip">
+      <a href="#08-efeitos-colaterais" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -167,7 +167,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Organização do repositório
+                08 - Efeitos colaterais
               
             </span>
           
@@ -265,7 +265,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
+        <a href="../00-organizacao/" class="md-tabs__link md-tabs__link--active">
           Aulas
         </a>
       
@@ -378,20 +378,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Organização do repositório" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../00-organizacao/" title="Organização do repositório" class="md-nav__link">
       Organização do repositório
     </a>
-    
   </li>
 
         
@@ -483,11 +474,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="08 - Efeitos colaterais" class="md-nav__link md-nav__link--active">
       08 - Efeitos colaterais
     </a>
+    
   </li>
 
         
@@ -595,11 +595,112 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/00-organizacao.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/08-efeitos-colaterais.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="organizacao-do-repositorio">Organização do repositório<a class="headerlink" href="#organizacao-do-repositorio" title="Permanent link">&para;</a></h1>
-<p>O material de SuperComputação para cada aula do semestre pode ser acessado utilizando o menu no lado esquerdo desta página. Todos os exemplos de código estão na pasta <a href="https://github.com/Insper/supercomp/tree/master/code">code</a> na raiz do repositório e serão também lincados em cada aula. Todos os slides estão na pasta <a href="https://github.com/insper/supercomp/material/aulas">material/aulas</a> e também estão lincados na parte prática de cada aula. </p>
+                <h1 id="08-efeitos-colaterais">08 - Efeitos colaterais<a class="headerlink" href="#08-efeitos-colaterais" title="Permanent link">&para;</a></h1>
+<p>Escrever código sem efeitos colaterais pode render ganhos de desempenho significativos ao paralelizar programas.</p>
+<div class="admonition note">
+<p class="admonition-title">Conceito</p>
+<p>Uma função tem efeitos colaterais quando ela modifica dados que não são nem passados via argumentos nem retornados
+pela função. São exemplos desse tipo de dados:</p>
+<ul>
+<li>variáveis globais</li>
+<li>variáveis alocadas via <code>malloc</code></li>
+<li>variáveis apontadas por ponteiros</li>
+</ul>
+<p>Uma função <strong>sem efeitos colaterais</strong> recebe todos os seus argumentos por cópia, os processa e devolve seu resultado exclusivamente via retorno da função. Ou seja, todas as outras variáveis do programa mantém o mesmo valor que tinham antes da chamada dessa função.</p>
+</div>
+<p>Pela definição acima, notamos que uma função <strong>sem efeitos colaterais</strong> pode ser chamada por várias threads ao mesmo tempo. Claramente isto é uma vantagem, já que isto pode facilitar muito a paralelização de código. </p>
+<h1 id="parte-0-analizando-o-codigo-existente">Parte 0: analizando o código existente<a class="headerlink" href="#parte-0-analizando-o-codigo-existente" title="Permanent link">&para;</a></h1>
+<p>Nesta parte do roteiro iremos analisar o código exemplo, testar uma paralelização ingênua e identificar seus possíveis problemas de paralelização.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Considerando somente o arquivo <em>pi_mc.c</em>, existe código com  efeitos colaterais? </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma paralelização ingênua deste código.</p>
+</div>
+<p>!! example 
+    Teste a paralelização ingênua do exercício anterior. Ela retorna os mesmos resultados em todas execuções? Se não, comente por que isto é um problema.</p>
+<p>Dado que não encontramos problemas no arquivo <em>pi_mc.c</em>, vamos olhar então os arquivos <em>random.c/h</em>. </p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Existe código com efeitos colaterais? Liste as funções encontradas.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Voltando para <em>pi_mc.c</em>, onde são chamadas as funções identificadas acima?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Agora que você está familiarizado com todo o código, explique por que os resultados são diferentes quando rodamos o código ingenuamente paralelo.</p>
+</div>
+<p>Só prossiga após validar as respostas do item anterior com o professor ou com um colega que já tenha finalizado esta parte.</p>
+<h1 id="parte-3-exclusao-mutua">Parte 3 - exclusão mútua<a class="headerlink" href="#parte-3-exclusao-mutua" title="Permanent link">&para;</a></h1>
+<p>Identificamos na parte anterior que a função <code>drandom</code> possui efeitos colaterais e estes efeitos colaterais estão atrapalhando a paralelização do código. Esta implementação é parecida com as funções do cabeçalho <code>&lt;random&gt;</code>: temos um estado do gerador de números que é passado para toda função que faz sorteios. Neste caso, o resultado do próximo número sorteado depende dos valores globais <code>MULTIPLIER</code>, <code>ADDEND</code>, <code>PMOD</code> e da variável estática <code>random_last</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique o código para que ele use as funções de geração de números aleatórios usando <code>&lt;random&gt;</code>. Salve em <em>pi_mc_random.cpp</em>.</p>
+</div>
+<p>Na aula <em>06</em> usamos <code>omp critical</code> para criar seções de exclusão mútua em que somente uma das threads rode por vez. No nosso caso o problema ocorre com a geração de números aleatórios: ao gerar um número o estado interno do gerador se modifica. Logo, tem um problema de acessos concorrentes a mesma variável.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Partindo do código sequencial, quais linhas precisariam ser protegidas de acessos concorrentes?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Utilize <code>omp for</code> e  <code>omp critical</code> para paralelizar o código em <em>pi_mc_random.cpp</em>. </p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Avalie seu código em termos de desempenho obtido e facilidade de programação </p>
+</div>
+<h1 id="parte-2-paralelizacao-das-distancias">Parte 2: paralelização das distâncias<a class="headerlink" href="#parte-2-paralelizacao-das-distancias" title="Permanent link">&para;</a></h1>
+<p>Na parte anterior eliminamos acessos concorrentes ao gerador de números aleatórios. Isso seria equivalente a fazer todos os sorteios <strong>antes</strong> e depois fazer os cálculos das distâncias. Ou seja, os cálculos de distância são independentes desde que os sorteios aleatórios já tenham sido feitos. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique <em>pi_mc_random.cpp</em> para que o sorteio dos pontos seja feito em um vetor <strong>antes</strong> do <code>for</code> que faz os cálculos de distâncias. </p>
+</div>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>É possível paralelizar o <code>for</code> que faz o sorteio dos números? E o que faz o cálculo das distâncias? </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Com base em suas respostas do item acima, paralize o que for possível e salve em um arquivo <em>pi_mc_par1.cpp</em></p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Houve ganho de desempenho? Compare com o programa original.</p>
+</div>
+<p>Esta estratégia é muito comum em casos em que a tarefa de interesse pode ser decomposta em uma parte inerentemente sequencial e uma que pode ser paralelizada mas que depende dos resultados da parte sequencial. Se a parte paralelizável for custosa essa estratégia pode trazer ganhos mesmo que o programa não seja inteiramente paralelizável. </p>
+<h1 id="parte-3-partes-independentes">Parte 3: partes independentes<a class="headerlink" href="#parte-3-partes-independentes" title="Permanent link">&para;</a></h1>
+<p>A segunda estratégia que usaremos é criar um gerador de números aleatórios para cada thread. Ou seja, cada thread precisará:</p>
+<ol>
+<li>criar um gerador de números aleatórios próprio</li>
+<li>acumular os resultados na mesma variável de somar pontos. </li>
+</ol>
+<p>Note que esta estratégia não é equivalente ao programa original: cada thread está seguindo uma sequência diferente de números aleatórios. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Reorganize seu código (partindo de <em>pi_mc_random.cpp</em>) para que cada thread crie seu próprio gerador de números aleatórios e faça &frac14; das iterações originais. Salve seu trabalho em <em>pi_mc_par2.c</em></p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Compare o desempenho com o programa original. </p>
+</div>
+<h1 id="parte-4-comparacao-de-desempenho-final">Parte 4 - comparação de desempenho final<a class="headerlink" href="#parte-4-comparacao-de-desempenho-final" title="Permanent link">&para;</a></h1>
+<p>Compare o desempenho das duas abordagens de paralelização. </p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Qual é mais rápida?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Qual é mais fácil de ser entendida?</p>
+</div>
                 
                   
                 
@@ -621,7 +722,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../sobre/" title="Sobre" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../07-openmp-for/" title="07 - OpenMP: Construções de alto nível" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -630,19 +731,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Sobre
+                07 - OpenMP: Construções de alto nível
               </span>
             </div>
           </a>
         
         
-          <a href="../01-intro-cpp/" title="01 - Introdução a C++" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                01 - Introdução a C++
+                Índice
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
