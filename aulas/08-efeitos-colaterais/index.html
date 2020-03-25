@@ -640,7 +640,7 @@ pela função. São exemplos desse tipo de dados:</p>
 <p>Agora que você está familiarizado com todo o código, explique por que os resultados são diferentes quando rodamos o código ingenuamente paralelo.</p>
 </div>
 <p>Só prossiga após validar as respostas do item anterior com o professor ou com um colega que já tenha finalizado esta parte.</p>
-<h1 id="parte-3-exclusao-mutua">Parte 3 - exclusão mútua<a class="headerlink" href="#parte-3-exclusao-mutua" title="Permanent link">&para;</a></h1>
+<h1 id="parte-1-exclusao-mutua">Parte 1: exclusão mútua<a class="headerlink" href="#parte-1-exclusao-mutua" title="Permanent link">&para;</a></h1>
 <p>Identificamos na parte anterior que a função <code>drandom</code> possui efeitos colaterais e estes efeitos colaterais estão atrapalhando a paralelização do código. Esta implementação é parecida com as funções do cabeçalho <code>&lt;random&gt;</code>: temos um estado do gerador de números que é passado para toda função que faz sorteios. Neste caso, o resultado do próximo número sorteado depende dos valores globais <code>MULTIPLIER</code>, <code>ADDEND</code>, <code>PMOD</code> e da variável estática <code>random_last</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
