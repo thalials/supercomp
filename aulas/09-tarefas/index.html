@@ -242,14 +242,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -263,7 +265,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../00-organizacao/" class="md-tabs__link">
+        <a href="../00-organizacao/" class="md-tabs__link md-tabs__link--active">
           Aulas
         </a>
       
@@ -355,10 +357,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -475,6 +479,27 @@
     <a href="../08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-nav__link">
       08 - Efeitos colaterais
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="09 - Tarefas" class="md-nav__link md-nav__link--active">
+      09 - Tarefas
+    </a>
+    
   </li>
 
         
@@ -671,7 +696,6 @@ I think car races are fun
 <p class="admonition-title">Question</p>
 <p>Resuma, com suas palavras, a estratégia de paralelização usada na parte 3. Qual a relação entre <code>MIN_BLK</code> e o número de <code>thread</code>s disponíveis em um sistema? Devemos modificar <code>MIN_BLK</code> baseado na entrada?</p>
 </div>
-<p>Nosso programa limita o paralelismo via <code>MIN_BLK</code>. Como você faria para ele aproveitar ao máximo o número de processadores disponíveis em tempo de execução?</p>
                 
                   
                 
@@ -689,6 +713,41 @@ I think car races are fun
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                08 - Efeitos colaterais
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Índice" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Índice
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
