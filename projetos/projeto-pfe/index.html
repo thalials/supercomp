@@ -735,8 +735,8 @@
 <p>Porém, nem sempre é fácil paralelizar estas técnicas e este será um dos desafios dos projetos deste semestre.</p>
 <h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
 <p>O formato de entrada do programa estará no formato abaixo.</p>
-<div class="codehilite"><pre><span></span><code>n_alunos n_projetos
-p1 p2 p3 p4 p5
+<div class="codehilite"><pre><span></span><code>n_alunos n_projetos n_choices
+p(1) p(2) ... p(n_choices)
 ..... # repetido n_alunos vezes
 </code></pre></div>
 
@@ -744,7 +744,7 @@ p1 p2 p3 p4 p5
 <li><code>n_alunos</code> é o número de alunos</li>
 <li><code>n_projetos</code> é o número de projetos existentes</li>
 <li>cada linha seguinte representa as cinco prioridades de um aluno.    </li>
-<li><code>p1, ..., p5</code> é um número entre <code>0</code> e <code>n_projetos-1</code>, sem repetições</li>
+<li><code>p(1), ..., p(n_choices)</code> é um número entre <code>0</code> e <code>n_projetos-1</code>, sem repetições</li>
 </ul>
 <p>A saída do programa deverá estar no formato abaixo.</p>
 <div class="codehilite"><pre><span></span><code>satisfacao opt

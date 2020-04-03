@@ -605,12 +605,25 @@
     Avaliação
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrategias-de-paralelizacao" class="md-nav__link">
+    Estratégias de paralelização
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio" class="md-nav__link">
+    Relatório
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -669,12 +682,25 @@
     Avaliação
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extras" class="md-nav__link">
-    Extras
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrategias-de-paralelizacao" class="md-nav__link">
+    Estratégias de paralelização
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorio" class="md-nav__link">
+    Relatório
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -698,18 +724,18 @@
                 
                 
                 <h1 id="multi-core-c-e-openmp">Multi-core: C++ e OpenMP<a class="headerlink" href="#multi-core-c-e-openmp" title="Permanent link">&para;</a></h1>
-<p>O primeiro projeto consiste em implementar uma solução multi-core para o problema da <a href="../projeto-pfe/">Alocação de alunos do PFE</a>. Para facilitar sua ele será dividido em duas partes. </p>
-<p>A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++. </p>
+<p>O primeiro projeto consiste em implementar uma solução multi-core para o problema da <a href="../projeto-pfe/">Alocação de alunos do PFE</a>. Para facilitar sua ele será dividido em duas partes.</p>
+<p>A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++.</p>
 <p>A segunda parte tratará da paralelização destes métodos usando as técnicas mostradas em sala de aula. O programa deverá ser escrito usando OpenMP e deverá escalar o mais naturalmente possível conforme o número de cores aumenta.</p>
 <h3 id="parte-1-estrategias-de-resolucao">Parte 1: estratégias de resolução<a class="headerlink" href="#parte-1-estrategias-de-resolucao" title="Permanent link">&para;</a></h3>
-<p>O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>. </p>
-<p><strong>Implementação em C++</strong>: </p>
+<p>O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>.</p>
+<p><strong>Implementação em C++</strong>:</p>
 <p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte será implementar soluções para o problema sem nós preocuparmos com paralelismo e o primeiro passo para isso é implementar o algoritmo que está em Python em C++.</p>
 <p><strong>Busca local</strong>:</p>
 <p>A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,</p>
 <ol>
 <li>a solução encontrada muda conforme a solução inicial</li>
-<li>nem todas as soluções são possíveis de serem encontradas. </li>
+<li>nem todas as soluções são possíveis de serem encontradas.</li>
 </ol>
 <p>Uma boa heurística geralmente é baseada em alguma característica da solução ótima. Para este problema usaremos a seguinte propriedade</p>
 <blockquote>
@@ -724,41 +750,41 @@
 </ul>
 </li>
 </ol>
-<p>Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca <strong>local</strong> pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo <strong>global</strong> no fim do processo.  </p>
+<p>Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca <strong>local</strong> pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo <strong>global</strong> no fim do processo.</p>
 <p><strong>Branch and Bound</strong>:</p>
-<p>Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (<em>branches</em>) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação: </p>
+<p>Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (<em>branches</em>) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:</p>
 <ul>
 <li>em um certo momento temos uma solução  com valor <span><span class="MathJax_Preview">200</span><script type="math/tex">200</script></span></li>
-<li>ainda faltam 3 alunos para serem alocados. </li>
+<li>ainda faltam 3 alunos para serem alocados.</li>
 <li>a melhor solução já encontrada tem valor <span><span class="MathJax_Preview">300</span><script type="math/tex">300</script></span>.</li>
 </ul>
 <p>Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor <span><span class="MathJax_Preview">275 &lt; 300</span><script type="math/tex">275 < 300</script></span>. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!</p>
-<p>Um <strong>bound</strong> é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar <em>X</em> alunos e tenho uma solução de valor <em>Y</em>, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor <span><span class="MathJax_Preview">&lt; Y + 25X</span><script type="math/tex">< Y + 25X</script></span>). </p>
+<p>Um <strong>bound</strong> é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar <em>X</em> alunos e tenho uma solução de valor <em>Y</em>, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor <span><span class="MathJax_Preview">&lt; Y + 25X</span><script type="math/tex">< Y + 25X</script></span>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Um bound é uma <strong>estimativa otimista</strong>. Ou seja, pode não existir uma solução com este valor! </p>
+<p>Um bound é uma <strong>estimativa otimista</strong>. Ou seja, pode não existir uma solução com este valor!</p>
 </div>
-<p>Um algoritmo <strong>branch and bound</strong> leva em conta essas estimativas em seu funcionamento: </p>
+<p>Um algoritmo <strong>branch and bound</strong> leva em conta essas estimativas em seu funcionamento:</p>
 <ul>
 <li>se o <strong>bound</strong> da solução atual for pior que a solução ótima atual, retorna</li>
 <li>continue a recursão caso contrário</li>
 </ul>
 <p>Esta técnica evita que nossa recursão entre em <em>branches</em> que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).</p>
 <p><strong>Heurísticas de busca</strong>:</p>
-<p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução. </p>
-<p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução. </p>
+<p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.</p>
+<p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.</p>
 <p>Será obrigatório implementar este item em cima do branch and bound.</p>
 <h3 id="parte-2-paralelismo">Parte 2: Paralelismo<a class="headerlink" href="#parte-2-paralelismo" title="Permanent link">&para;</a></h3>
-<p>Cada item da parte anterior deverá ser paralelizado usando OpenMP. Isto deverá ser feito da maneira mais escalável possível: o tempo de execução do programa deverá diminuir conforme o número de cores aumenta. </p>
-<p>Este item é o principal da entrega, mas ele se apoia inteiramente em cima dos itens da primeira entrega. </p>
+<p>Cada item da parte anterior deverá ser paralelizado usando OpenMP. Isto deverá ser feito da maneira mais escalável possível: o tempo de execução do programa deverá diminuir conforme o número de cores aumenta.</p>
+<p>Este item é o principal da entrega, mas ele se apoia inteiramente em cima dos itens da primeira entrega.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Os projetos da disciplina consideram que não é razoável tentar paralelizar um problema que vocês não sejam capazes de resolver sequencialmente. </p>
+<p>Os projetos da disciplina consideram que não é razoável tentar paralelizar um problema que vocês não sejam capazes de resolver sequencialmente.</p>
 </div>
 <h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
 <p>A entrega será dividida em duas partes:</p>
 <ol>
-<li>entrega do algoritmo sequencial em <em>C++</em>, comparando-o com a implementação em Python (30/03) </li>
+<li>entrega do algoritmo sequencial em <em>C++</em>, comparando-o com a implementação em Python (30/03)</li>
 <li>entrega final (antes da prova)</li>
 </ol>
 <p>Na primeira entrega são esperados os seguintes itens:</p>
@@ -766,9 +792,24 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../checklist/">Requisitos básicos</a> cumpridos</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório comparando desempenho Python vs C++</li>
 </ul>
-<p>Na segunda entrega seu relatório deverá estar completo, levando em conta também as paralelizações feitas na Parte 2. A rubrica de avaliação será publicada logo após a entrega sequencial. </p>
-<h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
-<p>Teremos uma competição de desempenho no Monstrão. Mais detalhes virão após 20/03. </p>
+<p>A entrega final será dividida em duas partes: estratégias de paralelização (55%) e relatório de desempenho (45%).</p>
+<div class="admonition warning">
+<p class="admonition-title">Requisitos básicos de projeto</p>
+<p>Caso os <a href="../checklist/">requisitos básicos de projeto</a> não sejam cumpridos sua nota será limitada a <code>D</code>.</p>
+</div>
+<h3 id="estrategias-de-paralelizacao">Estratégias de paralelização<a class="headerlink" href="#estrategias-de-paralelizacao" title="Permanent link">&para;</a></h3>
+<p>Cada funcionalidade do projeto corretamente implementada de maneira sequencia <strong>E</strong> paralela corresponde a um conceito neste item.</p>
+<ul>
+<li><strong>Conceito D</strong>: implementou a busca local e mostrou ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados <code>busca_local_seq</code> e <code>busca_local_par</code>.</li>
+<li><strong>Conceito C</strong>: implementou o algoritmo recursivo ingênuo, mostrando ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados <code>busca_exaustiva_seq</code> e <code>busca_exaustiva_par</code>.</li>
+<li><strong>Conceito B</strong>: implementou o <em>Branch and Bound</em> usando a função de <em>bound</em>  mostrada no enunciado e compartilhando a melhor solução entre as threads. Você deverá produzir executáveis nomeados <code>branch_bound_seq</code> e <code>branch_bound_par</code>.</li>
+<li><strong>Conceito B+</strong>: implementou uma heurística de busca no algoritmo sequencial e no paralelo e mostrou que há grandes ganhos de desempenho em seu uso. Você deverá produzir executáveis nomeados <code>branch_bound_heuristico_seq</code> e <code>branch_bound_heuristico_par</code>.</li>
+<li><strong>Conceito A+</strong>: implementou uma solução híbrida, com uma thread rodando busca local e as restantes executando o <em>Branch and Bound</em>. Você deverá produzir executáveis nomeados <code>branch_bound_hibrido_seq</code> e <code>branch_bound_hibrido_par</code>.</li>
+</ul>
+<p>Os conceitos acima estão apresentados em ordem de dificuldade. Em geral, a implementação de um conceito se apoia nas implementações dos conceitos anteriores.</p>
+<h3 id="relatorio">Relatório<a class="headerlink" href="#relatorio" title="Permanent link">&para;</a></h3>
+<p>Você deverá produzir um relatório de desempenho seguindo os moldes do Projeto 1. Ele será avaliado de acordo com a <a href="../rubrica.ods">rubrica de relatórios da disciplina</a></p>
+<p>Os testes de seu projeto poderão ser limitados por tempo. Você pode limitar seu programa para rodar até no máximo 20 minutos. O objetivo é rodar entradas o maiores possível dentre</p>
                 
                   
                 
