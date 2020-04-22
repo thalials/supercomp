@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/02-stl/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/10-gpu-I/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>02 - Templates e STL - 7s - SuperComputação - Insper 2020/1</title>
+        <title>10 - introdução a GPU - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#02-templates-e-stl" class="md-skip">
+        <a href="#10-introducao-a-gpu" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +149,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              02 - Templates e STL
+              10 - introdução a GPU
             
           </span>
         </div>
@@ -332,67 +332,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        02 - Templates e STL
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="02 - Templates e STL" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../02-stl/" title="02 - Templates e STL" class="md-nav__link">
       02 - Templates e STL
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#smart-pointers" class="md-nav__link">
-    Smart Pointers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strings-e-vector" class="md-nav__link">
-    Strings e Vector
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-adicionando-stl" class="md-nav__link">
-    Projeto 0 - adicionando STL
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -484,11 +428,81 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../10-gpu-I/" title="10 - introdução a GPU" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10 - introdução a GPU
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="10 - introdução a GPU" class="md-nav__link md-nav__link--active">
       10 - introdução a GPU
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-0-compilacao" class="md-nav__link">
+    Parte 0 - compilação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-transferencia-de-dados" class="md-nav__link">
+    Parte 1 - transferência de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-reducoes" class="md-nav__link">
+    Parte 2 - reduções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-transformacoes-ponto-a-ponto" class="md-nav__link">
+    Parte 3 - Transformações ponto a ponto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-1-instalacao-local" class="md-nav__link">
+    Anexo 1 - instalação local
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -601,22 +615,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#smart-pointers" class="md-nav__link">
-    Smart Pointers
+  <a href="#parte-0-compilacao" class="md-nav__link">
+    Parte 0 - compilação
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#strings-e-vector" class="md-nav__link">
-    Strings e Vector
+  <a href="#parte-1-transferencia-de-dados" class="md-nav__link">
+    Parte 1 - transferência de dados
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#projeto-0-adicionando-stl" class="md-nav__link">
-    Projeto 0 - adicionando STL
+  <a href="#parte-2-reducoes" class="md-nav__link">
+    Parte 2 - reduções
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-3-transformacoes-ponto-a-ponto" class="md-nav__link">
+    Parte 3 - Transformações ponto a ponto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-1-instalacao-local" class="md-nav__link">
+    Anexo 1 - instalação local
   </a>
   
 </li>
@@ -633,7 +661,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/02-stl.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/10-gpu-I.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -641,127 +669,131 @@
                   
                 
                 
-                <h1 id="02-templates-e-stl">02 - Templates e STL<a class="headerlink" href="#02-templates-e-stl" title="Permanent link">&para;</a></h1>
-<p>Esta prática consiste primariamente em aprender a usar tipos de dados complexos 
-disponibilizados pela STL e pela biblioteca padrão de C++. A atividade principal desta prática 
-consiste em modificar o exercício da aula passada para usar as estruturas de dados e 
-funções da STL. </p>
-<h2 id="smart-pointers">Smart Pointers<a class="headerlink" href="#smart-pointers" title="Permanent link">&para;</a></h2>
-<p>Uma das grandes dificuldades de desenvolver em C++ é evitar vazamentos de memória (memory leaks). Durante o desenvolvimento do programa é muito usado o recurso de alocação dinâmica de memória, contudo da mesma forma que o programador tem a responsabilidade de alocar a memória, ele tem de desalocar a memória. Os smart pointers são uma estratégia de evitar que você esqueça de desalocar e crie um programa devorador de memória. Os smart pointers percebem que uma memória alocada não é mais acessível e desaloca a memória.</p>
-<p><strong>unique_ptr</strong>: um smart pointer para um único objeto com um dono só. Ou seja, este smart pointer aponta para um objeto que deve ter só um apontamento de cada vez. Ao realizarmos atribuições a variável "dono" do objeto muda. </p>
-<p><strong>shared_ptr</strong>: Um smart pointer para um único objeto e pode ter vários donos. Ou seja, este smart pointer aponta para um objeto que pode ter vários apontamentos de cada vez. Ao realizarmos atribuições adicionamos uma nova referência a este dado. Quando não existem mais referências o dado é automaticamente liberado usando <code>delete</code></p>
+                <h1 id="10-introducao-a-gpu">10 - introdução a GPU<a class="headerlink" href="#10-introducao-a-gpu" title="Permanent link">&para;</a></h1>
+<p>Como visto em aula, programação para GPU requer ferramentas especializadas capazes de gerar código que rode parte na CPU (chamada de <em>host</em>) e parte na GPU (chamada de <em>target</em>). Nesta parte introdutória usaremos a biblioteca <code>cuda::thrust</code>. Ela possui um pequeno conjunto de operações otimizadas para GPU e que podem ser customizadas para diversos propósitos.</p>
+<div class="admonition note">
+<p class="admonition-title">Documentação oficial</p>
+<p>A documentação oficial da Thrust está disponível no endereço <a href="https://thrust.github.io/doc/modules.html">https://thrust.github.io/doc/modules.html</a>.</p>
+</div>
+<p>Também vamos focar em usar máquinas pré-configuradas. Instruções de instalação local estão disponíveis no <em>Anexo 1</em> deste roteiro.</p>
+<h2 id="parte-0-compilacao">Parte 0 - compilação<a class="headerlink" href="#parte-0-compilacao" title="Permanent link">&para;</a></h2>
+<p>Para compilar programas para rodar na GPU devemos usar o compilador <code>nvcc</code>. Ele identifica quais porções do código deverão ser compiladas para a GPU. O restante do código, que roda exclusivamente na CPU, é passado diretamente para um compilador <em>C++</em> regular e um único executável é gerado contendo o código para CPU e chamadas inseridas pelo <code>nvcc</code> para invocar as funções que rodam na GPU.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>O programa abaixo (<em>tarefa1.cpp</em>) tem problemas de memória devido a alocação feita na função <code>cria_vetor</code> e não liberada a cada iteração do for. Conserte o programa usando <code>shared_ptr</code> para que a memória alocada por <code>cria_vetor</code> seja liberada automaticamente. 
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-
-<span class="kt">double</span> <span class="o">*</span><span class="nf">cria_vetor</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">prt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">processa</span><span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="o">*</span><span class="n">vec</span> <span class="o">=</span> <span class="n">cria_vetor</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-        <span class="n">processa</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
-        <span class="c1">// vetor não é deletado no fim do main!</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<p>Verifique que sua instalação funciona compilando o arquivo abaixo.</p>
+<blockquote>
+<p>$ nvcc -std=c++11 exemplo1-criacao-iteracao.cu -o exemplo1</p>
+</blockquote>
 </div>
-<h2 id="strings-e-vector">Strings e Vector<a class="headerlink" href="#strings-e-vector" title="Permanent link">&para;</a></h2>
-<p>Nesta seção iremos trabalhar com dois conteiners muito usados da STL: <a href="http://www.cplusplus.com/reference/string/">string</a> e <a href="http://www.cplusplus.com/reference/vector/vector/">vector</a>. O objetivo é acostumá-los a consultar a documentação de C++ e entendê-la com autonomia. A STL tem uma quantidade enorme de recursos e aprender a pesquisar como usá-los é importante para sua proficiência. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça um programa que lê uma linha de texto (usando <code>std::getline</code>) e procure nela todas as ocorrências da palavra "hello". Você deverá implementar uma função</p>
-<p><code>std::vector&lt;int&gt; find_all(std::string text, std::string term);</code> </p>
-<p>que devolve um vetor com a posição de todas as ocorrências de <code>term</code> em <code>text</code>. Sua função <code>main</code> deverá mostrar os resultados da busca de maneira bem formatada. </p>
-</div>
-<h2 id="projeto-0-adicionando-stl">Projeto 0 - adicionando STL<a class="headerlink" href="#projeto-0-adicionando-stl" title="Permanent link">&para;</a></h2>
-<p>O código produzido na última aula parece muito com código <em>C</em> e usa muito pouco dos recursos introduzidos em <em>C++</em> para tornar nossos programas mais legíveis e fáceis de escrever. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>gera_vetor</code> para usar <code>std::vector</code> ao invés de arrays puros e para usar o cabeçalho <code>&lt;random&gt;</code>. A distribuição usada deverá ser uniforme real com limites 5 a 27.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique todas as funções (<code>log</code>, <code>sqrt</code>, <code>pow3</code>, <code>pow3mult</code> e <code>sum</code>) para receber <code>std::vector</code>. Note que você não precisa mais receber como argumento o tamanho do vetor. </p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Qual deverá ser a assinatura das funções acima para evitar que ocorra cópia do <code>std::vector</code>?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Continuando o exercício acima, use iteradores para percorrer seu <code>std::vector</code>. Para deixar o código mais legível use <code>auto</code></p>
-</div>
-<p>Vamos agora trabalhar com programação funcional em <em>C++</em> para tornar nosso código menor: armazenamento de referências para funções em variáveis e definição de funções usando <code>lambda</code>. </p>
-<p>Podemos definir funções no meio de nosso programa usando a seguinte sintaxe:</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">&amp;|=</span><span class="p">]</span> <span class="p">(</span><span class="n">argumentos</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">retorno</span> <span class="p">{</span>
-    <span class="n">corpo</span> <span class="n">da</span> <span class="n">função</span> <span class="n">aqui</span>
-<span class="p">};</span>
+<p>Se der tudo certo a execução do programa acima deverá gerar um executável <code>exemplo1</code> que roda e produz o seguinte resultado.</p>
+<div class="highlight"><pre><span></span><code>Host vector: 0 0 12 0 35
+Device vector 0 0 0 0 35
 </code></pre></div>
 
-<p>Uma função definida desta maneira pode usar as variáveis locais disponíveis no momento em que ela foi declarada (mesmo que não sejam passadas como argumento). A primeira parte da declaração define se essas variáveis serão copiadas <code>[=]</code> ou se uma referência para elas será utilizada na função <code>[&amp;]</code>. O restante segue padrões normalmente usados em <em>C++</em>. </p>
-<p>Podemos inclusive, passar essas funções como argumentos e devolvê-las como resultado de funções. Para isto usamos o tipo <code>std::function</code> disponível no cabeçalho <code>functional</code>. Os exercícios abaixo foram extraídos do arquivo <code>exemplos-lambda.cpp</code>. Faça-os e cheque seus resultados rodando o programa. Se houver dúvida chame o professor. </p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Qual é o resultado do código abaixo?</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">by_two</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kt">double</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span><span class="p">;</span> 
-<span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">by_two</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<h2 id="parte-1-transferencia-de-dados">Parte 1 - transferência de dados<a class="headerlink" href="#parte-1-transferencia-de-dados" title="Permanent link">&para;</a></h2>
+<p>Como visto na expositiva, a CPU e a GPU possuem espaços de endereçamento completamente distintos. Ou seja, a CPU não consegue acessar os dados na memória da GPU e vice-versa. A <code>thrust</code> disponibiliza somente um tipo de container (<code>vector</code>) e facilita este gerenciamento deixando explícito se ele está alocado na CPU (<code>host</code>) ou na GPU (<code>device</code>).  A cópia CPU<span><span class="MathJax_Preview">\leftrightarrow</span><script type="math/tex">\leftrightarrow</script></span> GPU é feita implicitamente quando criamos um <code>device_vector</code> ou quando usamos a operação de atribuição entre <code>host_vector</code> e <code>device_vector</code>. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">host_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec_cpu</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// alocado na CPU</span>
+
+<span class="n">vec1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">vec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+
+<span class="c1">// aloca vetor na GPU e transfere dados CPU-&gt;GPU</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec_gpu</span> <span class="p">(</span><span class="n">vec_cpu</span><span class="p">);</span>
+
+<span class="c1">//processa vec_gpu</span>
+
+<span class="n">vec_cpu</span> <span class="o">=</span> <span class="n">vec_gpu</span><span class="p">;</span> <span class="c1">// copia dados GPU -&gt; CPU</span>
 </code></pre></div>
 
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Qual é o resultado do código abaixo?</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">by_c</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kt">double</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">c</span><span class="p">;</span> 
-<span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">by_c</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">by_c</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<p>A <code>thrust</code> usa iteradores em todas as suas funções. Pense em um iterador como um ponteiro para os elementos do array. Porém, um iterador é mais esperto: ele guarda também o tipo do vetor original e suporta operações <code>++</code> e <code>*</code> para qualquer tipo de dado iterado de maneira transparente.</p>
+<p>Vetores <code>thrust</code> aceitam os métodos <code>v.begin()</code> para retornar um iterador para o começo do vetor e <code>v.end()</code> para um iterador para o fim (depois do último elemento). Podemos também somar um valor <code>n</code> a um iterador. Isto é equivalente a fazer <code>n</code> vezes a operação <code>++</code>.  Veja abaixo um exemplo de uso das funções <code>fill</code> e <code>sequence</code> para preencher valores em um vetor de maneira eficiente.</p>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// vetor de 5 ints zerado</span>
+<span class="c1">// v = {0, 0, 0, 0, 0}</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">sequence</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// preenche com 0, 1, 2, ....</span>
+<span class="c1">// v = {0, 1, 2, 3, 4}</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// dois primeiros elementos = 13</span>
+<span class="c1">// v = {13, 13, 2, 3, 4}</span>
 </code></pre></div>
 
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Escreva abaixo o tipo de uma variável que guarda referência para as funções que testamos neste exercício</p>
-<ul>
-<li><code>log</code></li>
-<li><code>sqrt</code></li>
-<li><code>pow3</code></li>
-<li><code>pow3mult</code></li>
-<li><code>sum</code></li>
-</ul>
+<p>Consulte o arquivo <em>exemplo1-criacao-iteracao.cu</em> para um exemplo completo de alocação e transferência de dados e do uso de iteradores.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>O fluxo de trabalho "normal" de aplicações usando GPU é receber os dados em um vetor na CPU e copiá-los para a GPU para fazer processamentos. Crie um programa que lê uma sequência de <code>double</code>s da entrada padrão em um <code>thrust::host_vector</code> e os copia para um <code>thrust::device_vector</code>. Teste seu programa com o arquivo <em>stocks-google.txt</em>, que contém o preço das ações do Google nos últimos 10 anos.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Crie uma função <code>std::vector&lt;double&gt; teste_incremental(</code><strong>tipo aqui</strong><code>)</code> que recebe um ponteiro para o tipo das funções acima e executa a função recebida com tamanhos de vetores incrementalmente maiores. Sua função deverá devolver os tempos (em segundos) para todas as execuções feitas. Ou seja, a função teste_incremental deverá funcionar como uma "casquinha" que gera vetores, roda as funções matemáticas testadas e retorna seus tempos de execução.</p>
+<p>A criação de um <code>device_vector</code> é demorada. Meça o tempo que a operação de alocação e cópia demora e imprima na saída de erros. (Use <code>std::chrono</code>).</p>
+</div>
+<hr />
+<h2 id="parte-2-reducoes">Parte 2 - reduções<a class="headerlink" href="#parte-2-reducoes" title="Permanent link">&para;</a></h2>
+<p>Uma operação genérica de <em>redução</em> transforma um vetor em um único valor. Exemplos clássicos de operações de redução incluem <em>soma</em>, <em>média</em> e <em>mínimo/máximo</em> de um vetor.</p>
+<p>A <code>thrust</code> disponibiliza este tipo de operação otimizada em <em>GPU</em> usando a função <code>thrust::reduce</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">val</span> <span class="o">=</span> <span class="n">thrust</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">iter_comeco</span><span class="p">,</span> <span class="n">iter_fim</span><span class="p">,</span> <span class="n">inicial</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
+<span class="c1">// iter_comeco: iterador para o começo dos dados</span>
+<span class="c1">// iter_fim: iterador para o fim dos dados</span>
+<span class="c1">// inicial: valor inicial</span>
+<span class="c1">// op: operação a ser feita.</span>
+</code></pre></div>
+
+<p>Um exemplo de uso de redução para computar o máximo pode ser visto <a href="http://thrust.github.io/doc/group__reductions_ga5e9cef4919927834bec50fc4829f6e6b.html#ga5e9cef4919927834bec50fc4829f6e6b">aqui</a>. A lista completa de funções que podem ser usadas no lugar de <code>op</code> pode ser vista <a href="http://thrust.github.io/doc/group__predefined__function__objects.html">neste link</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Continuando o exercício anterior, calcule as seguintes medidas. Não se esqueça de passar o <code>device_vector</code> para a sua função <code>reduce</code></p>
+<ol>
+<li>O preço médio das ações nos últimos 10 anos.</li>
+<li>O preço médio das ações no último ano (365 dias atrás).</li>
+<li>O maior e o menor preço da sequência inteira e do último ano.</li>
+</ol>
+</div>
+<p>Você pode consultar todos os tipos de reduções disponíveis no <a href="https://thrust.github.io/doc/group__reductions.html">site da thrust</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Todos os algoritmos da <code>thrust</code> podem ser rodados também em <em>OpenMP</em> passando como primeiro argumento <code>thrust::host</code>. Modifique o seu exercício acima para fazer as mesmas chamadas porém usando <em>OpenMP</em> e meça o tempo das duas implementações. Separe o tempo de cópia para GPU e o de execução em sua análise.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>você deve ter notado que a função <code>sum</code> não possui a mesma assinatura das outras. Use uma função <code>lambda</code> para adaptar os tipos e usar a função acima para testar a função <code>sum</code> também. </p>
+<p>Comente os resultado acima. Quando vale a pena paralelizar usando GPU? Compare o tempo de execução na CPU e na GPU e o tempo de cópia.</p>
 </div>
+<h2 id="parte-3-transformacoes-ponto-a-ponto">Parte 3 - Transformações ponto a ponto<a class="headerlink" href="#parte-3-transformacoes-ponto-a-ponto" title="Permanent link">&para;</a></h2>
+<p>Além de operações de redução também podemos fazer operações ponto a ponto em somente um vetor (como negar todas as componentes ou calcular os quadrados) quanto entre dois vetores (como somar dois vetores componente por componente ou comparar cada elemento com seu correspondente em outro vetor). A <code>thrust</code> dá o nome de <code>transformation</code> para este tipo de operação.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// para operações entre dois vetores iter1 e iter2. resultado armazenado em out</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter1_comeco</span><span class="p">,</span> <span class="n">iter1_fim</span><span class="p">,</span> <span class="n">iter2_comeco</span><span class="p">,</span> <span class="n">out_comeco</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
+<span class="c1">// iter1_comeco: iterador para o começo de iter1</span>
+<span class="c1">// iter1_fim: iterador para o fim de iter1</span>
+<span class="c1">// iter2_comeco: iterador para o começo de iter2</span>
+<span class="c1">// out_comeco: iterador para o começo de out</span>
+<span class="c1">// op: operação a ser realizada.</span>
+</code></pre></div>
+
+<p>Um exemplo concreto pode ser visto abaixo. O código completo está em <code>exemplo2-transform.cu</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V1</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V4</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// inicializa V1 e V2 aqui</span>
+
+<span class="c1">//soma V1 e V2</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">V2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V3</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">thrust</span><span class="o">::</span><span class="n">plus</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
+
+<span class="c1">// multiplica V1 por 0.5</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+                  <span class="n">thrust</span><span class="o">::</span><span class="n">constant_iterator</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+                  <span class="n">V4</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">thrust</span><span class="o">::</span><span class="n">multiplies</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
+</code></pre></div>
+
+<p>As operações que foram usadas no <code>reduce</code> também podem ser usadas em um <code>transform</code>. Não se esqueça de consultar <a href="http://thrust.github.io/doc/group__predefined__function__objects.html">a lista de operações</a> para fazer este exercício.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Vamos agora trabalhar com o arquivo <code>stocks2.csv</code>. Ele contém a série histórica de ações da Apple e da Microsoft. Seu objetivo é calcular a diferença média entre os preços das ações AAPL e MSFT.</p>
+</div>
+<p><strong>Dica</strong>: quebre o problema em duas partes. Primeiro calcule a diferença entre os preços e guarde isto em um vetor. Depois compute a média deste vetor.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Cada chamada a <code>reduce</code> e <code>transform</code> tem um custo fixo que pode se acumular caso façamos muitas chamadas. Estude como escrever seu programa usando <code>transform_reduce</code>.</p>
+</div>
+<h2 id="anexo-1-instalacao-local">Anexo 1 - instalação local<a class="headerlink" href="#anexo-1-instalacao-local" title="Permanent link">&para;</a></h2>
+<p><strong>Instruções fáceis</strong>: os repositórios oficiais do <em>Ubuntu</em> já contém o pacote <code>nvidia-cuda-toolkit</code> pronto para instalação via <em>apt</em>. A versão disponibilizada não é a mais atual (<code>9.1.85</code> vs <code>10.0</code>), mas tudo funciona de maneira integrada e não é necessário instalar nada manualmente. Esta versão será suportada pelo curso.</p>
+<p><strong>Instruções não tão fáceis</strong>: Visitar <a href="https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64">o site da NVIDIA</a>, baixar o pacote <code>.deb</code> e instalar manualmente. Estas instruções não são difíceis, mas como pode ser necessário instalar novos drivers de vídeo isto pode dar algum trabalho.</p>
                 
               
               
@@ -780,7 +812,7 @@ funções da STL. </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../01-intro-cpp/" title="01 - Introdução a C++" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../09-tarefas/" title="09 - Tarefas" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -789,19 +821,19 @@ funções da STL. </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                01 - Introdução a C++
+                09 - Tarefas
               </div>
             </div>
           </a>
         
         
-          <a href="../03-cmake/" title="03 - CMake e Debugging no VSCode" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                03 - CMake e Debugging no VSCode
+                Índice
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
