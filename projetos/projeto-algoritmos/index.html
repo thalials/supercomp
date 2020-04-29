@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/03-cmake/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/projeto-algoritmos/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>03 - CMake e Debugging no VSCode - 7s - SuperComputação - Insper 2020/1</title>
+        <title>Algoritmos para problemas NP-completo - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-cmake-e-debugging-no-vscode" class="md-skip">
+        <a href="#algoritmos-para-problemas-np-completo" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              03 - CMake e Debugging no VSCode
+              Algoritmos para problemas NP-completo
             
           </span>
         </div>
@@ -286,12 +286,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -315,7 +313,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../00-organizacao/" title="Organização do repositório" class="md-nav__link">
+    <a href="../../aulas/00-organizacao/" title="Organização do repositório" class="md-nav__link">
       Organização do repositório
     </a>
   </li>
@@ -327,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-intro-cpp/" title="01 - Introdução a C++" class="md-nav__link">
+    <a href="../../aulas/01-intro-cpp/" title="01 - Introdução a C++" class="md-nav__link">
       01 - Introdução a C++
     </a>
   </li>
@@ -339,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02-stl/" title="02 - Templates e STL" class="md-nav__link">
+    <a href="../../aulas/02-stl/" title="02 - Templates e STL" class="md-nav__link">
       02 - Templates e STL
     </a>
   </li>
@@ -349,87 +347,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        03 - CMake e Debugging no VSCode
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="03 - CMake e Debugging no VSCode" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../aulas/03-cmake/" title="03 - CMake e Debugging no VSCode" class="md-nav__link">
       03 - CMake e Debugging no VSCode
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
-    Gerenciamento de projetos com CMake
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opcoes-de-compilacao" class="md-nav__link">
-    Opções de compilação
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
-    Projeto 0 - Benchmarking e comparações de desempenho
-  </a>
-  
-    <nav class="md-nav" aria-label="Projeto 0 - Benchmarking e comparações de desempenho">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dicas" class="md-nav__link">
-    Dicas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
-    Extra 01 - Debugando seu projeto
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -439,7 +361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-nav__link">
+    <a href="../../aulas/04-autovec/" title="04 - SIMD: Autovetorização" class="md-nav__link">
       04 - SIMD: Autovetorização
     </a>
   </li>
@@ -451,7 +373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-intro-multi-core/" title="05 - Introdução a multi-core" class="md-nav__link">
+    <a href="../../aulas/05-intro-multi-core/" title="05 - Introdução a multi-core" class="md-nav__link">
       05 - Introdução a multi-core
     </a>
   </li>
@@ -463,7 +385,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-intro-openmp/" title="06 - Introdução a OpenMP" class="md-nav__link">
+    <a href="../../aulas/06-intro-openmp/" title="06 - Introdução a OpenMP" class="md-nav__link">
       06 - Introdução a OpenMP
     </a>
   </li>
@@ -475,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07-openmp-for/" title="07 - OpenMP: Construções de alto nível" class="md-nav__link">
+    <a href="../../aulas/07-openmp-for/" title="07 - OpenMP: Construções de alto nível" class="md-nav__link">
       07 - OpenMP: Construções de alto nível
     </a>
   </li>
@@ -487,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-nav__link">
+    <a href="../../aulas/08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-nav__link">
       08 - Efeitos colaterais
     </a>
   </li>
@@ -499,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09-tarefas/" title="09 - Tarefas" class="md-nav__link">
+    <a href="../../aulas/09-tarefas/" title="09 - Tarefas" class="md-nav__link">
       09 - Tarefas
     </a>
   </li>
@@ -511,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-gpu-I/" title="10 - introdução a GPU" class="md-nav__link">
+    <a href="../../aulas/10-gpu-I/" title="10 - introdução a GPU" class="md-nav__link">
       10 - introdução a GPU
     </a>
   </li>
@@ -553,7 +475,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/" title="Índice" class="md-nav__link">
+    <a href="../" title="Índice" class="md-nav__link">
       Índice
     </a>
   </li>
@@ -565,7 +487,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/projeto-pfe/" title="Alocação de alunos para o PFE" class="md-nav__link">
+    <a href="../projeto-pfe/" title="Alocação de alunos para o PFE" class="md-nav__link">
       Alocação de alunos para o PFE
     </a>
   </li>
@@ -577,7 +499,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
+    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
       Requisitos básicos de projeto
     </a>
   </li>
@@ -614,42 +536,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
-    Gerenciamento de projetos com CMake
+  <a href="#implementacao-em-c" class="md-nav__link">
+    Implementação em C++
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opcoes-de-compilacao" class="md-nav__link">
-    Opções de compilação
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
-    Projeto 0 - Benchmarking e comparações de desempenho
-  </a>
-  
-    <nav class="md-nav" aria-label="Projeto 0 - Benchmarking e comparações de desempenho">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dicas" class="md-nav__link">
-    Dicas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
-    Extra 01 - Debugando seu projeto
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
   </a>
   
 </li>
@@ -666,7 +561,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/03-cmake.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/projeto-algoritmos.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -674,98 +569,76 @@
                   
                 
                 
-                <h1 id="03-cmake-e-debugging-no-vscode">03 - CMake e Debugging no VSCode<a class="headerlink" href="#03-cmake-e-debugging-no-vscode" title="Permanent link">&para;</a></h1>
-<p>Até o momento todos nossos arquivos eram compilados em uma só linha usando <code>g++</code>. Conforme projetos ficam maiores e são divididos em vários módulos isto se torna inviável. Neste roteiro iremos usar o CMake, uma ferramenta de gerenciamento de projetos em C++. No fim, iremos configurar o VSCode para abrir projetos CMake.</p>
-<div class="admonition warning">
-<p class="admonition-title">Atenção</p>
-<p>Usar ferramentas adequadas aumenta consideravelmente a produtividade e também facilita encontrar erros no código. A partir desta aula será obrigatório já ter debugado o programa antes de tirar dúvidas. </p>
-</div>
-<h2 id="gerenciamento-de-projetos-com-cmake">Gerenciamento de projetos com CMake<a class="headerlink" href="#gerenciamento-de-projetos-com-cmake" title="Permanent link">&para;</a></h2>
-<p>O <a href="http://www.cmake.org">CMake</a> é uma das ferramentas mais usadas para gerenciar projetos C/C++. Outras ferramentas comumente usadas são <a href="https://ninja-build.org/manual.html">ninja</a> e <a href="https://mesonbuild.com/">meson</a>. </p>
-<p>Em <em>CMake</em>, um projeto é definido por um arquivo nomeado <em>CMakeLists.txt</em>. Este arquivo contém definições como nome do projeto, quais dependências (bibliotecas externas e subprojetos) são usadas e o quais arquivos serão gerados pelo projeto. Cada arquivo gerado é chamado de <em>target</em> na nomenclatura usada pelo CMake e pode ser um executável ou uma biblioteca (estática ou dinâmica). </p>
-<p>Um arquivo <em>CMakeLists.txt</em> básico pode conter apenas três linhas (pasta <a href="https://github.com/insper/supercomp/code/03-cmake">03-cmake</a>):</p>
-<div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.10)
-project (projeto_basico)
-add_executable(hello hello.cpp) 
+                <h1 id="algoritmos-para-problemas-np-completo">Algoritmos para problemas NP-completo<a class="headerlink" href="#algoritmos-para-problemas-np-completo" title="Permanent link">&para;</a></h1>
+<p>Na primeira etapa do projeto nos concentraremos na resolução do <a href="../projeto-pfe/">problema proposto</a> de maneira eficiente.
+O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>.</p>
+<h2 id="implementacao-em-c">Implementação em C++<a class="headerlink" href="#implementacao-em-c" title="Permanent link">&para;</a></h2>
+<p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte é compreender o efeito da linguagem de programação escolhida no desempenho da solução. Sua implementação deverá se chamar <code>busca_exaustiva_seq</code>.</p>
+<p>Além de devolver a saída no <a href="../projeto-pfe/">formato indicado no enunciado</a>, seu programa também deverá mostrar informações de debug na saída de erros. Sempre que for encontrada uma solução melhor que a atual seu programa deverá mostrar uma linha como a abaixo na saída de erros:</p>
+<div class="highlight"><pre><span></span><code>Melhor: (sat) pa1 pa2 pa3 ... pa(n_alunos)
 </code></pre></div>
 
-<p>Este arquivo somente descreve o projeto. Para efetivamente compilarmos o programa precisamos passar pela fase de <em>configuração</em>, em que o <em>CMake</em> checa se todas as dependências foram encontradas e se os compiladores necessários estão instalados. Se tudo estiver em ordem podemos gerar um <em>Makefile</em> (para Linux) ou um projeto do Visual Studio (para Windows). </p>
-<p>Para fazer a configuração do projeto basta rodar o comando <code>cmake</code> mais o caminho para a pasta do projeto. Você só precisará refazer a configuração do projeto se modificar o arquivo <em>CMakeLists.txt</em>.  É boa prática fazer a compilação do código em uma pasta separada, como na sequência de comandos abaixo.</p>
-<div class="codehilite"><pre><span></span><code>mkdir build
-cd build
-cmake ..
-</code></pre></div>
-
-
-<p>Estes comandos devem ter gerado uma série de arquivos na pasta <em>build</em>, incluindo um <em>Makefile</em>. Para compilar o projeto basta rodar</p>
-<div class="codehilite"><pre><span></span><code>make
-</code></pre></div>
-
-
-<p>E um executável de nome <em>hello</em> deverá aparecer na pasta <em>build</em>. </p>
-<div class="admonition note">
-<p class="admonition-title">Exercício</p>
-<p>Crie um arquivo <em>CMakeLists.txt</em> para o projeto 0. Você deverá adicionar um <em>target</em> chamado <code>vector_ops</code>. </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercício</p>
-<p>Separe as funções matemáticas testadas em arquivos <em>.cpp/h</em> e use-os no seu projeto. A diretiva <code>add_executable</code> aceita vários arquivos <em>.cpp</em> para criar um executável. </p>
-</div>
-<h2 id="opcoes-de-compilacao">Opções de compilação<a class="headerlink" href="#opcoes-de-compilacao" title="Permanent link">&para;</a></h2>
-<p>Além da criação de executáveis o CMake também permite adicionar opções de compilação específicas para cada <em>target</em> com a diretiva <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options</code></a>. No contexto desta matéria isto será especialmente interessante pois o <code>g++</code> oferece flags para ativar otimizações que podem melhorar significativamente o desempenho de nosso programa. Portanto, podemos facilmente compilar o mesmo programa com e sem otimizações no mesmo projeto! O exemplo abaixo ativa a flag <code>O3</code> no <em>target</em> <code>hello</code> criado no exemplo anterior. </p>
-<div class="codehilite"><pre><span></span><code>target_compile_options(hello PUBLIC -O3)
-</code></pre></div>
-
-
-<p>Podemos também usar <code>#define</code> para fazer compilação condicional do nosso código. Usar a <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html">diretiva abaixo</a> equivale e colocar um <code>#define OPT</code> no topo de cada arquivo do target <code>hello</code>.</p>
-<div class="codehilite"><pre><span></span><code>target_compile_definitions(hello PUBLIC OPT)
-</code></pre></div>
-
-
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Modifique seu <em>target</em> <code>vector_ops</code> para que ele use a opção de compilação <code>O2</code>.</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Crie um novo <em>target</em> <code>vector_ops_no_opt</code> que compile os mesmos arquivos de <code>vector_ops</code> mas use a opção de compilação <code>O0</code>.</p>
-</div>
-<h2 id="projeto-0-benchmarking-e-comparacoes-de-desempenho">Projeto 0 - Benchmarking e comparações de desempenho<a class="headerlink" href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" title="Permanent link">&para;</a></h2>
-<p>Vamos agora fazer um pequeno resumo dos resultados dos experimentos. Este resumo deverá conter os seguintes itens e deverá ser entregue em formato <em>PDF</em>. </p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> uma breve descrição do programa testado (um parágrafo); </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os nomes dos executáveis testados e qual a diferença entre eles</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os tamanhos de entrada usados e a máquina usada para seus testes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> gráficos ilustrando a diferença de desempenho para cada função testada</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> comentários sobre os resultados mostrados nos gráficos</li>
+<ul>
+<li><code>(sat)</code> é a satisfação da solução encontrada.</li>
+<li><code>pa1</code> até <code>pa(n_alunos)</code> é o vetor contendo o projeto atribuído a cada aluno.</li>
 </ul>
-<h3 id="dicas">Dicas<a class="headerlink" href="#dicas" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Ferramentas como <a href="http://mpastell.com/pweave">PWeave</a> ou Jupyter Notebook ajudam muito a criar textos que misturam código para criar gráficos, rodar programas automaticamente e interpretar sua saída. </li>
-<li>Tente automatizar o máximo possível a geração de gráficos de desempenho. Isso facilitará muito sua vida em projetos posteriores. </li>
-</ol>
-<h2 id="extra-01-debugando-seu-projeto">Extra 01 - Debugando seu projeto<a class="headerlink" href="#extra-01-debugando-seu-projeto" title="Permanent link">&para;</a></h2>
-<p>Agora iremos abrir nosso projeto um ambiente de desenvolvimento em vez de continuar trabalhando na linha de comando. Adotaremos o VSCode como ambiente padrão. </p>
-<p>O VSCode não vem com suporte por padrão a projetos CMake, mas a extensão <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/index.html"><em>Cmake Tools</em></a> possui um bom suporte. Instale-a e carregue o projeto. A extensão possui uma documentação tanto para a etapa de <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html#configuring-your-project">configuração e compilação</a> quanto para <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html">execução dos programas e debugging</a>. </p>
-<p>Para executar os programas você pode usar a opção "Run in terminal" disponível no menu do botão direito de cada <em>target</em>. </p>
-<hr />
-<p>Supondo que a etapa anterior funcionou, vamos agora rodar o nosso programa usando um debugger. Isto permite parar a execução no meio do programa e examinar o valor das variáveis. </p>
-<ol>
-<li>coloque um ou mais <em>breakpoints</em> no código. Basta clicar ao lado do número da linha. Um círculo vermelho indica que a execução será interrompida quando chegar nesta linha.</li>
-<li>botão direito no target -&gt; "Run with debugger".</li>
-<li>quando o programa parar teremos as seguintes opções:<ul>
-<li><strong>Continue</strong>: roda até o próximo <em>breakpoint</em></li>
-<li><strong>Step Over</strong>: roda a linha atual e passa para a próxima.</li>
-<li><strong>Step Into</strong>: se a linha atual tem uma chamada de função, continua o debug dentro da função chamada.</li>
-<li><strong>Step Out</strong>: executa até o fim da função atual e para logo após o retorno.</li>
+<p>Seu programa deverá encontrar exatamente as mesmas soluções que o programa em Python, pois ele é uma tradução fiel do algoritmo utilizado e deveria percorrer as soluções possíveis na mesma ordem.</p>
+<p>Para validar sua implementação deste item você deverá usar o script <code>code/projeto-validacao/validacao-exaustivo.py</code>. Este script recebe o seu executável e roda uma série de testes, verificando tanto a saída esperada quanto as informações de diagnóstico mostradas na saída de erros. As entradas usadas estão na pasta <code>entradas</code>.</p>
+<!--
+**Busca local**:
+
+A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,
+
+1. a solução encontrada muda conforme a solução inicial
+1. nem todas as soluções são possíveis de serem encontradas.
+
+Uma boa heurística geralmente é baseada em alguma característica da solução ótima. Para este problema usaremos a seguinte propriedade
+
+> não existe nenhuma dupla de alunos que, se for trocada de projeto, melhora a satisfação global.
+
+Claramente se a solução é a melhor possível então isto não pode acontecer. Nosso algoritmo será
+
+1. escolha uma atribuição aluno-projeto válida aleatoriamente
+1. verifique se existe um par de alunos cuja troca de projeto melhore a satisfação global
+    * se existir faça a troca e repita o teste acima
+    * se não existir retorne a solução atual
+
+Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca **local** pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo **global** no fim do processo.
+
+**Branch and Bound**:
+
+Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (*branches*) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:
+
+* em um certo momento temos uma solução  com valor $200$
+* ainda faltam 3 alunos para serem alocados.
+* a melhor solução já encontrada tem valor $300$.
+
+Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor $275 < 300$. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!
+
+Um **bound** é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar *X* alunos e tenho uma solução de valor *Y*, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor $< Y + 25X$).
+
+!!! warning
+    Um bound é uma **estimativa otimista**. Ou seja, pode não existir uma solução com este valor!
+
+Um algoritmo **branch and bound** leva em conta essas estimativas em seu funcionamento:
+
+* se o **bound** da solução atual for pior que a solução ótima atual, retorna
+* continue a recursão caso contrário
+
+Esta técnica evita que nossa recursão entre em *branches* que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).
+
+**Heurísticas de busca**:
+
+O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.
+
+Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.
+
+Será obrigatório implementar este item em cima do branch and bound. -->
+
+<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Conceito D</strong>: implementou o algoritmo exaustivo inocente em <code>C++</code>. O executável deverá ser nomeado <code>busca_exaustiva_seq</code>.</li>
 </ul>
-</li>
-<li>Também podemos colocar o mouse em cima de cada variável para ver seu valor. O explorador de variáveis (que mostra todas as válidas na função atual) aparece no painel esquerdo, dentro da view <em>debug</em>.</li>
-</ol>
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Abra sua atividade e rode-a com o debugger. Pause a execução no meio e verifique os tempos de execução. </p>
-</div>
                 
               
               
@@ -780,41 +653,6 @@ cmake ..
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../02-stl/" title="02 - Templates e STL" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                02 - Templates e STL
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                04 - SIMD: Autovetorização
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

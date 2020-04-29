@@ -19,7 +19,7 @@
     
     
       
-        <title>Multi-core: C++ e OpenMP - 7s - SuperComputação - Insper 2020/1</title>
+        <title>Multi-core usando OpenMP - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#multi-core-c-e-openmp" class="md-skip">
+        <a href="#multi-core-usando-openmp" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Multi-core: C++ e OpenMP
+              Multi-core usando OpenMP
             
           </span>
         </div>
@@ -448,12 +448,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Projetos
@@ -489,8 +487,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
-      Requisitos básicos de projeto
+    <a href="../projeto-pfe/" title="Alocação de alunos para o PFE" class="md-nav__link">
+      Alocação de alunos para o PFE
     </a>
   </li>
 
@@ -501,97 +499,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../projeto-pfe/" title="Projeto semestral - Alocação de alunos para o PFE" class="md-nav__link">
-      Projeto semestral - Alocação de alunos para o PFE
+    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
+      Requisitos básicos de projeto
     </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Multi-core: C++ e OpenMP
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Multi-core: C++ e OpenMP" class="md-nav__link md-nav__link--active">
-      Multi-core: C++ e OpenMP
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parte-1-estrategias-de-resolucao" class="md-nav__link">
-    Parte 1: estratégias de resolução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parte-2-paralelismo" class="md-nav__link">
-    Parte 2: Paralelismo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avaliacao" class="md-nav__link">
-    Avaliação
-  </a>
-  
-    <nav class="md-nav" aria-label="Avaliação">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#estrategias-de-paralelizacao" class="md-nav__link">
-    Estratégias de paralelização
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relatorio" class="md-nav__link">
-    Relatório
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -624,20 +534,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parte-1-estrategias-de-resolucao" class="md-nav__link">
-    Parte 1: estratégias de resolução
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parte-2-paralelismo" class="md-nav__link">
-    Parte 2: Paralelismo
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#avaliacao" class="md-nav__link">
@@ -686,71 +582,10 @@
                   
                 
                 
-                <h1 id="multi-core-c-e-openmp">Multi-core: C++ e OpenMP<a class="headerlink" href="#multi-core-c-e-openmp" title="Permanent link">&para;</a></h1>
+                <h1 id="multi-core-usando-openmp">Multi-core usando OpenMP<a class="headerlink" href="#multi-core-usando-openmp" title="Permanent link">&para;</a></h1>
 <p>O primeiro projeto consiste em implementar uma solução multi-core para o problema da <a href="../projeto-pfe/">Alocação de alunos do PFE</a>. Para facilitar sua ele será dividido em duas partes.</p>
-<p>A primeira parte focará em criar uma solução que resolve este problema este C++ e compará-la com uma solução inocente em Python. Isto inclui estudar métodos de resolução do problema e implementá-los em C++.</p>
-<p>A segunda parte tratará da paralelização destes métodos usando as técnicas mostradas em sala de aula. O programa deverá ser escrito usando OpenMP e deverá escalar o mais naturalmente possível conforme o número de cores aumenta.</p>
-<h3 id="parte-1-estrategias-de-resolucao">Parte 1: estratégias de resolução<a class="headerlink" href="#parte-1-estrategias-de-resolucao" title="Permanent link">&para;</a></h3>
-<p>O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>.</p>
-<p><strong>Implementação em C++</strong>:</p>
-<p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte será implementar soluções para o problema sem nós preocuparmos com paralelismo e o primeiro passo para isso é implementar o algoritmo que está em Python em C++.</p>
-<p><strong>Busca local</strong>:</p>
-<p>A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,</p>
-<ol>
-<li>a solução encontrada muda conforme a solução inicial</li>
-<li>nem todas as soluções são possíveis de serem encontradas.</li>
-</ol>
-<p>Uma boa heurística geralmente é baseada em alguma característica da solução ótima. Para este problema usaremos a seguinte propriedade</p>
-<blockquote>
-<p>não existe nenhuma dupla de alunos que, se for trocada de projeto, melhora a satisfação global.</p>
-</blockquote>
-<p>Claramente se a solução é a melhor possível então isto não pode acontecer. Nosso algoritmo será</p>
-<ol>
-<li>escolha uma atribuição aluno-projeto válida aleatoriamente</li>
-<li>verifique se existe um par de alunos cuja troca de projeto melhore a satisfação global<ul>
-<li>se existir faça a troca e repita o teste acima</li>
-<li>se não existir retorne a solução atual</li>
-</ul>
-</li>
-</ol>
-<p>Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca <strong>local</strong> pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo <strong>global</strong> no fim do processo.</p>
-<p><strong>Branch and Bound</strong>:</p>
-<p>Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (<em>branches</em>) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:</p>
-<ul>
-<li>em um certo momento temos uma solução  com valor <span><span class="MathJax_Preview">200</span><script type="math/tex">200</script></span></li>
-<li>ainda faltam 3 alunos para serem alocados.</li>
-<li>a melhor solução já encontrada tem valor <span><span class="MathJax_Preview">300</span><script type="math/tex">300</script></span>.</li>
-</ul>
-<p>Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor <span><span class="MathJax_Preview">275 &lt; 300</span><script type="math/tex">275 < 300</script></span>. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!</p>
-<p>Um <strong>bound</strong> é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar <em>X</em> alunos e tenho uma solução de valor <em>Y</em>, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor <span><span class="MathJax_Preview">&lt; Y + 25X</span><script type="math/tex">< Y + 25X</script></span>).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Um bound é uma <strong>estimativa otimista</strong>. Ou seja, pode não existir uma solução com este valor!</p>
-</div>
-<p>Um algoritmo <strong>branch and bound</strong> leva em conta essas estimativas em seu funcionamento:</p>
-<ul>
-<li>se o <strong>bound</strong> da solução atual for pior que a solução ótima atual, retorna</li>
-<li>continue a recursão caso contrário</li>
-</ul>
-<p>Esta técnica evita que nossa recursão entre em <em>branches</em> que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).</p>
-<p><strong>Heurísticas de busca</strong>:</p>
-<p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.</p>
-<p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.</p>
-<p>Será obrigatório implementar este item em cima do branch and bound.</p>
-<h3 id="parte-2-paralelismo">Parte 2: Paralelismo<a class="headerlink" href="#parte-2-paralelismo" title="Permanent link">&para;</a></h3>
-<p>Cada item da parte anterior deverá ser paralelizado usando OpenMP. Isto deverá ser feito da maneira mais escalável possível: o tempo de execução do programa deverá diminuir conforme o número de cores aumenta.</p>
-<p>Este item é o principal da entrega, mas ele se apoia inteiramente em cima dos itens da primeira entrega.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Os projetos da disciplina consideram que não é razoável tentar paralelizar um problema que vocês não sejam capazes de resolver sequencialmente.</p>
-</div>
+<p>Os algoritmos serão construídos em cima da <a href="../projeto-algoritmos/">primeira parte</a>, que tratou de estratégias eficientes de resolução do problema.</p>
 <h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
-<p>A entrega será dividida em duas partes:</p>
-<ol>
-<li>entrega do algoritmo sequencial em <em>C++</em>, comparando-o com a implementação em Python (30/03)</li>
-<li>entrega final (antes da prova)</li>
-</ol>
-<p>Na primeira entrega são esperados os seguintes itens:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../checklist/">Requisitos básicos</a> cumpridos</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório comparando desempenho Python vs C++</li>
@@ -787,27 +622,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../projeto-pfe/" title="Projeto semestral - Alocação de alunos para o PFE" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Projeto semestral - Alocação de alunos para o PFE
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

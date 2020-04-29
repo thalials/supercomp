@@ -19,7 +19,7 @@
     
     
       
-        <title>Projeto semestral - Alocação de alunos para o PFE - 7s - SuperComputação - Insper 2020/1</title>
+        <title>Alocação de alunos para o PFE - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projeto-semestral-alocacao-de-alunos-para-o-pfe" class="md-skip">
+        <a href="#alocacao-de-alunos-para-o-pfe" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Projeto semestral - Alocação de alunos para o PFE
+              Alocação de alunos para o PFE
             
           </span>
         </div>
@@ -487,18 +487,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
-      Requisitos básicos de projeto
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -510,14 +498,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Projeto semestral - Alocação de alunos para o PFE
+        Alocação de alunos para o PFE
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Projeto semestral - Alocação de alunos para o PFE" class="md-nav__link md-nav__link--active">
-      Projeto semestral - Alocação de alunos para o PFE
+    <a href="./" title="Alocação de alunos para o PFE" class="md-nav__link md-nav__link--active">
+      Alocação de alunos para o PFE
     </a>
     
       
@@ -582,8 +570,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../projeto-multi-core/" title="Multi-core: C++ e OpenMP" class="md-nav__link">
-      Multi-core: C++ e OpenMP
+    <a href="../checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
+      Requisitos básicos de projeto
     </a>
   </li>
 
@@ -672,7 +660,7 @@
                   
                 
                 
-                <h1 id="projeto-semestral-alocacao-de-alunos-para-o-pfe">Projeto semestral - Alocação de alunos para o PFE<a class="headerlink" href="#projeto-semestral-alocacao-de-alunos-para-o-pfe" title="Permanent link">&para;</a></h1>
+                <h1 id="alocacao-de-alunos-para-o-pfe">Alocação de alunos para o PFE<a class="headerlink" href="#alocacao-de-alunos-para-o-pfe" title="Permanent link">&para;</a></h1>
 <p>Neste semeste trabalharemos com um problema bastante familiar para os alunos do 8/9 semestre: a atribuição de alunos a projetos no Projeto Final de Engenharia.</p>
 <ul>
 <li>Cada aluno escolhe cinco opções de projetos de acordo com sua preferência.</li>
@@ -684,16 +672,16 @@
 <li>....</li>
 <li><span><span class="MathJax_Preview">2^2 = 4</span><script type="math/tex">2^2 = 4</script></span> se foi colocado em sua quarta opção</li>
 <li><span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> se foi colocado em sua última opção</li>
-<li><span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> se não foi possível colocá-lo em nenhuma de suas opções. </li>
-<li>a satisfação "global" de uma solução é a soma da satisfação individual de todos alunos. </li>
+<li><span><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> se não foi possível colocá-lo em nenhuma de suas opções.</li>
+<li>a satisfação "global" de uma solução é a soma da satisfação individual de todos alunos.</li>
 </ol>
 <p>Desta maneira, gostaríamos de encontrar a melhor solução (a que possui maior satisfação global) dados o número de alunos, o número de projetos e até 5 opções de projetos em ordem de preferência para cada aluno.</p>
 <h2 id="justificativa">Justificativa<a class="headerlink" href="#justificativa" title="Permanent link">&para;</a></h2>
-<p>Apesar de parecer simples, este problema é <em>NP-completo</em>: não existe um método que encontra a solução com maior satisfação global em tempo polinomial. Além disso, não existe uma maneira que verifique se uma solução é a melhor possível em tempo polinomial. Ou seja, trabalhar com este problema invariavelmente envolverá enumerar todas as possibilidades. Claramente este é um problema onde SuperComputação é necessária! Veremos que técnicas de computação paralela podem diminuir consideravelmente o tempo de execução de nosso programa. </p>
-<p>Outra fonte de ideias para acelerar a resolução deste problema é a utilização de técnicas de otimização discreta, que são nada mais do que explorar alguma característica do problema que estamos tratando para melhorar nossas soluções. Podemos usá-las para </p>
+<p>Apesar de parecer simples, este problema é <em>NP-completo</em>: não existe um método que encontra a solução com maior satisfação global em tempo polinomial. Além disso, não existe uma maneira que verifique se uma solução é a melhor possível em tempo polinomial. Ou seja, trabalhar com este problema invariavelmente envolverá enumerar todas as possibilidades. Claramente este é um problema onde SuperComputação é necessária! Veremos que técnicas de computação paralela podem diminuir consideravelmente o tempo de execução de nosso programa.</p>
+<p>Outra fonte de ideias para acelerar a resolução deste problema é a utilização de técnicas de otimização discreta, que são nada mais do que explorar alguma característica do problema que estamos tratando para melhorar nossas soluções. Podemos usá-las para</p>
 <ul>
-<li>encontrar boas soluções sem enumerar todas <strong>ou</strong> </li>
-<li>para evitar enumerar soluções que com certeza não são as ótimas. </li>
+<li>encontrar boas soluções sem enumerar todas <strong>ou</strong></li>
+<li>para evitar enumerar soluções que com certeza não são as ótimas.</li>
 </ul>
 <p>Porém, nem sempre é fácil paralelizar estas técnicas e este será um dos desafios dos projetos deste semestre.</p>
 <h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
@@ -706,7 +694,7 @@ p(1) p(2) ... p(n_choices)
 <ul>
 <li><code>n_alunos</code> é o número de alunos</li>
 <li><code>n_projetos</code> é o número de projetos existentes</li>
-<li>cada linha seguinte representa as cinco prioridades de um aluno.    </li>
+<li>cada linha seguinte representa as cinco prioridades de um aluno.</li>
 <li><code>p(1), ..., p(n_choices)</code> é um número entre <code>0</code> e <code>n_projetos-1</code>, sem repetições</li>
 </ul>
 <p>A saída do programa deverá estar no formato abaixo.</p>
@@ -719,11 +707,11 @@ pa1 pa2 pa3 ... pa(n_alunos)
 <li><code>opt</code> é <code>1</code> se a solução encontrada é a melhor possível, <code>0</code> caso contrário</li>
 <li><code>pa(i)</code> contém a qual projeto o aluno <code>i</code> foi atribuído</li>
 </ul>
-<p>A pasta <a href="...">code/projeto</a> contém exemplos de entradas e saída esperadas. Seu programa deverá funcionar com estas entradas e produzir saídas <strong>exatamente</strong> neste formato. </p>
+<p>A pasta <a href="...">code/projeto</a> contém exemplos de entradas e saída esperadas. Seu programa deverá funcionar com estas entradas e produzir saídas <strong>exatamente</strong> neste formato.</p>
 <div class="admonition note">
 <p class="admonition-title">Avisos</p>
 <ul>
-<li>Se existirem duas soluções com mesma satisfação qualquer uma pode ser retornada.  </li>
+<li>Se existirem duas soluções com mesma satisfação qualquer uma pode ser retornada.</li>
 <li>Informações de <em>debug</em> devem ser enviadas para a saída de erros (<code>std::cerr</code>). A saída de seu programa deverá estar <strong>exatamente</strong> no formato mostrado na seção anterior.</li>
 </ul>
 </div>
@@ -735,7 +723,7 @@ pa1 pa2 pa3 ... pa(n_alunos)
 </ol>
 <p>Isto facilita muito o problema, pois nunca conseguimos montar uma solução inválida nem precisamos levar em conta a distribuição de alunos ao criar soluções.</p>
 <h2 id="entregas">Entregas<a class="headerlink" href="#entregas" title="Permanent link">&para;</a></h2>
-<p>Os projetos da disciplina envolverão resolver este problema usando diferentes tecnologias e iremos comparar os desempenhos obtidos com cada uma. </p>
+<p>Os projetos da disciplina envolverão resolver este problema usando diferentes tecnologias e iremos comparar os desempenhos obtidos com cada uma.</p>
                 
               
               
@@ -754,7 +742,7 @@ pa1 pa2 pa3 ... pa(n_alunos)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../checklist/" title="Requisitos básicos de projeto" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Índice" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -763,19 +751,19 @@ pa1 pa2 pa3 ... pa(n_alunos)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Requisitos básicos de projeto
+                Índice
               </div>
             </div>
           </a>
         
         
-          <a href="../projeto-multi-core/" title="Multi-core: C++ e OpenMP" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../checklist/" title="Requisitos básicos de projeto" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Multi-core: C++ e OpenMP
+                Requisitos básicos de projeto
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
