@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/03-cmake/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/11-gpu-II/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>03 - CMake e Debugging no VSCode - 7s - SuperComputação - Insper 2020/1</title>
+        <title>11 - introdução a GPU - II - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-cmake-e-debugging-no-vscode" class="md-skip">
+        <a href="#11-introducao-a-gpu-ii" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              03 - CMake e Debugging no VSCode
+              11 - introdução a GPU - II
             
           </span>
         </div>
@@ -349,87 +349,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        03 - CMake e Debugging no VSCode
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="03 - CMake e Debugging no VSCode" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../03-cmake/" title="03 - CMake e Debugging no VSCode" class="md-nav__link">
       03 - CMake e Debugging no VSCode
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
-    Gerenciamento de projetos com CMake
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opcoes-de-compilacao" class="md-nav__link">
-    Opções de compilação
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
-    Projeto 0 - Benchmarking e comparações de desempenho
-  </a>
-  
-    <nav class="md-nav" aria-label="Projeto 0 - Benchmarking e comparações de desempenho">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dicas" class="md-nav__link">
-    Dicas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
-    Extra 01 - Debugando seu projeto
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -521,11 +445,60 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../11-gpu-II/" title="11 - introdução a GPU - II" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        11 - introdução a GPU - II
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="11 - introdução a GPU - II" class="md-nav__link md-nav__link--active">
       11 - introdução a GPU - II
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-iteradores" class="md-nav__link">
+    Parte 1 - iteradores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-reducoes-customizadas" class="md-nav__link">
+    Parte 2 - reduções customizadas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -626,42 +599,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gerenciamento-de-projetos-com-cmake" class="md-nav__link">
-    Gerenciamento de projetos com CMake
+  <a href="#parte-1-iteradores" class="md-nav__link">
+    Parte 1 - iteradores
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opcoes-de-compilacao" class="md-nav__link">
-    Opções de compilação
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" class="md-nav__link">
-    Projeto 0 - Benchmarking e comparações de desempenho
-  </a>
-  
-    <nav class="md-nav" aria-label="Projeto 0 - Benchmarking e comparações de desempenho">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dicas" class="md-nav__link">
-    Dicas
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-01-debugando-seu-projeto" class="md-nav__link">
-    Extra 01 - Debugando seu projeto
+  <a href="#parte-2-reducoes-customizadas" class="md-nav__link">
+    Parte 2 - reduções customizadas
   </a>
   
 </li>
@@ -678,7 +624,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/03-cmake.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/11-gpu-II.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -686,97 +632,73 @@
                   
                 
                 
-                <h1 id="03-cmake-e-debugging-no-vscode">03 - CMake e Debugging no VSCode<a class="headerlink" href="#03-cmake-e-debugging-no-vscode" title="Permanent link">&para;</a></h1>
-<p>Até o momento todos nossos arquivos eram compilados em uma só linha usando <code>g++</code>. Conforme projetos ficam maiores e são divididos em vários módulos isto se torna inviável. Neste roteiro iremos usar o CMake, uma ferramenta de gerenciamento de projetos em C++. No fim, iremos configurar o VSCode para abrir projetos CMake.</p>
+                <h1 id="11-introducao-a-gpu-ii">11 - introdução a GPU - II<a class="headerlink" href="#11-introducao-a-gpu-ii" title="Permanent link">&para;</a></h1>
+<p>Na última aula conseguimos rodar algumas funções em GPU e medir o custo de transferência de dados. Chegamos a conclusão de que, para valer a pena usar a GPU, ou precisamos tratar muitos dados ou precisamos fazer tratamentos pesados.</p>
+<h2 id="parte-1-iteradores">Parte 1 - iteradores<a class="headerlink" href="#parte-1-iteradores" title="Permanent link">&para;</a></h2>
+<p>Continuando a partir do último item da aula anterior, suponha que você deseja calcular a variância das diferenças. Agora que já temos a média, a fórmula da variância é dada por</p>
+<div>
+<div class="MathJax_Preview">\frac{1}{n}\sum_{i=0}^n (x_i - \mu)^2</div>
+<script type="math/tex; mode=display">\frac{1}{n}\sum_{i=0}^n (x_i - \mu)^2</script>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Já sabemos tudo o que precisamos para fazer este cálculo. Crie um vetor em que todas as componentes sejam iguais a média (usando <code>thrust::fill</code>) e compute a variância usando a fórmula acima.</p>
+</div>
+<p>Apesar do código acima funcionar, ele tem um problema grave: é preciso alocar um vetor inteiro somente para preenchê-lo com valores iguais! Se estivermos trabalhando com muitos dados isto significa diminuir bastante a quantidade de dados que conseguimos tratar antes de acabar com a memória da GPU. Podemos contornar isso usando iteradores, que são vetores gerados dinamicamente pela thrust a partir de um valor único ou a partir de outros vetores.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Pesquise a documentação de <code>thrust::constant_iterator</code> e use-o para substituir a alocação de memória extra no exercício acima.</p>
+</div>
+<p>Vamos agora nos preparar para a parte 2 criando um programa novamente em cima do arquivo <code>stocks.txt</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Leia o arquivo <code>stocks.txt</code> e crie um vetor contendo a diferença entre o dia atual e o anterior. Ou seja, dado que o vetor de saída tenha nome <code>ganho_diario</code> e o de entrada <code>stocks</code>, temos que</p>
+<p><code>ganho_diario[i] = stocks[i+1] - stocks[i]</code></p>
+<p>Claramente <code>ganho_diario.size() == stocks.size() - 1</code>. Leve isto em conta ao utilizar a operação <code>transform</code> para criar o vetor <code>ganho_diario</code>.</p>
+</div>
+<h2 id="parte-2-reducoes-customizadas">Parte 2 - reduções customizadas<a class="headerlink" href="#parte-2-reducoes-customizadas" title="Permanent link">&para;</a></h2>
+<p>Com o vetor <code>ganho_diario</code> acima conseguimos saber se o valor da ação subiu ou caiu de um dia para o outro! Duas perguntas se seguem:</p>
+<ol>
+<li>quantas vezes o valor subiu?</li>
+<li>qual é o aumento médio, considerando só as vezes em que o valor aumentou de fato?</li>
+</ol>
+<p>Podemos implementar essas lógicas usando operações customizadas. Como estamos fazendo uma operação de redução, nossa operação consiste em receber dois elementos do vetor e devolver um terceiro que resume eles. Ao fazermos isso com todos os pares de elementos sucessivamente chegamos no valor final da redução. Note que isto significa que nossa operação de redução não é sensível a ordem em que é executada.</p>
+<p>O código para definir operações customizadas é um pouco estranho, mas segue a lógica abaixo. Um exemplo concreto pode ser visto no arquivo <code>example-reduction.cu</code>. O arquivo mostra uma operação de redução, mas a sintaxe e estilo de uso vale para qualquer operação da <code>thrust</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">custom_reduce</span>
+<span class="p">{</span>
+    <span class="n">__host__</span> <span class="n">__device__</span>
+        <span class="kt">double</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+            <span class="c1">// operações podem ser binárias (receber x e y) ou unárias (receber só um argumento)</span>
+            <span class="c1">// o resultado é sempre devolvido</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>Em geral a documentação da <code>thrust</code> especifica que uma operação recebe um <code>UnaryOp</code> ou <code>BinaryOp</code>. Isto significa que a função <code>operator()</code> acima receberá, respectivamente, um valor ou dois valores. </p>
 <div class="admonition warning">
-<p class="admonition-title">Atenção</p>
-<p>Usar ferramentas adequadas aumenta consideravelmente a produtividade e também facilita encontrar erros no código. A partir desta aula será obrigatório já ter debugado o programa antes de tirar dúvidas. </p>
+<p class="admonition-title">Warning</p>
+<p>É sempre importante consultar a documentação para entender como essa função será aplicada. Em alguns casos é necessário que a função passada obedeça algumas restrições para que os resultados obtidos façam sentido. </p>
 </div>
-<h2 id="gerenciamento-de-projetos-com-cmake">Gerenciamento de projetos com CMake<a class="headerlink" href="#gerenciamento-de-projetos-com-cmake" title="Permanent link">&para;</a></h2>
-<p>O <a href="http://www.cmake.org">CMake</a> é uma das ferramentas mais usadas para gerenciar projetos C/C++. Outras ferramentas comumente usadas são <a href="https://ninja-build.org/manual.html">ninja</a> e <a href="https://mesonbuild.com/">meson</a>. </p>
-<p>Em <em>CMake</em>, um projeto é definido por um arquivo nomeado <em>CMakeLists.txt</em>. Este arquivo contém definições como nome do projeto, quais dependências (bibliotecas externas e subprojetos) são usadas e o quais arquivos serão gerados pelo projeto. Cada arquivo gerado é chamado de <em>target</em> na nomenclatura usada pelo CMake e pode ser um executável ou uma biblioteca (estática ou dinâmica). </p>
-<p>Um arquivo <em>CMakeLists.txt</em> básico pode conter apenas três linhas (pasta <a href="https://github.com/insper/supercomp/code/03-cmake">03-cmake</a>):</p>
-<div class="highlight"><pre><span></span><code>cmake_minimum_required(VERSION 3.10)
-project (projeto_basico)
-add_executable(hello hello.cpp) 
-</code></pre></div>
-
-<p>Este arquivo somente descreve o projeto. Para efetivamente compilarmos o programa precisamos passar pela fase de <em>configuração</em>, em que o <em>CMake</em> checa se todas as dependências foram encontradas e se os compiladores necessários estão instalados. Se tudo estiver em ordem podemos gerar um <em>Makefile</em> (para Linux) ou um projeto do Visual Studio (para Windows). </p>
-<p>Para fazer a configuração do projeto basta rodar o comando <code>cmake</code> mais o caminho para a pasta do projeto. Você só precisará refazer a configuração do projeto se modificar o arquivo <em>CMakeLists.txt</em>.  É boa prática fazer a compilação do código em uma pasta separada, como na sequência de comandos abaixo.</p>
-<div class="codehilite"><pre><span></span><code>mkdir build
-cd build
-cmake ..
-</code></pre></div>
-
-
-<p>Estes comandos devem ter gerado uma série de arquivos na pasta <em>build</em>, incluindo um <em>Makefile</em>. Para compilar o projeto basta rodar</p>
-<div class="codehilite"><pre><span></span><code>make
-</code></pre></div>
-
-
-<p>E um executável de nome <em>hello</em> deverá aparecer na pasta <em>build</em>. </p>
-<div class="admonition note">
-<p class="admonition-title">Exercício</p>
-<p>Crie um arquivo <em>CMakeLists.txt</em> para o projeto 0. Você deverá adicionar um <em>target</em> chamado <code>vector_ops</code>. </p>
+<div class="admonition note short">
+<p class="admonition-title">Note</p>
+<p>A <code>thrust</code> já tem suporte a operações de redução que são contagens. Veja sua documentação oficial <a href="https://thrust.github.io/doc/group__counting.html">neste link</a>. Qual função dessa página você usaria para contar somente os elementos positivos de <code>ganhos_diarios</code>?</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Exercício</p>
-<p>Separe as funções matemáticas testadas em arquivos <em>.cpp/h</em> e use-os no seu projeto. A diretiva <code>add_executable</code> aceita vários arquivos <em>.cpp</em> para criar um executável. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use a função acima para calcular quantas vezes o valor da ação subiu.</p>
 </div>
-<h2 id="opcoes-de-compilacao">Opções de compilação<a class="headerlink" href="#opcoes-de-compilacao" title="Permanent link">&para;</a></h2>
-<p>Além da criação de executáveis o CMake também permite adicionar opções de compilação específicas para cada <em>target</em> com a diretiva <a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html"><code>target_compile_options</code></a>. No contexto desta matéria isto será especialmente interessante pois o <code>g++</code> oferece flags para ativar otimizações que podem melhorar significativamente o desempenho de nosso programa. Portanto, podemos facilmente compilar o mesmo programa com e sem otimizações no mesmo projeto! O exemplo abaixo ativa a flag <code>O3</code> no <em>target</em> <code>hello</code> criado no exemplo anterior. </p>
-<div class="codehilite"><pre><span></span><code>target_compile_options(hello PUBLIC -O3)
-</code></pre></div>
-
-
-<p>Podemos também usar <code>#define</code> para fazer compilação condicional do nosso código. Usar a <a href="https://cmake.org/cmake/help/latest/command/target_compile_definitions.html">diretiva abaixo</a> equivale e colocar um <code>#define OPT</code> no topo de cada arquivo do target <code>hello</code>.</p>
-<div class="codehilite"><pre><span></span><code>target_compile_definitions(hello PUBLIC OPT)
-</code></pre></div>
-
-
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Modifique seu <em>target</em> <code>vector_ops</code> para que ele use a opção de compilação <code>O2</code>.</p>
+<p>Vamos agora para o segundo item: "Calcular o aumento médio, considerando somente as vezes em que o valor aumentou de fato". Uma estratégia possível é <strong>zerar</strong> todos os elementos negativos do vetor e depois calcular sua soma.</p>
+<div class="admonition note short">
+<p class="admonition-title">Note</p>
+<p>A <a href="https://thrust.github.io/doc/group__transformations.html">documentação sobre transformações</a> é bastante vasta. Você consegue encontrar alguma função que possa <strong>substituir</strong> elementos de um vetor baseado em uma condição booleana?</p>
 </div>
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Crie um novo <em>target</em> <code>vector_ops_no_opt</code> que compile os mesmos arquivos de <code>vector_ops</code> mas use a opção de compilação <code>O0</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use a função acima para substituir todos os valores negativos por <code>0</code> em <code>ganhos_diarios</code>.</p>
 </div>
-<h2 id="projeto-0-benchmarking-e-comparacoes-de-desempenho">Projeto 0 - Benchmarking e comparações de desempenho<a class="headerlink" href="#projeto-0-benchmarking-e-comparacoes-de-desempenho" title="Permanent link">&para;</a></h2>
-<p>Vamos agora fazer um pequeno resumo dos resultados dos experimentos. Este resumo deverá conter os seguintes itens e deverá ser entregue em formato <em>PDF</em>. </p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> uma breve descrição do programa testado (um parágrafo); </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os nomes dos executáveis testados e qual a diferença entre eles</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> os tamanhos de entrada usados e a máquina usada para seus testes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> gráficos ilustrando a diferença de desempenho para cada função testada</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> comentários sobre os resultados mostrados nos gráficos</li>
-</ul>
-<h3 id="dicas">Dicas<a class="headerlink" href="#dicas" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Ferramentas como <a href="http://mpastell.com/pweave">PWeave</a> ou Jupyter Notebook ajudam muito a criar textos que misturam código para criar gráficos, rodar programas automaticamente e interpretar sua saída. </li>
-<li>Tente automatizar o máximo possível a geração de gráficos de desempenho. Isso facilitará muito sua vida em projetos posteriores. </li>
-</ol>
-<h2 id="extra-01-debugando-seu-projeto">Extra 01 - Debugando seu projeto<a class="headerlink" href="#extra-01-debugando-seu-projeto" title="Permanent link">&para;</a></h2>
-<p>Agora iremos abrir nosso projeto um ambiente de desenvolvimento em vez de continuar trabalhando na linha de comando. Adotaremos o VSCode como ambiente padrão. </p>
-<p>O VSCode não vem com suporte por padrão a projetos CMake, mas a extensão <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/index.html"><em>Cmake Tools</em></a> possui um bom suporte. Instale-a e carregue o projeto. A extensão possui uma documentação tanto para a etapa de <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html#configuring-your-project">configuração e compilação</a> quanto para <a href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html">execução dos programas e debugging</a>. </p>
-<p>Para executar os programas você pode usar a opção "Run in terminal" disponível no menu do botão direito de cada <em>target</em>. </p>
-<hr />
-<p>Supondo que a etapa anterior funcionou, vamos agora rodar o nosso programa usando um debugger. Isto permite parar a execução no meio do programa e examinar o valor das variáveis. </p>
-<ol>
-<li>coloque um ou mais <em>breakpoints</em> no código. Basta clicar ao lado do número da linha. Um círculo vermelho indica que a execução será interrompida quando chegar nesta linha.</li>
-<li>botão direito no target -&gt; "Run with debugger".</li>
-<li>quando o programa parar teremos as seguintes opções:<ul>
-<li><strong>Continue</strong>: roda até o próximo <em>breakpoint</em></li>
-<li><strong>Step Over</strong>: roda a linha atual e passa para a próxima.</li>
-<li><strong>Step Into</strong>: se a linha atual tem uma chamada de função, continua o debug dentro da função chamada.</li>
-<li><strong>Step Out</strong>: executa até o fim da função atual e para logo após o retorno.</li>
-</ul>
-</li>
-<li>Também podemos colocar o mouse em cima de cada variável para ver seu valor. O explorador de variáveis (que mostra todas as válidas na função atual) aparece no painel esquerdo, dentro da view <em>debug</em>.</li>
-</ol>
-<div class="admonition bug">
-<p class="admonition-title">Exercício</p>
-<p>Abra sua atividade e rode-a com o debugger. Pause a execução no meio e verifique os tempos de execução. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Calcule agora e média dos valores positivos do vetor. Você já tem todos os que são positivos no exercício acima e a quantidade de valores positivos.</p>
 </div>
                 
               
@@ -796,7 +718,7 @@ cmake ..
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../02-stl/" title="02 - Templates e STL" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../10-gpu-I/" title="10 - introdução a GPU" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -805,19 +727,19 @@ cmake ..
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                02 - Templates e STL
+                10 - introdução a GPU
               </div>
             </div>
           </a>
         
         
-          <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                04 - SIMD: Autovetorização
+                Índice
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
