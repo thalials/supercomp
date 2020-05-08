@@ -569,10 +569,10 @@
       
         <li class="md-nav__item">
   <a href="#busca-local" class="md-nav__link">
-    Busca local:
+    Busca local
   </a>
   
-    <nav class="md-nav" aria-label="Busca local:">
+    <nav class="md-nav" aria-label="Busca local">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -588,8 +588,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#avaliacao" class="md-nav__link">
-    Avaliação
+  <a href="#branch-and-bound" class="md-nav__link">
+    Branch and Bound
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heuristicas-de-busca" class="md-nav__link">
+    Heurísticas de busca
   </a>
   
 </li>
@@ -629,7 +636,7 @@
 <p>Seu programa deverá encontrar exatamente as mesmas soluções que o programa em Python, pois ele é uma tradução fiel do algoritmo utilizado e deveria percorrer as soluções possíveis na mesma ordem.</p>
 <h3 id="validacao">Validação<a class="headerlink" href="#validacao" title="Permanent link">&para;</a></h3>
 <p>Para validar sua implementação deste item você deverá usar o script <code>code/projeto-validacao/validacao-exaustivo.py</code>. Este script recebe o seu executável e roda uma série de testes, verificando tanto a saída esperada quanto as informações de diagnóstico mostradas na saída de erros. As entradas usadas estão na pasta <code>entradas</code>.</p>
-<h2 id="busca-local">Busca local:<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
+<h2 id="busca-local">Busca local<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
 <p>A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além disto,</p>
 <ol>
 <li>a solução encontrada muda conforme a solução inicial</li>
@@ -665,41 +672,32 @@
 <li>Ao final do processo não existe nenhuma dupla de alunos que, se trocada, melhoraria a satisfação.</li>
 </ol>
 <p>O programa acima checa essas duas condições para várias entradas. </p>
-<!--
-**Branch and Bound**:
-
-Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (*branches*) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:
-
-* em um certo momento temos uma solução  com valor $200$
-* ainda faltam 3 alunos para serem alocados.
-* a melhor solução já encontrada tem valor $300$.
-
-Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor $275 < 300$. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!
-
-Um **bound** é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar *X* alunos e tenho uma solução de valor *Y*, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor $< Y + 25X$).
-
-!!! warning
-    Um bound é uma **estimativa otimista**. Ou seja, pode não existir uma solução com este valor!
-
-Um algoritmo **branch and bound** leva em conta essas estimativas em seu funcionamento:
-
-* se o **bound** da solução atual for pior que a solução ótima atual, retorna
-* continue a recursão caso contrário
-
-Esta técnica evita que nossa recursão entre em *branches* que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).
-
-**Heurísticas de busca**:
-
-O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.
-
-Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.
-
-Será obrigatório implementar este item em cima do branch and bound. -->
-
-<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<h2 id="branch-and-bound">Branch and Bound<a class="headerlink" href="#branch-and-bound" title="Permanent link">&para;</a></h2>
+<p>Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (<em>branches</em>) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:</p>
 <ul>
-<li><strong>Conceito D</strong>: implementou o algoritmo exaustivo inocente em <code>C++</code>. O executável deverá ser nomeado <code>busca_exaustiva_seq</code>.</li>
+<li>em um certo momento temos uma solução  com valor <span><span class="MathJax_Preview">200</span><script type="math/tex">200</script></span></li>
+<li>ainda faltam 3 alunos para serem alocados.</li>
+<li>a melhor solução já encontrada tem valor <span><span class="MathJax_Preview">300</span><script type="math/tex">300</script></span>.</li>
 </ul>
+<p>Note que, mesmo se alocarmos os três alunos para sua primeira opção ficaríamos com uma solução de valor <span><span class="MathJax_Preview">275 &lt; 300</span><script type="math/tex">275 < 300</script></span>. Ou seja, não precisamos tentar alocá-los para projetos, pois mesmo que façamos o melhor possível ainda não conseguiremos superar a melhor solução atual!</p>
+<p>Um <strong>bound</strong> é uma estimativa otimista para o valor final de uma solução parcial. Ou seja, dado que falta ainda alocar <em>X</em> alunos e tenho uma solução de valor <em>Y</em>, uma estimativa otimista seria supor que todos serão alocados em sua primeira opção (solução final com valor <span><span class="MathJax_Preview">&lt; Y + 25X</span><script type="math/tex">< Y + 25X</script></span>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Um bound é uma <strong>estimativa otimista</strong>. Ou seja, pode não existir uma solução com este valor!</p>
+</div>
+<p>Um algoritmo <strong>branch and bound</strong> leva em conta essas estimativas em seu funcionamento:</p>
+<ul>
+<li>se o <strong>bound</strong> da solução atual for pior que a solução ótima atual, retorna</li>
+<li>continue a recursão caso contrário</li>
+</ul>
+<p>Esta técnica evita que nossa recursão entre em <em>branches</em> que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).</p>
+<h2 id="heuristicas-de-busca">Heurísticas de busca<a class="headerlink" href="#heuristicas-de-busca" title="Permanent link">&para;</a></h2>
+<p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.</p>
+<p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.</p>
+<p>Será obrigatório implementar este item em cima do branch and bound. &rarr;</p>
+<!--## Avaliação
+
+* **Conceito D**: implementou o algoritmo exaustivo inocente em `C++`. O executável deverá ser nomeado `busca_exaustiva_seq`. -->
                 
               
               
