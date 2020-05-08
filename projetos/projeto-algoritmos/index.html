@@ -552,6 +552,39 @@
     Implementação em C++
   </a>
   
+    <nav class="md-nav" aria-label="Implementação em C++">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacao" class="md-nav__link">
+    Validação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busca-local" class="md-nav__link">
+    Busca local:
+  </a>
+  
+    <nav class="md-nav" aria-label="Busca local:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacao_1" class="md-nav__link">
+    Validação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -582,8 +615,7 @@
                 
                 
                 <h1 id="algoritmos-para-problemas-np-completo">Algoritmos para problemas NP-completo<a class="headerlink" href="#algoritmos-para-problemas-np-completo" title="Permanent link">&para;</a></h1>
-<p>Na primeira etapa do projeto nos concentraremos na resolução do <a href="../projeto-pfe/">problema proposto</a> de maneira eficiente.
-O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>.</p>
+<p>Na primeira etapa do projeto nos concentraremos na resolução do <a href="../projeto-pfe/">problema proposto</a> de maneira eficiente. O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é <strong>extremamente ingênuo</strong>. Por isso, ele também é <strong>extremamente lento</strong>.</p>
 <h2 id="implementacao-em-c">Implementação em C++<a class="headerlink" href="#implementacao-em-c" title="Permanent link">&para;</a></h2>
 <p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte é compreender o efeito da linguagem de programação escolhida no desempenho da solução. Sua implementação deverá se chamar <code>busca_exaustiva_seq</code>.</p>
 <p>Além de devolver a saída no <a href="../projeto-pfe/">formato indicado no enunciado</a>, seu programa também deverá mostrar informações de debug na saída de erros. Sempre que for encontrada uma solução melhor que a atual seu programa deverá mostrar uma linha como a abaixo na saída de erros:</p>
@@ -595,28 +627,45 @@ O arquivo <code>solucao-ingenua.py</code> contém uma solução simplista escrit
 <li><code>pa1</code> até <code>pa(n_alunos)</code> é o vetor contendo o projeto atribuído a cada aluno.</li>
 </ul>
 <p>Seu programa deverá encontrar exatamente as mesmas soluções que o programa em Python, pois ele é uma tradução fiel do algoritmo utilizado e deveria percorrer as soluções possíveis na mesma ordem.</p>
+<h3 id="validacao">Validação<a class="headerlink" href="#validacao" title="Permanent link">&para;</a></h3>
 <p>Para validar sua implementação deste item você deverá usar o script <code>code/projeto-validacao/validacao-exaustivo.py</code>. Este script recebe o seu executável e roda uma série de testes, verificando tanto a saída esperada quanto as informações de diagnóstico mostradas na saída de erros. As entradas usadas estão na pasta <code>entradas</code>.</p>
+<h2 id="busca-local">Busca local:<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
+<p>A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além disto,</p>
+<ol>
+<li>a solução encontrada muda conforme a solução inicial</li>
+<li>nem todas as soluções são possíveis de serem encontradas.</li>
+</ol>
+<p>Uma boa heurística geralmente é baseada em alguma característica da solução ótima. Para este problema usaremos a seguinte propriedade</p>
+<blockquote>
+<p>não existe nenhuma dupla de alunos que, se for trocada de projeto, melhora a satisfação global.</p>
+</blockquote>
+<p>Claramente se a solução é a melhor possível então isto não pode acontecer. Nosso algoritmo será</p>
+<ol>
+<li>escolha uma atribuição aluno-projeto válida aleatoriamente</li>
+<li>verifique se existe um par de alunos cuja troca de projeto melhore a satisfação global<ul>
+<li>se existir faça a troca e repita o teste acima</li>
+<li>se não existir retorne a solução atual</li>
+</ul>
+</li>
+</ol>
+<p>Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca <strong>local</strong> pois é feita usando apenas informações de dois alunos. Ou seja, não é possível garantir que essas soluções irão resultar na maior atribuição possível. Apenas que ao realizar trocas é possível encontrar uma solução melhor que a atual.</p>
+<h3 id="validacao_1">Validação<a class="headerlink" href="#validacao_1" title="Permanent link">&para;</a></h3>
+<p>O programa <code>code/projeto-validacao/validacao-exaustivo.py</code> recebe sua implementação e roda uma sequência de testes automatizados. Para funcionar ele espera que seu programa tenha o seguinte comportamento:</p>
+<ol>
+<li>É possível configurar o número de iterações que a busca local rodará usando a variável de ambiente <code>ITER</code>. Se ela não for passada assuma <code>ITER=100 000</code>.</li>
+<li>É possível configurar o seed do gerador de números aleatórios usando a variável de ambiente <code>SEED</code>. Se ela não for passada assuma <code>SEED=0</code></li>
+<li>A cada troca seu algoritmo deverá mostrar na saída de erros a seguinte linha:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>Iter: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+</code></pre></div>
+
+<p>Sua implementação está correta se obedece a duas condições:</p>
+<ol>
+<li>A solução melhora a cada iteração</li>
+<li>Ao final do processo não existe nenhuma dupla de alunos que, se trocada, melhoraria a satisfação.</li>
+</ol>
+<p>O programa acima checa essas duas condições para várias entradas. </p>
 <!--
-**Busca local**:
-
-A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,
-
-1. a solução encontrada muda conforme a solução inicial
-1. nem todas as soluções são possíveis de serem encontradas.
-
-Uma boa heurística geralmente é baseada em alguma característica da solução ótima. Para este problema usaremos a seguinte propriedade
-
-> não existe nenhuma dupla de alunos que, se for trocada de projeto, melhora a satisfação global.
-
-Claramente se a solução é a melhor possível então isto não pode acontecer. Nosso algoritmo será
-
-1. escolha uma atribuição aluno-projeto válida aleatoriamente
-1. verifique se existe um par de alunos cuja troca de projeto melhore a satisfação global
-    * se existir faça a troca e repita o teste acima
-    * se não existir retorne a solução atual
-
-Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca **local** pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo **global** no fim do processo.
-
 **Branch and Bound**:
 
 Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (*branches*) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:
