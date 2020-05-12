@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/04-autovec/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/12-gpu-III/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>04 - SIMD: Autovetorização - 7s - SuperComputação - Insper 2020/1</title>
+        <title>11 - introdução a GPU - III - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#04-simd-autovetorizacao" class="md-skip">
+        <a href="#11-introducao-a-gpu-iii" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              04 - SIMD: Autovetorização
+              11 - introdução a GPU - III
             
           </span>
         </div>
@@ -361,74 +361,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        04 - SIMD: Autovetorização
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="04 - SIMD: Autovetorização" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../04-autovec/" title="04 - SIMD: Autovetorização" class="md-nav__link">
       04 - SIMD: Autovetorização
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#capacidade-dos-registradores" class="md-nav__link">
-    Capacidade dos registradores
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instrucoes-vetoriais" class="md-nav__link">
-    Instruções vetoriais
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aplicando-autovetorizacao" class="md-nav__link">
-    Aplicando autovetorização
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-aplicando-autovetorizacao" class="md-nav__link">
-    Projeto 0 - aplicando autovetorização
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -520,11 +457,67 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../12-gpu-III/" title="11 - introdução a GPU - III" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        11 - introdução a GPU - III
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="11 - introdução a GPU - III" class="md-nav__link md-nav__link--active">
       11 - introdução a GPU - III
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-0-revisao" class="md-nav__link">
+    Parte 0 - revisão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-acesso-direto-a-vetores" class="md-nav__link">
+    Parte 1 - acesso direto a vetores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-acesso-a-matrizes" class="md-nav__link">
+    Parte 2 - acesso a matrizes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -625,29 +618,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#capacidade-dos-registradores" class="md-nav__link">
-    Capacidade dos registradores
+  <a href="#parte-0-revisao" class="md-nav__link">
+    Parte 0 - revisão
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instrucoes-vetoriais" class="md-nav__link">
-    Instruções vetoriais
+  <a href="#parte-1-acesso-direto-a-vetores" class="md-nav__link">
+    Parte 1 - acesso direto a vetores
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#aplicando-autovetorizacao" class="md-nav__link">
-    Aplicando autovetorização
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#projeto-0-aplicando-autovetorizacao" class="md-nav__link">
-    Projeto 0 - aplicando autovetorização
+  <a href="#parte-2-acesso-a-matrizes" class="md-nav__link">
+    Parte 2 - acesso a matrizes
   </a>
   
 </li>
@@ -664,7 +650,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/04-autovec.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/12-gpu-III.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -672,132 +658,102 @@
                   
                 
                 
-                <h1 id="04-simd-autovetorizacao">04 - SIMD: Autovetorização<a class="headerlink" href="#04-simd-autovetorizacao" title="Permanent link">&para;</a></h1>
-<p>Programas de fazer cálculos podem ser acelerados significativamente por instruções <em>SIMD</em> (<em>Single Instruction Multiple Data</em>). Neste contexto, a utilização de compiladores com opção de <em>autovetorização</em> é muito conveniente: se o código compilado tiver algumas características o compilador é capaz utilizar estas instruções automaticamente e melhorar muito o desempenho sem que um programador precise modificar código. Um guia para autovetorização usando <code>gcc</code> pode ser encontrado em <a href="https://gcc.gnu.org/projects/tree-ssa/vectorization.html">sua documentação</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Os exercícios de aula podem ser feitos em dupla.</p>
-</div>
-<h2 id="capacidade-dos-registradores">Capacidade dos registradores<a class="headerlink" href="#capacidade-dos-registradores" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Levando em conta que a arquitetura <em>AVX</em> armazena dados em registradores de 128 <em>bits</em>, podemos armazenar em um único registrador até:</p>
-<ul>
-<li>____ chars;</li>
-<li>____ shorts;</li>
-<li>____ ints;</li>
-<li>____ longs;</li>
-<li>____ floats;</li>
-<li>____ doubles;</li>
-</ul>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>A arquitetura <em>AVX2</em> suporta registradores de 256 <em>bits</em>. Isto significa que código autovetorizado com instruções <em>AVX2</em> pode ser até ____ vezes mais rápido do que código vetorizado com <em>AVX</em></p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Toda instrução SIMD opera sobre todos os elementos guardados ao mesmo tempo. Ou seja, ao executar uma instrução SIMD de soma de variáveis <code>int</code> no registrador <code>%xmm0</code> estarei somando ____ variáveis em uma só instrução.</p>
-</div>
-<h2 id="instrucoes-vetoriais">Instruções vetoriais<a class="headerlink" href="#instrucoes-vetoriais" title="Permanent link">&para;</a></h2>
-<p>Vamos agora compilar alguns códigos em C++ para Assembly usando 
-as opções <code>-ffast-math -ftree-vectorize -mavx</code> do <code>gcc</code>. Estas opções habilitam a <em>autovetorização</em>
-de código. Ou sejam elas analisam o código e procuram substituir loops e acessos sequenciais
-a vetores por instruções SIMD que façam o mesmo trabalho.</p>
-<p>A flag <code>-mavx</code> indica que o código de máquina gerado pode utilizar instruções
-SIMD da arquitetura <em>AVX</em> (e de sua predecessora, SSE), que usa registradores de 128 bits nomeados <code>%xmm0</code> 
-até <code>%xmm7</code> e de 256 bits nomeados <code>%ymm0</code> até <code>%ymm15</code>. </p>
-<p>Vamos agora analisar o código Assembly de uma função simples que soma todos elementos de um vetor. </p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Original: Nicolas Brailovsky</span>
+                <h1 id="11-introducao-a-gpu-iii">11 - introdução a GPU - III<a class="headerlink" href="#11-introducao-a-gpu-iii" title="Permanent link">&para;</a></h1>
+<p>Hoje o foco será operações customizadas. </p>
+<h2 id="parte-0-revisao">Parte 0 - revisão<a class="headerlink" href="#parte-0-revisao" title="Permanent link">&para;</a></h2>
+<p>Na aula anterior fizemos várias implementações da variância. Podemos fazer uma versão ainda mais sucinta usando operações customizadas. Um truque comum é adicionar atributos no <code>struct</code> usado como operação:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">T</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">attr</span><span class="p">;</span>
 
-<span class="cp">#define SIZE (400)</span>
-<span class="kt">long</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">long</span> <span class="n">v</span><span class="p">[</span><span class="n">SIZE</span><span class="p">])</span> <span class="p">{</span>
-    <span class="kt">long</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">s</span> <span class="o">+=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
-<span class="p">}</span>
+    <span class="n">T</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{};</span>
+
+    <span class="c1">// TODO: operação customizada aqui</span>
+<span class="p">};</span>
 </code></pre></div>
 
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Compile este código com otimizações básicas (<code>-O2</code>)</p>
-<blockquote>
-<p>$ g++ -S -c -O2  tarefa1.cpp -o /dev/stdout | c++filt</p>
-</blockquote>
-<p>Agora adicione autovetorização (com as flags listadas acima)</p>
-<blockquote>
-<p>$ g++ -S -c -O2 -ffast-math -ftree-vectorize -mavx tarefa1.cpp -o /dev/stdout | c++filt</p>
-</blockquote>
+<p>Faça uma nova implementação da variância, dessa vez usando uma operação customizada e com a chamada <code>transform_reduce</code>. </p>
+<p><strong>Dica</strong>: passe a média e o tamanho do vetor como atributo do <code>struct</code>.</p>
 </div>
-<div class="admonition question long">
-<p class="admonition-title">Question</p>
-<p>Compare as instruções Assembly geradas acima e escreva abaixo as diferenças percebidas. Você consegue explicar seu funcionamento?</p>
-</div>
-<h2 id="aplicando-autovetorizacao">Aplicando autovetorização<a class="headerlink" href="#aplicando-autovetorizacao" title="Permanent link">&para;</a></h2>
-<p>Nesta tarefa iremos trabalhar com as opções de autovetorização do <code>gcc</code> para entender como escrever código que possa ser otimizado automaticamente. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Escreva uma função <code>main</code> que gera um vetor de tamanho <code>10.000.000</code> contendo números aleatórios uniformemente distribuídos entre <code>-10</code> e <code>10</code>. Use as funções do cabeçalho <code>&lt;random&gt;</code>. </p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Escreva uma função <code>double soma_positivos1(double *a, int n)</code> que soma todos os números positivos do vetor <code>a</code>. Adicione uma chamada a esta função no seu <code>main</code> e use as funções do cabeçalho <code>&lt;chrono&gt;</code> para medir o tempo de execução da sua função. Neste exercício você deverá usar um <code>if</code> para checar se os números são positivos. </p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Compile com e sem as otimizações SIMD e escreva abaixo os tempos de execução.</p>
-</div>
-<p>O auto vetorizador suporta uma série de padrões de codificação relativamente abrangente (<a href="https://gcc.gnu.org/projects/tree-ssa/vectorization.html">lista completa</a>). Porém, códigos que são vetorizados de maneira idêntica podem possuir desempenho bastante diferente quanto a vetorização não está habilitada.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça uma função <code>double soma_positivos2(double *a, int n)</code> que faz o mesmo que a função anterior, mas usando agora o operador ternário <code>(cond)?expr_true:expr_false</code> ao invés de um <code>if</code>. (Se você fez com o operador ternário acima faça com <code>if</code>). Houve diferença de desempenho na versão SIMD? E na versão sem SIMD?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Complete a tabela abaixo com os tempos obtidos</p>
-<table>
-<thead>
-<tr>
-<th>-</th>
-<th>SIMD</th>
-<th>sem SIMD</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>if-else</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ternário</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="admonition note medium">
-<p class="admonition-title">Exercício</p>
-<p>Qual versão da função anterior você usaria se seu código fosse executado em processadores de baixo custo (Intel Celeron) ou muito antigos (mais de 5 anos)? E se o plano for executar em processadores novos? </p>
-</div>
-<h2 id="projeto-0-aplicando-autovetorizacao">Projeto 0 - aplicando autovetorização<a class="headerlink" href="#projeto-0-aplicando-autovetorizacao" title="Permanent link">&para;</a></h2>
+<h2 id="parte-1-acesso-direto-a-vetores">Parte 1 - acesso direto a vetores<a class="headerlink" href="#parte-1-acesso-direto-a-vetores" title="Permanent link">&para;</a></h2>
+<p>Apesar da <code>thrust</code> nos permitir acessar os dados de cada iteração, o acesso a elementos arbitrários do vetor não é diretamente suportado. Apesar de ser possível fazer isto com iteradores e tuplas, vamos usar uma abordagem um pouco diferente: acessar o vetor diretamente e usar a <code>thrust</code> para fornecer ao nossa transformação customizada o índice a ser usado. Vejamos abaixo um exemplo simples:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;thrust/device_vector.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;thrust/iterator/counting_iterator.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">raw_access</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+
+    <span class="n">raw_access</span> <span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="o">:</span> <span class="n">ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{};</span>
+
+    <span class="n">__device__</span> <span class="n">__host__</span>
+    <span class="kt">double</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="n">thrust</span><span class="o">::</span><span class="n">counting_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">raw_access</span> <span class="n">ra</span><span class="p">(</span><span class="n">thrust</span><span class="o">::</span><span class="n">raw_pointer_cast</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+    <span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">iter</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ra</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="nl">d</span> <span class="p">:</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>O <code>struct raw_access</code> recebe um ponteiro para o vetor e guarda em um atributo. Os valores recebidos em <code>operator()</code> são simplesmente os índices do vetor a serem tratados. Com isso, podemos fazer modificações complexas em vetores trabalhando apenas com índices e acessos diretos a memória.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Os exercícios do Projeto 0 são individuais. </p>
+<p>A <code>thrust</code> é bastante eficiente e os algoritmos foram implementados por especialistas em GPGPU. Prefira usar os recursos disponíveis na biblioteca se possível.</p>
 </div>
-<p>Nas últimas duas tarefas vimos como usar as opções do compilador para gerar instruções SIMD, 
-tornando nossos programas mais eficientes. Agora vamos aplicá-las ao nosso exemplo dos experimentos. Você deverá</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> criar um novo target <code>vector_ops_simd</code> com as opções de compilação SIMD e a flag de otimização <code>O3</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> atualizar seus gráficos de desempenho com o novo experimento</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> comentar os novos resultados, respondendo às seguintes perguntas:<ul>
-<li>A partir de qual tamanho de array o código vetorizado mostra ganhos de desempenho expressivos?</li>
-<li>Qual é o ganho de desempenho esperado? Leve em conta a arquitetura usada e o tipo de dados usado.</li>
-<li>Os ganhos de desempenho são consistentes com o esperado?</li>
-</ul>
-</li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Reimplemente o cálculo das diferenças adjancente usando uma transformação customizada. Aproveite e já zere toda diferença negativa no novo vetor. </p>
+</div>
+<h2 id="parte-2-acesso-a-matrizes">Parte 2 - acesso a matrizes<a class="headerlink" href="#parte-2-acesso-a-matrizes" title="Permanent link">&para;</a></h2>
+<p>Assim como na CPU, podemos representar imagens como um vetor "deitado". O acesso ao elemento <code>(i, j)</code> é feito como abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">img</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Examine os arquivo <em>imagem.cpp/h</em>. Quais funções são definidas e o quê elas fazem?</p>
+</div>
+<p>O filtro de média é um processamento de imagens simples muito usado para tirar suavizar imagens. Sua implementação é bastante simples. Dada uma imagem de entrada <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>, a imagem de saída <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span> é dada pela seguinte expressão.</p>
+<div>
+<div class="MathJax_Preview">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</div>
+<script type="math/tex; mode=display">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</script>
+</div>
+<p>Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área válida da imagem ele deve ser considerado 0. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Você pode converter qualquer imagem que tiver em seu computador para <em>PGM</em> usando o programa <code>convert</code>:</p>
+<p><code>$&gt; convert imagem.png -compress None imagem.pgm</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
+<p><code>$&gt; media_gpu in.pgm out.pgm</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma implementação em CPU do filtro de média. Chame-a de <code>media_cpu</code>. Ela deverá funcionar de maneira idêntica ao programa acima.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Teste seu programa com diferentes tamanhos de imagens e compare os tempos de execução. A partir de qual tamanho os tempos ficam equivalentes?</p>
+</div>
                 
               
               
@@ -816,7 +772,7 @@ tornando nossos programas mais eficientes. Agora vamos aplicá-las ao nosso exem
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../03-cmake/" title="03 - CMake e Debugging no VSCode" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../11-gpu-II/" title="11 - introdução a GPU - II" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -825,19 +781,19 @@ tornando nossos programas mais eficientes. Agora vamos aplicá-las ao nosso exem
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                03 - CMake e Debugging no VSCode
+                11 - introdução a GPU - II
               </div>
             </div>
           </a>
         
         
-          <a href="../05-intro-multi-core/" title="05 - Introdução a multi-core" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                05 - Introdução a multi-core
+                Índice
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
