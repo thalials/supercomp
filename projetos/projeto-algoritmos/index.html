@@ -638,7 +638,7 @@
 <h2 id="implementacao-em-c">Implementação em C++<a class="headerlink" href="#implementacao-em-c" title="Permanent link">&para;</a></h2>
 <p>Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo desta parte é compreender o efeito da linguagem de programação escolhida no desempenho da solução. Sua implementação deverá se chamar <code>busca_exaustiva_seq</code>.</p>
 <p>Além de devolver a saída no <a href="../projeto-pfe/">formato indicado no enunciado</a>, seu programa também deverá mostrar informações de debug na saída de erros. Sempre que for encontrada uma solução melhor que a atual seu programa deverá mostrar uma linha como a abaixo na saída de erros:</p>
-<div class="highlight"><pre><span></span><code>Melhor: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+<div class="highlight"><pre><span></span><code>Melhor: sat pa1 pa2 pa3 ... pa(n_alunos)
 </code></pre></div>
 
 <ul>
@@ -675,7 +675,7 @@
 <li>É possível configurar o seed do gerador de números aleatórios usando a variável de ambiente <code>SEED</code>. Se ela não for passada assuma <code>SEED=0</code></li>
 <li>A cada troca seu algoritmo deverá mostrar na saída de erros a seguinte linha:</li>
 </ol>
-<div class="highlight"><pre><span></span><code>Iter: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+<div class="highlight"><pre><span></span><code>Iter: sat pa1 pa2 pa3 ... pa(n_alunos)
 </code></pre></div>
 
 <p>Sua implementação está correta se obedece a duas condições:</p>
