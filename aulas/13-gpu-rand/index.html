@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/12-gpu-III/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/13-gpu-rand/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>12 - introdução a GPU - III - 7s - SuperComputação - Insper 2020/1</title>
+        <title>13 - Números aleatórios em GPU - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-introducao-a-gpu-iii" class="md-skip">
+        <a href="#13-numeros-aleatorios-em-gpu" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              12 - introdução a GPU - III
+              13 - Números aleatórios em GPU
             
           </span>
         </div>
@@ -457,6 +457,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../12-gpu-III/" title="12 - introdução a GPU - III" class="md-nav__link">
+      12 - introdução a GPU - III
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -468,14 +480,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        12 - introdução a GPU - III
+        13 - Números aleatórios em GPU
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="12 - introdução a GPU - III" class="md-nav__link md-nav__link--active">
-      12 - introdução a GPU - III
+    <a href="./" title="13 - Números aleatórios em GPU" class="md-nav__link md-nav__link--active">
+      13 - Números aleatórios em GPU
     </a>
     
       
@@ -494,22 +506,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parte-0-revisao" class="md-nav__link">
-    Parte 0 - revisão
+  <a href="#parte-0-revisao-de-numeros-aleatorios" class="md-nav__link">
+    Parte 0 - revisão de números aleatórios
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parte-1-acesso-direto-a-vetores" class="md-nav__link">
-    Parte 1 - acesso direto a vetores
+  <a href="#parte-1-thrust-e-rng" class="md-nav__link">
+    Parte 1 - thrust e RNG
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parte-2-acesso-a-matrizes" class="md-nav__link">
-    Parte 2 - acesso a matrizes
+  <a href="#parte-2-seeds-em-programas-aleatorios" class="md-nav__link">
+    Parte 2 - seeds em programas aleatórios
   </a>
   
 </li>
@@ -518,18 +530,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../13-gpu-rand/" title="13 - Números aleatórios em GPU" class="md-nav__link">
-      13 - Números aleatórios em GPU
-    </a>
   </li>
 
         
@@ -630,22 +630,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parte-0-revisao" class="md-nav__link">
-    Parte 0 - revisão
+  <a href="#parte-0-revisao-de-numeros-aleatorios" class="md-nav__link">
+    Parte 0 - revisão de números aleatórios
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parte-1-acesso-direto-a-vetores" class="md-nav__link">
-    Parte 1 - acesso direto a vetores
+  <a href="#parte-1-thrust-e-rng" class="md-nav__link">
+    Parte 1 - thrust e RNG
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parte-2-acesso-a-matrizes" class="md-nav__link">
-    Parte 2 - acesso a matrizes
+  <a href="#parte-2-seeds-em-programas-aleatorios" class="md-nav__link">
+    Parte 2 - seeds em programas aleatórios
   </a>
   
 </li>
@@ -662,7 +662,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/12-gpu-III.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/13-gpu-rand.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -670,106 +670,96 @@
                   
                 
                 
-                <h1 id="12-introducao-a-gpu-iii">12 - introdução a GPU - III<a class="headerlink" href="#12-introducao-a-gpu-iii" title="Permanent link">&para;</a></h1>
-<p>Hoje o foco será operações customizadas. </p>
-<h2 id="parte-0-revisao">Parte 0 - revisão<a class="headerlink" href="#parte-0-revisao" title="Permanent link">&para;</a></h2>
-<p>Na aula anterior fizemos várias implementações da variância. Podemos fazer uma versão ainda mais sucinta usando operações customizadas. Um truque comum é adicionar atributos no <code>struct</code> usado como operação:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">T</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">attr</span><span class="p">;</span>
-
-    <span class="n">T</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{};</span>
-
-    <span class="c1">// TODO: operação customizada aqui</span>
-<span class="p">};</span>
-</code></pre></div>
-
-<p>A linha <code>T(int a): attr(a) {}</code> declara o construtor do <code>struct T</code>. Ela faz com que o atributo <code>attr</code> seja inicializado com o valor do parâmetro <code>a</code>. Se houver mais de uma atribuição parâmetro - atributo é só usar <code>,</code> para separar as inicializações. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça uma nova implementação da variância, dessa vez usando uma operação customizada e com a chamada <code>transform_reduce</code>. </p>
-<p><strong>Dica</strong>: passe a média e o tamanho do vetor como atributo do <code>struct</code>.</p>
-</div>
-<h2 id="parte-1-acesso-direto-a-vetores">Parte 1 - acesso direto a vetores<a class="headerlink" href="#parte-1-acesso-direto-a-vetores" title="Permanent link">&para;</a></h2>
-<p>Apesar da <code>thrust</code> nos permitir acessar os dados de cada iteração, o acesso a elementos arbitrários do vetor não é diretamente suportado. Apesar de ser possível fazer isto com iteradores e tuplas, vamos usar uma abordagem um pouco diferente: acessar o vetor diretamente e usar a <code>thrust</code> para fornecer ao nossa transformação customizada o índice a ser usado. Vejamos abaixo um exemplo simples:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;thrust/device_vector.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;thrust/iterator/counting_iterator.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;imagem.h&quot;</span><span class="cp"></span>
-
-<span class="k">struct</span> <span class="n">raw_access</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
-
-    <span class="n">raw_access</span> <span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="o">:</span> <span class="n">ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{};</span>
-
-    <span class="n">__device__</span> <span class="n">__host__</span>
-    <span class="kt">double</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-
-    <span class="n">thrust</span><span class="o">::</span><span class="n">counting_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-    <span class="n">raw_access</span> <span class="n">ra</span><span class="p">(</span><span class="n">thrust</span><span class="o">::</span><span class="n">raw_pointer_cast</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
-    <span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">iter</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ra</span><span class="p">);</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="nl">d</span> <span class="p">:</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">imagem</span> <span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="n">read_pgm</span><span class="p">(</span><span class="s">&quot;lebron.pgm&quot;</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">cols</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="o">-&gt;</span><span class="n">total_size</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>O <code>struct raw_access</code> recebe um ponteiro para o vetor e guarda em um atributo. Os valores recebidos em <code>operator()</code> são simplesmente os índices do vetor a serem tratados. Com isso, podemos fazer modificações complexas em vetores trabalhando apenas com índices e acessos diretos a memória.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>A <code>thrust</code> é bastante eficiente e os algoritmos foram implementados por especialistas em GPGPU. Prefira usar os recursos disponíveis na biblioteca se possível.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Reimplemente o cálculo das diferenças adjancente usando uma transformação customizada. Aproveite e já zere toda diferença negativa no novo vetor. </p>
-</div>
-<h2 id="parte-2-acesso-a-matrizes">Parte 2 - acesso a matrizes<a class="headerlink" href="#parte-2-acesso-a-matrizes" title="Permanent link">&para;</a></h2>
-<p>Assim como na CPU, podemos representar imagens como um vetor "deitado". O acesso ao elemento <code>(i, j)</code> é feito como abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="n">img</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</code></pre></div>
-
+                <h1 id="13-numeros-aleatorios-em-gpu">13 - Números aleatórios em GPU<a class="headerlink" href="#13-numeros-aleatorios-em-gpu" title="Permanent link">&para;</a></h1>
+<p>A última etapa da nossa formação em <em>GPU</em> é a utilização de geradores de números pseudo-aleatórios. Isso é uma etapa importante para implementação de algoritmos de simulação e otimização. </p>
+<h2 id="parte-0-revisao-de-numeros-aleatorios">Parte 0 - revisão de números aleatórios<a class="headerlink" href="#parte-0-revisao-de-numeros-aleatorios" title="Permanent link">&para;</a></h2>
+<p>Um gerador de números pseudo-aleatórios (RNG) é um algoritmo <strong>determinístico</strong> que gera uma sequência de números que <strong>parece</strong> aleatória. Essa frase possui dois termos importantes que precisamos destrinchar:</p>
+<ul>
+<li><strong>determinístico</strong>: Um <em>RNG</em> tipicamente recebe como entrada um inteiro <em>seed</em> (que representa uma sequência de bits "aleatória") e gera uma sequência de números baseada no <em>seed</em>. Ou seja, o algoritmo é <strong>determinístico</strong> pois gera sempre a mesma sequência para uma determinada entrada (<em>seed</em>).</li>
+<li><strong>parece aleatória</strong>: Se compararmos duas sequências de números, uma gerada por um <em>RNG</em> e outra por uma distribuição uniforme de verdade, não conseguimos dizer qual distribuição foi gerada pelo <em>RNG</em>. </li>
+</ul>
+<p>Ou seja, ao escolhermos um <em>seed</em> a sequência gerada será sempre a mesma, mesmo se executarmos o programa em outras máquinas. Isso torna a utilização de <em>RNGs</em> para experimentos bastante interessante: é possível <strong>reproduzir</strong> os resultados feitos por outros desenvolvedores/cientistas. Para isto é necessário</p>
+<ol>
+<li>que o programa permita escolher o <em>seed</em> da simulação;</li>
+<li>que o <em>seed</em> usado seja publicado junto com os resultados.</li>
+</ol>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Examine os arquivo <em>imagem.cpp/h</em>. Quais funções são definidas e o quê elas fazem?</p>
+<p>E se quisermos gerar uma sequência diferente a cada execução do programa? Como poderíamos configurar o <em>seed</em> para que isto aconteça?</p>
 </div>
-<p>O filtro de média é um processamento de imagens simples muito usado para tirar suavizar imagens. Sua implementação é bastante simples. Dada uma imagem de entrada <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>, a imagem de saída <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span> é dada pela seguinte expressão.</p>
-<div>
-<div class="MathJax_Preview">
-O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+<p>Muitas implementações de <em>RNGs</em>  são divididas em duas partes:</p>
+<ol>
+<li><strong>engine</strong>: algoritmo que gera um inteiro cujos bits formam uma sequência pseudo-aleatória.</li>
+<li><strong>distribution</strong>: utiliza os bits acima para retornar números que sigam alguma distribuição estatística (como normal ou uniforme).</li>
+</ol>
+<p>As classes do cabeçalho <code>&lt;random&gt;</code> seguem este padrão:</p>
+<ol>
+<li><code>std::random::default_random_engine</code> gera bits aleatórios</li>
+<li>todas as funções <code>std::random::*_distribution</code>. Cada um dos exemplos abaixo gera números seguindo suas respectivas distribuições estatísticas e recebem os parâmetros de cada distribuição. <ul>
+<li><code>poisson_distribution</code></li>
+<li><code>uniform_int_distribution</code></li>
+<li><code>uniform_real_distribution</code></li>
+<li><code>normal_distribution</code>.</li>
+</ul>
+</li>
+</ol>
+<p>Vamos agora verificar na prática essas propriedades criando um programa de testes. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que leia um inteiro <em>seed</em> do terminal e:</p>
+<ol>
+<li>crie um objeto <code>default_random_engine</code> que o utilize como seed.</li>
+<li>mostre no terminal uma sequência de 10 números fracionários tirados de uma distribuição uniforme <code>[25, 40]</code>.</li>
+</ol>
 </div>
-<script type="math/tex; mode=display">
-O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
-</script>
+<h2 id="parte-1-thrust-e-rng">Parte 1 - <code>thrust</code> e <em>RNG</em><a class="headerlink" href="#parte-1-thrust-e-rng" title="Permanent link">&para;</a></h2>
+<p>A <code>thrust</code> contém um</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Consulte a documentação oficial da <code>thrust</code> e encontre as páginas que descrevem os <strong>engines</strong> e <strong>distributions</strong> implementados. </p>
 </div>
-<p>Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área válida da imagem ele deve ser considerado 0. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Você pode converter qualquer imagem que tiver em seu computador para <em>PGM</em> usando o programa <code>convert</code>:</p>
-<p><code>$&gt; convert imagem.png -compress None imagem.pgm</code></p>
+<p>Vamos agora repetir o exercício da parte anterior em <code>thrust</code>. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que leia um inteiro <em>seed</em> do terminal e:</p>
+<ol>
+<li>crie um objeto <code>default_random_engine</code> que o utilize como seed.</li>
+<li>mostre no terminal uma sequência de 10 números fracionários tirados de uma distribuição uniforme <code>[25, 40]</code>.</li>
+</ol>
+<p>Seu programa deverá estar implementado usando os tipos definidos em <code>thrust::random</code>.</p>
+</div>
+<p>Um ponto importante da API <code>thrust</code> para geração de números aleatórios é que essas funções podem ser chamadas dentro de operações customizadas! Vamos continuar trabalhando com imagens no próximo exercício, mas desta vez faremos uma operação exatamente contrária: adicionaremos ruído a uma imagem. </p>
+<p>Usaremos o seguinte algoritmo: para cada ponto da imagem sortearemos um número entre <code>1</code> e <code>10</code> inclusive. </p>
+<ol>
+<li>Se o número for <code>1</code> a cor atual deve ser substituída por preto. </li>
+<li>Se o número for <code>10</code> a cor atual deve ser substituída por branco.</li>
+<li>Caso contrário não mexa na cor atual. </li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que recebe uma imagem como argumento e escreva em uma segunda imagem o resultado do algoritmo de ruído acima. Seu programa deverá funcionar como abaixo:</p>
+<p><code>$&gt; ruido in.pgm out.pgm</code></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Mesmo que seu programa aparentemente não funcione, valide sua saída com o professor.</p>
+</div>
+<h2 id="parte-2-seeds-em-programas-aleatorios">Parte 2 - seeds em programas aleatórios<a class="headerlink" href="#parte-2-seeds-em-programas-aleatorios" title="Permanent link">&para;</a></h2>
+<p>Um desafio em programas paralelos é gerar sequências pseudo-aleatórias de qualidade. Se não tormarmos cuidado acabamos gerando os mesmos números em threads diferentes e desperdiçamos grande quantidade de trabalho! Em geral existem duas abordagens </p>
+<p><strong>Abordagem 1</strong>: usar <em>seeds</em> diferentes em cada thread. </p>
+<p><strong>Abordagem 2</strong>: usar a mesma <em>seed</em> em todas as threads, mas cada uma começa em um ponto diferente da sequência daquela seed.</p>
+<p>Note que em ambos os casos os resultados dependem do número de threads usadas! Como vimos em aulas anteriores, um <em>RNG</em> tem estado interno e não pode ser facilmente compartilhado entre várias threads. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente a abordagem 1 no exercício da parte anterior. Para isto você pode usar o índice recebido como <em>seed</em></p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
-<p><code>$&gt; media_gpu in.pgm out.pgm</code></p>
+<p>Implemente a abordagem 2 no exercício da parte anterior. Para isto você pode <em>descartar</em> os <em>i</em> primeiros números aleatórios gerados. Procure na documentação oficial como fazer isto. </p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Faça uma implementação em CPU do filtro de média. Chame-a de <code>media_cpu</code>. Ela deverá funcionar de maneira idêntica ao programa acima.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Teste seu programa com diferentes tamanhos de imagens e compare os tempos de execução. A partir de qual tamanho os tempos ficam equivalentes?</p>
+<p>Compare os dois resultados em termos de tempo e quantidade de ruído presente na imagem de saída. </p>
 </div>
                 
               
@@ -789,7 +779,7 @@ O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../11-gpu-II/" title="11 - introdução a GPU - II" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../12-gpu-III/" title="12 - introdução a GPU - III" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -798,19 +788,19 @@ O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                11 - introdução a GPU - II
+                12 - introdução a GPU - III
               </div>
             </div>
           </a>
         
         
-          <a href="../13-gpu-rand/" title="13 - Números aleatórios em GPU" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                13 - Números aleatórios em GPU
+                Índice
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
