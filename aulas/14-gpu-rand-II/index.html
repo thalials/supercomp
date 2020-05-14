@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/09-tarefas/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/14-gpu-rand-II/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>09 - Tarefas - 7s - SuperComputação - Insper 2020/1</title>
+        <title>14 - Mais números aleatórios em - 7s - SuperComputação - Insper 2020/1</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#09-tarefas" class="md-skip">
+        <a href="#14-mais-numeros-aleatorios-em" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +154,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              09 - Tarefas
+              14 - Mais números aleatórios em
             
           </span>
         </div>
@@ -421,20 +421,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="09 - Tarefas" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../09-tarefas/" title="09 - Tarefas" class="md-nav__link">
       09 - Tarefas
     </a>
-    
   </li>
 
         
@@ -490,11 +481,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../14-gpu-rand-II/" title="14 - Mais números aleatórios em" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="14 - Mais números aleatórios em" class="md-nav__link md-nav__link--active">
       14 - Mais números aleatórios em
     </a>
+    
   </li>
 
         
@@ -596,7 +596,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/09-tarefas.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/14-gpu-rand-II.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -604,92 +604,77 @@
                   
                 
                 
-                <h1 id="09-tarefas">09 - Tarefas<a class="headerlink" href="#09-tarefas" title="Permanent link">&para;</a></h1>
-<p>O uso de tarefas (tasks) para paralelizar códigos apresenta bons resultados em diversas aplicações que não se encaixam exatamente no modelo <em>fork-join</em>. Nessa aula exploraremos o uso de tarefas para paralelizar a execução de funções recursivas. </p>
-<h1 id="parte-0-comandos-task-e-master">Parte 0 - comandos <code>task</code> e <code>master</code><a class="headerlink" href="#parte-0-comandos-task-e-master" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Revisão</p>
+                <h1 id="14-mais-numeros-aleatorios-em">14 - Mais números aleatórios em<a class="headerlink" href="#14-mais-numeros-aleatorios-em" title="Permanent link">&para;</a></h1>
+<p>Na última aula trabalhamos com algoritmos simples que faziam sorteios aleatórios. Neste aula exploraremos novamente o </p>
+<h1 id="parte-0-revisao-do-algoritmo-sequencial">Parte 0 - revisão do algoritmo sequencial<a class="headerlink" href="#parte-0-revisao-do-algoritmo-sequencial" title="Permanent link">&para;</a></h1>
+<p>O algoritmo sequencial se baseia em sorteios de pontos dentro de um quadrado de lado <code>2</code>. Se a distância entre o ponto e o centro do quadrado for menor que 1 então o ponto cai dentro do círculo inscrito no quadrado. A quantidade de pontos que caem dentro do quadrado é proporcional a <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>. </p>
+<ol>
+<li><code>sum = 0</code></li>
+<li>De <code>i=0</code> até <code>N</code>:<ol>
+<li>sorteie pontos <span><span class="MathJax_Preview">x,y \in [0,1]</span><script type="math/tex">x,y \in [0,1]</script></span></li>
+<li>se <span><span class="MathJax_Preview">x^2 + y^2 \leq 1</span><script type="math/tex">x^2 + y^2 \leq 1</script></span>, <code>sum += 1</code></li>
+</ol>
+</li>
+<li>devolva <code>4 * sum / N</code></li>
+</ol>
+<h1 id="parte-1-implementacoes-inocentes">Parte 1 - implementações inocentes<a class="headerlink" href="#parte-1-implementacoes-inocentes" title="Permanent link">&para;</a></h1>
+<p>Vamos iniciar nossa implementação fazendo uma implementação ingênua do programa acima. Primeiro iremos sortear todos os pares de pontos. Então, iremos usar uma operação customizada para fazer a comparação acima e fazer a soma final.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que gera <code>N=100 000</code> pares de números aleatórios no intervalo <code>[0,1]</code>. Use a <strong>Abordagem 1</strong> da aula passada (uma <em>seed</em> por thread). Armazene as componentes <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> em um vetor <code>rx</code> e as componentes <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> em um vetor <code>ry</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma transformação customizada que cria um vetor <code>dentro</code> em que cada posição <code>i</code> contem <code>1</code> se <code>x[i], yi[i]</code> satisfazem a condição da parte 0 e 0 caso contrário. Use este vetor para calcular o <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Podemos usar acesso direto a elementos do vetor para eliminar o vetor temporário do exercício acima.  Faça isto e compare os tempos de execução. </p>
+<p><strong>Dica</strong>: use <code>transform_reduce</code></p>
+</div>
+<h1 id="parte-2-economizando-memoria-e-calibrando-o-rng">Parte 2 - economizando memória e calibrando o <em>RNG</em><a class="headerlink" href="#parte-2-economizando-memoria-e-calibrando-o-rng" title="Permanent link">&para;</a></h1>
+<p>Uma grande desvantagem do programa acima é que ele gasta muita memória. Um <code>transform</code> é feito só para gerar os números aleatórios e armazenar nos vetores <code>rx, ry</code>! Poderíamos fazer isto direto na transformação customizada do último exercício!</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie uma nova versão do seu exercício anterior, mas agora faça a geração do par <span><span class="MathJax_Preview">x,y</span><script type="math/tex">x,y</script></span> e a comparação em uma chamada só. Ou seja, você estará juntando seus dois <code>struct</code>s em um só. Seu <code>struct</code> agora receberá índices e não mais as componentes <span><span class="MathJax_Preview">(x, y)</span><script type="math/tex">(x, y)</script></span> do ponto. </p>
+</div>
+<p>Agora nosso programa está mais eficiente: faz somente uma chamada à GPU (<code>transform_reduce</code>) e não usa memória auxiliar. Ainda assim há dois problemas: </p>
+<ol>
+<li>uma thread é aberta só para sortear dois números e fazer uma comparação. Ou seja, geramos <code>N=100 000</code> threads que fazem pouquíssimo trabalho. Isto pode significar que o custo de gerar todas essas threads seja grande perto do tempo que passamos realmente calculando o que precisamos!</li>
+<li>o <em>RNG</em> está gerando somente um número por <em>seed</em>.</li>
+</ol>
+<p>Apesar do primeiro item não ser exatamente um grande o problema (pode ser que fique mais rápido se balancear), o segundo item afeta diretamente a precisão do nosso programa!</p>
+<p>Vamos realizar um experimento rápido e testar se a quantidade de números sorteados pelo <em>RNG</em> afeta os resultados. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique seu <code>struct</code> para receber um número <code>N_thread</code> que representará o número de sorteios feitos por cada thread. Teste seu programa com <code>N_thread=1</code> e <code>N=100000</code> e verifique que ele continua funcionando. </p>
+</div>
+<p>Vamos agora executar o experimento</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Com <code>N= 100 000</code>, escreva abaixo o valor do <code>pi</code> para cada valor de <code>N_thread</code>:</p>
 <ul>
-<li><code>#pragma omp task</code> - cria uma tarefa, que será executada por alguma das threads disponíveis.</li>
-<li><code>#pragma omp master</code> - executa o bloco abaixo da diretiva na thread principal (<code>id == 0</code>)</li>
+<li><code>1</code>: ____</li>
+<li><code>10</code>:____</li>
+<li><code>100</code>:_____</li>
+</ul>
+<p>Não se esqueça de calibrar também o número <code>N_parts</code> de threads criadas! Ou seja, <code>N == N_parts * N_threads</code>.</p>
+</div>
+<p>Esses resultados ocorrem pois o <em>RNG</em> garante que sua sequência parece aleatória, não que o primeiro número de cada sequência será aleatório! Ou seja, <strong>só conseguimos as propriedades de aleatoriedade se, para cada <em>seed</em>, gerarmos uma quantidade grande de números!</strong></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Com <code>N= 100 000</code>, escreva abaixo o tempo total do programa para cada valor de <code>N_thread</code>:</p>
+<ul>
+<li><code>1</code>: ____</li>
+<li><code>10</code>:____</li>
+<li><code>100</code>:_____</li>
 </ul>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Escreva um programa usando tarefas (tasks) que irá aleatoriamente gerar uma das duas cadeias de caracteres:
-    <div class="highlight"><pre><span></span><code>I think race cars are fun 
-I think car races are fun
-</code></pre></div></p>
-<p><strong>Dica</strong>: use tarefas para imprimir a parte indeterminada da saída (ou seja, as palavras "race" ou "cars").</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A primeira execução de um programa em GPU é muito lenta pois ela inclui um tempo de compilação e transferência do programa para a GPU. Os tempos para as execuções subsequentes devem ser bem menores e ter menos variância.</p>
 </div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>O programa retorna sempre a mesma resposta?</p>
-</div>
-<p>Essa situação é chamada de "Condição da corrida". </p>
-<div class="admonition note">
-<p class="admonition-title">Conceito</p>
-<p>Uma <strong>condição de corrida</strong> ocorre quando o resultado de um programa depende de como o sistema operacional escalona as threads. Ou seja, seu resultado não é determinístico.</p>
-</div>
-<h1 id="parte-1-tarefas-e-funcoes-recursivas">Parte 1 - tarefas e funções recursivas<a class="headerlink" href="#parte-1-tarefas-e-funcoes-recursivas" title="Permanent link">&para;</a></h1>
-<p>O código abaixo calcula a <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci">sequência de Fibonacci</a> usando um algoritmo recursivo. </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">NW</span><span class="o">=</span><span class="mi">45</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="n">fib</span><span class="p">(</span><span class="n">NW</span><span class="p">);</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Crie uma nova função <code>int fib_par1(int n);</code> e paraleliza as chamadas recursivas usando <code>task</code>s. Faça com que cada chamada recursiva seja executada como uma tarefa. <strong>Dica</strong>: é preciso esperar as tarefas acabarem antes do <code>return</code>?</p>
-</div>
-<div class="admonition example short">
-<p class="admonition-title">Example</p>
-<p>Compare com o código original. Houve melhora? Por que?</p>
-</div>
-<p>O exercício acima exemplifica o custo de criar e escalonar tarefas. Vamos melhorar esta paralelização agora limitando o número de tarefas criadas.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Crie uma nova função <code>int fib_par2(int n)</code> e paraleliza as chamadas recursivas. Faça com que sejam criadas no máximo <code>max_tasks</code> tarefas. <strong>Dica</strong>: passar como argumento o nível da recursão pode ajudar. </p>
-</div>
-<h1 id="parte-2-estrategias-de-paralelizacao">Parte 2 - estratégias de paralelização<a class="headerlink" href="#parte-2-estrategias-de-paralelizacao" title="Permanent link">&para;</a></h1>
-<p>A etapa final de nossa aula trabalhará o algoritmo de cálculo do <em>pi</em> usando integração numerica novamente, mas agora escrito de maneira recursiva. </p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Abra o arquivo <em>pi_recursivo.cpp</em> e examine seu conteúdo. Quantos níveis de recursão são feitos? Em outras palavras, quantas chamadas são necessárias até que o <code>for</code> seja executado sequencialmente? <strong>Dica</strong>: veja a relação entre <code>MIN_BLK</code> e <code>num_steps</code>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>A paralelização de código é sempre muito mais fácil quando eliminamos todos os efeitos colaterais. Elimine todas as variáveis globais do código. Crie também uma função <code>double pi_par_tasks(long num_steps)</code> que chama a função <code>double pi_r</code> com os valores iniciais corretos.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Agora use <code>omp task</code> para paralelizar as chamadas recursivas. </p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Varie o valor de <code>MIN_BLK</code> e meça o desempenho do programa. Escreva, junto desse valor, quantas tarefas foram criadas e quantos processadores estiveram ativos durante a execução do programa. </p>
-</div>
-<h1 id="parte-3-estrategias-de-paralelizacao">Parte 3 - estratégias de paralelização<a class="headerlink" href="#parte-3-estrategias-de-paralelizacao" title="Permanent link">&para;</a></h1>
-<div class="admonition question long">
-<p class="admonition-title">Question</p>
-<p>Resuma, com suas palavras, a estratégia de paralelização usada na parte 2. Como ela se relaciona com o número de <code>thread</code>s disponíveis em um sistema?</p>
-</div>
-<div class="admonition question long">
-<p class="admonition-title">Question</p>
-<p>Resuma, com suas palavras, a estratégia de paralelização usada na parte 3. Qual a relação entre <code>MIN_BLK</code> e o número de <code>thread</code>s disponíveis em um sistema? Devemos modificar <code>MIN_BLK</code> baseado na entrada?</p>
-</div>
+<p>Por outro lado, GPUs são muito boas em criar grande quantidade de threads e executá-las. Ou seja, quanto mais trabalho é feito por cada thread menos vantajoso será sua paralelização em GPU! Como visto acima, o tempo aumenta proporcional a quantidade de trabalho feito nas threads. </p>
                 
               
               
@@ -708,7 +693,7 @@ I think car races are fun
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../08-efeitos-colaterais/" title="08 - Efeitos colaterais" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../13-gpu-rand/" title="13 - Números aleatórios em GPU" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -717,19 +702,19 @@ I think car races are fun
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                08 - Efeitos colaterais
+                13 - Números aleatórios em GPU
               </div>
             </div>
           </a>
         
         
-          <a href="../10-gpu-I/" title="10 - introdução a GPU" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Índice" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                10 - introdução a GPU
+                Índice
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
