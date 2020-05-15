@@ -539,8 +539,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../14-gpu-rand-II/" title="14 - Mais números aleatórios em" class="md-nav__link">
-      14 - Mais números aleatórios em
+    <a href="../14-gpu-rand-II/" title="14 - Mais números aleatórios em GPU" class="md-nav__link">
+      14 - Mais números aleatórios em GPU
     </a>
   </li>
 
@@ -706,7 +706,6 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;thrust/device_vector.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;thrust/iterator/counting_iterator.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;imagem.h&quot;</span><span class="cp"></span>
 
 <span class="k">struct</span> <span class="n">raw_access</span> <span class="p">{</span>
         <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
@@ -769,12 +768,12 @@ O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
-<p><code>$&gt; media_gpu in.pgm out.pgm</code></p>
+<p>Faça uma implementação em CPU do filtro de média. Chame-a de <code>media_cpu</code>. Ela deverá funcionar de maneira idêntica ao programa acima.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Faça uma implementação em CPU do filtro de média. Chame-a de <code>media_cpu</code>. Ela deverá funcionar de maneira idêntica ao programa acima.</p>
+<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
+<p><code>$&gt; media_gpu in.pgm out.pgm</code></p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
