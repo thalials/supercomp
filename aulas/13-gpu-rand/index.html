@@ -683,12 +683,12 @@
                 
                 
                 <h1 id="13-numeros-aleatorios-em-gpu">13 - Números aleatórios em GPU<a class="headerlink" href="#13-numeros-aleatorios-em-gpu" title="Permanent link">&para;</a></h1>
-<p>A última etapa da nossa formação em <em>GPU</em> é a utilização de geradores de números pseudo-aleatórios. Isso é uma etapa importante para implementação de algoritmos de simulação e otimização. </p>
+<p>A última etapa da nossa formação em <em>GPU</em> é a utilização de geradores de números pseudo-aleatórios. Isso é uma etapa importante para implementação de algoritmos de simulação e otimização.</p>
 <h2 id="parte-0-revisao-de-numeros-aleatorios">Parte 0 - revisão de números aleatórios<a class="headerlink" href="#parte-0-revisao-de-numeros-aleatorios" title="Permanent link">&para;</a></h2>
 <p>Um gerador de números pseudo-aleatórios (RNG) é um algoritmo <strong>determinístico</strong> que gera uma sequência de números que <strong>parece</strong> aleatória. Essa frase possui dois termos importantes que precisamos destrinchar:</p>
 <ul>
 <li><strong>determinístico</strong>: Um <em>RNG</em> tipicamente recebe como entrada um inteiro <em>seed</em> (que representa uma sequência de bits "aleatória") e gera uma sequência de números baseada no <em>seed</em>. Ou seja, o algoritmo é <strong>determinístico</strong> pois gera sempre a mesma sequência para uma determinada entrada (<em>seed</em>).</li>
-<li><strong>parece aleatória</strong>: Se compararmos duas sequências de números, uma gerada por um <em>RNG</em> e outra por uma distribuição uniforme de verdade, não conseguimos dizer qual distribuição foi gerada pelo <em>RNG</em>. </li>
+<li><strong>parece aleatória</strong>: Se compararmos duas sequências de números, uma gerada por um <em>RNG</em> e outra por uma distribuição uniforme de verdade, não conseguimos dizer qual distribuição foi gerada pelo <em>RNG</em>.</li>
 </ul>
 <p>Ou seja, ao escolhermos um <em>seed</em> a sequência gerada será sempre a mesma, mesmo se executarmos o programa em outras máquinas. Isso torna a utilização de <em>RNGs</em> para experimentos bastante interessante: é possível <strong>reproduzir</strong> os resultados feitos por outros desenvolvedores/cientistas. Para isto é necessário</p>
 <ol>
@@ -707,7 +707,7 @@
 <p>As classes do cabeçalho <code>&lt;random&gt;</code> seguem este padrão:</p>
 <ol>
 <li><code>std::random::default_random_engine</code> gera bits aleatórios</li>
-<li>todas as funções <code>std::random::*_distribution</code>. Cada um dos exemplos abaixo gera números seguindo suas respectivas distribuições estatísticas e recebem os parâmetros de cada distribuição. <ul>
+<li>todas as funções <code>std::random::*_distribution</code>. Cada um dos exemplos abaixo gera números seguindo suas respectivas distribuições estatísticas e recebem os parâmetros de cada distribuição.<ul>
 <li><code>poisson_distribution</code></li>
 <li><code>uniform_int_distribution</code></li>
 <li><code>uniform_real_distribution</code></li>
@@ -715,7 +715,7 @@
 </ul>
 </li>
 </ol>
-<p>Vamos agora verificar na prática essas propriedades criando um programa de testes. </p>
+<p>Vamos agora verificar na prática essas propriedades criando um programa de testes.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Crie um programa que leia um inteiro <em>seed</em> do terminal e:</p>
@@ -725,12 +725,12 @@
 </ol>
 </div>
 <h2 id="parte-1-thrust-e-rng">Parte 1 - <code>thrust</code> e <em>RNG</em><a class="headerlink" href="#parte-1-thrust-e-rng" title="Permanent link">&para;</a></h2>
-<p>A <code>thrust</code> contém um</p>
+<p>A <code>thrust</code> contém uma API de geração de números aleatórios muito parecida com a API da biblioteca padrão de C++.</p>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Consulte a documentação oficial da <code>thrust</code> e encontre as páginas que descrevem os <strong>engines</strong> e <strong>distributions</strong> implementados. </p>
+<p>Consulte a documentação oficial da <code>thrust</code> e encontre as páginas que descrevem os <strong>engines</strong> e <strong>distributions</strong> implementados.</p>
 </div>
-<p>Vamos agora repetir o exercício da parte anterior em <code>thrust</code>. </p>
+<p>Vamos agora repetir o exercício da parte anterior em <code>thrust</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Crie um programa que leia um inteiro <em>seed</em> do terminal e:</p>
@@ -740,12 +740,12 @@
 </ol>
 <p>Seu programa deverá estar implementado usando os tipos definidos em <code>thrust::random</code>.</p>
 </div>
-<p>Um ponto importante da API <code>thrust</code> para geração de números aleatórios é que essas funções podem ser chamadas dentro de operações customizadas! Vamos continuar trabalhando com imagens no próximo exercício, mas desta vez faremos uma operação exatamente contrária: adicionaremos ruído a uma imagem. </p>
-<p>Usaremos o seguinte algoritmo: para cada ponto da imagem sortearemos um número entre <code>1</code> e <code>10</code> inclusive. </p>
+<p>Um ponto importante da API <code>thrust</code> para geração de números aleatórios é que essas funções podem ser chamadas dentro de operações customizadas! Vamos continuar trabalhando com imagens no próximo exercício, mas desta vez faremos uma operação exatamente contrária: adicionaremos ruído a uma imagem.</p>
+<p>Usaremos o seguinte algoritmo: para cada ponto da imagem sortearemos um número entre <code>1</code> e <code>10</code> inclusive.</p>
 <ol>
-<li>Se o número for <code>1</code> a cor atual deve ser substituída por preto. </li>
+<li>Se o número for <code>1</code> a cor atual deve ser substituída por preto.</li>
 <li>Se o número for <code>10</code> a cor atual deve ser substituída por branco.</li>
-<li>Caso contrário não mexa na cor atual. </li>
+<li>Caso contrário não mexa na cor atual.</li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -757,21 +757,21 @@
 <p>Mesmo que seu programa aparentemente não funcione, valide sua saída com o professor.</p>
 </div>
 <h2 id="parte-2-seeds-em-programas-aleatorios">Parte 2 - seeds em programas aleatórios<a class="headerlink" href="#parte-2-seeds-em-programas-aleatorios" title="Permanent link">&para;</a></h2>
-<p>Um desafio em programas paralelos é gerar sequências pseudo-aleatórias de qualidade. Se não tormarmos cuidado acabamos gerando os mesmos números em threads diferentes e desperdiçamos grande quantidade de trabalho! Em geral existem duas abordagens </p>
-<p><strong>Abordagem 1</strong>: usar <em>seeds</em> diferentes em cada thread. </p>
+<p>Um desafio em programas paralelos é gerar sequências pseudo-aleatórias de qualidade. Se não tormarmos cuidado acabamos gerando os mesmos números em threads diferentes e desperdiçamos grande quantidade de trabalho! Em geral existem duas abordagens</p>
+<p><strong>Abordagem 1</strong>: usar <em>seeds</em> diferentes em cada thread.</p>
 <p><strong>Abordagem 2</strong>: usar a mesma <em>seed</em> em todas as threads, mas cada uma começa em um ponto diferente da sequência daquela seed.</p>
-<p>Note que em ambos os casos os resultados dependem do número de threads usadas! Como vimos em aulas anteriores, um <em>RNG</em> tem estado interno e não pode ser facilmente compartilhado entre várias threads. </p>
+<p>Note que em ambos os casos os resultados dependem do número de threads usadas! Como vimos em aulas anteriores, um <em>RNG</em> tem estado interno e não pode ser facilmente compartilhado entre várias threads.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Implemente a abordagem 1 no exercício da parte anterior. Para isto você pode usar o índice recebido como <em>seed</em></p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente a abordagem 2 no exercício da parte anterior. Para isto você pode <em>descartar</em> os <em>i</em> primeiros números aleatórios gerados. Procure na documentação oficial como fazer isto. </p>
+<p>Implemente a abordagem 2 no exercício da parte anterior. Para isto você pode <em>descartar</em> os <em>i</em> primeiros números aleatórios gerados. Procure na documentação oficial como fazer isto.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Compare os dois resultados em termos de tempo e quantidade de ruído presente na imagem de saída. </p>
+<p>Compare os dois resultados em termos de tempo e quantidade de ruído presente na imagem de saída.</p>
 </div>
                 
               
