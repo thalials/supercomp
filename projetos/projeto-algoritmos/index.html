@@ -628,12 +628,38 @@
     Branch and Bound
   </a>
   
+    <nav class="md-nav" aria-label="Branch and Bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacao_2" class="md-nav__link">
+    Validação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#heuristicas-de-busca" class="md-nav__link">
     Heurísticas de busca
   </a>
+  
+    <nav class="md-nav" aria-label="Heurísticas de busca">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacao_3" class="md-nav__link">
+    Validação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -727,10 +753,28 @@
 <li>continue a recursão caso contrário</li>
 </ul>
 <p>Esta técnica evita que nossa recursão entre em <em>branches</em> que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).</p>
+<h3 id="validacao_2">Validação<a class="headerlink" href="#validacao_2" title="Permanent link">&para;</a></h3>
+<p>O programa <code>code/projeto-validacao/validacao-branch-bound.py</code> recebe sua implementação e roda uma sequência de testes automatizados. </p>
+<p>Ao encontrar uma solução melhor que a atual deverá enviar para a saída de erros:</p>
+<div class="highlight"><pre><span></span><code>Melhor: sat pa1 pa2 pa3 ... pa(n_alunos)
+</code></pre></div>
+
+<p>Sempre que o cálculo do <em>bound</em> evitar que a chamada recursiva seja feita seu programa deverá enviar para a saída de erros:</p>
+<div class="highlight"><pre><span></span><code>Bound: sat_melhor sat_max
+</code></pre></div>
+
+<ul>
+<li><code>sat_melhor</code> é a satisfação da melhor atribuição encontrada até o momento</li>
+<li><code>sat_max</code> é a satisfação máxima do caminho atual na recursão</li>
+</ul>
+<p>Note que sua saída de erros poderá alternar algumas linhas do tipo <code>Melhor</code> e muitas linhas do tipo <code>Bound</code>.</p>
 <h2 id="heuristicas-de-busca">Heurísticas de busca<a class="headerlink" href="#heuristicas-de-busca" title="Permanent link">&para;</a></h2>
 <p>O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.</p>
 <p>Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.</p>
-<p>Será obrigatório implementar este item em cima do branch and bound. &rarr;</p>
+<p>Será obrigatório implementar este item em cima do branch and bound. </p>
+<h3 id="validacao_3">Validação<a class="headerlink" href="#validacao_3" title="Permanent link">&para;</a></h3>
+<p>O programa <code>code/projeto-validacao/validacao-heuristico.py</code> recebe sua implementação e roda uma sequência de testes automatizados. A única checagem que ele faz é o tempo que seu programa leva para executar. Ou seja, neste quesito estamos olhando puramente o desempenho dos algoritmos implementados. </p>
+<p>Os tempos foram calibrados utilizando uma implementação em Python com bibliotecas de <em>JIT</em>. Para que valha a pena usar seu programa ele deverá ser mais rápido que a implementação "preguiçosa" em Python.</p>
 <!--## Avaliação
 
 * **Conceito D**: implementou o algoritmo exaustivo inocente em `C++`. O executável deverá ser nomeado `busca_exaustiva_seq`. -->

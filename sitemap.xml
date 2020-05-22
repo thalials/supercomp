@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://insper.github.io/supercomp/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/sobre/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/00-organizacao/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/01-intro-cpp/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/02-stl/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/03-cmake/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/04-autovec/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/05-intro-multi-core/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/06-intro-openmp/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/07-openmp-for/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/08-efeitos-colaterais/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/09-tarefas/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/10-gpu-I/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/11-gpu-II/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/12-gpu-III/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/13-gpu-rand/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/14-gpu-rand-II/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/projeto-pfe/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/checklist/</loc>
-     <lastmod>2020-05-15</lastmod>
+     <lastmod>2020-05-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
