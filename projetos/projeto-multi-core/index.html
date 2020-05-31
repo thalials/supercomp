@@ -584,29 +584,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avaliacao" class="md-nav__link">
-    Avaliação
-  </a>
-  
-    <nav class="md-nav" aria-label="Avaliação">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#estrategias-de-paralelizacao" class="md-nav__link">
     Estratégias de paralelização
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#relatorio" class="md-nav__link">
-    Relatório
+      
+        <li class="md-nav__item">
+  <a href="#validacao" class="md-nav__link">
+    Validação
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -633,29 +620,24 @@
                 <h1 id="multi-core-usando-openmp">Multi-core usando OpenMP<a class="headerlink" href="#multi-core-usando-openmp" title="Permanent link">&para;</a></h1>
 <p>O primeiro projeto consiste em implementar uma solução multi-core para o problema da <a href="../projeto-pfe/">Alocação de alunos do PFE</a>. Para facilitar sua ele será dividido em duas partes.</p>
 <p>Os algoritmos serão construídos em cima da <a href="../projeto-algoritmos/">primeira parte</a>, que tratou de estratégias eficientes de resolução do problema.</p>
-<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../checklist/">Requisitos básicos</a> cumpridos</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório comparando desempenho Python vs C++</li>
-</ul>
-<p>A entrega final será dividida em duas partes: estratégias de paralelização (55%) e relatório de desempenho (45%).</p>
-<div class="admonition warning">
-<p class="admonition-title">Requisitos básicos de projeto</p>
-<p>Caso os <a href="../checklist/">requisitos básicos de projeto</a> não sejam cumpridos sua nota será limitada a <code>D</code>.</p>
-</div>
-<h3 id="estrategias-de-paralelizacao">Estratégias de paralelização<a class="headerlink" href="#estrategias-de-paralelizacao" title="Permanent link">&para;</a></h3>
-<p>Cada funcionalidade do projeto corretamente implementada de maneira sequencia <strong>E</strong> paralela corresponde a um conceito neste item.</p>
+<h2 id="estrategias-de-paralelizacao">Estratégias de paralelização<a class="headerlink" href="#estrategias-de-paralelizacao" title="Permanent link">&para;</a></h2>
+<p>Cada funcionalidade do projeto corretamente implementada de maneira sequencial <strong>E</strong> paralela corresponde a um conceito neste item.</p>
 <ul>
 <li><strong>Conceito D</strong>: implementou a busca local e mostrou ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados <code>busca_local_seq</code> e <code>busca_local_par</code>.</li>
 <li><strong>Conceito C</strong>: implementou o algoritmo recursivo ingênuo, mostrando ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados <code>busca_exaustiva_seq</code> e <code>busca_exaustiva_par</code>.</li>
-<li><strong>Conceito B</strong>: implementou o <em>Branch and Bound</em> usando a função de <em>bound</em>  mostrada no enunciado e compartilhando a melhor solução entre as threads. Você deverá produzir executáveis nomeados <code>branch_bound_seq</code> e <code>branch_bound_par</code>.</li>
-<li><strong>Conceito B+</strong>: implementou uma heurística de busca no algoritmo sequencial e no paralelo e mostrou que há grandes ganhos de desempenho em seu uso. Você deverá produzir executáveis nomeados <code>branch_bound_heuristico_seq</code> e <code>branch_bound_heuristico_par</code>.</li>
-<li><strong>Conceito A+</strong>: implementou uma solução híbrida, com uma thread rodando busca local e as restantes executando o <em>Branch and Bound</em>. Você deverá produzir executáveis nomeados <code>branch_bound_hibrido_seq</code> e <code>branch_bound_hibrido_par</code>.</li>
+<li><strong>Conceito A</strong>: para alcançar este conceito seu programa deverá ter alto desempenho. Os tempos foram calibrados usando uma implementação do algoritmo heurístico sequencial, levando em conta que seu programa deveria cortar este tempo pela metade. Duas sugestões de paralelização são dadas abaixo. <ul>
+<li>Algoritmo heurístico implementado </li>
+<li>Solução híbrida Branch and Bound + busca local.</li>
 </ul>
-<p>Os conceitos acima estão apresentados em ordem de dificuldade. Em geral, a implementação de um conceito se apoia nas implementações dos conceitos anteriores.</p>
-<h3 id="relatorio">Relatório<a class="headerlink" href="#relatorio" title="Permanent link">&para;</a></h3>
-<p>Você deverá produzir um relatório de desempenho seguindo os moldes do Projeto 1. Ele será avaliado de acordo com a <a href="../rubrica.ods">rubrica de relatórios da disciplina</a></p>
-<p>Os testes de seu projeto poderão ser limitados por tempo. Você pode limitar seu programa para rodar até no máximo 20 minutos. O objetivo é rodar entradas o maiores possível dentre</p>
+</li>
+</ul>
+<h2 id="validacao">Validação<a class="headerlink" href="#validacao" title="Permanent link">&para;</a></h2>
+<p>Cada conceito possui um validador individual que leva em conta particularidades de cada técnica implementada. </p>
+<ul>
+<li><strong>Conceito D</strong>: a ser disponibilizado.</li>
+<li><strong>Conceito C</strong>: Executar <code>validacao-paralelo-exaustivo.py</code>. Este programa checa apenas a resposta e ignora os valores mostrados em <code>stderr</code>.</li>
+<li><strong>Conceito A</strong>: Executar <code>validacao-bb-heur.py</code>. Este programa checa apenas a resposta e ignora os valores mostrados em <code>stderr</code>.</li>
+</ul>
                 
               
               
