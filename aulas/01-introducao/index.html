@@ -1,0 +1,738 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/01-introducao/">
+      
+      
+        <meta name="author" content="Igor Montagner, Lucianos Soares">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>01 - Recursos úteis de C++ - SuperComputação - 2020/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/printing.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01-recursos-uteis-de-c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<script>
+  window.site_url = "https://insper.github.io/supercomp/";
+</script>
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="https://insper.github.io/supercomp/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/supercomp/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia"> SuperComputação </div>
+    <div class="professor"> Igor Montagner, Luciano Soares </div>
+    <div class="semestre"> 2020/2 </div>
+  </div>
+</div>
+
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    <!-- Link to home -->
+    <a
+      href="https://insper.github.io/supercomp/"
+      title="SuperComputação - 2020/2"
+      class="md-header-nav__button md-logo"
+      aria-label="SuperComputação - 2020/2"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            SuperComputação - 2020/2
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              01 - Recursos úteis de C++
+            
+          </span>
+        </div>
+      
+    </div>
+
+    <!-- Button to open search dialogue -->
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/insper/supercomp/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SuperComp
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+
+
+
+
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2020/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2020/2">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    SuperComputação - 2020/2
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/insper/supercomp/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SuperComp
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
+      Burocracias
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Aulas
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Aulas" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Aulas
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        01 - Recursos úteis de C++
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="01 - Recursos úteis de C++" class="md-nav__link md-nav__link--active">
+      01 - Recursos úteis de C++
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao" class="md-nav__link">
+    Compilação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida-em-c" class="md-nav__link">
+    Entrada e saída em C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alocacao-de-memoria" class="md-nav__link">
+    Alocação de memória
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vetores-em-c" class="md-nav__link">
+    Vetores em C++
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Projeto
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Projeto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/" title="Travelling Sales Person" class="md-nav__link">
+      Travelling Sales Person
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/checklist/" title="Requisitos básicos de projeto" class="md-nav__link">
+      Requisitos básicos de projeto
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao" class="md-nav__link">
+    Compilação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida-em-c" class="md-nav__link">
+    Entrada e saída em C++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alocacao-de-memoria" class="md-nav__link">
+    Alocação de memória
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vetores-em-c" class="md-nav__link">
+    Vetores em C++
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/01-introducao/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="01-recursos-uteis-de-c">01 - Recursos úteis de C++<a class="headerlink" href="#01-recursos-uteis-de-c" title="Permanent link">&para;</a></h1>
+<p>A disciplina utilizará a linguagem C++ para implementação dos programas. Ela é muito usada em implementações de alto desempenho e possui recursos muito úteis e que simplificam a programação se comparada com C puro. Nas aulas 01 e 02 aprenderemos alguns desses recursos e os utilizaremos para implementação de algoritmos simples. </p>
+<div class="admonition failure">
+<p class="admonition-title">Gabaritos e respostas</p>
+<p>Este curso não fornece código de resposta para os exercícios de sala. Cada exercício é acompanhado de um algoritmo em pseudo-código e alguns pares de arquivos entrada/saída. Isto já é suficiente para que vocês verifiquem se sua solução está correta. </p>
+<p>Boas práticas de programação serão demonstradas em exercícios corrigidos pelo professor durante o semestre. Uma lista (não exaustiva) dessas práticas estará disponíveis na página <a href="/projetos/checklist.md">Projeto</a>.</p>
+</div>
+<h2 id="compilacao">Compilação<a class="headerlink" href="#compilacao" title="Permanent link">&para;</a></h2>
+<p>Programas em C++ são compilados com o comando <code>g++</code>. Ele funciona igual ao <code>gcc</code> que vocês já usaram em Desafios e Sistemas Hardware-Software.</p>
+<div class="highlight"><pre><span></span><code>$&gt; g++ arquivo.cpp -o executavel
+</code></pre></div>
+
+<h2 id="entrada-e-saida-em-c">Entrada e saída em C++<a class="headerlink" href="#entrada-e-saida-em-c" title="Permanent link">&para;</a></h2>
+<p>Em C usamos as funções <code>printf</code> para mostrar dados no terminal e <code>scanf</code> para ler dados. Em C++ essas funções também podem ser usadas, mas em geral são substituídas pelos objetos <code>std::cin</code> e <code>std::cout</code> (disponíveis no cabeçalho iostream). </p>
+<p>A maior vantagem de usar <code>cin</code> e <code>cout</code> é que não precisamos mais daquelas strings de formatação estranhas com <code>%d</code>, <code>%s</code> e afins. Podemos passar variáveis diretamente para a saída do terminal usando o operador <code>&lt;&lt;</code>. Veja um exemplo abaixo. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.2</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Saída: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um arquivo <code>entrada-saida.cpp</code> com uma função <code>main</code> que roda o código acima. Compile e execute seu programa e verifique que ele mostra o valor correto no terminal. </p>
+</div>
+<p>O mesmo vale para a entrada, mas desta vez "tiramos" os dados do objeto <code>std::cin</code>. O exemplo abaixo lê um inteiro e um <code>double</code> do terminal. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique seu programa <code>entrada-saida.cpp</code> para ler ê um número inteiro <code>n</code> e mostrar sua divisão fracionária por 2. Ou seja, antes de dividir converta <code>n</code> para <code>double</code>. </p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">E esse <code>std::</code>?</p>
+<p>Em <code>C++</code> podemos ter várias funções, variáveis e objetos em geral com o mesmo nome. Para evitar que eles colidam e não se saiba a qual estamos nos referindo cada nome deve ser definido um <code>namespace</code> (literalmente <em>espaco de nomes</em>). Podemos ter <code>namespace</code>s aninhados.Por exemplo, <code>std::chrono</code> contém as funções relacionadas contagem de tempo durante a execução de um programa. </p>
+<p>Todas as funções, classes e globais na biblioteca padrão estão definidas no espaço <code>std</code>. Se quisermos, podemos omitir escrever <code>std::</code> toda vez digitando <code>using namespace std</code>. Isso pode ser feito também com namespaces aninhados. </p>
+</div>
+<p>A implementação de algoritmos definidos usando expressões matemáticas é uma habilidade importante neste curso.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Escreva um programa que receba um inteiro <code>n</code> e calcule a seguinte série.</p>
+<div>
+<div class="MathJax_Preview">
+S = \sum_{i=0}^n \frac{1}{2^i}
+</div>
+<script type="math/tex; mode=display">
+S = \sum_{i=0}^n \frac{1}{2^i}
+</script>
+</div>
+<p>Mostre as primeiras 15 casas decimais de <code>S</code>. Veja a documentação de <a href="http://cplusplus.com/reference/iomanip/setprecision/"><code>std::setprecision</code> aqui</a>. </p>
+<details class="details"><summary>Resposta</summary><p>Essa série converge para o número 2, mas sua resposta deverá ser sempre menor que este número. Logo, quanto maior <code>n</code> mais próxima sua resposta será. Seu programa deverá implementar algo como o algoritmo abaixo.</p>
+<div class="highlight"><pre><span></span><code>leia inteiro n
+s = 0.0
+para i=0 até n
+    s += 1 / (2 elevado a i)
+
+print(s)
+</code></pre></div>
+
+</details>
+</div>
+<h2 id="alocacao-de-memoria">Alocação de memória<a class="headerlink" href="#alocacao-de-memoria" title="Permanent link">&para;</a></h2>
+<p>Em <em>C</em> usamos as funções <code>malloc</code> e <code>free</code> para alocar memória dinamicamente. Um inconveniente dessas funções é que sempre temos que passar o tamanho que queremos em bytes. Em <em>C++</em> essas funções também estão disponíveis, mas usá-las é considerado uma má prática. Ao invés, usamos os operadores <code>new</code> e <code>delete</code> para alocar memória. Existem duas vantagens em usá-los.</p>
+<ol>
+<li>Podemos escrever diretamente o tipo que queremos, em vez de seu tamanho em bytes. </li>
+<li>A alocação de arrays é feita de maneira natural usando os colchetes <code>[]</code>.</li>
+</ol>
+<p>Vejamos o exemplo abaixo. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">double</span> <span class="o">*</span><span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+
+<span class="cm">/* usar values aqui */</span>
+
+<span class="k">delete</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
+</code></pre></div>
+
+<p>É alocado um vetor de <code>double</code> de tamanho <code>n</code> (lido do terminal). Após ele ser usado liberamos o espaço alocado usando <code>delete[]</code>. </p>
+<div class="admonition tip">
+<p class="admonition-title">E se eu quiser alocar um só valor?</p>
+<p>É simples! É só usar <code>new</code> sem os colchetes <code>[]</code>!</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que lê um número inteiro <code>n</code> e depois lê <code>n</code> números fracionários <span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>. Faça os seguintes cálculos e motre-os no terminal com 10 casas decimais. </p>
+<div>
+<div class="MathJax_Preview">\mu = \frac{1}{n} \sum_{i=1}^n x_i</div>
+<script type="math/tex; mode=display">\mu = \frac{1}{n} \sum_{i=1}^n x_i</script>
+</div>
+<div>
+<div class="MathJax_Preview">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</div>
+<script type="math/tex; mode=display">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</script>
+</div>
+<details class="details"><summary>Resposta</summary><p>Os arquivos <em>t4-in-(1,2,3).txt</em> e <em>t4-out-(1,2,3).txt</em> devem ser usados para testar seu programa. </p>
+</details>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Você reconhece as fórmulas acima? Elas calculam quais medidas estatísticas?</p>
+<details class="details"><summary>Resposta</summary><p>Média e variância.</p>
+</details>
+</div>
+<h2 id="vetores-em-c">Vetores em C++<a class="headerlink" href="#vetores-em-c" title="Permanent link">&para;</a></h2>
+<p>Apesar do uso de <code>new[]</code> e <code>delete[]</code> mostrado na seção anterior já ser mais conveniente, ainda são essencialmente um programa em C com sintaxe ligeiramente mais agradável. Para tornar a programação em C++ mais produtiva sua biblioteca padrão conta com estruturas de dados prontas para uso. </p>
+<p>A estrutura <code>std::vector</code> é um vetor dinâmico que tem funcionalidades parecidas com a lista de Python ou o <code>ArrayList</code> de Java. O código abaixo exemplifica seu uso e mostra algumas de suas funções. Note que omitimos o uso de <code>std</code> no código abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Tamanho do vetor: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Primeiro elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Último elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Elemento 3: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Alguns pontos interessantes deste exemplo:</p>
+<ol>
+<li>Não sabemos o tamanho de <code>vec</code> ao criá-lo. O método <code>push_back</code> aumenta ele quando necessário e não precisamos nos preocupar com isso. </li>
+<li>O número de elementos colocados no vetor é retornado pelo método <code>size()</code></li>
+<li>O acesso é feito exatamente igual ao array de C, usando os colchetes <code>[]</code></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">E esse <code>&lt;double&gt;</code> na declaração?</p>
+<p>Em C++ tipos passados entre <code>&lt; &gt;</code> são usados para parametrizar tipos genéricos. Ou seja, um vetor pode guardar qualquer tipo de dado e precisamos indicar qual ao criá-lo. </p>
+<p>Note que, portanto, um vetor <code>vector&lt;int&gt;</code> e um vetor <code>vector&lt;double&gt;</code> são considerados de tipos diferentes e não posso passar o primeiro para uma função esperando o segundo. </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Modifique sua Tarefa 4 para usar <code>vector</code>. Meça o desempenho com o programa <code>time</code> e anote abaixo seus resultados. </p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../sobre/" title="Burocracias" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Burocracias
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Travelling Sales Person" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../../translate-admonitions.js"></script>
+      
+    
+  </body>
+</html>
