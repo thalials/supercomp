@@ -19,7 +19,7 @@
     
     
       
-        <title>Requisitos básicos de projeto - SuperComputação - 2020/2</title>
+        <title>Checklist de projeto - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#requisitos-basicos-de-projeto" class="md-skip">
+        <a href="#checklist-de-projeto" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Requisitos básicos de projeto
+              Checklist de projeto
             
           </span>
         </div>
@@ -391,9 +391,42 @@
       
     
     
-    <a href="./" title="Requisitos básicos de projeto" class="md-nav__link md-nav__link--active">
-      Requisitos básicos de projeto
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Checklist de projeto
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Checklist de projeto" class="md-nav__link md-nav__link--active">
+      Checklist de projeto
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-qualidade" class="md-nav__link">
+    Requisitos de qualidade
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -420,6 +453,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-de-qualidade" class="md-nav__link">
+    Requisitos de qualidade
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -438,25 +488,32 @@
                   
                 
                 
-                <h1 id="requisitos-basicos-de-projeto">Requisitos básicos de projeto<a class="headerlink" href="#requisitos-basicos-de-projeto" title="Permanent link">&para;</a></h1>
-<p>Os seguintes pontos são obrigatórios para todos projetos entregues na disciplina. Caso eles não sejam satisfeitos a nota final será <strong>D</strong>. Se sua nota for maior que <strong>C</strong> e alguns desses itens for <strong>o único problema</strong> da entrega você pode reentregar sem desconto de nota. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>A condição acima não vale para o <a href="index#projeto-0">projeto 0 - revisão de C++</a>, já que grande parte dele é realizar as tarefas abaixo.  </p>
-</div>
+                <h1 id="checklist-de-projeto">Checklist de projeto<a class="headerlink" href="#checklist-de-projeto" title="Permanent link">&para;</a></h1>
+<p>Alguns requisitos de projeto básicos serão verificados em todas as entregas. O objetivo aqui é evitar que uma evidência importante de aprendizado deixe de ser enviada e prejudique a avaliação. Não cumprir algum desses requisitos implica em reentrega valendo <strong>D</strong>. </p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CMakeLists.txt gera um executável por método testado</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório feito em Jupyter Notebook  ou PWeave. Seu relatório deve conter as seguintes seções: <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Descrição do problema tratado</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Descrição dos testes feitos (tamanho de entradas, quantas execuções são feitas, como mediu tempo, infra usada)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Organização em alto nível de seu projeto.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Script de compilação (CMake, Makefile, bash script). </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Relatório feito em Jupyter Notebook ou PWeave. <ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Versão em PDF (ou HTML) do relatório</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Instruções para replicar os testes realizados. Se isto estiver incluso no relatório executável basta indicar no texto. </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Seção explicando onde está e como usar o script de compilação. </li>
 </ul>
 </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Versão já rodada do relatório exportada para <em>PDF</em></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> README.txt explicando como rodar seus testes (pode estar no relatório).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Conjunto de testes automatizados (via script Python ou direto no relatório)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Respeitar os formatos de entrada e saída definidos nos enunciados.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Seu programa deverá retornar sempre o mesmo resultado. Os tempos serão ligeiramente diferentes em cada execução, mas o resultado final deverá ser sempre o mesmo. </li>
+</ul>
+<h2 id="requisitos-de-qualidade">Requisitos de qualidade<a class="headerlink" href="#requisitos-de-qualidade" title="Permanent link">&para;</a></h2>
+<p>Além dos requisitos acima, que são obrigatórios, os seguintes itens procuram medir a <strong>qualidade</strong> da implementação que vocês desenvolveram. Assim como explicado na aula 01, eles não reprovam, mas diminuem a nota de projeto. Cada item que não for cumprido implica em desconto de 1,0 na nota de projeto. </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Programa compila sem warnings quando compilado com <code>g++ -O3 -Wall -pedantic -std=c++11</code>;</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Programa não tem warnings detectados pelo <code>clang-tidy</code>. Veja <a href="https://www.youtube.com/watch?v=pXk6xIFWzv4">este vídeo</a> para um breve tutorial de uso;<ul>
+<li>usar os checks <code>read*,performance*,hicpp*,modern*,-modernize-use-trailing-return-type</code>. </li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Não há repetição desnecessária de código;<ul>
+<li>Implementaremos várias soluções para o mesmo problema. É importante compartilhar o máximo de código possível entre todas as implementações;</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Utilizar <code>struct</code> ou <code>class</code> para agregar grupos de variáveis que sempre são usadas junto (Exemplo: todos os dados de entrada do programa);</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Utilizar <code>typdef</code> para renomear tipos com nomes grandes. (Exemplo seria um <code>vector</code> de um <code>struct</code> ou <code>pair</code>);</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Utilizar corretamente os recursos de C++. Em geral o que for apresentado em aula e não conflitar com os itens acima é OK. Em geral código copiado da internet não passa nesse quesito. Na dúvida pergunte. </li>
 </ul>
                 
               
