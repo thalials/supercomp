@@ -19,7 +19,7 @@
     
     
       
-        <title>02 - Detalhes de implementação - SuperComputação - 2020/2</title>
+        <title>02 - Iniciando C++11 - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#02-detalhes-de-implementacao" class="md-skip">
+        <a href="#02-iniciando-c11" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              02 - Detalhes de implementação
+              02 - Iniciando C++11
             
           </span>
         </div>
@@ -317,8 +317,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-introducao/" title="01 - Recursos úteis de C++" class="md-nav__link">
-      01 - Recursos úteis de C++
+    <a href="../01-introducao/" title="01 - Aquecimento" class="md-nav__link">
+      01 - Aquecimento
     </a>
   </li>
 
@@ -338,14 +338,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        02 - Detalhes de implementação
+        02 - Iniciando C++11
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="02 - Detalhes de implementação" class="md-nav__link md-nav__link--active">
-      02 - Detalhes de implementação
+    <a href="./" title="02 - Iniciando C++11" class="md-nav__link md-nav__link--active">
+      02 - Iniciando C++11
     </a>
     
       
@@ -364,22 +364,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#o-problema-basico" class="md-nav__link">
-    O problema básico
+  <a href="#alocacao-de-memoria-e-vetores-em-c" class="md-nav__link">
+    Alocação de memória e vetores em C++
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passagem-de-dados-no-programa" class="md-nav__link">
-    Passagem de dados no programa
+  <a href="#matrizes-versao-1" class="md-nav__link">
+    Matrizes (versão 1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
-    Medição de tempo com KCachegrind
+  <a href="#referencias-e-passagem-de-dados" class="md-nav__link">
+    Referências e passagem de dados
   </a>
   
 </li>
@@ -476,22 +476,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#o-problema-basico" class="md-nav__link">
-    O problema básico
+  <a href="#alocacao-de-memoria-e-vetores-em-c" class="md-nav__link">
+    Alocação de memória e vetores em C++
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passagem-de-dados-no-programa" class="md-nav__link">
-    Passagem de dados no programa
+  <a href="#matrizes-versao-1" class="md-nav__link">
+    Matrizes (versão 1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
-    Medição de tempo com KCachegrind
+  <a href="#referencias-e-passagem-de-dados" class="md-nav__link">
+    Referências e passagem de dados
   </a>
   
 </li>
@@ -516,21 +516,83 @@
                   
                 
                 
-                <h1 id="02-detalhes-de-implementacao">02 - Detalhes de implementação<a class="headerlink" href="#02-detalhes-de-implementacao" title="Permanent link">&para;</a></h1>
+                <h1 id="02-iniciando-c11">02 - Iniciando C++11<a class="headerlink" href="#02-iniciando-c11" title="Permanent link">&para;</a></h1>
 <p>Nesta aula trabalharemos dois objetivos:</p>
 <ol>
 <li>implementação de algoritmos dada uma descrição de alto nível da tarefa a ser implementada</li>
 <li>técnicas de implementação para alto desempenho</li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Software</p>
-<p>Para esta aula precisaremos dos seguintes pacotes instalados. </p>
-<ul>
-<li><code>valgrind</code> - ferramenta de análise de código executável</li>
-<li><code>kcachegrind</code> - visualizador de resultados do <code>valgrind</code></li>
-</ul>
+<h2 id="alocacao-de-memoria-e-vetores-em-c">Alocação de memória e vetores em C++<a class="headerlink" href="#alocacao-de-memoria-e-vetores-em-c" title="Permanent link">&para;</a></h2>
+<p>Em <em>C</em> usamos as funções <code>malloc</code> e <code>free</code> para alocar memória dinamicamente. Um inconveniente dessas funções é que sempre temos que passar o tamanho que queremos em bytes. Em <em>C++</em> essas funções também estão disponíveis, mas usá-las é considerado uma má prática. Ao invés, usamos os operadores <code>new</code> e <code>delete</code> para alocar memória. Existem duas vantagens em usá-los.</p>
+<ol>
+<li>Podemos escrever diretamente o tipo que queremos, em vez de seu tamanho em bytes. </li>
+<li>A alocação de arrays é feita de maneira natural usando os colchetes <code>[]</code>.</li>
+</ol>
+<p>Vejamos o exemplo abaixo. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">double</span> <span class="o">*</span><span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+
+<span class="cm">/* usar values aqui */</span>
+
+<span class="k">delete</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
+</code></pre></div>
+
+<p>É alocado um vetor de <code>double</code> de tamanho <code>n</code> (lido do terminal). Após ele ser usado liberamos o espaço alocado usando <code>delete[]</code>. </p>
+<div class="admonition tip">
+<p class="admonition-title">E se eu quiser alocar um só valor?</p>
+<p>É simples! É só usar <code>new</code> sem os colchetes <code>[]</code>!</p>
 </div>
-<h2 id="o-problema-basico">O problema básico<a class="headerlink" href="#o-problema-basico" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que lê um número inteiro <code>n</code> e depois lê <code>n</code> números fracionários <span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>. Faça os seguintes cálculos e motre-os no terminal com 10 casas decimais. </p>
+<div>
+<div class="MathJax_Preview">\mu = \frac{1}{n} \sum_{i=1}^n x_i</div>
+<script type="math/tex; mode=display">\mu = \frac{1}{n} \sum_{i=1}^n x_i</script>
+</div>
+<div>
+<div class="MathJax_Preview">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</div>
+<script type="math/tex; mode=display">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</script>
+</div>
+<details class="details"><summary>Resposta</summary><p>Os arquivos <em>t4-in-(1,2,3).txt</em> e <em>t4-out-(1,2,3).txt</em> devem ser usados para testar seu programa. </p>
+</details>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Você reconhece as fórmulas acima? Elas calculam quais medidas estatísticas?</p>
+<details class="details"><summary>Resposta</summary><p>Média e variância.</p>
+</details>
+</div>
+<p>Apesar do uso de <code>new[]</code> e <code>delete[]</code> mostrado na seção anterior já ser mais conveniente, ainda são essencialmente um programa em C com sintaxe ligeiramente mais agradável. Para tornar a programação em C++ mais produtiva sua biblioteca padrão conta com estruturas de dados prontas para uso. </p>
+<p>A estrutura <code>std::vector</code> é um vetor dinâmico que tem funcionalidades parecidas com a lista de Python ou o <code>ArrayList</code> de Java. O código abaixo exemplifica seu uso e mostra algumas de suas funções. Note que omitimos o uso de <code>std</code> no código abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Tamanho do vetor: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Primeiro elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Último elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Elemento 3: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Alguns pontos interessantes deste exemplo:</p>
+<ol>
+<li>Não sabemos o tamanho de <code>vec</code> ao criá-lo. O método <code>push_back</code> aumenta ele quando necessário e não precisamos nos preocupar com isso. </li>
+<li>O número de elementos colocados no vetor é retornado pelo método <code>size()</code></li>
+<li>O acesso é feito exatamente igual ao array de C, usando os colchetes <code>[]</code></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">E esse <code>&lt;double&gt;</code> na declaração?</p>
+<p>Em C++ tipos passados entre <code>&lt; &gt;</code> são usados para parametrizar tipos genéricos. Ou seja, um vetor pode guardar qualquer tipo de dado e precisamos indicar qual ao criá-lo. </p>
+<p>Note que, portanto, um vetor <code>vector&lt;int&gt;</code> e um vetor <code>vector&lt;double&gt;</code> são considerados de tipos diferentes e não posso passar o primeiro para uma função esperando o segundo. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique sua Tarefa 4 para usar <code>vector</code>. Verifique que o programa continua produzindo os mesmos resultados. </p>
+</div>
+<h2 id="matrizes-versao-1">Matrizes (versão 1)<a class="headerlink" href="#matrizes-versao-1" title="Permanent link">&para;</a></h2>
 <p>Dados <code>N</code> pontos com coordenadas <span><span class="MathJax_Preview">(x_i, y_i)_{i=0}^N</span><script type="math/tex">(x_i, y_i)_{i=0}^N</script></span>, computar a matriz de distâncias <span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span> tal que </p>
 <div>
 <div class="MathJax_Preview">
@@ -542,7 +604,7 @@ D_{i,j} = \textrm{Distância entre } (x_i, y_i) \textrm{ e } (x_j, y_j)
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente um programa que calcule a matriz <code>D</code> acima. Sua entrada deverá estar no formato dos arquivos <code>t1-in-*.txt</code> e sua saída no formato dos arquivos <code>t1-out-*.txt</code>. </p>
+<p>Implemente um programa que calcule a matriz <code>D</code> acima. Sua entrada deverá estar no formato dos arquivos <code>t2-in-*.txt</code> e sua saída no formato dos arquivos <code>t2-out-*.txt</code>. Mostre as distâncias com 2 casas decimais. </p>
 <p><strong>Dicas</strong>:</p>
 <ol>
 <li>a maneira mais fácil (não necessariamente a melhor) de alocar uma matriz é usando um vetor em que cada elemento é outro vetor. </li>
@@ -564,18 +626,18 @@ para i=1..N:
 </div>
 <div class="admonition question medium">
 <p class="admonition-title">Question</p>
-<p>Anote abaixo o tempo de execução para os arquivos <code>t1-in-*.txt</code> e <code>t1-out-*.txt</code></p>
+<p>Anote abaixo o tempo de execução para os arquivos <code>t2-in-*.txt</code> e <code>t2-out-*.txt</code></p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Qual é a complexidade computacional de sua implementação? </p>
 </div>
-<h2 id="passagem-de-dados-no-programa">Passagem de dados no programa<a class="headerlink" href="#passagem-de-dados-no-programa" title="Permanent link">&para;</a></h2>
+<h2 id="referencias-e-passagem-de-dados">Referências e passagem de dados<a class="headerlink" href="#referencias-e-passagem-de-dados" title="Permanent link">&para;</a></h2>
 <p>Na parte anterior fizemos nosso programa inteiro no <code>main</code>. Vamos agora organizá-lo melhor. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Crie uma função <code>calcula_distancias</code> que recebe a matriz e os dados recebidos na entrada e a preenche. Sua função não deverá retornar nenhum valor. </p>
-<p>Ao terminar, meça o tempo de execução para o arquivo <code>t1-out-4.txt</code>.</p>
+<p>Ao terminar, meça o tempo de execução para o arquivo <code>t2-out-4.txt</code>.</p>
 <details class="details"><summary>Resposta</summary><p>Aqui podem ocorrer dois problemas:</p>
 <ol>
 <li>Seu programa deu "Segmentation Fault". </li>
@@ -615,89 +677,6 @@ para i=1..N:
 <p class="admonition-title">Dica</p>
 <p>Em <em>C++</em> precisamos estar sempre atentos a maneira que passamos os dados. Se não indicarmos será por cópia. Para compartilhar o mesmo objeto entre várias funções usamos referências <code>&amp;</code>. </p>
 </div>
-<h2 id="medicao-de-tempo-com-kcachegrind">Medição de tempo com KCachegrind<a class="headerlink" href="#medicao-de-tempo-com-kcachegrind" title="Permanent link">&para;</a></h2>
-<p>Apesar de podermos medir o tempo que nosso programa demora usando o comando <code>time</code>, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de <strong>Profiling</strong>. </p>
-<div class="admonition tip">
-<p class="admonition-title">Dica</p>
-<p>É preciso compilar um executável com profiling habilitado para medir os tempos. Isso é feito com a flag <code>-p</code> do <code>g++</code>. Veja abaixo. </p>
-<div class="highlight"><pre><span></span><code>g++ -p -g euclides-ingenuo.cpp -o euclides-ingenuo
-</code></pre></div>
-
-</div>
-<details class="quote"><summary>Demonstração</summary><p>adslj
-lkadj</p>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<p>Para mostrar os resultados usando o <code>kcachegrind</code> usamos o seguinte comando. </p>
-<div class="highlight"><pre><span></span><code>kcachegrind callgrind.out.(pid aqui)
-</code></pre></div>
-
-</details>
-<p>Na demonstração pudemos ver que grande parte do tempo do programa da Tarefa 1 é gasto mostrando a saída no terminal. Isto nos leva à primeira conclusão da atividade de hoje:</p>
-<div class="admonition info">
-<p class="admonition-title">Entrada e saída de dados são operações muito lentas</p>
-</div>
-<p>Com isso em mente, vamos agora otimizar a função <code>calcula_distancias</code>. Já sabemos que o efeito no tempo final não será grande. Nosso objetivo então será verificar a seguinte afirmação. </p>
-<div class="admonition info">
-<p class="admonition-title">Dois algoritmos de mesma complexidade computacional podem ter tempos de execução muito diferentes</p>
-</div>
-<p>A otimização que trabalharemos nesse roteiro tentará explorar a <strong>simetria</strong> da matriz <code>D</code>. </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Como isso poderia ser usado para melhorar o tempo de execução de <code>calcula_distancias</code>?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Seu programa criado na tarefa 1 consegue ser adaptado para implementar sua ideia da questão 
-anterior? O que precisaria ser modificado?</p>
-<details class="note"><summary>Resposta</summary><p>Duas respostas são possíveis e corretas aqui:</p>
-<ol>
-<li>
-<p>Preciso checar se o <code>i &lt; j</code> e usar o valor já calculado de <code>D[j,i]</code>.</p>
-</li>
-<li>
-<p>É preciso alocar a matriz inteira antes de começar. Se formos dando <code>push_back</code> linha a linha não conseguimos atribuir um valor ao mesmo tempo a <code>D[i,j]</code> e <code>D[j,i]</code>, já que um deles ainda não terá sido criado. </p>
-</li>
-</ol>
-</details>
-</div>
-<p>Vamos começar implementando resposta 1 da pergunta anterior, já que ela envolve uma pequena modificação no programa. </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Anote abaixo o consumo absoluto de tempo da função <code>calcula_distancia</code>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Adicione uma checagem que verifica se o elemento já foi calculado no "outro lado" da matriz e use esse valor ao invés de </p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Anote abaixo o consumo absoluto de tempo da sua nova função <code>calcula_distancia</code>. Compare com a pergunta anterior e tente entender seus resultados.</p>
-<details class="note"><summary>Resposta</summary><p>Deve ter havido uma pequena melhora, mas longe de ser a metade do tempo. </p>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Por que não houve melhora significativa? Você consegue explicar?</p>
-<details class="nota"><summary>Resposta</summary><p>A principal razão é que o número absoluto de instruções não mudou muito. O <code>for</code> duplo ainda roda <code>n*n</code> vezes e o próprio acesso a <code>mat[i][j]</code> é apontado como lento pelo <code>kcachegrind</code>. </p>
-</details>
-</div>
-<p>Com a alternativa 1 descartada, vamos agora para a alternativa 2: atribuir de uma só vez em <code>D[i,j]</code> e <code>D[j,i]</code>. Ou seja, agora nosso loop vai ser executado metade das vezes! </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Supondo que a matriz já esteja inteira alocada, como você implementaria a alternativa 2?</p>
-<details class="note"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>para i=1..N:
-    para j=i..N:
-        DX = X[i] - X[j]
-        DY = Y[i] - Y[j]
-        DIST = sqrt(DX*DX + DY*DY)
-        D[i,j] = DIST
-        D[j,i] = DIST
-</code></pre></div>
-
-</details>
-</div>
                 
               
               
@@ -716,7 +695,7 @@ anterior? O que precisaria ser modificado?</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../01-introducao/" title="01 - Recursos úteis de C++" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01-introducao/" title="01 - Aquecimento" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -725,7 +704,7 @@ anterior? O que precisaria ser modificado?</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                01 - Recursos úteis de C++
+                01 - Aquecimento
               </div>
             </div>
           </a>

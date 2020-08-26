@@ -19,7 +19,7 @@
     
     
       
-        <title>01 - Recursos úteis de C++ - SuperComputação - 2020/2</title>
+        <title>01 - Aquecimento - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#01-recursos-uteis-de-c" class="md-skip">
+        <a href="#01-aquecimento" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              01 - Recursos úteis de C++
+              01 - Aquecimento
             
           </span>
         </div>
@@ -326,14 +326,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        01 - Recursos úteis de C++
+        01 - Aquecimento
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="01 - Recursos úteis de C++" class="md-nav__link md-nav__link--active">
-      01 - Recursos úteis de C++
+    <a href="./" title="01 - Aquecimento" class="md-nav__link md-nav__link--active">
+      01 - Aquecimento
     </a>
     
       
@@ -365,20 +365,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#alocacao-de-memoria" class="md-nav__link">
-    Alocação de memória
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vetores-em-c" class="md-nav__link">
-    Vetores em C++
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -392,8 +378,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02-desempenho/" title="02 - Detalhes de implementação" class="md-nav__link">
-      02 - Detalhes de implementação
+    <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-nav__link">
+      02 - Iniciando C++11
     </a>
   </li>
 
@@ -496,20 +482,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#alocacao-de-memoria" class="md-nav__link">
-    Alocação de memória
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vetores-em-c" class="md-nav__link">
-    Vetores em C++
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -530,7 +502,7 @@
                   
                 
                 
-                <h1 id="01-recursos-uteis-de-c">01 - Recursos úteis de C++<a class="headerlink" href="#01-recursos-uteis-de-c" title="Permanent link">&para;</a></h1>
+                <h1 id="01-aquecimento">01 - Aquecimento<a class="headerlink" href="#01-aquecimento" title="Permanent link">&para;</a></h1>
 <p>A disciplina utilizará a linguagem C++ para implementação dos programas. Ela é muito usada em implementações de alto desempenho e possui recursos muito úteis e que simplificam a programação se comparada com C puro. Nas aulas 01 e 02 aprenderemos alguns desses recursos e os utilizaremos para implementação de algoritmos simples. </p>
 <div class="admonition failure">
 <p class="admonition-title">Gabaritos e respostas</p>
@@ -593,77 +565,6 @@ print(s)
 
 </details>
 </div>
-<h2 id="alocacao-de-memoria">Alocação de memória<a class="headerlink" href="#alocacao-de-memoria" title="Permanent link">&para;</a></h2>
-<p>Em <em>C</em> usamos as funções <code>malloc</code> e <code>free</code> para alocar memória dinamicamente. Um inconveniente dessas funções é que sempre temos que passar o tamanho que queremos em bytes. Em <em>C++</em> essas funções também estão disponíveis, mas usá-las é considerado uma má prática. Ao invés, usamos os operadores <code>new</code> e <code>delete</code> para alocar memória. Existem duas vantagens em usá-los.</p>
-<ol>
-<li>Podemos escrever diretamente o tipo que queremos, em vez de seu tamanho em bytes. </li>
-<li>A alocação de arrays é feita de maneira natural usando os colchetes <code>[]</code>.</li>
-</ol>
-<p>Vejamos o exemplo abaixo. </p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-<span class="kt">double</span> <span class="o">*</span><span class="n">values</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
-
-<span class="cm">/* usar values aqui */</span>
-
-<span class="k">delete</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
-</code></pre></div>
-
-<p>É alocado um vetor de <code>double</code> de tamanho <code>n</code> (lido do terminal). Após ele ser usado liberamos o espaço alocado usando <code>delete[]</code>. </p>
-<div class="admonition tip">
-<p class="admonition-title">E se eu quiser alocar um só valor?</p>
-<p>É simples! É só usar <code>new</code> sem os colchetes <code>[]</code>!</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Crie um programa que lê um número inteiro <code>n</code> e depois lê <code>n</code> números fracionários <span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span>. Faça os seguintes cálculos e motre-os no terminal com 10 casas decimais. </p>
-<div>
-<div class="MathJax_Preview">\mu = \frac{1}{n} \sum_{i=1}^n x_i</div>
-<script type="math/tex; mode=display">\mu = \frac{1}{n} \sum_{i=1}^n x_i</script>
-</div>
-<div>
-<div class="MathJax_Preview">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</div>
-<script type="math/tex; mode=display">\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2</script>
-</div>
-<details class="details"><summary>Resposta</summary><p>Os arquivos <em>t4-in-(1,2,3).txt</em> e <em>t4-out-(1,2,3).txt</em> devem ser usados para testar seu programa. </p>
-</details>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Você reconhece as fórmulas acima? Elas calculam quais medidas estatísticas?</p>
-<details class="details"><summary>Resposta</summary><p>Média e variância.</p>
-</details>
-</div>
-<h2 id="vetores-em-c">Vetores em C++<a class="headerlink" href="#vetores-em-c" title="Permanent link">&para;</a></h2>
-<p>Apesar do uso de <code>new[]</code> e <code>delete[]</code> mostrado na seção anterior já ser mais conveniente, ainda são essencialmente um programa em C com sintaxe ligeiramente mais agradável. Para tornar a programação em C++ mais produtiva sua biblioteca padrão conta com estruturas de dados prontas para uso. </p>
-<p>A estrutura <code>std::vector</code> é um vetor dinâmico que tem funcionalidades parecidas com a lista de Python ou o <code>ArrayList</code> de Java. O código abaixo exemplifica seu uso e mostra algumas de suas funções. Note que omitimos o uso de <code>std</code> no código abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Tamanho do vetor: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Primeiro elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Último elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Elemento 3: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</code></pre></div>
-
-<p>Alguns pontos interessantes deste exemplo:</p>
-<ol>
-<li>Não sabemos o tamanho de <code>vec</code> ao criá-lo. O método <code>push_back</code> aumenta ele quando necessário e não precisamos nos preocupar com isso. </li>
-<li>O número de elementos colocados no vetor é retornado pelo método <code>size()</code></li>
-<li>O acesso é feito exatamente igual ao array de C, usando os colchetes <code>[]</code></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">E esse <code>&lt;double&gt;</code> na declaração?</p>
-<p>Em C++ tipos passados entre <code>&lt; &gt;</code> são usados para parametrizar tipos genéricos. Ou seja, um vetor pode guardar qualquer tipo de dado e precisamos indicar qual ao criá-lo. </p>
-<p>Note que, portanto, um vetor <code>vector&lt;int&gt;</code> e um vetor <code>vector&lt;double&gt;</code> são considerados de tipos diferentes e não posso passar o primeiro para uma função esperando o segundo. </p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Modifique sua Tarefa 4 para usar <code>vector</code>. Meça o desempenho com o programa <code>time</code> e anote abaixo seus resultados. </p>
-</div>
                 
               
               
@@ -697,13 +598,13 @@ print(s)
           </a>
         
         
-          <a href="../02-desempenho/" title="02 - Detalhes de implementação" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                02 - Detalhes de implementação
+                02 - Iniciando C++11
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
