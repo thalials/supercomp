@@ -288,10 +288,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -333,6 +335,67 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        03 - Profiling
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="03 - Profiling" class="md-nav__link md-nav__link--active">
+      03 - Profiling
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
+    Medição de tempo com KCachegrind
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes-versao-2" class="md-nav__link">
+    Matrizes (versão 2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -369,8 +432,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/" title="Travelling Sales Person" class="md-nav__link">
-      Travelling Sales Person
+    <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
+      Travelling Sales Person (TSP)
     </a>
   </li>
 
@@ -420,6 +483,13 @@
         <li class="md-nav__item">
   <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
     Medição de tempo com KCachegrind
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes-versao-2" class="md-nav__link">
+    Matrizes (versão 2)
   </a>
   
 </li>
@@ -486,7 +556,7 @@
 <details class="details"><summary>Resposta</summary><p>Deve ter havido uma diminuição, mas não chega nem perto de metade. Isso ocorre por várias razões:</p>
 <ol>
 <li>nosso <code>for</code> duplo continua percorrendo a matriz inteira, apesar de só fazer o cálculo em metade das posições. </li>
-<li>alocamos a matriz elemento a elemento enquanto fazemos os cálculos</li>
+<li>alocamos a matriz elemento a elemento enquanto fazemos os cálculos.</li>
 </ol>
 </details>
 </div>
@@ -494,51 +564,9 @@
 <div class="admonition info">
 <p class="admonition-title">Dois algoritmos de mesma complexidade computacional podem ter tempos de execução muito diferentes</p>
 </div>
-<p>A otimização que trabalharemos nesse roteiro tentará explorar a <strong>simetria</strong> da matriz <code>D</code>. </p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Como isso poderia ser usado para melhorar o tempo de execução de <code>calcula_distancias</code>?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Seu programa criado na tarefa 1 consegue ser adaptado para implementar sua ideia da questão 
-anterior? O que precisaria ser modificado?</p>
-<details class="note"><summary>Resposta</summary><p>Duas respostas são possíveis e corretas aqui:</p>
-<ol>
-<li>
-<p>Preciso checar se o <code>i &lt; j</code> e usar o valor já calculado de <code>D[j,i]</code>.</p>
-</li>
-<li>
-<p>É preciso alocar a matriz inteira antes de começar. Se formos dando <code>push_back</code> linha a linha não conseguimos atribuir um valor ao mesmo tempo a <code>D[i,j]</code> e <code>D[j,i]</code>, já que um deles ainda não terá sido criado. </p>
-</li>
-</ol>
-</details>
-</div>
-<p>Vamos começar implementando resposta 1 da pergunta anterior, já que ela envolve uma pequena modificação no programa. </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Anote abaixo o consumo absoluto de tempo da função <code>calcula_distancia</code>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Adicione uma checagem que verifica se o elemento já foi calculado no "outro lado" da matriz e use esse valor ao invés de </p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Anote abaixo o consumo absoluto de tempo da sua nova função <code>calcula_distancia</code>. Compare com a pergunta anterior e tente entender seus resultados.</p>
-<details class="note"><summary>Resposta</summary><p>Deve ter havido uma pequena melhora, mas longe de ser a metade do tempo. </p>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Por que não houve melhora significativa? Você consegue explicar?</p>
-<details class="nota"><summary>Resposta</summary><p>A principal razão é que o número absoluto de instruções não mudou muito. O <code>for</code> duplo ainda roda <code>n*n</code> vezes e o próprio acesso a <code>mat[i][j]</code> é apontado como lento pelo <code>kcachegrind</code>. </p>
-</details>
-</div>
-<p>Com a alternativa 1 descartada, vamos agora para a alternativa 2: atribuir de uma só vez em <code>D[i,j]</code> e <code>D[j,i]</code>. Ou seja, agora nosso loop vai ser executado metade das vezes! </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Supondo que a matriz já esteja inteira alocada, como você implementaria a alternativa 2?</p>
+<p>A resposta da questão anterior indica que só usar um <code>if</code> para evitar o cálculo repetido não é suficiente. Precisamos efetivamente fazer um <code>for</code> que percorre só metade da matriz. Supondo que a matriz já esteja inteira alocada, escreva em pseudo-código como fazê-lo.</p>
 <details class="note"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>para i=1..N:
     para j=i..N:
         DX = X[i] - X[j]
@@ -549,6 +577,41 @@ anterior? O que precisaria ser modificado?</p>
 </code></pre></div>
 
 </details>
+</div>
+<h2 id="matrizes-versao-2">Matrizes (versão 2)<a class="headerlink" href="#matrizes-versao-2" title="Permanent link">&para;</a></h2>
+<p>Nossa implementação usando <code>vector&lt;vector&lt;double&gt;&gt;</code> tem um problema sério: ela aloca elemento a elemento uma estrutura grande que já sabemos o tamanho de início. Seria muito melhor se pudéssemos alocar todas as <span><span class="MathJax_Preview">N^2</span><script type="math/tex">N^2</script></span> posições da matriz de  uma só vez!</p>
+<p>Fazemos isso trabalhando com um layout de memória contínuo. Ou seja, armazenaremos a matriz linha a linha como um único vetor de tamanho <code>n*n</code>. Temos várias vantagens:</p>
+<ol>
+<li>tempo de alocação de memória é reduzido, já que só fazemos uma chamada</li>
+<li>podemos acessar qualquer posição a qualquer momento</li>
+<li>melhor desempenho de cache</li>
+</ol>
+<p>A figura abaixo exemplifica esse layout de memória:</p>
+<p><img alt="Matriz &quot;deitada&quot; linha a linha" src="https://insper.github.io/Labs-de-C/imgs/day4-arrays/mem-mat.png" /></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Em uma matriz de tamanho <code>4x7</code> (4 linhas, 7 colunas), qual é o elemento do vetor que representa a posição <code>2x5</code> (linha 3, coluna 6)?</p>
+<details class="details"><summary>Details</summary><p>Estamos considerando que começamos a contar as linhas e colunas do zero. A posição do vetor é <code>19</code>. Este número é obtido pela expressão</p>
+<p>$ i \times c + j$</p>
+<ul>
+<li><code>i</code> é a linha a ser acessada</li>
+<li><code>j</code> é a coluna</li>
+<li><code>c</code> é o número de colunas da matriz</li>
+</ul>
+<p><code>19 = 2 * 7 + 5</code></p>
+</details>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Conseguimos redimensionar um vetor usando o método <code>resize</code>, que recebe o novo número de elementos do vetor. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma terceira versão de <code>calcula_distancias</code>, desta vez usando o layout de memória acima. Verifique que o programa continua retornando os mesmos resultados que as versões anteriores. </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Rode novamente os testes de profiling e verifique o número de instruções para esta nova versão. Compare este valor com os anteriores e comente. </p>
 </div>
                 
               
@@ -564,6 +627,41 @@ anterior? O que precisaria ser modificado?</p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                02 - Iniciando C++11
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person (TSP)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

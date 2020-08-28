@@ -19,7 +19,7 @@
     
     
       
-        <title>Travelling Sales Person - SuperComputação - 2020/2</title>
+        <title>Travelling Sales Person (TSP) - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#travelling-sales-person" class="md-skip">
+        <a href="#travelling-sales-person-tsp" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Travelling Sales Person
+              Travelling Sales Person (TSP)
             
           </span>
         </div>
@@ -333,6 +333,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aulas/03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
+      03 - Profiling
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -379,9 +391,56 @@
       
     
     
-    <a href="./" title="Travelling Sales Person" class="md-nav__link md-nav__link--active">
-      Travelling Sales Person
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Travelling Sales Person (TSP)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Travelling Sales Person (TSP)" class="md-nav__link md-nav__link--active">
+      Travelling Sales Person (TSP)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-escolhemos-esse-problema" class="md-nav__link">
+    Por que escolhemos esse problema?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao-e-formatos-de-entrada-e-saida" class="md-nav__link">
+    Avaliação e formatos de entrada e saída
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregas-e-datas-importantes" class="md-nav__link">
+    Entregas e Datas importantes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -420,6 +479,37 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-escolhemos-esse-problema" class="md-nav__link">
+    Por que escolhemos esse problema?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao-e-formatos-de-entrada-e-saida" class="md-nav__link">
+    Avaliação e formatos de entrada e saída
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregas-e-datas-importantes" class="md-nav__link">
+    Entregas e Datas importantes
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -438,8 +528,63 @@
                   
                 
                 
-                <h1 id="travelling-sales-person">Travelling Sales Person<a class="headerlink" href="#travelling-sales-person" title="Permanent link">&para;</a></h1>
-<p>TODO: descrição do projeto aqui</p>
+                <h1 id="travelling-sales-person-tsp">Travelling Sales Person (TSP)<a class="headerlink" href="#travelling-sales-person-tsp" title="Permanent link">&para;</a></h1>
+<p>Nosso projeto do semestre será o <a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem"><strong>Caixeiro Viajante</strong></a>. Neste problema recebemos uma lista de cidades representadas por suas coordenadas <span><span class="MathJax_Preview">(x_i, y_i)_{i=0}^N</span><script type="math/tex">(x_i, y_i)_{i=0}^N</script></span> e temos como objetivo encontrar o o caminho fechado que </p>
+<ol>
+<li>visite todas as cidades </li>
+<li>tenha o menor comprimento possível</li>
+</ol>
+<p>Note que podemos começar de qualquer cidade, já que nosso caminho é fechado. Ou seja, ele começa e termina no mesmo lugar. </p>
+<p>Este é um problema <strong>muito</strong> estudado em otimização e existem vários métodos que proporcionam soluções muito boas em pouquíssimo tempo. Por exemplo, o Gif abaixo usa uma técnica de otimização chamada <a href="https://en.wikipedia.org/wiki/Simulated_annealing">Simulated annealing</a>.</p>
+<p><img alt="Exemplo de solução do TSP" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Travelling_salesman_problem_solved_with_simulated_annealing.gif/220px-Travelling_salesman_problem_solved_with_simulated_annealing.gif" /></p>
+<p>É fácil de perceber que este problema ocorre frequentemente em logísitca, seja na forma que apresentamos ou em sua generalização, o <a href="https://en.wikipedia.org/wiki/Vehicle_routing_problem">Roteamento de Veículos</a>. </p>
+<h2 id="por-que-escolhemos-esse-problema">Por que escolhemos esse problema?<a class="headerlink" href="#por-que-escolhemos-esse-problema" title="Permanent link">&para;</a></h2>
+<p>O <em>TSP</em> é um problema de otimização dos mais difíceis (<a href="https://en.wikipedia.org/wiki/NP-hardness">NP-hard</a>). Não existe algoritmo polinomial que encontre a melhor solução <strong>nem</strong> algoritmo polinomial que cheque se uma solução é a melhor. </p>
+<p>Entramos então em duas áreas:</p>
+<ol>
+<li>encontrar a melhor solução o mais rápido possível</li>
+<li>usar heurísticas para encontrar uma solução boa o mais rápido possível</li>
+</ol>
+<p>Trabalharemos com ambas as ideias durante a disciplina, focando tanto em implementações sequenciais como paralelas. </p>
+<h2 id="avaliacao-e-formatos-de-entrada-e-saida">Avaliação e formatos de entrada e saída<a class="headerlink" href="#avaliacao-e-formatos-de-entrada-e-saida" title="Permanent link">&para;</a></h2>
+<p>O projeto é individual e será corrigido usando uma série de scripts de correção automatizada. </p>
+<p><strong>Entrada</strong>
+<div class="highlight"><pre><span></span><code>N
+x1 y1
+....
+xN yN
+</code></pre></div></p>
+<ul>
+<li><code>N</code> é o número de cidades</li>
+<li><code>xi yi</code> são as coordenadas de cada cidade</li>
+</ul>
+<p><strong>Saída</strong>
+<div class="highlight"><pre><span></span><code>L O
+c1 .... cN
+</code></pre></div></p>
+<ul>
+<li><code>L</code> é o comprimento do <em>tour</em> </li>
+<li><code>O</code> indica se o tour é ótimo (1) ou não (0)</li>
+<li><code>c1 ... cN</code> é a sequência de cidades visitadas para chegar no tour de comprimento <code>L</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<ol>
+<li>Os formatos de entrada e saída deverão ser respeitados de maneira estrita</li>
+<li>Algumas entregas pedirão também informações mostradas na saída de erros <code>std:cerr</code></li>
+<li>Os scripts de correção serão atualizados durante o semestre. </li>
+<li></li>
+</ol>
+</div>
+<h2 id="entregas-e-datas-importantes">Entregas e Datas importantes<a class="headerlink" href="#entregas-e-datas-importantes" title="Permanent link">&para;</a></h2>
+<p>O projeto de vocês deverá ser entregue via um repositório Git privado criado especialmente para este fim. Ele será criado a partir das respostas do formulário a seguir.</p>
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=wKZwY5B7CUe9blnCjt6DO-vbzw2O33BIuQfhB7kkTWxUNkdDWTJBVkJHTjZDVFA3Njc1MlQ4WldBOCQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+<p>Cada aluno irá adicionar sua solução ao seu repositório, que já irá conter os arquivos de correção automática. A entrega deverá cumprir todos os itens do <a href="checklist/">Checklist de projeto</a>.</p>
+<p>As etapas do projeto serão disponibilizadas depois de discussões em sala de aula e estarão conectadas com uma aula específica. </p>
+<ul>
+<li>Atividade 1 TBA</li>
+</ul>
                 
               
               
@@ -458,7 +603,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../aulas/02-desempenho/" title="02 - Iniciando C++11" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../aulas/03-profiling-e-projeto/" title="03 - Profiling" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -467,7 +612,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                02 - Iniciando C++11
+                03 - Profiling
               </div>
             </div>
           </a>

@@ -9,17 +9,12 @@ void calcula_distancias(matriz &mat, std::vector<double> &x, std::vector<double>
     for (int i = 0; i < n; i++) {
         std::vector<double> linha(n);
         for (int j = 0; j < n; j++) {
-            if (j < i) {
-                linha[j] = mat[j][i];
-            } else {
-                double dx = x[i] - x[j];
-                double dy = y[i] - y[j];
-                linha[j] = sqrt(dx*dx + dy*dy);    
-            }
+            double dx = x[i] - x[j];
+            double dy = y[i] - y[j];
+            linha[j] = sqrt(dx*dx + dy*dy);    
         }
         mat.push_back(linha);
     }
-
 }
 
 int main() {
@@ -28,7 +23,8 @@ int main() {
     int n;
 
     std::cin >> n;
-
+    x.reserve(n);
+    y.reserve(n);
     for (int i = 0; i < n; i++) {
         double xt, yt;
         std::cin >> xt >> yt;
@@ -38,9 +34,9 @@ int main() {
 
     calcula_distancias(mat, x, y);
     
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            std::cout << mat[i][j] << " ";
+    for (auto &linha : mat) {
+        for (double el : linha) {
+            std::cout << el << " ";
         }
         std::cout << "\n";
     }
