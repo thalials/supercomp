@@ -527,7 +527,7 @@
 </div>
 <h2 id="medicao-de-tempo-com-kcachegrind">Medição de tempo com KCachegrind<a class="headerlink" href="#medicao-de-tempo-com-kcachegrind" title="Permanent link">&para;</a></h2>
 <p>Apesar de podermos medir o tempo que nosso programa demora usando o comando <code>time</code>, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de <strong>Profiling</strong>. </p>
-<details class="quote"><summary>Demonstração (Instruções)</summary><p>É preciso compilar um executável com profiling habilitado para medir os tempos. Isso é feito com a flag <code>-p</code> do <code>g++</code>. Veja abaixo. </p>
+<details class="quote"><summary>Demonstração (Instruções)</summary><p>É preciso compilar um executável com profiling habilitado para medir os tempos. </p>
 <div class="highlight"><pre><span></span><code>g++ -g euclides-ingenuo.cpp -o euclides-ingenuo
 </code></pre></div>
 
@@ -589,7 +589,7 @@
 <li>melhor desempenho de cache</li>
 </ol>
 <p>A figura abaixo exemplifica esse layout de memória:</p>
-<p><img alt="Matriz &quot;deitada&quot; linha a linha" src="https://insper.github.io/Labs-de-C/imgs/day4-arrays/mem-mat.png" /></p>
+<p><img alt="Matriz &quot;deitada&quot; linha a linha" src="matriz.png" /></p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p>Em uma matriz de tamanho <code>4x7</code> (4 linhas, 7 colunas), qual é o elemento do vetor que representa a posição <code>2x5</code> (linha 3, coluna 6)?</p>

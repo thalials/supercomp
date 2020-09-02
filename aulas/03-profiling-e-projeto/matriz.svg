@@ -15,9 +15,41 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="matriz.svg">
+   sodipodi:docname="matriz.svg"
+   inkscape:export-filename="/home/igor/Dropbox/INSPER/2020/supercomp/material/aulas/03-profiling-e-projeto/matriz.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker1083"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1081" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker921"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path919"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
     <marker
        inkscape:isstock="true"
        style="overflow:visible;"
@@ -25,7 +57,8 @@
        refX="0.0"
        refY="0.0"
        orient="auto"
-       inkscape:stockid="Arrow1Lend">
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
       <path
          transform="scale(0.8) rotate(180) translate(12.5,0)"
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
@@ -70,8 +103,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="297.17313"
-     inkscape:cy="690.73631"
+     inkscape:cx="384.55133"
+     inkscape:cy="655.22325"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -88,7 +121,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -131,7 +164,7 @@
          id="tspan819"
          x="27.79603"
          y="56.746178"
-         style="stroke-width:0.26458332">Matriz 4x7</tspan></text>
+         style="stroke-width:0.26458332;font-size:8.46666667px">Matriz 4x7</tspan></text>
     <g
        id="g880"
        transform="translate(-1.5289845,-2.1166667)">
@@ -312,13 +345,13 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="27.79603"
-       y="114.98945"
+       y="118.6936"
        id="text973"><tspan
          sodipodi:role="line"
          id="tspan971"
          x="27.79603"
-         y="114.98945"
-         style="stroke-width:0.26458332">Na memória</tspan></text>
+         y="118.6936"
+         style="font-size:8.46666622px;stroke-width:0.26458332">Na memória</tspan></text>
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#ff2a2a;stroke-width:0.36061153;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1086-2"
@@ -480,5 +513,45 @@
        d="m 52.919365,136.63828 19.510676,14.43256 30.735999,-14.69983"
        id="path2292"
        inkscape:connector-curvature="0" />
+    <ellipse
+       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.40000001;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path905"
+       cx="161.96533"
+       cy="81.714394"
+       rx="4.543582"
+       ry="3.8754082" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="140.04921"
+       y="103.75877"
+       id="text909"><tspan
+         sodipodi:role="line"
+         id="tspan907"
+         x="140.04921"
+         y="103.75877"
+         style="font-size:4.93888903px;fill:#ff0000;stroke-width:0.26458332">1x7 + 3</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker921)"
+       d="m 161.69806,87.727959 c 0.0173,10.796351 -10.37651,-3.769133 -12.2944,9.888971"
+       id="path911"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1083)"
+       d="m 157.15448,159.62346 v -24.5888"
+       id="path1073"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="139.78197"
+       y="165.50339"
+       id="text1129"><tspan
+         sodipodi:role="line"
+         id="tspan1127"
+         x="139.78197"
+         y="165.50339"
+         style="font-size:6.3499999px;stroke-width:0.26458332">28 elementos</tspan></text>
   </g>
 </svg>

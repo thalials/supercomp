@@ -9,19 +9,11 @@ void calcula_distancias(matriz &mat, std::vector<double> &x, std::vector<double>
     for (int i = 0; i < n; i++) {
         std::vector<double> linha(n); // alocou com n elementos com valor 0
         for (int j = 0; j < n; j++) {
-            #ifdef OPT_SYM
-            if (i > j) {
-                linha[j] = mat[j][i];
-            } else {
-                double dx = x[i] - x[j];
-                double dy = y[i] - y[j];
-                linha[j] = sqrt(dx*dx + dy*dy);        
-            }
-            #else
+            
             double dx = x[i] - x[j];
             double dy = y[i] - y[j];
             linha[j] = sqrt(dx*dx + dy*dy);    
-            #endif
+            
         }
         mat.push_back(linha);
     }
