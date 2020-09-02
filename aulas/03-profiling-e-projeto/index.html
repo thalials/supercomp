@@ -515,6 +515,8 @@
                 
                 
                 <h1 id="03-profiling">03 - Profiling<a class="headerlink" href="#03-profiling" title="Permanent link">&para;</a></h1>
+<!-- TODO: desenho da matriz está ruim. Usar algo parecido com o da aula de terça -->
+
 <div class="admonition warning">
 <p class="admonition-title">Software</p>
 <p>Para esta aula precisaremos dos seguintes pacotes instalados. </p>
@@ -526,7 +528,7 @@
 <h2 id="medicao-de-tempo-com-kcachegrind">Medição de tempo com KCachegrind<a class="headerlink" href="#medicao-de-tempo-com-kcachegrind" title="Permanent link">&para;</a></h2>
 <p>Apesar de podermos medir o tempo que nosso programa demora usando o comando <code>time</code>, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de <strong>Profiling</strong>. </p>
 <details class="quote"><summary>Demonstração (Instruções)</summary><p>É preciso compilar um executável com profiling habilitado para medir os tempos. Isso é feito com a flag <code>-p</code> do <code>g++</code>. Veja abaixo. </p>
-<div class="highlight"><pre><span></span><code>g++ -p -g euclides-ingenuo.cpp -o euclides-ingenuo
+<div class="highlight"><pre><span></span><code>g++ -g euclides-ingenuo.cpp -o euclides-ingenuo
 </code></pre></div>
 
 <p>Após este passo, devemos executar o programa usando o <code>valgrind</code> com as opções abaixo.</p>
