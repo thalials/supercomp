@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <random>
 
 struct objeto {
     int id;
@@ -26,12 +27,33 @@ int main() {
     std::sort(objetos.begin(), objetos.end(), [](objeto &a, objeto &b) {
         return a.valor > b.valor;
     });
+
+    std::vector<bool> usados(N, false);
     
-    for (objeto &o : objetos) {
-        if (peso + o.peso < W) {
-            resposta.push_back(o.id);
-            peso += o.peso;
-            valor += o.valor;
+    int i = 0; 
+    std::default_random_engine eng(20);
+    std::uniform_real_distribution<double> d(0.0, 1.0);
+    while (i < N) {
+        if (usados[i]) {
+            i++;
+            continue;
+        };
+        int idx;
+        if (d(eng) < 0.25) {
+            std::uniform_int_distribution<int> d_resto(i, N-1);
+            idx = d_resto(eng);
+        } else {
+            idx = i;
+            i++;
+        }
+        objeto *o = &objetos[idx];
+
+        if (!usados[idx] && peso + o->peso < W) {
+            usados[idx] = true;
+            resposta.push_back(o->id);
+            peso += o->peso;
+            valor += o->valor;
+            std::cerr << o->id << " " << o->peso << " " << o->valor << "\n";
         }
     }
 
