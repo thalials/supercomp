@@ -462,6 +462,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#verificacao-de-resultados" class="md-nav__link">
+    Verificação de resultados
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -477,6 +484,18 @@
   <li class="md-nav__item">
     <a href="checklist/" title="Checklist de projeto" class="md-nav__link">
       Checklist de projeto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
+      Heurística da cidade mais próxima
     </a>
   </li>
 
@@ -528,6 +547,13 @@
         <li class="md-nav__item">
   <a href="#entregas-e-datas-importantes" class="md-nav__link">
     Entregas e Datas importantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacao-de-resultados" class="md-nav__link">
+    Verificação de resultados
   </a>
   
 </li>
@@ -607,8 +633,31 @@ c1 .... cN
 <p>Cada aluno irá adicionar sua solução ao seu repositório, que já irá conter os arquivos de correção automática. A entrega deverá cumprir todos os itens do <a href="checklist/">Checklist de projeto</a>.</p>
 <p>As etapas do projeto serão disponibilizadas depois de discussões em sala de aula e estarão conectadas com uma aula específica. </p>
 <ul>
-<li>Atividade 1 - [heurística da cidade mais próxima]</li>
+<li>Atividade 1 - <a href="heuristica">heurística da cidade mais próxima</a>: <strong>Entrega 18/09</strong></li>
 </ul>
+<h2 id="verificacao-de-resultados">Verificação de resultados<a class="headerlink" href="#verificacao-de-resultados" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Você receberá um convite para repositório. Todas as atividades serão disponibilizadas neste repositório e suas soluções devem ser adicionadas nos arquivos correspondentes. </li>
+<li>O corretor automático depende do pacote <code>grading-tools</code>, que deverá ser instalado como abaixo.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$&gt; python3.8 -m pip install --user git+https://github.com/igordsm/grading-tools
+</code></pre></div>
+
+<details class="tip"><summary>Python 3.8 no Ubuntu</summary><p>Se seu <code>python3</code> é uma versão inferior ao 3.8, você pode instalá-lo com os pacotes abaixo:</p>
+<div class="highlight"><pre><span></span><code>python3.8 python3.8-dev 
+</code></pre></div>
+
+<p>A partir daí poderá seguir normalmente as instruções desta página.</p>
+</details>
+<ol>
+<li>Com isso configurado, é só compilar seu programa e rodar <code>python3.8 corretor.py executavel</code>. </li>
+<li>Para baixar os novos exercícios é só rodar <code>git pull</code>. </li>
+<li>Os exercícios serão entregues criando um commit com sua resposta e dando <code>git push</code>. </li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Fique atento a atualizações no seu repositório de projeto. Atualizações no corretor serão feitas ao longo do semestre, assim como serão disponibilizados novos arquivos de entrada/saída para cada parte a ser implementada. </p>
+</div>
                 
               
               

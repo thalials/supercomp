@@ -7,6 +7,7 @@ struct objeto {
     int id;
     int peso;
     int valor;
+    bool usado;
 };
 
 int main() {
@@ -16,6 +17,7 @@ int main() {
     
     for (int i = 0; i < N; i++) {
         objetos[i].id = i;
+        objetos[i].usado = false;
         std::cin >> objetos[i].peso >> objetos[i].valor;
     }
 
@@ -27,33 +29,27 @@ int main() {
     std::sort(objetos.begin(), objetos.end(), [](objeto &a, objeto &b) {
         return a.valor > b.valor;
     });
-
-    std::vector<bool> usados(N, false);
-    
-    int i = 0; 
+    int i = 0;
     std::default_random_engine eng(20);
-    std::uniform_real_distribution<double> d(0.0, 1.0);
+    std::uniform_real_distribution<double> heuristica(0, 1); 
     while (i < N) {
-        if (usados[i]) {
-            i++;
-            continue;
-        };
         int idx;
-        if (d(eng) < 0.25) {
-            std::uniform_int_distribution<int> d_resto(i, N-1);
-            idx = d_resto(eng);
-        } else {
-            idx = i;
-            i++;
-        }
-        objeto *o = &objetos[idx];
+        if (heuristica(eng) <= 0.25) {
+            std::uniform_int_distribution<int> proximo(i, N-1);
+            idx = proximo(eng);
+            while(objetos[idx].usado)
+                idx = proximo(eng);
 
-        if (!usados[idx] && peso + o->peso < W) {
-            usados[idx] = true;
-            resposta.push_back(o->id);
-            peso += o->peso;
-            valor += o->valor;
-            std::cerr << o->id << " " << o->peso << " " << o->valor << "\n";
+        } else {
+            idx = i++;
+        }
+
+        objeto &o = objetos[idx];
+        if (!o.usado && peso + o.peso < W) {
+            o.usado = true;
+            resposta.push_back(o.id);
+            peso += o.peso;
+            valor += o.valor;
         }
     }
 
