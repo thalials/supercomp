@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/03-profiling-e-projeto/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/06-busca-local/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>03 - Profiling - SuperComputação - 2020/2</title>
+        <title>06 - Busca local - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-profiling" class="md-skip">
+        <a href="#06-busca-local" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              03 - Profiling
+              06 - Busca local
             
           </span>
         </div>
@@ -339,60 +339,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        03 - Profiling
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="03 - Profiling" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
       03 - Profiling
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
-    Medição de tempo com KCachegrind
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matrizes-versao-2" class="md-nav__link">
-    Matrizes (versão 2)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -424,11 +375,87 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../06-busca-local/" title="06 - Busca local" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        06 - Busca local
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="06 - Busca local" class="md-nav__link md-nav__link--active">
       06 - Busca local
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solucao-aleatorizada" class="md-nav__link">
+    Solução aleatorizada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busca-local" class="md-nav__link">
+    Busca local
+  </a>
+  
+    <nav class="md-nav" aria-label="Busca local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mochila-cheia" class="md-nav__link">
+    Mochila cheia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substituicao-de-objeto" class="md-nav__link">
+    Substituição de objeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechamento" class="md-nav__link">
+    Fechamento
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -529,15 +556,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#medicao-de-tempo-com-kcachegrind" class="md-nav__link">
-    Medição de tempo com KCachegrind
+  <a href="#solucao-aleatorizada" class="md-nav__link">
+    Solução aleatorizada
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#matrizes-versao-2" class="md-nav__link">
-    Matrizes (versão 2)
+  <a href="#busca-local" class="md-nav__link">
+    Busca local
+  </a>
+  
+    <nav class="md-nav" aria-label="Busca local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mochila-cheia" class="md-nav__link">
+    Mochila cheia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substituicao-de-objeto" class="md-nav__link">
+    Substituição de objeto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechamento" class="md-nav__link">
+    Fechamento
   </a>
   
 </li>
@@ -554,7 +608,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/03-profiling-e-projeto/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/06-busca-local/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -562,106 +616,84 @@
                   
                 
                 
-                <h1 id="03-profiling">03 - Profiling<a class="headerlink" href="#03-profiling" title="Permanent link">&para;</a></h1>
-<!-- TODO: desenho da matriz está ruim. Usar algo parecido com o da aula de terça -->
-
-<div class="admonition warning">
-<p class="admonition-title">Software</p>
-<p>Para esta aula precisaremos dos seguintes pacotes instalados. </p>
+                <h1 id="06-busca-local">06 - Busca local<a class="headerlink" href="#06-busca-local" title="Permanent link">&para;</a></h1>
+<p>Nesta aula trabalharemos com um algoritmo chamado "Busca local", que consiste basicamente em fazer pequenas atualizações que melhoram sucessivamente uma solução. </p>
+<h2 id="solucao-aleatorizada">Solução aleatorizada<a class="headerlink" href="#solucao-aleatorizada" title="Permanent link">&para;</a></h2>
+<p>Vamos iniciar criando soluções aleatórias. Isto nos permitiria criar uma grande quantidade de soluções e, eventualmente, pegar a melhor delas. Apesar de ser muito mais simples que a busca heurística, a quantidade massiva de soluções geradas tem potencial de encontrar boas soluções. </p>
+<p>Vamos trabalhar com um algoritmo bem simples para gerar soluções aleatórias:</p>
 <ul>
-<li><code>valgrind</code> - ferramenta de análise de código executável</li>
-<li><code>kcachegrind</code> - visualizador de resultados do <code>valgrind</code></li>
+<li>Para cada objeto, selecione-o com probabilidade <code>0.5</code>.</li>
+<li>Se o objeto for selecionado, coloque-o na mochile se couber.</li>
 </ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Supondo que só existe uma solução ótima global, qual é a chance de a encontrarmos repetindo o algoritmo acima?</p>
 </div>
-<h2 id="medicao-de-tempo-com-kcachegrind">Medição de tempo com KCachegrind<a class="headerlink" href="#medicao-de-tempo-com-kcachegrind" title="Permanent link">&para;</a></h2>
-<p>Apesar de podermos medir o tempo que nosso programa demora usando o comando <code>time</code>, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de <strong>Profiling</strong>. </p>
-<details class="quote"><summary>Demonstração (Instruções)</summary><p>É preciso compilar um executável com profiling habilitado para medir os tempos. </p>
-<div class="highlight"><pre><span></span><code>g++ -g euclides-ingenuo.cpp -o euclides-ingenuo
-</code></pre></div>
-
-<p>Após este passo, devemos executar o programa usando o <code>valgrind</code> com as opções abaixo.</p>
-<div class="highlight"><pre><span></span><code>valgrind --tool=callgrind ./seu_exec &lt; entrada &gt; saida
-</code></pre></div>
-
-<p>Para mostrar os resultados usando o <code>kcachegrind</code> usamos o seguinte comando. </p>
-<div class="highlight"><pre><span></span><code>kcachegrind callgrind.out.(pid aqui)
-</code></pre></div>
-
-</details>
-<p>Na demonstração pudemos ver que grande parte do tempo do programa da Tarefa 1 é gasto mostrando a saída no terminal. Isto nos leva à primeira conclusão da atividade de hoje:</p>
-<div class="admonition info">
-<p class="admonition-title">Entrada e saída de dados são operações muito lentas</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Supondo que todos os objetos caibam na mochila, quantos são selecionados em média?</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Faça o teste da demonstração em seu próprio programa e anote abaixo, para as duas versões de <code>calcula_distancias</code>,</p>
-<ol>
-<li>o tempo relativo de execução </li>
-<li>o número absoluto de instruções executadas</li>
-</ol>
+<p>Implemente o algoritmo acima. Use <code>seed=10</code>.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>O número absoluto de intruções executadas diminuiu significativamente depois de nossa otimização? Teoricamente só calculamos metade da matriz, esse número é quase metade da versão não otimizada? Você consegue dizer por que?</p>
-<details class="details"><summary>Resposta</summary><p>Deve ter havido uma diminuição, mas não chega nem perto de metade. Isso ocorre por várias razões:</p>
-<ol>
-<li>nosso <code>for</code> duplo continua percorrendo a matriz inteira, apesar de só fazer o cálculo em metade das posições. </li>
-<li>alocamos a matriz elemento a elemento enquanto fazemos os cálculos.</li>
-</ol>
-</details>
-</div>
-<p>Com isso em mente, vamos agora otimizar a função <code>calcula_distancias</code>. Já sabemos que o efeito no tempo final não será grande. Nosso objetivo então será verificar a seguinte afirmação. </p>
-<div class="admonition info">
-<p class="admonition-title">Dois algoritmos de mesma complexidade computacional podem ter tempos de execução muito diferentes</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>A resposta da questão anterior indica que só usar um <code>if</code> para evitar o cálculo repetido não é suficiente. Precisamos efetivamente fazer um <code>for</code> que percorre só metade da matriz. Supondo que a matriz já esteja inteira alocada, escreva em pseudo-código como fazê-lo.</p>
-<details class="note"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>para i=1..N:
-    para j=i..N:
-        DX = X[i] - X[j]
-        DY = Y[i] - Y[j]
-        DIST = sqrt(DX*DX + DY*DY)
-        D[i,j] = DIST
-        D[j,i] = DIST
-</code></pre></div>
-
-</details>
-</div>
-<h2 id="matrizes-versao-2">Matrizes (versão 2)<a class="headerlink" href="#matrizes-versao-2" title="Permanent link">&para;</a></h2>
-<p>Nossa implementação usando <code>vector&lt;vector&lt;double&gt;&gt;</code> tem um problema sério: ela aloca elemento a elemento uma estrutura grande que já sabemos o tamanho de início. Seria muito melhor se pudéssemos alocar todas as <span><span class="MathJax_Preview">N^2</span><script type="math/tex">N^2</script></span> posições da matriz de  uma só vez!</p>
-<p>Fazemos isso trabalhando com um layout de memória contínuo. Ou seja, armazenaremos a matriz linha a linha como um único vetor de tamanho <code>n*n</code>. Temos várias vantagens:</p>
-<ol>
-<li>tempo de alocação de memória é reduzido, já que só fazemos uma chamada</li>
-<li>podemos acessar qualquer posição a qualquer momento</li>
-<li>melhor desempenho de cache</li>
-</ol>
-<p>A figura abaixo exemplifica esse layout de memória:</p>
-<p><img alt="Matriz &quot;deitada&quot; linha a linha" src="matriz.png" /></p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Em uma matriz de tamanho <code>4x7</code> (4 linhas, 7 colunas), qual é o elemento do vetor que representa a posição <code>2x5</code> (linha 3, coluna 6)?</p>
-<details class="details"><summary>Details</summary><p>Estamos considerando que começamos a contar as linhas e colunas do zero. A posição do vetor é <code>19</code>. Este número é obtido pela expressão</p>
-<p>$ i \times c + j$</p>
-<ul>
-<li><code>i</code> é a linha a ser acessada</li>
-<li><code>j</code> é a coluna</li>
-<li><code>c</code> é o número de colunas da matriz</li>
-</ul>
-<p><code>19 = 2 * 7 + 5</code></p>
-</details>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Repita o algoritmo 10 vezes e pegue somente a melhor solução.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Conseguimos redimensionar um vetor usando o método <code>resize</code>, que recebe o novo número de elementos do vetor. </p>
+<p>Use os arquivos de entrada/saída disponibilizados nas aulas passadas. </p>
+</div>
+<h2 id="busca-local">Busca local<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
+<p>Vamos agora implementar uma busca local para a Mochila Binária seguindo os dois algoritmos vistos na expositiva. </p>
+<h3 id="mochila-cheia">Mochila cheia<a class="headerlink" href="#mochila-cheia" title="Permanent link">&para;</a></h3>
+<p>Para implementar a <em>Mochila cheia</em> iremos adotar a seguinte estratégia:</p>
+<ol>
+<li>Gere uma solução aleatória.</li>
+<li>Percorre novamente todos os objetos (na ordem da entrada)</li>
+<li>Se um objeto couber na mochila, inclua-o.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente o algoritmo acima.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Faça uma terceira versão de <code>calcula_distancias</code>, desta vez usando o layout de memória acima. Verifique que o programa continua retornando os mesmos resultados que as versões anteriores. </p>
+<p>Rode a <em>Mochila cheia</em> 10 vezes e retorne a melhor solução. </p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Rode novamente os testes de profiling e verifique o número de instruções para esta nova versão. Compare este valor com os anteriores e comente. </p>
+<p>Houve melhoria em relação ao aleatório sozinho? Foi significativa?</p>
+</div>
+<h3 id="substituicao-de-objeto">Substituição de objeto<a class="headerlink" href="#substituicao-de-objeto" title="Permanent link">&para;</a></h3>
+<p>Para implementar a <em>Substituição de objeto</em> iremos adotar a seguinte estratégia:</p>
+<ol>
+<li>Gere uma solução aleatória.</li>
+<li>Execute <em>Mochila Cheia</em></li>
+<li>Para cada objeto (em ordem da entrada):<ol>
+<li>Verifique, para cada objeto não usado, se uma troca aumentaria o valor da mochila</li>
+<li>Em caso positivo, faça a troca e volte para o início do passo 2.</li>
+</ol>
+</li>
+<li>Repita enquanto for possível.</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente o algoritmo acima. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Rode a <em>Substituição de objeto</em> 10 vezes e retorne a melhor solução. </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Houve melhoria em relação ao aleatório sozinho? E a <em>Mochila Cheia</em>? Foi significativa?</p>
+</div>
+<h2 id="fechamento">Fechamento<a class="headerlink" href="#fechamento" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Como você avalia os ganhos obtidos pela busca local em relação ao aleatório?</p>
 </div>
                 
               
@@ -681,7 +713,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -690,19 +722,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                02 - Iniciando C++11
+                05 - Algoritmos Aleatorizados
               </div>
             </div>
           </a>
         
         
-          <a href="../04-projeto-heuristicas/" title="04 - Heurísticas" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                04 - Heurísticas
+                Travelling Sales Person (TSP)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

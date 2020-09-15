@@ -44,7 +44,7 @@ int main() {
             idx = i++;
         }
 
-        objeto &o = objetos[idx];
+        auto &o = objetos[idx];
         if (!o.usado && peso + o.peso < W) {
             o.usado = true;
             resposta.push_back(o.id);
