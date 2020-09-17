@@ -9,21 +9,23 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/07-busca-exaustiva/">
+      
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
       
-      <link rel="shortcut icon" href="/supercomp/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>SuperComputação - 2020/2</title>
+        <title>06 - Busca exaustiva - SuperComputação - 2020/2</title>
       
     
     
-      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.63b94e9e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -41,7 +43,7 @@
     
     
     
-      <link rel="stylesheet" href="/supercomp/css/printing.css">
+      <link rel="stylesheet" href="../../css/printing.css">
     
     
       
@@ -60,6 +62,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#06-busca-exaustiva" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -149,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              06 - Busca exaustiva
             
           </span>
         </div>
@@ -259,7 +266,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -271,7 +278,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/sobre/" title="Burocracias" class="md-nav__link">
+    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -281,10 +288,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -308,7 +317,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/01-introducao/" title="01 - Aquecimento" class="md-nav__link">
+    <a href="../01-introducao/" title="01 - Aquecimento" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -320,7 +329,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/02-desempenho/" title="02 - Iniciando C++11" class="md-nav__link">
+    <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -332,7 +341,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
+    <a href="../03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -344,7 +353,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/04-projeto-heuristicas/" title="04 - Heurísticas" class="md-nav__link">
+    <a href="../04-projeto-heuristicas/" title="04 - Heurísticas" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -356,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-nav__link">
+    <a href="../05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -368,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/06-busca-local/" title="06 - Busca local" class="md-nav__link">
+    <a href="../06-busca-local/" title="06 - Busca local" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -378,11 +387,67 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/07-busca-exaustiva/" title="06 - Busca exaustiva" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        06 - Busca exaustiva
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="06 - Busca exaustiva" class="md-nav__link md-nav__link--active">
       06 - Busca exaustiva
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-codigo" class="md-nav__link">
+    Pseudo-código
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacao" class="md-nav__link">
+    Implementação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechamento" class="md-nav__link">
+    Fechamento
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -422,7 +487,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
+    <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -434,7 +499,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/checklist/" title="Checklist de projeto" class="md-nav__link">
+    <a href="../../projetos/checklist/" title="Checklist de projeto" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -446,7 +511,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
+    <a href="../../projetos/heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -458,7 +523,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-local/" title="Busca local" class="md-nav__link">
+    <a href="../../projetos/busca-local/" title="Busca local" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -476,12 +541,106 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pseudo-codigo" class="md-nav__link">
+    Pseudo-código
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementacao" class="md-nav__link">
+    Implementação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fechamento" class="md-nav__link">
+    Fechamento
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/07-busca-exaustiva/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="06-busca-exaustiva">06 - Busca exaustiva<a class="headerlink" href="#06-busca-exaustiva" title="Permanent link">&para;</a></h1>
+<h2 id="pseudo-codigo">Pseudo-código<a class="headerlink" href="#pseudo-codigo" title="Permanent link">&para;</a></h2>
+<p>Vamos iniciar tentando escrever um algoritmo em pseudo-código para a seguinte ideia:</p>
+<ul>
+<li>Iniciando com o objeto 0:<ul>
+<li>Não inclua ele na mochila: resolva o problema com o restante dos objetos e retorne esse resultado</li>
+<li>Inclua ele na mochila: resolva o problema com o restante dos objetos e uma mochila de capacidade <code>C - p[0]</code>. Retorne o resultado <code>+ v[0]</code>.</li>
+<li>Escolhe a melhor das duas opções acima e retorne.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note que pedimos para resolver o problema de novo, mas com menos objetos. Parece que esse é um algoritmo recursivo!</p>
+</div>
+<div class="admonition question long">
+<p class="admonition-title">Question</p>
+<p>Escreva um algoritmo recursivo em pseudo-código para resolver o problema da mochila. Seu algoritmo deverá retornar o valor da mochila ótima, mas <strong>NÃO</strong> precisa ainda retornar a mochila que tem esse valor. </p>
+</div>
+<div class="admonition question long">
+<p class="admonition-title">Question</p>
+<p>Adapte seu algoritmo acima para, além de retornar a melhor solução, também retornar a mochila que tem esse valor. </p>
+<p><strong>Dica</strong>: pode ser útil passar um vetor para guardar a melhor solução encontrada.</p>
+</div>
+<h2 id="implementacao">Implementação<a class="headerlink" href="#implementacao" title="Permanent link">&para;</a></h2>
+<p>Vamos agora tentar implementar o algoritmo de busca global que fizemos. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente em C++ seu algoritmo acima. </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Teste o seu programa com a entrada <code>in-aula.txt</code> (que é a entrada dos slides). Você consegue agora responder à pergunta <strong>Existe mochila com valor maior que 13</strong>?</p>
+</div>
+<h2 id="fechamento">Fechamento<a class="headerlink" href="#fechamento" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Como você avalia os ganhos obtidos pela busca global em relação à busca local?</p>
+</div>
+                
+              
               
                 
 
@@ -494,6 +653,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../06-busca-local/" title="06 - Busca local" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                06 - Busca local
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person (TSP)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -511,22 +705,22 @@
       
     </div>
     
-      <script src="/supercomp/assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="/supercomp/assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "/supercomp/",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "/supercomp/assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
-        <script src="/supercomp/translate-admonitions.js"></script>
+        <script src="../../translate-admonitions.js"></script>
       
     
   </body>

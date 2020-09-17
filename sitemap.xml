@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://insper.github.io/supercomp/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/sobre/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/01-introducao/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/02-desempenho/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/03-profiling-e-projeto/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/04-projeto-heuristicas/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/05-algoritmos-aleatorios/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/06-busca-local/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://insper.github.io/supercomp/aulas/07-busca-exaustiva/</loc>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/checklist/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/heuristica/</loc>
-     <lastmod>2020-09-15</lastmod>
+     <lastmod>2020-09-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://insper.github.io/supercomp/projetos/busca-local/</loc>
+     <lastmod>2020-09-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
