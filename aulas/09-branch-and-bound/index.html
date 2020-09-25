@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/06-busca-local/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/09-branch-and-bound/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -19,7 +19,7 @@
     
     
       
-        <title>06 - Busca local - SuperComputação - 2020/2</title>
+        <title>09 - Branch and Bound - SuperComputação - 2020/2</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#06-busca-local" class="md-skip">
+        <a href="#09-branch-and-bound" class="md-skip">
           Skip to content
         </a>
       
@@ -156,7 +156,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              06 - Busca local
+              09 - Branch and Bound
             
           </span>
         </div>
@@ -375,80 +375,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        06 - Busca local
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="06 - Busca local" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../06-busca-local/" title="06 - Busca local" class="md-nav__link">
       06 - Busca local
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#solucao-aleatorizada" class="md-nav__link">
-    Solução aleatorizada
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#busca-local" class="md-nav__link">
-    Busca local
-  </a>
-  
-    <nav class="md-nav" aria-label="Busca local">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mochila-cheia" class="md-nav__link">
-    Mochila cheia
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fechamento" class="md-nav__link">
-    Fechamento
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -480,11 +411,73 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        09 - Branch and Bound
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="09 - Branch and Bound" class="md-nav__link md-nav__link--active">
       09 - Branch and Bound
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
+    Um bound simples: ignorar peso
+  </a>
+  
+    <nav class="md-nav" aria-label="Um bound simples: ignorar peso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avancado" class="md-nav__link">
+    Avançado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analisando-nosso-bound" class="md-nav__link">
+    Analisando nosso bound
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -597,23 +590,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#solucao-aleatorizada" class="md-nav__link">
-    Solução aleatorizada
+  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
+    Um bound simples: ignorar peso
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#busca-local" class="md-nav__link">
-    Busca local
-  </a>
-  
-    <nav class="md-nav" aria-label="Busca local">
+    <nav class="md-nav" aria-label="Um bound simples: ignorar peso">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mochila-cheia" class="md-nav__link">
-    Mochila cheia
+  <a href="#avancado" class="md-nav__link">
+    Avançado
   </a>
   
 </li>
@@ -624,8 +610,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fechamento" class="md-nav__link">
-    Fechamento
+  <a href="#analisando-nosso-bound" class="md-nav__link">
+    Analisando nosso bound
   </a>
   
 </li>
@@ -642,7 +628,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/06-busca-local/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/09-branch-and-bound/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -650,82 +636,93 @@
                   
                 
                 
-                <h1 id="06-busca-local">06 - Busca local<a class="headerlink" href="#06-busca-local" title="Permanent link">&para;</a></h1>
-<p>Nesta aula trabalharemos com um algoritmo chamado "Busca local", que consiste basicamente em fazer pequenas atualizações que melhoram sucessivamente uma solução. </p>
-<h2 id="solucao-aleatorizada">Solução aleatorizada<a class="headerlink" href="#solucao-aleatorizada" title="Permanent link">&para;</a></h2>
-<p>Vamos iniciar criando soluções aleatórias. Isto nos permitiria criar uma grande quantidade de soluções e, eventualmente, pegar a melhor delas. Apesar de ser muito mais simples que a busca heurística, a quantidade massiva de soluções geradas tem potencial de encontrar boas soluções. </p>
-<p>Vamos trabalhar com um algoritmo bem simples para gerar soluções aleatórias:</p>
-<ul>
-<li>Para cada objeto, selecione-o com probabilidade <code>0.5</code>.</li>
-<li>Se o objeto for selecionado, coloque-o na mochile se couber.</li>
-</ul>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Supondo que só existe uma solução ótima global, qual é a chance de a encontrarmos repetindo o algoritmo acima?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Supondo que todos os objetos caibam na mochila, quantos são selecionados em média?</p>
-</div>
+                <h1 id="09-branch-and-bound">09 - Branch and Bound<a class="headerlink" href="#09-branch-and-bound" title="Permanent link">&para;</a></h1>
+<p>Vamos começar nossa atividade instrumentando nossa busca exaustiva. Dado que a promessa do nosso algoritmo <em>Branch and Bound</em> é evitar chegar até o fim de uma solução parcial que não tem chance de ser ótima, faz todo sentido então contarmos quantas vezes chegamos até o fim. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente o algoritmo acima. Use <code>seed=10</code>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Repita o algoritmo 10 vezes e pegue somente a melhor solução.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Use os arquivos de entrada/saída disponibilizados nas aulas passadas. </p>
-</div>
-<h2 id="busca-local">Busca local<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
-<p>Vamos agora implementar uma busca local para a Mochila Binária seguindo os dois algoritmos vistos na expositiva. </p>
-<h3 id="mochila-cheia">Mochila cheia<a class="headerlink" href="#mochila-cheia" title="Permanent link">&para;</a></h3>
-<p>Para implementar a <em>Mochila cheia</em> iremos adotar a seguinte estratégia:</p>
+<p>Vamos adicionar dois contadores ao nosso programa</p>
 <ol>
-<li>Gere uma solução aleatória.</li>
-<li>Percorre novamente todos os objetos (na ordem da entrada)</li>
-<li>Se um objeto couber na mochila, inclua-o.</li>
+<li><code>num_leaf</code> conta quantas vezes uma solução completa foi comparada com a melhor possível</li>
+<li><code>num_copy</code> conta quantas vezes foi encontrada uma solução melhor que a atual.</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Implemente o algoritmo acima.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Rode para o exemplo <code>in150.txt</code> e anote os valores obtidos abaixo.</p>
+</div>
+<h2 id="um-bound-simples-ignorar-peso">Um bound simples: ignorar peso<a class="headerlink" href="#um-bound-simples-ignorar-peso" title="Permanent link">&para;</a></h2>
+<p>Nesta seção implementaremos um <em>Branch and Bound</em> simples com a seguinte ideia:</p>
+<div class="admonition quote">
+<p class="admonition-title">BOUND</p>
+<p>Complete uma solução parcial incluindo na mochila todos os objetos não selecionados. Isto é equivalente a <strong>relaxar a restrição do peso</strong>.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Os contadores <code>num_leaf</code> e <code>num_copy</code> se modificariam ao implementar o <em>Branch and Bound</em>? Se sim, quais deles?</p>
+<details class="tip"><summary>Resposta</summary><p>Somente <code>num_leaf</code>, já que deixamos de chegar em folhas que não tem chance de serem ótimos globais. <code>num_copy</code> continua igual, já que conta o número de vezes que o melhor foi atualizado.</p>
+</details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Rode a <em>Mochila cheia</em> 10 vezes e retorne a melhor solução. </p>
+<p>Implemente no seu código o <em>Branch and Bound</em> usando o <em>Bound</em> acima. Ou seja, você deverá, ao chegar em um objeto</p>
+<ol>
+<li>Checar se a soma da solução atual mais o bound é melhor que o melhor possível. </li>
+<li>Se não for retorna</li>
+<li>Se for prossegue fazendo a escolha para o objeto atual.</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Adicione ao seu programa um contador <code>num_bounds</code> que conta o número de vezes em que evitamos de testar uma solução parcial até o fim.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Teste seu programa novamente com a entrada <code>in150.txt</code>. Houve ganho de desempenho? Anote abaixo os contadores e interprete seu resultado.</p>
+</div>
+<h3 id="avancado">Avançado<a class="headerlink" href="#avancado" title="Permanent link">&para;</a></h3>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>O bound <em>Ignorar peso</em> depende das escolhas feitas até o momento? Ou seja, se tenho 4 objetos, o bound da solução parcial <code>(1, 0, -, -)</code> é igual ou diferente do bound da solução parcial <code>(1, 1, -, -)</code>?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Como você poderia economizar trabalho ao calcular o bound? É possível pré-calcular algo?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Reimplemente seu bound, desta vez pré-calculando tudo antes de iniciar a busca_exaustiva. </p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Rode novamente com a entrada <code>in150.txt</code> e verifique se houve ganho de tempo de execução.</p>
+</div>
+<h2 id="analisando-nosso-bound">Analisando nosso bound<a class="headerlink" href="#analisando-nosso-bound" title="Permanent link">&para;</a></h2>
+<p>Conseguimos algum ganho de desempenho ao criar o último bound. Vamos agora descobrir se ele é bom mesmo.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Como você mediria a altura em que o bound agiu? Seria melhor cortar mais para cima ou mais para baixo?</p>
+</div>
+<p>O valor <code>num_bound</code> não ajuda muito a entender se o bound é bom, já que cortar muito pode significar fazê-lo próximo das folhas (e isto gera ganho pequeno de desempenho).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça seu programa contar o número de vezes em que o bound é ativado em cada nível da recursão. Mostre esses valores no terminal.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Interprete os resultados acima. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça seu programa guardar a diferença média entre o valor do bound (que é uma estimativa da qualidade final de uma solução) e o melhor valor encontrado para aquele ramo da recursão. </p>
+<p><strong>Dica</strong>: você vai precisar retornar o valor da melhor mochila encontrada em cada parte. </p>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Houve melhoria em relação ao aleatório sozinho? Foi significativa?</p>
+<p>Interprete os resultados acima.</p>
 </div>
-<!--
-### Substituição de objeto
-
-Para implementar a *Substituição de objeto* iremos adotar a seguinte estratégia:
-
-1. Gere uma solução aleatória.
-2. Execute *Mochila Cheia*
-3. Para cada objeto (em ordem da entrada):
-    1. Verifique, para cada objeto não usado, se uma troca aumentaria o valor da mochila
-    2. Em caso positivo, faça a troca e volte para o início do passo 2.
-3. Repita enquanto for possível.
-
-!!! example
-    Implemente o algoritmo acima. 
-
-!!! example
-    Rode a *Substituição de objeto* 10 vezes e retorne a melhor solução. 
-
-!!! question 
-    Houve melhoria em relação ao aleatório sozinho? E a *Mochila Cheia*? Foi significativa?
--->
-
-<h2 id="fechamento">Fechamento<a class="headerlink" href="#fechamento" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Como você avalia os ganhos obtidos pela busca local em relação ao aleatório?</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Plote os valores obtidos acima e interprete seus resultados. </p>
 </div>
                 
               
@@ -745,7 +742,7 @@ Para implementar a *Substituição de objeto* iremos adotar a seguinte estratég
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../08-busca-exaustiva-II/" title="08 - Comparação de resultados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -754,19 +751,19 @@ Para implementar a *Substituição de objeto* iremos adotar a seguinte estratég
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                05 - Algoritmos Aleatorizados
+                08 - Comparação de resultados
               </div>
             </div>
           </a>
         
         
-          <a href="../07-busca-exaustiva/" title="07 - Busca exaustiva" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                07 - Busca exaustiva
+                Travelling Sales Person (TSP)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

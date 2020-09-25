@@ -32,7 +32,8 @@ struct solucao {
     }
 };
 
-int num_hit = 0;
+int num_hit = 0, num_bound = 0;
+
 
 void busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &atual, int i = 0) {
     if (i == obj.size()) {
@@ -40,16 +41,17 @@ void busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &
         if (atual.valor > melhor.valor) {
             std::cerr << "Encontrou melhor:" << melhor.valor << " para " << atual.valor << "\n";
             melhor = atual;
+            num_bound++;
         }
         return;
     }
 
-    busca_exaustiva(obj, C, melhor, atual, i+1);
     if (obj[i].peso <= C) {
         atual.add_objeto(obj[i]);
         busca_exaustiva(obj, C - obj[i].peso, melhor, atual, i+1);
         atual.tira_objeto(obj[i]);
     }
+    busca_exaustiva(obj, C, melhor, atual, i+1);
 }
 
 int main() {
@@ -73,7 +75,7 @@ int main() {
         }
     }
     std::cout << "\n";
-    std::cerr << "num_hit: " << num_hit << "\n";
+    std::cerr << "num_hit: " << num_hit << " num_bound: " << num_bound << "\n";
 
     return 0;
 }
