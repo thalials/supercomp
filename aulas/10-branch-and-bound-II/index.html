@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/09-branch-and-bound/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/10-branch-and-bound-II/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -17,7 +17,7 @@
     
     
       
-        <title>09 - Branch and Bound - SuperComputação - 2020/2</title>
+        <title>10 - Branch and Bound II - SuperComputação - 2020/2</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#09-branch-and-bound" class="md-skip">
+        <a href="#10-branch-and-bound-ii" class="md-skip">
           Skip to content
         </a>
       
@@ -160,7 +160,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              09 - Branch and Bound
+              10 - Branch and Bound II
             
           </span>
         </div>
@@ -290,12 +290,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -409,69 +407,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        09 - Branch and Bound
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="09 - Branch and Bound" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
       09 - Branch and Bound
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
-    Um bound simples: ignorar peso
-  </a>
-  
-    <nav class="md-nav" aria-label="Um bound simples: ignorar peso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avancado" class="md-nav__link">
-    Avançado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analisando-nosso-bound" class="md-nav__link">
-    Analisando nosso bound
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -590,28 +530,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
-    Um bound simples: ignorar peso
+  <a href="#a-mochila-fracionaria" class="md-nav__link">
+    A mochila fracionária
   </a>
-  
-    <nav class="md-nav" aria-label="Um bound simples: ignorar peso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avancado" class="md-nav__link">
-    Avançado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#analisando-nosso-bound" class="md-nav__link">
-    Analisando nosso bound
+  <a href="#a-ordem-importa-estrategia-best-first" class="md-nav__link">
+    A ordem importa? Estratégia Best-first
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-bound-mochila-fracionaria" class="md-nav__link">
+    O bound Mochila fracionária
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analisando-o-bound" class="md-nav__link">
+    Analisando o bound
   </a>
   
 </li>
@@ -628,72 +569,80 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/09-branch-and-bound/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/10-branch-and-bound-II/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="09-branch-and-bound">09 - Branch and Bound<a class="headerlink" href="#09-branch-and-bound" title="Permanent link">&para;</a></h1>
-<p>Vamos começar nossa atividade instrumentando nossa busca exaustiva. Dado que a promessa do nosso algoritmo <em>Branch and Bound</em> é evitar chegar até o fim de uma solução parcial que não tem chance de ser ótima, faz todo sentido então contarmos quantas vezes chegamos até o fim. </p>
+                <h1 id="10-branch-and-bound-ii">10 - Branch and Bound II<a class="headerlink" href="#10-branch-and-bound-ii" title="Permanent link">&para;</a></h1>
+<p>Vimos na expositiva que um bound justo é importante para conseguir ganhos grandes de desempenho no Branch and Bound. </p>
+<h2 id="a-mochila-fracionaria">A mochila fracionária<a class="headerlink" href="#a-mochila-fracionaria" title="Permanent link">&para;</a></h2>
+<p>Nosso relaxamento de restrição permite que um objeto seja incluido em frações. Como vimos na aula, existe um algoritmo simples que dá a solução ótima:</p>
+<ol>
+<li>ordene os objetos por proporção valor/kg.</li>
+<li>pegue os objetos nesta ordem até não caber mais na mochila</li>
+<li>se um objeto não couber inteiro, pegue a maior fração possível</li>
+</ol>
+<p>A resposta da <em>Mochila fracionária</em> provavelmente não será uma <em>Mochila binária</em> viável. Mesmo assim, provamos na aula que ela é um <strong>limitante superior</strong> para a <em>Mochila binária*</em>. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Vamos adicionar dois contadores ao nosso programa</p>
-<ol>
-<li><code>num_leaf</code> conta quantas vezes uma solução completa foi comparada com a melhor possível</li>
-<li><code>num_copy</code> conta quantas vezes foi encontrada uma solução melhor que a atual.</li>
-</ol>
+<p>Implemente a mochila fracionária e execute-a para nossa entrada <code>in150.txt</code>. Sua saída deve estar no formato abaixo.</p>
+<div class="highlight"><pre><span></span><code>valor 
+objeto1(fracao1) .... objetoN(fracaoN)
+</code></pre></div>
+
+<p>Veja o arquivo <code>out150.txt</code> para a resposta esperada neste exercício.</p>
+</div>
+<h2 id="a-ordem-importa-estrategia-best-first">A ordem importa? Estratégia <em>Best-first</em><a class="headerlink" href="#a-ordem-importa-estrategia-best-first" title="Permanent link">&para;</a></h2>
+<p>Antes de incorporar o bound usando mochila fracionária vamos observar o efeito da ordem de análise das soluções. Na nossa primeira tentativa fizemos a busca exaustiva na ordem que os objetos foram apresentados na entrada. Isso resultava nos seguintes indicadores</p>
+<div class="highlight"><pre><span></span><code>num_leaf 770786731 num_copy 44
+</code></pre></div>
+
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Suponha que agora você irá analisar os objetos na ordem usada na <em>Mochila fracionária</em>. Você espera que <code>num_leaf</code> continue igual, aumente ou diminua?</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Rode para o exemplo <code>in150.txt</code> e anote os valores obtidos abaixo.</p>
+<p>Suponha que agora você irá analisar os objetos na ordem usada na <em>Mochila fracionária</em>. Você espera que <code>num_copy</code> continue igual, aumente ou diminua?</p>
 </div>
-<h2 id="um-bound-simples-ignorar-peso">Um bound simples: ignorar peso<a class="headerlink" href="#um-bound-simples-ignorar-peso" title="Permanent link">&para;</a></h2>
-<p>Nesta seção implementaremos um <em>Branch and Bound</em> simples com a seguinte ideia:</p>
-<div class="admonition quote">
-<p class="admonition-title">BOUND</p>
-<p>Complete uma solução parcial incluindo na mochila todos os objetos não selecionados. Isto é equivalente a <strong>relaxar a restrição do peso</strong>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente esta estratégia e verifique se os seus resultados se confirmaram.</p>
+<details class="details"><summary>Resposta</summary><p>Assim como você deve ter respondido nas duas primeiras questões, <code>num_leaf</code> deve continuar igual, mas <code>num_copy</code> vai diminuir muito. </p>
+</details>
+</div>
+<h2 id="o-bound-mochila-fracionaria">O bound <em>Mochila fracionária</em><a class="headerlink" href="#o-bound-mochila-fracionaria" title="Permanent link">&para;</a></h2>
+<p>Vamos agora juntar tudo e implementar o bound <em>Mochila fracionária</em> examinando os objetos na ordem da parte anterior.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Levando em conta que a ordem anterior fez apenas 3 cópias, qual sua expectativa em relação aos possíveis ganhos de desempenho que implementar o bound <em>Mochila fracionária</em> pode trazer?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente o bound. </p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Os contadores <code>num_leaf</code> e <code>num_copy</code> se modificariam ao implementar o <em>Branch and Bound</em>? Se sim, quais deles?</p>
-<details class="tip"><summary>Resposta</summary><p>Somente <code>num_leaf</code>, já que deixamos de chegar em folhas que não tem chance de serem ótimos globais. <code>num_copy</code> continua igual, já que conta o número de vezes que o melhor foi atualizado.</p>
+<p>Quais os valores de <code>num_leaf</code>, <code>num_copy</code> e <code>num_bound</code> para <code>in150.txt</code>?</p>
+</div>
+<h2 id="analisando-o-bound">Analisando o bound<a class="headerlink" href="#analisando-o-bound" title="Permanent link">&para;</a></h2>
+<p>Vamos agora analisar nossas medidas de efetividade do bound.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Compare os valores de <code>num_bound</code> para <em>Ignorar peso</em> e <em>Mochila fracionária</em>. Você consegue tirar conclusões a partir deste valor?</p>
+<details class="details"><summary>Resposta</summary><p>A dica de que tem algo estranho é que <code>num_bound</code> é muito menor. Ou seja, a conclusão de que quanto menor o <code>num_bound</code> melhor é claramente problemática, já que contraria a intuição de que um bound teria que estar ocorrendo várias vezes. Por outro lado, o programa é realmente muito mais rápido, então deve haver algo que não está sendo medido corretamente. </p>
 </details>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Implemente no seu código o <em>Branch and Bound</em> usando o <em>Bound</em> acima. Ou seja, você deverá, ao chegar em um objeto</p>
-<ol>
-<li>Checar se a soma da solução atual mais o bound é melhor que o melhor possível. </li>
-<li>Se não for retorna</li>
-<li>Se for prossegue fazendo a escolha para o objeto atual.</li>
-</ol>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Adicione ao seu programa um contador <code>num_bounds</code> que conta o número de vezes em que evitamos de testar uma solução parcial até o fim.</p>
+<p>Implemente no seu código a contagem de quantas vezes o bound foi feito por nível da recursão.</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Teste seu programa novamente com a entrada <code>in150.txt</code>. Houve ganho de desempenho? Anote abaixo os contadores e interprete seu resultado.</p>
+<p>Compare o resultado acima com o obtido no</p>
+<details class="details"><summary>sd,fjds,</summary></details>
 </div>
-<h3 id="avancado">Avançado<a class="headerlink" href="#avancado" title="Permanent link">&para;</a></h3>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>O bound <em>Ignorar peso</em> depende das escolhas feitas até o momento? Ou seja, se tenho 4 objetos, o bound da solução parcial <code>(1, 0, -, -)</code> é igual ou diferente do bound da solução parcial <code>(1, 1, -, -)</code>?</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Como você poderia economizar trabalho ao calcular o bound? É possível pré-calcular algo?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Reimplemente seu bound, desta vez pré-calculando tudo antes de iniciar a busca_exaustiva. </p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Rode novamente com a entrada <code>in150.txt</code> e verifique se houve ganho de tempo de execução.</p>
-</div>
-<h2 id="analisando-nosso-bound">Analisando nosso bound<a class="headerlink" href="#analisando-nosso-bound" title="Permanent link">&para;</a></h2>
 <p>Conseguimos algum ganho de desempenho ao criar o último bound. Vamos agora descobrir se ele é bom mesmo.</p>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
@@ -735,41 +684,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../08-busca-exaustiva-II/" title="08 - Comparação de resultados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                08 - Comparação de resultados
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Travelling Sales Person (TSP)
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

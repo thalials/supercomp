@@ -34,7 +34,22 @@ struct solucao {
 
 long num_hit = 0, num_copy = 0, num_bound = 0;
 
-int busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &atual, int i = 0) {
+double bound(std::vector<objeto> &obj, int i, int C) {
+    double extra = 0.0;
+    for (; i < obj.size(); i++) {
+        objeto &o = obj[i];
+        if (o.peso <= C) {
+            extra += o.valor;
+            C -= o.peso;
+        } else {
+            extra += o.valor * (double(C) / o.peso);
+            break;
+        }
+    }
+    return extra;
+}
+
+void busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &atual, int i = 0) {
     if (i == obj.size()) {
         num_hit++;
         if (atual.valor > melhor.valor) {
@@ -42,17 +57,20 @@ int busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &a
             melhor = atual;
             num_copy++;
         }
-        return atual.valor;
+        return;
     }
 
-    int com, sem;
+    if (atual.valor + bound(obj, i, C) < melhor.valor) {
+        num_bound++;
+        return;
+    }
+
     if (obj[i].peso <= C) {
         atual.add_objeto(obj[i]);
-        com = busca_exaustiva(obj, C - obj[i].peso, melhor, atual, i+1);
+        busca_exaustiva(obj, C - obj[i].peso, melhor, atual, i+1);
         atual.tira_objeto(obj[i]);
     }
-    sem = busca_exaustiva(obj, C, melhor, atual, i+1);
-    return (com > sem)? com : sem;
+    busca_exaustiva(obj, C, melhor, atual, i+1);
 }
 
 int main() {
@@ -64,6 +82,11 @@ int main() {
         objetos[i].id = i;
         std::cin >> objetos[i].peso >> objetos[i].valor;
     }
+
+    std::sort(objetos.begin(), objetos.end(), [](auto &a, auto &b) -> bool {
+        return double(a.valor) / a.peso > double(b.valor) / b.peso;
+    });
+
 
     solucao melhor(N);
     solucao atual(N);

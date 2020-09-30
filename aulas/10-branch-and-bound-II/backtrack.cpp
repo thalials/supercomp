@@ -65,6 +65,11 @@ int main() {
         std::cin >> objetos[i].peso >> objetos[i].valor;
     }
 
+    std::sort(objetos.begin(), objetos.end(), [](auto &a, auto &b) -> bool {
+        return double(a.valor) / a.peso > double(b.valor) / b.peso;
+    });
+
+
     solucao melhor(N);
     solucao atual(N);
     busca_exaustiva(objetos, W, melhor, atual);
