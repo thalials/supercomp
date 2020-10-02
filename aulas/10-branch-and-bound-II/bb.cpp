@@ -33,6 +33,7 @@ struct solucao {
 };
 
 long num_hit = 0, num_copy = 0, num_bound = 0;
+std::vector<long>bound_level;
 
 double bound(std::vector<objeto> &obj, int i, int C) {
     double extra = 0.0;
@@ -61,6 +62,7 @@ void busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &
     }
 
     if (atual.valor + bound(obj, i, C) < melhor.valor) {
+        bound_level[i]++;
         num_bound++;
         return;
     }
@@ -77,6 +79,8 @@ int main() {
     int N, W;
     std::cin >> N >> W;
     std::vector<objeto> objetos(N);
+    bound_level.resize(N, 0);
+
     
     for (int i = 0; i < N; i++) {
         objetos[i].id = i;
@@ -100,6 +104,10 @@ int main() {
     }
     std::cout << "\n";
     std::cerr << "num_hit: " << num_hit << " num_copy " << num_copy << " num_bound: " << num_bound << "\n";
+    for (auto &i : bound_level) { 
+        std::cerr << i << " ";
+    }
+    std::cerr << "\n";
 
     return 0;
 }

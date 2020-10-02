@@ -290,10 +290,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -412,6 +414,77 @@
     <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
       09 - Branch and Bound
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10 - Branch and Bound II
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="10 - Branch and Bound II" class="md-nav__link md-nav__link--active">
+      10 - Branch and Bound II
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-mochila-fracionaria" class="md-nav__link">
+    A mochila fracionária
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-ordem-importa-estrategia-best-first" class="md-nav__link">
+    A ordem importa? Estratégia Best-first
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-bound-mochila-fracionaria" class="md-nav__link">
+    O bound Mochila fracionária
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analisando-o-bound" class="md-nav__link">
+    Analisando o bound
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -583,7 +656,7 @@
 <li>pegue os objetos nesta ordem até não caber mais na mochila</li>
 <li>se um objeto não couber inteiro, pegue a maior fração possível</li>
 </ol>
-<p>A resposta da <em>Mochila fracionária</em> provavelmente não será uma <em>Mochila binária</em> viável. Mesmo assim, provamos na aula que ela é um <strong>limitante superior</strong> para a <em>Mochila binária*</em>. </p>
+<p>A resposta da <em>Mochila fracionária</em> provavelmente não será uma <em>Mochila binária</em> viável. Mesmo assim, provamos na aula que ela é um <strong>limitante superior</strong> para a <em>Mochila binária</em>. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Implemente a mochila fracionária e execute-a para nossa entrada <code>in150.txt</code>. Sua saída deve estar no formato abaixo.</p>
@@ -640,35 +713,9 @@ objeto1(fracao1) .... objetoN(fracaoN)
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Compare o resultado acima com o obtido no</p>
-<details class="details"><summary>sd,fjds,</summary></details>
-</div>
-<p>Conseguimos algum ganho de desempenho ao criar o último bound. Vamos agora descobrir se ele é bom mesmo.</p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Como você mediria a altura em que o bound agiu? Seria melhor cortar mais para cima ou mais para baixo?</p>
-</div>
-<p>O valor <code>num_bound</code> não ajuda muito a entender se o bound é bom, já que cortar muito pode significar fazê-lo próximo das folhas (e isto gera ganho pequeno de desempenho).</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça seu programa contar o número de vezes em que o bound é ativado em cada nível da recursão. Mostre esses valores no terminal.</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Interprete os resultados acima. </p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça seu programa guardar a diferença média entre o valor do bound (que é uma estimativa da qualidade final de uma solução) e o melhor valor encontrado para aquele ramo da recursão. </p>
-<p><strong>Dica</strong>: você vai precisar retornar o valor da melhor mochila encontrada em cada parte. </p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Interprete os resultados acima.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Plote os valores obtidos acima e interprete seus resultados. </p>
+<p>Compare o resultado acima com o obtido no mesmo teste na aula anterior. Agora você consegue explicar a razão do desempenho da nova implementação ter sido tão melhor?</p>
+<details class="details"><summary>Resposta para a aula anterior</summary><p><code>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 43 32830 536970 250518 792810 1550819 2119857 2475746 2710403 56370234 16347241 14514859 63885823 22061564 111961043 25164499 79575293 47368277 2373877 0 17059720 2265050 423517</code></p>
+</details>
 </div>
                 
               
@@ -684,6 +731,41 @@ objeto1(fracao1) .... objetoN(fracaoN)
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                09 - Branch and Bound
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person (TSP)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

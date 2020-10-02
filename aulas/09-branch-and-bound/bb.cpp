@@ -104,7 +104,7 @@ int main() {
     std::cout << "\n";
     std::cerr << "num_hit: " << num_hit << " num_copy " << num_copy << " num_bound: " << num_bound << "\n";
     for (auto &i : bound_level) { 
-        std::cerr << double(i) / num_bound << " ";
+        std::cerr << i << " ";
     }
     std::cerr << "\n";
 
