@@ -13,7 +13,7 @@
         <meta name="author" content="Igor Montagner, Lucianos Soares">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -21,10 +21,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -46,6 +46,12 @@
       <link rel="stylesheet" href="../../css/printing.css">
     
       <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
     
     
       
@@ -236,7 +242,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2020/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2020/2">
       
@@ -268,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
   </li>
@@ -280,8 +288,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
+    <a href="../../sobre/" class="md-nav__link">
       Burocracias
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../enunciado/" class="md-nav__link">
+      prova
     </a>
   </li>
 
@@ -295,14 +315,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Aulas
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Aulas" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
         Aulas
       </label>
@@ -315,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-introducao/" title="01 - Aquecimento" class="md-nav__link">
+    <a href="../01-introducao/" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -340,7 +360,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="02 - Iniciando C++11" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       02 - Iniciando C++11
     </a>
     
@@ -398,7 +418,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
+    <a href="../03-profiling-e-projeto/" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -410,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04-projeto-heuristicas/" title="04 - Heurísticas" class="md-nav__link">
+    <a href="../04-projeto-heuristicas/" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -422,7 +442,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-nav__link">
+    <a href="../05-algoritmos-aleatorios/" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -434,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-busca-local/" title="06 - Busca local" class="md-nav__link">
+    <a href="../06-busca-local/" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -446,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07-busca-exaustiva/" title="07 - Busca exaustiva" class="md-nav__link">
+    <a href="../07-busca-exaustiva/" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -458,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../08-busca-exaustiva-II/" title="08 - Comparação de resultados" class="md-nav__link">
+    <a href="../08-busca-exaustiva-II/" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -470,7 +490,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
+    <a href="../09-branch-and-bound/" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -482,8 +502,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-branch-and-bound-II/" title="10 - Branch and Bound II" class="md-nav__link">
+    <a href="../10-branch-and-bound-II/" class="md-nav__link">
       10 - Branch and Bound II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11-introducao-paralelismo/" class="md-nav__link">
+      11 - Introdução a paralelismo
     </a>
   </li>
 
@@ -500,14 +532,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Projeto
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Projeto" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon"></span>
         Projeto
       </label>
@@ -520,7 +552,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
+    <a href="../../projetos/" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -532,7 +564,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/checklist/" title="Checklist de projeto" class="md-nav__link">
+    <a href="../../projetos/checklist/" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -544,7 +576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
+    <a href="../../projetos/heuristica/" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -556,7 +588,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-local/" title="Busca local" class="md-nav__link">
+    <a href="../../projetos/busca-local/" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -568,7 +600,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-exaustiva/" title="Busca exaustiva" class="md-nav__link">
+    <a href="../../projetos/busca-exaustiva/" class="md-nav__link">
       Busca exaustiva
     </a>
   </li>
@@ -668,7 +700,6 @@
 
 <span class="k">delete</span><span class="p">[]</span> <span class="n">values</span><span class="p">;</span>
 </code></pre></div>
-
 <p>É alocado um vetor de <code>double</code> de tamanho <code>n</code> (lido do terminal). Após ele ser usado liberamos o espaço alocado usando <code>delete[]</code>. </p>
 <div class="admonition tip">
 <p class="admonition-title">E se eu quiser alocar um só valor?</p>
@@ -707,7 +738,6 @@
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Último elemento: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Elemento 3: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </code></pre></div>
-
 <p>Alguns pontos interessantes deste exemplo:</p>
 <ol>
 <li>Não sabemos o tamanho de <code>vec</code> ao criá-lo. O método <code>push_back</code> aumenta ele quando necessário e não precisamos nos preocupar com isso. </li>
@@ -756,7 +786,6 @@ para i=1..N:
         DY = Y[i] - Y[j]
         D[i,j] = sqrt(DX*DX + DY*DY)
 </code></pre></div>
-
 </details>
 </div>
 <div class="admonition question medium">
@@ -790,14 +819,12 @@ para i=1..N:
 <span class="n">ref</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// 15</span>
 </code></pre></div>
-
 <p>O mesmo poderia ser feito com ponteiros (como mostrado abaixo). A grande vantagem da referência é que não precisamos usar <code>*ref</code> para nos referirmos à variável <code>x</code>! Na atribuição também podemos usar direto <code>int &amp;ref = x</code>, o que torna o código mais limpo e fácil de entender.  </p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">*</span><span class="n">ref</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// precisamos de &amp;x para apontar ref para a variável x</span>
 <span class="o">*</span><span class="n">ref</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// precisamos indicar *ref para atribuir a variável x</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// 15</span>
 </code></pre></div>
-
 <div class="admonition tip">
 <p class="admonition-title">Dicas</p>
 <p>Note que uma referência tem que ser inicializada com a variável a que ela se refere. Ou seja, ao declarar tenho que já indicar a variável destino. </p>
@@ -847,7 +874,6 @@ anterior? O que precisaria ser modificado?</p>
 <details class="details"><summary>Resposta</summary><div class="codehilite"><pre><span></span><code>Não deverá haver ganho de desempenho significativo. Veremos exatamente o por que na próxima aula.
 </code></pre></div>
 
-
 </details>
 </div>
                 
@@ -868,7 +894,7 @@ anterior? O que precisaria ser modificado?</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../01-introducao/" title="01 - Aquecimento" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01-introducao/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -883,7 +909,7 @@ anterior? O que precisaria ser modificado?</p>
           </a>
         
         
-          <a href="../03-profiling-e-projeto/" title="03 - Profiling" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../03-profiling-e-projeto/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -916,8 +942,8 @@ anterior? O que precisaria ser modificado?</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

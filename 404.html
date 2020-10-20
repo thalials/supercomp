@@ -11,7 +11,7 @@
         <meta name="author" content="Igor Montagner, Lucianos Soares">
       
       <link rel="shortcut icon" href="/supercomp/assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
@@ -19,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -44,6 +44,12 @@
       <link rel="stylesheet" href="/supercomp/css/printing.css">
     
       <link rel="stylesheet" href="/supercomp/css/extra.css">
+    
+      <link rel="stylesheet" href="/supercomp/css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="/supercomp/css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="/supercomp/css/pandas-dataframe.css">
     
     
       
@@ -229,7 +235,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2020/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2020/2">
       
@@ -261,7 +269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/." title="Home" class="md-nav__link">
+    <a href="/supercomp/." class="md-nav__link">
       Home
     </a>
   </li>
@@ -273,8 +281,20 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/sobre/" title="Burocracias" class="md-nav__link">
+    <a href="/supercomp/sobre/" class="md-nav__link">
       Burocracias
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="/supercomp/enunciado/" class="md-nav__link">
+      prova
     </a>
   </li>
 
@@ -286,14 +306,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Aulas
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Aulas" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
         Aulas
       </label>
@@ -306,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/01-introducao/" title="01 - Aquecimento" class="md-nav__link">
+    <a href="/supercomp/aulas/01-introducao/" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -318,7 +338,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/02-desempenho/" title="02 - Iniciando C++11" class="md-nav__link">
+    <a href="/supercomp/aulas/02-desempenho/" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -330,7 +350,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
+    <a href="/supercomp/aulas/03-profiling-e-projeto/" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -342,7 +362,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/04-projeto-heuristicas/" title="04 - Heurísticas" class="md-nav__link">
+    <a href="/supercomp/aulas/04-projeto-heuristicas/" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -354,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-nav__link">
+    <a href="/supercomp/aulas/05-algoritmos-aleatorios/" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -366,7 +386,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/06-busca-local/" title="06 - Busca local" class="md-nav__link">
+    <a href="/supercomp/aulas/06-busca-local/" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -378,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/07-busca-exaustiva/" title="07 - Busca exaustiva" class="md-nav__link">
+    <a href="/supercomp/aulas/07-busca-exaustiva/" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -390,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/08-busca-exaustiva-II/" title="08 - Comparação de resultados" class="md-nav__link">
+    <a href="/supercomp/aulas/08-busca-exaustiva-II/" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -402,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
+    <a href="/supercomp/aulas/09-branch-and-bound/" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -414,8 +434,20 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/10-branch-and-bound-II/" title="10 - Branch and Bound II" class="md-nav__link">
+    <a href="/supercomp/aulas/10-branch-and-bound-II/" class="md-nav__link">
       10 - Branch and Bound II
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/supercomp/aulas/11-introducao-paralelismo/" class="md-nav__link">
+      11 - Introdução a paralelismo
     </a>
   </li>
 
@@ -432,14 +464,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Projeto
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Projeto" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         <span class="md-nav__icon md-icon"></span>
         Projeto
       </label>
@@ -452,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
+    <a href="/supercomp/projetos/" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -464,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/checklist/" title="Checklist de projeto" class="md-nav__link">
+    <a href="/supercomp/projetos/checklist/" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -476,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
+    <a href="/supercomp/projetos/heuristica/" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -488,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-local/" title="Busca local" class="md-nav__link">
+    <a href="/supercomp/projetos/busca-local/" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -500,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-exaustiva/" title="Busca exaustiva" class="md-nav__link">
+    <a href="/supercomp/projetos/busca-exaustiva/" class="md-nav__link">
       Busca exaustiva
     </a>
   </li>
@@ -553,8 +585,8 @@
       
     </div>
     
-      <script src="/supercomp/assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="/supercomp/assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="/supercomp/assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="/supercomp/assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
