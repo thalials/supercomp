@@ -14,7 +14,20 @@ double funcao2() {
 int main() {
     double res_func1, res_func2;
     
-    // TODO: chamar funcao1 e funcao2 em paralelo
+    #pragma omp parallel 
+    {
+        #pragma omp master
+        {
+            #pragma omp task 
+            {
+                res_func1 = funcao1();
+            }
+            #pragma omp task 
+            {
+                res_func2 = funcao2();
+            }
+        }
+    }
 
     std::cout << res_func1 << " " << res_func2 << "\n";
 }
