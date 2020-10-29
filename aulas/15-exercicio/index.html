@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/12-introducao-omp/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/15-exercicio/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -17,7 +17,7 @@
     
     
       
-        <title>12 - Introdução a OpenMP - SuperComputação - 2020/2</title>
+        <title>15 - Exercício prático - SuperComputação - 2020/2</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-introducao-a-openmp" class="md-skip">
+        <a href="#15-exercicio-pratico" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              12 - Introdução a OpenMP
+              15 - Exercício prático
             
           </span>
         </div>
@@ -453,63 +453,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        12 - Introdução a OpenMP
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../12-introducao-omp/" class="md-nav__link">
       12 - Introdução a OpenMP
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#primeiros-passos" class="md-nav__link">
-    Primeiros passos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paralelismo-de-tarefas" class="md-nav__link">
-    Paralelismo de tarefas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problema-pratico" class="md-nav__link">
-    Problema prático
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -541,11 +489,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../15-exercicio/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        15 - Exercício prático
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       15 - Exercício prático
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarefas" class="md-nav__link">
+    Tarefas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-paralelo" class="md-nav__link">
+    for paralelo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacao" class="md-nav__link">
+    Comparação
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -676,22 +676,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#primeiros-passos" class="md-nav__link">
-    Primeiros passos
+  <a href="#tarefas" class="md-nav__link">
+    Tarefas
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#paralelismo-de-tarefas" class="md-nav__link">
-    Paralelismo de tarefas
+  <a href="#for-paralelo" class="md-nav__link">
+    for paralelo
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#problema-pratico" class="md-nav__link">
-    Problema prático
+  <a href="#comparacao" class="md-nav__link">
+    Comparação
   </a>
   
 </li>
@@ -708,160 +708,63 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/12-introducao-omp/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/15-exercicio/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="12-introducao-a-openmp">12 - Introdução a OpenMP<a class="headerlink" href="#12-introducao-a-openmp" title="Permanent link">&para;</a></h1>
-<p>OpenMP é uma tecnologia de computação multi-core usada para paralelizar programas. Sua principal vantagem é oferecer uma transição suave entre código sequencial e código paralelo. </p>
-<h2 id="primeiros-passos">Primeiros passos<a class="headerlink" href="#primeiros-passos" title="Permanent link">&para;</a></h2>
-<p>Nesta parte do roteiro usaremos 4 chamadas do OpenMP para criar nossas primeiras threads.</p>
-<ol>
-<li><code>#pragma omp parallel</code> cria um conjunto de threads. Deve ser aplicado acima de um bloco de código limitado por <code>{  }</code></li>
-<li><code>int omp_get_num_threads();</code> retorna o número de threads criadas (dentro de uma região paralela)</li>
-<li><code>int omp_get_max_threads();</code> retorna o número de máximo de threads (fora de uma região paralela)</li>
-<li><code>int omp_get_thread_num();</code> retorna o id da thread atual (entre 0 e o valor acima, dentro de uma região paralela)</li>
-</ol>
-<p>O código abaixo (<em>exemplo1.cpp</em>) ilustra como utilizar OpenMP para criar um conjunto de <em>threads</em> que rodam em paralelo.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel </span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ID:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&quot;</span> <span class="o">&lt;&lt;</span> 
-                        <span class="n">omp_get_num_threads</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Vamos agora fazer alguns experimentos com esse exemplo básico para entender como OpenMP funciona. </p>
+                <h1 id="15-exercicio-pratico">15 - Exercício prático<a class="headerlink" href="#15-exercicio-pratico" title="Permanent link">&para;</a></h1>
+<p>Nesta aula final de de paralelismo multi-core vamos fazer um exercício aberto. A única restrição é criar uma implementação do código no arquivo <em>pi_recursivo.cpp</em> usando tarefas e uma usando <code>for</code> paralelo. Esse roteiro tem apenas algumas perguntas que visam orientar seu trabalho. </p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Compile o programa de exemplo usando a seguinte linha de comando e rode-o.</p>
-<blockquote>
-<p><code>$ g++ -O3 exemplo1.cpp -o exemplo1 -fopenmp</code></p>
-</blockquote>
+<p>Examine o código. Procure entender bem o que está acontecendo antes de prosseguir. </p>
+</div>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>O código tem efeitos colaterais? Existem variáveis que poderiam ser compartilhadas de maneira não intencional? Se sim, você conseguiria refatorar o código para minimizar ou até eliminar esses efeitos colaterais?</p>
+</div>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>Quantas níveis de chamadas recursivas são feitas? Quando o programa para de chamar recursivamente e faz sequencial?</p>
+</div>
+<h2 id="tarefas">Tarefas<a class="headerlink" href="#tarefas" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie uma implementação do <em>pi_recursivo</em> usando tarefas. Meça seu tempo e anote.</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>O OpenMP permite alterar o número máximo de threads criados usando a variável de ambiente <code>OMP_NUM_THREADS</code>. Rode <code>exemplo1</code> como abaixo.</p>
-<blockquote>
-<p><code>OMP_NUM_THREADS=2 ./exemplo1</code> </p>
-</blockquote>
-<p>Quantas threads foram criadas?</p>
+<p>Os ganhos de desempenho foram significativos?</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Rode agora sem a variável de ambiente. Qual é o valor padrão assumido pelo OpenMP? É uma boa ideia usar mais threads que o valor padrão?</p>
-</div>
-<p>A utilização de <code>OMP_NUM_THREADS</code> ajuda a realizar testes de modo a compreender os ganhos de desempenho de um programa conforme mais threads são utilizadas. </p>
-<p>Quando uma região paralela inicia são criadas <code>OMP_NUM_THREADS</code> <em>threads</em> e cada uma roda o bloco de código imediatamente abaixo de maneira independents.</p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>No trecho abaixo, quantas cópias da variável <code>temp</code> são criadas? E da variável <code>res</code>? Responda usando o número de cores da máquina como referência.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="cp">#pragma omp parallel </span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">res</span> <span class="o">*=</span> <span class="n">temp</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<details class="details"><summary>Resposta</summary><p>Só uma variável <code>res</code> existe, pois ela foi declarada fora da região paralela. Existem <code>N</code> cópias de <code>temp</code>, uma criada para cada <em>thread</em> existente.</p>
-</details>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Você consegue prever o resultado do código abaixo? Se sim, qual sua saída? Se não, você consegue explicar o por que?</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="cp">#pragma omp parallel </span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>Quantas tarefas foram criadas? Você escolheu essa valor como?</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Rode o código acima (arquivo <em>exemplo2.cpp</em>) e veja se suas expectativas se cumprem. Aproveite e verifique se o programa retorna o mesmo resultado se executado várias vezes.  Chame o professor se você se surpreender com o resultado.</p>
-<details class="details"><summary>Resposta</summary><p>O código dará resultados estranhos, com <code>res</code> não assumindo o valor <code>N * 10000</code>. Quanto maior o número de threads mais distante do correto o valor resultante será.</p>
-</details>
+<p>Tente números diferentes de tarefas e verifique se o desempenho melhora ou piora. Anote suas conclusões abaixo. </p>
 </div>
+<h2 id="for-paralelo"><code>for</code> paralelo<a class="headerlink" href="#for-paralelo" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Mude o limite do <code>for</code> para <code>1000</code>. Os resultados agora são os esperados? Por que?</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Nos dois exemplos acima as variáveis <code>res</code> eram usadas por múltiplas threads! Ou seja, cada thread possui uma <strong>dependência</strong> em relação a <code>res</code>. Escrever código sem levar em conta as dependências é um problema que será abordado nas próximas aulas. </p>
-</div>
-<h2 id="paralelismo-de-tarefas">Paralelismo de tarefas<a class="headerlink" href="#paralelismo-de-tarefas" title="Permanent link">&para;</a></h2>
-<p>Vamos agora criar <em>tarefas</em> que podem ser executadas em paralelo.</p>
-<div class="admonition tip">
-<p class="admonition-title">Definição</p>
-<p>Uma <strong>tarefa</strong> é um bloco de código que é rodado de maneira paralela usando OpenMP. <em>Tarefas</em> são alocadas para cada uma das <em>threads</em> criadas em um região paralela. Não existe uma associação <strong>1-1</strong> entre <em>threads</em> e <em>tarefas</em>. Posso ter mais <em>tarefas</em> que <em>threads</em> e mais <em>threads</em> que <em>tarefas</em>.</p>
-</div>
-<p>Veja abaixo um exemplo de criação de tarefas.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel </span>
-<span class="p">{</span>
-    <span class="cp">#pragma omp task </span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na tarefa &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;eu só rodo quanto TODAS tarefas acabarem.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</code></pre></div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>O exemplo acima cria quantas tarefas, supondo que <code>OMP_NUM_THREADS=4</code>? </p>
-</div>
-<p>Para controlar a criação de tarefas em geral usamos a diretiva <code>master</code>, que executa somente na thread de índice <code>0</code>. </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel </span>
-<span class="p">{</span>
-    <span class="cp">#pragma omp master </span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;só roda uma vez na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-        <span class="cp">#pragma omp task </span>
-        <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Quantas tarefas são criadas no exemplo acima? Elas rodam em qual thread? Responda somente lendo o código e depois confirme sua resposta rodando <em>exemplo3.cpp</em>. </p>
+<p>Crie uma implementação do <em>pi_recursivo</em> usando for paralelo. Meça seu tempo e anote.</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Execute <em>exemplo3.cpp</em> diversas vezes. Os resultados são sempre iguais? Por que?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Complete <em>exercicio1.cpp</em> criando duas tarefas. A primeira deverá rodar <code>funcao1</code> e a segunda <code>funcao2</code>. Salve seus resultados nas variáveis indicadas no código.</p>
+<p>Os ganhos de desempenho foram significativos?</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Leia o código e responda. Quanto tempo o código sequencial demora? E o paralelo? Verifique que sua implementação está de acordo com suas expectativas.</p>
+<p>Como você fez o paralelismo? Precisou definir o número do <code>for</code> manualmente ou conseguiu realizar a divisão automaticamente? Comente abaixo sua implementação.</p>
 </div>
-<h2 id="problema-pratico">Problema prático<a class="headerlink" href="#problema-pratico" title="Permanent link">&para;</a></h2>
-<p>Vamos agora para um exemplo prático. O código <em>pi-numeric-integration.cpp</em> calcula o <code>pi</code> usando uma técnica chamada integração numérica. </p>
+<h2 id="comparacao">Comparação<a class="headerlink" href="#comparacao" title="Permanent link">&para;</a></h2>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Examine o arquivo acima. Onde haveriam oportunidades de paralelização?</p>
+<p>Compare seus resultados das duas abordagens. Anote abaixo seus resultados.</p>
 </div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Suponha que você irá tentar dividir os cálculos do programa em duas partes. Como você faria isso?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça a divisão do cálculo do <code>pi</code> em duas tarefas. </p>
-<ul>
-<li>Sua primeira tarefa deverá guardar seu resultado na variável <code>res_parte1</code>. </li>
-<li>A segunda tarefa deverá guardar seu resultado na variável <code>res_parte2</code>. </li>
-<li>Você deverá somar os dois resultados após as tarefas acabarem.</li>
-</ul>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Meça o tempo do programa paralelizado e compare com o original. Verifique também que os resultados continuam iguais.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>É possível conseguir tempos muito parecidos com ambas, então se uma delas ficou muito mais lenta é hora de rever o que foi feito. </p>
 </div>
                 
               
@@ -881,7 +784,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../11-introducao-paralelismo/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../14-efeitos-colaterais/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -890,19 +793,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                11 - Introdução a paralelismo
+                14 - Efeitos colaterais
               </div>
             </div>
           </a>
         
         
-          <a href="../13-paralelismo-dados/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                13 - Paralelismo de dados
+                Travelling Sales Person (TSP)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
