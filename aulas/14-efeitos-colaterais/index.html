@@ -640,6 +640,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/multi-core/" class="md-nav__link">
+      Paralelismo multi-core
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -701,6 +713,7 @@
                 
                 <h1 id="14-efeitos-colaterais">14 - Efeitos colaterais<a class="headerlink" href="#14-efeitos-colaterais" title="Permanent link">&para;</a></h1>
 <p>Nesta aula iremos aprender a controlar os efeitos colaterais de programas paralelos. Nossa estratégia se baseará na ideia de que o resultado de um programa paralelo deverá se manter igual em toda execução, a não ser que explicitamente seja pedido o contrário. </p>
+<p>!!! tip "Cheat Sheet OpenMP</p>
 <h2 id="geradores-de-numeros-aleatorios">Geradores de números aleatórios<a class="headerlink" href="#geradores-de-numeros-aleatorios" title="Permanent link">&para;</a></h2>
 <p>Na última aula vimos que nossa implementação de <code>discard</code> era <code>O(N)</code>, o que tornava nosso algoritmo <span><span class="MathJax_Preview">O(N^2)</span><script type="math/tex">O(N^2)</script></span> e invalidava qualquer ganho vindo do paralelismo. Vamos então abdicar de uma implementação literalmente igual à sequencial e tomar como boa uma implementação que, mantendo fixo o número de threads, retorna sempre os mesmos resultados. Ou seja, adicionamos como parâmetro do programa o número de threads a serem usadas. Se mantivermos os mesmos parâmetros (agora incluindo número de threads) os resultados serão mantidos.</p>
 <p>Claramente não é o ideal, mas é suficiente se formos explícitos nessa condição. Lembrando que um dos nossos objetivos é ganhar desempenho mantendo a previsibilidade e a reprodutibilidade.</p>

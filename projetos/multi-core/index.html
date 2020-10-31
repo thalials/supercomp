@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/04-projeto-heuristicas/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/multi-core/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -17,7 +17,7 @@
     
     
       
-        <title>04 - Heurísticas - SuperComputação - 2020/2</title>
+        <title>Paralelismo multi-core - SuperComputação - 2020/2</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#04-heuristicas" class="md-skip">
+        <a href="#paralelismo-multi-core" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              04 - Heurísticas
+              Paralelismo multi-core
             
           </span>
         </div>
@@ -298,12 +298,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -323,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-introducao/" class="md-nav__link">
+    <a href="../../aulas/01-introducao/" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -335,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02-desempenho/" class="md-nav__link">
+    <a href="../../aulas/02-desempenho/" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -347,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03-profiling-e-projeto/" class="md-nav__link">
+    <a href="../../aulas/03-profiling-e-projeto/" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -357,70 +355,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        04 - Heurísticas
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../aulas/04-projeto-heuristicas/" class="md-nav__link">
       04 - Heurísticas
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#resumo-do-problema" class="md-nav__link">
-    Resumo do problema
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mais-caro-primeiro" class="md-nav__link">
-    Mais caro primeiro
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mais-leve-primeiro" class="md-nav__link">
-    Mais leve primeiro
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analisando-nossas-heuristicas" class="md-nav__link">
-    Analisando nossas heurísticas
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -430,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-algoritmos-aleatorios/" class="md-nav__link">
+    <a href="../../aulas/05-algoritmos-aleatorios/" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -442,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-busca-local/" class="md-nav__link">
+    <a href="../../aulas/06-busca-local/" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -454,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07-busca-exaustiva/" class="md-nav__link">
+    <a href="../../aulas/07-busca-exaustiva/" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -466,7 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../08-busca-exaustiva-II/" class="md-nav__link">
+    <a href="../../aulas/08-busca-exaustiva-II/" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -478,7 +417,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09-branch-and-bound/" class="md-nav__link">
+    <a href="../../aulas/09-branch-and-bound/" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -490,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-branch-and-bound-II/" class="md-nav__link">
+    <a href="../../aulas/10-branch-and-bound-II/" class="md-nav__link">
       10 - Branch and Bound II
     </a>
   </li>
@@ -502,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../11-introducao-paralelismo/" class="md-nav__link">
+    <a href="../../aulas/11-introducao-paralelismo/" class="md-nav__link">
       11 - Introdução a paralelismo
     </a>
   </li>
@@ -514,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../12-introducao-omp/" class="md-nav__link">
+    <a href="../../aulas/12-introducao-omp/" class="md-nav__link">
       12 - Introdução a OpenMP
     </a>
   </li>
@@ -526,7 +465,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../13-paralelismo-dados/" class="md-nav__link">
+    <a href="../../aulas/13-paralelismo-dados/" class="md-nav__link">
       13 - Paralelismo de dados
     </a>
   </li>
@@ -538,7 +477,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../14-efeitos-colaterais/" class="md-nav__link">
+    <a href="../../aulas/14-efeitos-colaterais/" class="md-nav__link">
       14 - Efeitos colaterais
     </a>
   </li>
@@ -550,7 +489,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../15-exercicio/" class="md-nav__link">
+    <a href="../../aulas/15-exercicio/" class="md-nav__link">
       15 - Exercício prático
     </a>
   </li>
@@ -565,10 +504,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Projeto
@@ -588,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -600,7 +541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/checklist/" class="md-nav__link">
+    <a href="../checklist/" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -612,7 +553,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/heuristica/" class="md-nav__link">
+    <a href="../heuristica/" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -624,7 +565,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-local/" class="md-nav__link">
+    <a href="../busca-local/" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -636,7 +577,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-exaustiva/" class="md-nav__link">
+    <a href="../busca-exaustiva/" class="md-nav__link">
       Busca exaustiva
     </a>
   </li>
@@ -648,7 +589,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/desempenho-sequencial/" class="md-nav__link">
+    <a href="../desempenho-sequencial/" class="md-nav__link">
       Desempenho sequencial
     </a>
   </li>
@@ -658,11 +599,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../projetos/multi-core/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Paralelismo multi-core
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Paralelismo multi-core
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao-do-programa" class="md-nav__link">
+    Compilação do programa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correcao-automatica" class="md-nav__link">
+    Correção automática
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -695,29 +681,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#resumo-do-problema" class="md-nav__link">
-    Resumo do problema
+  <a href="#compilacao-do-programa" class="md-nav__link">
+    Compilação do programa
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mais-caro-primeiro" class="md-nav__link">
-    Mais caro primeiro
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mais-leve-primeiro" class="md-nav__link">
-    Mais leve primeiro
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analisando-nossas-heuristicas" class="md-nav__link">
-    Analisando nossas heurísticas
+  <a href="#correcao-automatica" class="md-nav__link">
+    Correção automática
   </a>
   
 </li>
@@ -734,109 +706,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/04-projeto-heuristicas/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/multi-core.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="04-heuristicas">04 - Heurísticas<a class="headerlink" href="#04-heuristicas" title="Permanent link">&para;</a></h1>
-<p>A atividade prática de hoje consiste em implementar heurísticas para a solução do problema da <strong>Mochila binária</strong>.</p>
-<h2 id="resumo-do-problema">Resumo do problema<a class="headerlink" href="#resumo-do-problema" title="Permanent link">&para;</a></h2>
-<p>Dados <code>N</code> objetos e uma mochila que comporta até <code>W</code> quilos, cada um com peso <span><span class="MathJax_Preview">w_i</span><script type="math/tex">w_i</script></span> e valor <span><span class="MathJax_Preview">v_i</span><script type="math/tex">v_i</script></span>, selecionar objetos com o maior valor possível que caibam dentro da mochila.</p>
-<p><strong>Entrada</strong>:
-<div class="highlight"><pre><span></span><code>N W
-w1 v1
-....
-wN vN
-</code></pre></div></p>
-<p><strong>Saída</strong>:
-<div class="highlight"><pre><span></span><code>W V opt
-o1 ... oT
-</code></pre></div></p>
-<ul>
-<li><code>W</code> - peso dos objetos selecionados</li>
-<li><code>V</code> - valor dos objetos selecionados</li>
-<li><code>opt</code><ul>
-<li><code>0</code> se for usada uma heurística ou busca local</li>
-<li><code>1</code> se a solução for ótimo global</li>
-</ul>
-</li>
-<li><code>oi</code> são os índices (<em>em ordem crescente</em>) dos objetos selecionados</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Arquivos para verificar a corretude das suas implementações estão disponíveis nesta pasta. Eles estão nomeados como <code>in-*.txt</code>, <code>mais-caro-out-*.txt</code> e <code>mais-leve-out-*.txt</code>.</p>
-</div>
-<h2 id="mais-caro-primeiro">Mais caro primeiro<a class="headerlink" href="#mais-caro-primeiro" title="Permanent link">&para;</a></h2>
-<p>A ideia desta heurística é não deixar nenhum objeto valioso para trás! Por isso vamos ser ganaciosos e pegar <strong>primeiro os objetos mais caros</strong>! Se um objeto valioso não couber passamos para os mais baratos e prosseguimos até examinar todos objetos. </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Escreva abaixo um algoritmo em pseudo-código para implementar a heurística descrita acima.</p>
-<details class="details"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>ids = // vetor inicializado com ids[i] = i
-ordene os vetores ids, v e w de acordo com o vetor de valores v
-peso = 0
-valor = 0
-resposta = //vetor inicializado com 0
-T = 0 // número de objetos selecionados
-para i=1..N
-    se peso + w[i] &lt; W então
-        resposta[T] = ids[i]
-        peso += w[i]
-        valor += v[i]
-        T += 1
-
-print peso, valor, 0
-print resposta[0 .. T]
+                <h1 id="paralelismo-multi-core">Paralelismo multi-core<a class="headerlink" href="#paralelismo-multi-core" title="Permanent link">&para;</a></h1>
+<p>Seu trabalho nesta atividade será criar uma implementação paralela do algoritmo de busca local. </p>
+<h2 id="compilacao-do-programa">Compilação do programa<a class="headerlink" href="#compilacao-do-programa" title="Permanent link">&para;</a></h2>
+<p>Seu programa multi-core deverá ser gerado a partir do mesmo código fonte do sequencial. Ou seja, compilar com <code>-fopenmp</code> habilita o programa paralelo. Compilar sem obtem os resultados sequenciais. Caso seu programa use as chamadas do OpenMP para códigos auxiliares (alocação de memória, etc), você pode checar se seu programa foi compilado com esta flag seguindo o exemplo abaixo. </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifdef _OPENMP</span>
+    <span class="c1">// código específico para multi-core aqui</span>
+<span class="cp">#else</span>
+    <span class="c1">// código específico para sequencia aqui</span>
+<span class="cp">#endif </span>
 </code></pre></div>
-</details>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Qual é a complexidade computacional deste algoritmo? Ele é a melhor implementação possível?</p>
-<details class="details"><summary>Resposta</summary><p>Se o algoritmo descrito em sua resposta anterior envolver ordenação, então ele tem complexidade <span><span class="MathJax_Preview">\mathcal{O}(n\log n)</span><script type="math/tex">\mathcal{O}(n\log n)</script></span> e é o melhor possível sim (você consegue explicar por que?). Se você fez um loop duplo que procura pelo maior a cada iteração então seu algoritmo é <span><span class="MathJax_Preview">\mathcal{O}(n^2)</span><script type="math/tex">\mathcal{O}(n^2)</script></span>.</p>
-</details>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Agora que temos um algoritmo, crie uma implementação do programa acima. </p>
-<p><strong>Dica</strong>: </p>
-<ul>
-<li>C++ já possui um algoritmo de ordenação implementado no cabeçalho <a href="http://cplusplus.com/reference/algorithm/sort/"><code>&lt;algorithm&gt;</code></a>. Use-o.</li>
-<li>Busque por ordenação indireta para entender como ordenar os três vetores ao mesmo tempo.</li>
-<li>Pode ser conveniente organizar os dados usando <code>struct</code>.</li>
-</ul>
-</div>
-<h2 id="mais-leve-primeiro">Mais leve primeiro<a class="headerlink" href="#mais-leve-primeiro" title="Permanent link">&para;</a></h2>
-<p>Vamos testar uma abordagem oposta: <strong>quantidade agora é o foco</strong>. Por isso vamos ser práticos e pegar <strong>o maior número de objetos possível</strong>! Começaremos agora pelos objetos mais leves e vamos torcer para que a quantidade grande de objetos selecionados resulte em uma mochila com alto valor. </p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Compare esta heurística com a da seção anterior levando em conta o algoritmo em pseudo-código e sua complexidade computacional.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Quais partes do programa da heurística anterior podem ser aproveitadas para implementar a descrita acima?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Implemente agora a heurística do mais leve. Chame seu programa de <code>mais_leve</code>, mantendo também o código do anterior.</p>
-</div>
-<h2 id="analisando-nossas-heuristicas">Analisando nossas heurísticas<a class="headerlink" href="#analisando-nossas-heuristicas" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Crie uma entrada em que a heurística do mais valioso seja muito melhor que a do mais leve. Escreva abaixo as saídas de cada programa.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Crie uma entrada em que a heurística do mais leve seja muito melhor que a do mais valioso. Escreva abaixo as saídas de cada programa.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Com base nas suas respostas acima, em quais situações a heurística do mais valioso é melhor?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Com base nas suas respostas acima, em quais situações a heurística do mais leve é melhor?</p>
-</div>
+<h2 id="correcao-automatica">Correção automática<a class="headerlink" href="#correcao-automatica" title="Permanent link">&para;</a></h2>
+<p>Se seu programa for compilado com <code>-fopenmp</code> ele deverá rodar usando todas as CPUs pelo máximo de tempo possível. O corretor automático checará as seguintes condições:</p>
+<ol>
+<li>o tempo de execução cai ao menos pela metade ao rodar a versão paralela. Cheque as instruções de contagem de tempo na parte de <a href="desempenho sequencial">/projetos/desempenho-sequencial</a>.</li>
+<li>o consumo médio de CPU durante a execução do programa é maior que <code>75%</code> para cada core.</li>
+<li>as mesmas checagens do algoritmo sequencial serão feitas. Ou seja, seu programa deverá funcionar de maneira idêntica ao algoritmo sequencial. <strong>Os resultados não precisam ser exatamente os mesmos, mas o programa deverá gerar soluções com as mesmas propriedades.</strong></li>
+</ol>
                 
               
               
@@ -855,7 +746,7 @@ print resposta[0 .. T]
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../03-profiling-e-projeto/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../desempenho-sequencial/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -864,25 +755,11 @@ print resposta[0 .. T]
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                03 - Profiling
+                Desempenho sequencial
               </div>
             </div>
           </a>
         
-        
-          <a href="../05-algoritmos-aleatorios/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                05 - Algoritmos Aleatorizados
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
