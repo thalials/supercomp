@@ -298,10 +298,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -519,6 +521,56 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        19 - Operações customizadas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      19 - Operações customizadas
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-2d-matrizes-e-imagens" class="md-nav__link">
+    Estruturas 2D - matrizes e imagens
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -686,11 +738,13 @@
 <p>Para criar nossas próprias operações usamos a seguinte sintaxe:</p>
 <div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">custom_transform</span>
 <span class="p">{</span>
-    <span class="c1">// essas marcações indicam que o código deve ser compilado para CPU (host) e GPU (device)</span>
+    <span class="c1">// essas marcações indicam que o código deve ser compilado para CPU (host) </span>
+    <span class="c1">// e GPU (device)</span>
     <span class="c1">// IMPORTANTE: somente código com a marcação __device__ é compilado para GPU</span>
     <span class="n">__host__</span> <span class="n">__device__</span>
         <span class="kt">double</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-            <span class="c1">// isto pode ser usado com um transform que usa dois vetores e coloca o resultado em um terceiro.</span>
+            <span class="c1">// isto pode ser usado com um transform que usa dois vetores </span>
+            <span class="c1">// e coloca o resultado em um terceiro.</span>
 
             <span class="c1">// x é um elemento do primeiro vetor</span>
             <span class="c1">// y é o elemento correspondente do segundo vetor</span>
@@ -747,6 +801,8 @@ x = k % largura
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
 <p>Retome os arquivos <code>imagem.h/cpp</code> da <a href="https://insper.github.io/supercomp/aulas/13-paralelismo-dados/#exercicio-pratico">aula 13</a>. Quais dados você precisaria copiar para a GPU? Quais dados seriam copiados de volta para a CPU ao finalizar?</p>
+<details class="details"><summary>Resposta</summary><p>É necessário copiar o vetor pixels e o tamanho total da imagem para a GPU, o que significa que teremos um vetor para a imagem de entrada. O vetor de saída também deve ser criado na GPU, mas não precisa ser inicializado. Após o cálculo ele deverá ser copiado de volta para a CPU.</p>
+</details>
 </div>
 <p>Podemos copiar dados de ponteiros "crus" para a GPU com uma sintaxe parecida com os nossos <code>host_vector</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="o">*</span><span class="n">dados</span><span class="p">;</span> <span class="c1">// possui N elementos</span>
@@ -754,7 +810,45 @@ x = k % largura
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Use uma transformação customizada para implementar o filtro do limiar. Aproveite os arquivos e tarefas da </p>
+<p>Use uma transformação customizada para implementar o filtro do limiar. Use os arquivos examinados na pergunta anterior. </p>
+</div>
+<p>A operação acima encaixa bem na <code>thrust</code> pois é ponto a ponto: cada processamento só leva em conta o valor do ponto atual. A maioria dos filtros, porém, usa informações da vizinhança de um ponto. Um exemplo é o <em>filtro de média</em> mostrado abaixo.</p>
+<p>Dada uma imagem de entrada <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>, a imagem de saída <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span> é dada pela seguinte expressão.</p>
+<div>
+<div class="MathJax_Preview">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</div>
+<script type="math/tex; mode=display">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</script>
+</div>
+<p>Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área válida da imagem ele deve ser considerado 0. </p>
+<p>Apesar da <code>thrust</code> nos permitir acessar os dados de cada iteração, o acesso a elementos arbitrários do vetor não é diretamente suportado. Apesar de ser possível fazer isto com iteradores e tuplas, vamos usar uma abordagem um pouco diferente: acessar o vetor diretamente e usar a <code>thrust</code> para fornecer ao nossa transformação customizada o índice a ser usado. Vejamos abaixo um exemplo (arquivo <em>raw_access.cu</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">raw_access</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+
+    <span class="n">raw_access</span> <span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="o">:</span> <span class="n">ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{};</span>
+
+    <span class="n">__device__</span> <span class="n">__host__</span>
+    <span class="kt">double</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="p">...</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">counting_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">raw_access</span> <span class="nf">ra</span><span class="p">(</span><span class="n">thrust</span><span class="o">::</span><span class="n">raw_pointer_cast</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">iter</span><span class="o">+</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ra</span><span class="p">);</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>No código acima nossa operação customizada recebe o vetor como parâmetro de criação do <code>struct</code>. O valor passado pelo <code>transform</code> agora é o <strong>índice a ser preenchido no vetor de saída</strong>. Para simplificar, em geral vamos entender que o vetor de entrada e o de saída são do mesmo tamanho. Ou seja, conseguimos escrever código em GPU trabalhando somente com ponteiros e índices. Código arbitrariamente complexo pode estar dentro do <code>operator()</code>, desde que seja retornado o valor a ser colocado no vetor de saída na posição <code>i</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>No caso acima o vetor de entrada e saída eram o mesmo. Não há problema pois a operação só acessa o elemento <code>i</code>. Porém, se acessasse outros não conseguimos garantir a ordem das operações e os resultados seriam imprevisíveis. Na dúvida, sempre envie os dados para um vetor de saída diferente.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
 </div>
                 
               
@@ -770,6 +864,41 @@ x = k % largura
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../17-gpu-iteradores/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                18 - Iteradores em Thrust
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person (TSP)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
