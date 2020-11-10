@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/multi-core/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/17-gpu-iteradores/">
       
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
@@ -17,7 +17,7 @@
     
     
       
-        <title>Paralelismo multi-core - SuperComputação - 2020/2</title>
+        <title>18 - Iteradores em Thrust - SuperComputação - 2020/2</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paralelismo-multi-core" class="md-skip">
+        <a href="#18-iteradores-em-thrust" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Paralelismo multi-core
+              18 - Iteradores em Thrust
             
           </span>
         </div>
@@ -298,10 +298,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -321,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/01-introducao/" class="md-nav__link">
+    <a href="../01-introducao/" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -333,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/02-desempenho/" class="md-nav__link">
+    <a href="../02-desempenho/" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -345,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/03-profiling-e-projeto/" class="md-nav__link">
+    <a href="../03-profiling-e-projeto/" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -357,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/04-projeto-heuristicas/" class="md-nav__link">
+    <a href="../04-projeto-heuristicas/" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -369,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/05-algoritmos-aleatorios/" class="md-nav__link">
+    <a href="../05-algoritmos-aleatorios/" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -381,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/06-busca-local/" class="md-nav__link">
+    <a href="../06-busca-local/" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -393,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/07-busca-exaustiva/" class="md-nav__link">
+    <a href="../07-busca-exaustiva/" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -405,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/08-busca-exaustiva-II/" class="md-nav__link">
+    <a href="../08-busca-exaustiva-II/" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -417,7 +419,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/09-branch-and-bound/" class="md-nav__link">
+    <a href="../09-branch-and-bound/" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -429,7 +431,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/10-branch-and-bound-II/" class="md-nav__link">
+    <a href="../10-branch-and-bound-II/" class="md-nav__link">
       10 - Branch and Bound II
     </a>
   </li>
@@ -441,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/11-introducao-paralelismo/" class="md-nav__link">
+    <a href="../11-introducao-paralelismo/" class="md-nav__link">
       11 - Introdução a paralelismo
     </a>
   </li>
@@ -453,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/12-introducao-omp/" class="md-nav__link">
+    <a href="../12-introducao-omp/" class="md-nav__link">
       12 - Introdução a OpenMP
     </a>
   </li>
@@ -465,7 +467,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/13-paralelismo-dados/" class="md-nav__link">
+    <a href="../13-paralelismo-dados/" class="md-nav__link">
       13 - Paralelismo de dados
     </a>
   </li>
@@ -477,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/14-efeitos-colaterais/" class="md-nav__link">
+    <a href="../14-efeitos-colaterais/" class="md-nav__link">
       14 - Efeitos colaterais
     </a>
   </li>
@@ -489,7 +491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/15-exercicio/" class="md-nav__link">
+    <a href="../15-exercicio/" class="md-nav__link">
       15 - Exercício prático
     </a>
   </li>
@@ -501,108 +503,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/16-intro-gpu/" class="md-nav__link">
+    <a href="../16-intro-gpu/" class="md-nav__link">
       16/17 - Introdução a GPU
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      Projeto
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Projeto" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
-        Projeto
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../" class="md-nav__link">
-      Travelling Sales Person (TSP)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../checklist/" class="md-nav__link">
-      Checklist de projeto
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../heuristica/" class="md-nav__link">
-      Heurística da cidade mais próxima
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../busca-local/" class="md-nav__link">
-      Busca local
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../busca-exaustiva/" class="md-nav__link">
-      Busca exaustiva
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../desempenho-sequencial/" class="md-nav__link">
-      Desempenho sequencial
     </a>
   </li>
 
@@ -622,12 +524,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Paralelismo multi-core
+        18 - Iteradores em Thrust
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Paralelismo multi-core
+      18 - Iteradores em Thrust
     </a>
     
       
@@ -644,15 +546,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilacao-do-programa" class="md-nav__link">
-    Compilação do programa
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#correcao-automatica" class="md-nav__link">
-    Correção automática
+  <a href="#operacoes-customizaveis" class="md-nav__link">
+    Operações customizáveis
   </a>
   
 </li>
@@ -661,6 +563,104 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Projeto
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Projeto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/" class="md-nav__link">
+      Travelling Sales Person (TSP)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/checklist/" class="md-nav__link">
+      Checklist de projeto
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/heuristica/" class="md-nav__link">
+      Heurística da cidade mais próxima
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/busca-local/" class="md-nav__link">
+      Busca local
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/busca-exaustiva/" class="md-nav__link">
+      Busca exaustiva
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/desempenho-sequencial/" class="md-nav__link">
+      Desempenho sequencial
+    </a>
   </li>
 
         
@@ -693,15 +693,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilacao-do-programa" class="md-nav__link">
-    Compilação do programa
+  <a href="#iteradores" class="md-nav__link">
+    Iteradores
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#correcao-automatica" class="md-nav__link">
-    Correção automática
+  <a href="#operacoes-customizaveis" class="md-nav__link">
+    Operações customizáveis
   </a>
   
 </li>
@@ -718,29 +718,75 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/multi-core.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/17-gpu-iteradores/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="paralelismo-multi-core">Paralelismo multi-core<a class="headerlink" href="#paralelismo-multi-core" title="Permanent link">&para;</a></h1>
-<p>Seu trabalho nesta atividade será criar uma implementação paralela do algoritmo de busca local. </p>
-<h2 id="compilacao-do-programa">Compilação do programa<a class="headerlink" href="#compilacao-do-programa" title="Permanent link">&para;</a></h2>
-<p>Seu programa multi-core deverá ser gerado a partir do mesmo código fonte do sequencial. Ou seja, compilar com <code>-fopenmp</code> habilita o programa paralelo. Compilar sem obtem os resultados sequenciais. Caso seu programa use as chamadas do OpenMP para códigos auxiliares (alocação de memória, etc), você pode checar se seu programa foi compilado com esta flag seguindo o exemplo abaixo. </p>
-<div class="highlight"><pre><span></span><code><span class="cp">#ifdef _OPENMP</span>
-    <span class="c1">// código específico para multi-core aqui</span>
-<span class="cp">#else</span>
-    <span class="c1">// código específico para sequencia aqui</span>
-<span class="cp">#endif </span>
-</code></pre></div>
-<h2 id="correcao-automatica">Correção automática<a class="headerlink" href="#correcao-automatica" title="Permanent link">&para;</a></h2>
-<p>Se seu programa for compilado com <code>-fopenmp</code> ele deverá rodar usando todas as CPUs pelo máximo de tempo possível. O corretor automático checará as seguintes condições:</p>
+                <h1 id="18-iteradores-em-thrust">18 - Iteradores em Thrust<a class="headerlink" href="#18-iteradores-em-thrust" title="Permanent link">&para;</a></h1>
+<p>Na última aula conseguimos rodar algumas funções em GPU e medir o custo de transferência de dados. Chegamos a conclusão de que, para valer a pena usar a GPU, ou precisamos tratar muitos dados ou precisamos fazer tratamentos pesados.</p>
+<h2 id="iteradores">Iteradores<a class="headerlink" href="#iteradores" title="Permanent link">&para;</a></h2>
+<p>Continuando a partir do último item da aula anterior, suponha que você deseja calcular a variância das diferenças. Agora que já temos a média, a fórmula da variância é dada por</p>
+<div>
+<div class="MathJax_Preview">\frac{1}{n}\sum_{i=0}^n (x_i - \mu)^2</div>
+<script type="math/tex; mode=display">\frac{1}{n}\sum_{i=0}^n (x_i - \mu)^2</script>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Já sabemos tudo o que precisamos para fazer este cálculo. Crie um vetor em que todas as componentes sejam iguais a média (usando <code>thrust::fill</code>) e compute a variância usando a fórmula acima.</p>
+</div>
+<p>Apesar do código acima funcionar, ele tem um problema grave: é preciso alocar um vetor inteiro somente para preenchê-lo com valores iguais! Se estivermos trabalhando com muitos dados isto significa diminuir bastante a quantidade de dados que conseguimos tratar antes de acabar com a memória da GPU. Podemos contornar isso usando iteradores, que são vetores gerados dinamicamente pela thrust a partir de um valor único ou a partir de outros vetores.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Pesquise a documentação de <code>thrust::constant_iterator</code> e use-o para substituir a alocação de memória extra no exercício acima.</p>
+</div>
+<p>Vamos agora nos preparar para a parte 2 criando um programa novamente em cima do arquivo <code>stocks.txt</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Leia o arquivo <code>stocks.txt</code> e crie um vetor contendo a diferença entre o dia atual e o anterior. Ou seja, dado que o vetor de saída tenha nome <code>ganho_diario</code> e o de entrada <code>stocks</code>, temos que</p>
+<p><code>ganho_diario[i] = stocks[i+1] - stocks[i]</code></p>
+<p>Claramente <code>ganho_diario.size() == stocks.size() - 1</code>. Leve isto em conta ao utilizar a operação <code>transform</code> para criar o vetor <code>ganho_diario</code>.</p>
+</div>
+<h2 id="operacoes-customizaveis">Operações customizáveis<a class="headerlink" href="#operacoes-customizaveis" title="Permanent link">&para;</a></h2>
+<p>Com o vetor <code>ganho_diario</code> acima conseguimos saber se o valor da ação subiu ou caiu de um dia para o outro! Duas perguntas se seguem:</p>
 <ol>
-<li>o tempo de execução cai ao menos pela metade ao rodar a versão paralela. Cheque as instruções de contagem de tempo na parte de <a href="desempenho sequencial">/projetos/desempenho-sequencial</a>.</li>
-<li>o consumo médio de CPU durante a execução do programa é maior que <code>75%</code> para cada core.</li>
-<li>as mesmas checagens do algoritmo sequencial serão feitas. Ou seja, seu programa deverá funcionar de maneira idêntica ao algoritmo sequencial. <strong>Os resultados não precisam ser exatamente os mesmos, mas o programa deverá gerar soluções com as mesmas propriedades.</strong></li>
+<li>quantas vezes o valor subiu?</li>
+<li>qual é o aumento médio, considerando só as vezes em que o valor aumentou de fato?</li>
 </ol>
-<p>Execute o corretor de dentro da pasta <code>busca-local</code> para ver os resultados do teste multi-core.</p>
+<p>Podemos implementar essas lógicas usando operações customizadas. Apesar de ser possível escrever essas funções do zero, a <code>thrust</code> já possui diversas funções de reduções customizáveis.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>É sempre importante consultar a documentação para entender como essa função será aplicada. Em alguns casos é necessário que a função passada obedeça algumas restrições para que os resultados obtidos façam sentido.</p>
+</div>
+<div class="admonition note short">
+<p class="admonition-title">Note</p>
+<p>A <code>thrust</code> já tem suporte a operações de redução que são contagens. Veja sua documentação oficial <a href="https://thrust.github.io/doc/group__counting.html">neste link</a>. Qual função dessa página você usaria para contar somente os elementos positivos de <code>ganhos_diarios</code>?</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A função <code>count_if</code> está atualmente com um erro em sua documentação (<a href="https://github.com/thrust/thrust/issues/1148">link da issue</a>). Não se esqueça de colocar <code>const</code> no parâmetro de <code>operator()</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use a função acima para calcular quantas vezes o valor da ação subiu.</p>
+<details class="details"><summary>Resposta</summary><p><code>1309</code></p>
+</details>
+</div>
+<p>Vamos agora para o segundo item: "Calcular o aumento médio, considerando somente as vezes em que o valor aumentou de fato". Uma estratégia possível é <strong>zerar</strong> todos os elementos negativos do vetor e depois calcular sua soma.</p>
+<div class="admonition note short">
+<p class="admonition-title">Note</p>
+<p>A <a href="https://thrust.github.io/doc/group__transformations.html">documentação sobre transformações</a> é bastante vasta. Você consegue encontrar alguma função que possa <strong>substituir</strong> elementos de um vetor baseado em uma condição booleana?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use a função acima para substituir todos os valores negativos por <code>0</code> em <code>ganhos_diarios</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Calcule agora e média dos valores positivos do vetor. Você já tem todos os que são positivos no exercício acima e a quantidade de valores positivos.</p>
+<details class="details"><summary>Resposta</summary><p><code>5,25179</code></p>
+</details>
+</div>
                 
               
               
@@ -759,7 +805,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../desempenho-sequencial/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../16-intro-gpu/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -768,11 +814,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Desempenho sequencial
+                16/17 - Introdução a GPU
               </div>
             </div>
           </a>
         
+        
+          <a href="../../projetos/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Travelling Sales Person (TSP)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
