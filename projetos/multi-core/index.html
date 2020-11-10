@@ -7,22 +7,24 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/multi-core/">
+      
       
         <meta name="author" content="Igor Montagner, Lucianos Soares">
       
-      <link rel="shortcut icon" href="/supercomp/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
-        <title>SuperComputação - 2020/2</title>
+        <title>Paralelismo multi-core - SuperComputação - 2020/2</title>
       
     
     
-      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -41,15 +43,15 @@
     
     
     
-      <link rel="stylesheet" href="/supercomp/css/printing.css">
+      <link rel="stylesheet" href="../../css/printing.css">
     
-      <link rel="stylesheet" href="/supercomp/css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-      <link rel="stylesheet" href="/supercomp/css/ansi-colours.css">
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
     
-      <link rel="stylesheet" href="/supercomp/css/jupyter-cells.css">
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
     
-      <link rel="stylesheet" href="/supercomp/css/pandas-dataframe.css">
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
     
     
       
@@ -70,6 +72,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#paralelismo-multi-core" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -159,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              Paralelismo multi-core
             
           </span>
         </div>
@@ -269,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/." class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
   </li>
@@ -281,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/sobre/" class="md-nav__link">
+    <a href="../../sobre/" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -314,7 +321,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/01-introducao/" class="md-nav__link">
+    <a href="../../aulas/01-introducao/" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -326,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/02-desempenho/" class="md-nav__link">
+    <a href="../../aulas/02-desempenho/" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -338,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/03-profiling-e-projeto/" class="md-nav__link">
+    <a href="../../aulas/03-profiling-e-projeto/" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -350,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/04-projeto-heuristicas/" class="md-nav__link">
+    <a href="../../aulas/04-projeto-heuristicas/" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -362,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/05-algoritmos-aleatorios/" class="md-nav__link">
+    <a href="../../aulas/05-algoritmos-aleatorios/" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -374,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/06-busca-local/" class="md-nav__link">
+    <a href="../../aulas/06-busca-local/" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -386,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/07-busca-exaustiva/" class="md-nav__link">
+    <a href="../../aulas/07-busca-exaustiva/" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -398,7 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/08-busca-exaustiva-II/" class="md-nav__link">
+    <a href="../../aulas/08-busca-exaustiva-II/" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -410,7 +417,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/09-branch-and-bound/" class="md-nav__link">
+    <a href="../../aulas/09-branch-and-bound/" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -422,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/10-branch-and-bound-II/" class="md-nav__link">
+    <a href="../../aulas/10-branch-and-bound-II/" class="md-nav__link">
       10 - Branch and Bound II
     </a>
   </li>
@@ -434,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/11-introducao-paralelismo/" class="md-nav__link">
+    <a href="../../aulas/11-introducao-paralelismo/" class="md-nav__link">
       11 - Introdução a paralelismo
     </a>
   </li>
@@ -446,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/12-introducao-omp/" class="md-nav__link">
+    <a href="../../aulas/12-introducao-omp/" class="md-nav__link">
       12 - Introdução a OpenMP
     </a>
   </li>
@@ -458,7 +465,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/13-paralelismo-dados/" class="md-nav__link">
+    <a href="../../aulas/13-paralelismo-dados/" class="md-nav__link">
       13 - Paralelismo de dados
     </a>
   </li>
@@ -470,7 +477,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/14-efeitos-colaterais/" class="md-nav__link">
+    <a href="../../aulas/14-efeitos-colaterais/" class="md-nav__link">
       14 - Efeitos colaterais
     </a>
   </li>
@@ -482,7 +489,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/15-exercicio/" class="md-nav__link">
+    <a href="../../aulas/15-exercicio/" class="md-nav__link">
       15 - Exercício prático
     </a>
   </li>
@@ -494,7 +501,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/16-intro-gpu/" class="md-nav__link">
+    <a href="../../aulas/16-intro-gpu/" class="md-nav__link">
       16/17 - Introdução a GPU
     </a>
   </li>
@@ -506,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/17-gpu-iteradores/" class="md-nav__link">
+    <a href="../../aulas/17-gpu-iteradores/" class="md-nav__link">
       18 - Iteradores em Thrust
     </a>
   </li>
@@ -521,10 +528,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Projeto
@@ -544,7 +553,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/" class="md-nav__link">
+    <a href="../" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -556,7 +565,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/checklist/" class="md-nav__link">
+    <a href="../checklist/" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -568,7 +577,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/heuristica/" class="md-nav__link">
+    <a href="../heuristica/" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -580,7 +589,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-local/" class="md-nav__link">
+    <a href="../busca-local/" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -592,7 +601,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-exaustiva/" class="md-nav__link">
+    <a href="../busca-exaustiva/" class="md-nav__link">
       Busca exaustiva
     </a>
   </li>
@@ -604,7 +613,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/desempenho-sequencial/" class="md-nav__link">
+    <a href="../desempenho-sequencial/" class="md-nav__link">
       Desempenho sequencial
     </a>
   </li>
@@ -614,11 +623,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/multi-core/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Paralelismo multi-core
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Paralelismo multi-core
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao-do-programa" class="md-nav__link">
+    Compilação do programa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correcao-automatica" class="md-nav__link">
+    Correção automática
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -634,12 +688,73 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compilacao-do-programa" class="md-nav__link">
+    Compilação do programa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correcao-automatica" class="md-nav__link">
+    Correção automática
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/multi-core.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="paralelismo-multi-core">Paralelismo multi-core<a class="headerlink" href="#paralelismo-multi-core" title="Permanent link">&para;</a></h1>
+<p>Seu trabalho nesta atividade será criar uma implementação paralela do algoritmo de busca local. </p>
+<h2 id="compilacao-do-programa">Compilação do programa<a class="headerlink" href="#compilacao-do-programa" title="Permanent link">&para;</a></h2>
+<p>Seu programa multi-core deverá ser gerado a partir do mesmo código fonte do sequencial. Ou seja, compilar com <code>-fopenmp</code> habilita o programa paralelo. Compilar sem obtem os resultados sequenciais. Caso seu programa use as chamadas do OpenMP para códigos auxiliares (alocação de memória, etc), você pode checar se seu programa foi compilado com esta flag seguindo o exemplo abaixo. </p>
+<div class="highlight"><pre><span></span><code><span class="cp">#ifdef _OPENMP</span>
+    <span class="c1">// código específico para multi-core aqui</span>
+<span class="cp">#else</span>
+    <span class="c1">// código específico para sequencia aqui</span>
+<span class="cp">#endif </span>
+</code></pre></div>
+<h2 id="correcao-automatica">Correção automática<a class="headerlink" href="#correcao-automatica" title="Permanent link">&para;</a></h2>
+<p>Se seu programa for compilado com <code>-fopenmp</code> ele deverá rodar usando todas as CPUs pelo máximo de tempo possível. O corretor automático checará as seguintes condições:</p>
+<ol>
+<li>o tempo de execução cai ao menos pela metade ao rodar a versão paralela. Cheque as instruções de contagem de tempo na parte de <a href="desempenho sequencial">/projetos/desempenho-sequencial</a>.</li>
+<li>o consumo médio de CPU durante a execução do programa é maior que <code>75%</code> para cada core.</li>
+<li>as mesmas checagens do algoritmo sequencial serão feitas. Ou seja, seu programa deverá funcionar de maneira idêntica ao algoritmo sequencial. <strong>Os resultados não precisam ser exatamente os mesmos, mas o programa deverá gerar soluções com as mesmas propriedades.</strong></li>
+</ol>
+<p>Execute o corretor de dentro da pasta <code>busca-local</code> para ver os resultados do teste multi-core.</p>
+                
+              
               
                 
 
@@ -652,6 +767,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../desempenho-sequencial/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Desempenho sequencial
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -669,22 +805,22 @@
       
     </div>
     
-      <script src="/supercomp/assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="/supercomp/assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "/supercomp/",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "/supercomp/assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
-        <script src="/supercomp/translate-admonitions.js"></script>
+        <script src="../../translate-admonitions.js"></script>
       
     
   </body>

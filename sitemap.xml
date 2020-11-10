@@ -99,5 +99,9 @@
      <loc>https://insper.github.io/supercomp/projetos/desempenho-sequencial/</loc>
      <lastmod>2020-11-10</lastmod>
      <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://insper.github.io/supercomp/projetos/multi-core/</loc>
+     <lastmod>2020-11-10</lastmod>
+     <changefreq>daily</changefreq>
     </url>
 </urlset>
