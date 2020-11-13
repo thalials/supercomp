@@ -559,6 +559,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#anexo-2" class="md-nav__link">
+    Anexo 2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -730,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#anexo-2" class="md-nav__link">
+    Anexo 2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -811,6 +825,22 @@
 <details class="details"><summary>Resposta</summary><p><code>5,25179</code></p>
 </details>
 </div>
+<h2 id="anexo-2">Anexo 2<a class="headerlink" href="#anexo-2" title="Permanent link">&para;</a></h2>
+<p>É possível compilar código <code>thrust</code> direto na CPU usando OpenMP e o <code>g++</code>. Para fazer isto você precisa</p>
+<ol>
+<li>baixar o código fonte da <code>thrust</code> <a href="https://github.com/NVIDIA/thrust">no github</a>.</li>
+<li>adicionar as seguintes flags no g++<ul>
+<li><code>-DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP</code>: diz que a paralelização de <code>device_vetor</code> será usando OpenMP</li>
+<li><code>-I/home/....</code>: o caminho passado será usado na busca por <code>include</code>s. Coloque o caminho do repositório da <code>thrust</code></li>
+<li><code>-fopenmp</code>: já conhecemos este ;)</li>
+<li><code>-x c++</code>: força a compilação de arquivos <code>.cu</code> como código fonte C++</li>
+</ul>
+</li>
+</ol>
+<p>Para testar, compile o arquivo <em>thrust_cpu.cu</em> disponível nesta pasta com o seguinte comando:</p>
+<blockquote>
+<p>$ g++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -I/caminho/para/thrust/  -fopenmp -x c++ thrust_cpu.cu -o thrust_cpu</p>
+</blockquote>
                 
               
               

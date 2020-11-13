@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://insper.github.io/supercomp/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/sobre/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/01-introducao/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/02-desempenho/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/03-profiling-e-projeto/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/04-projeto-heuristicas/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/05-algoritmos-aleatorios/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/06-busca-local/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/07-busca-exaustiva/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/08-busca-exaustiva-II/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/09-branch-and-bound/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/10-branch-and-bound-II/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/11-introducao-paralelismo/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/12-introducao-omp/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/13-paralelismo-dados/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/14-efeitos-colaterais/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/15-exercicio/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/16-intro-gpu/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/17-gpu-iteradores/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/aulas/18-transformacoes-customizadas/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/checklist/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/heuristica/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/busca-local/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/busca-exaustiva/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/desempenho-sequencial/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://insper.github.io/supercomp/projetos/multi-core/</loc>
-     <lastmod>2020-11-10</lastmod>
+     <lastmod>2020-11-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
