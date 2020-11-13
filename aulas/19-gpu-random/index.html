@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -13,29 +15,27 @@
         <meta name="author" content="Igor Montagner, Lucianos Soares">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>GPU e números aleatórios - SuperComputação - 2020/2</title>
+        <title>20 - GPU e números aleatórios - SuperComputação - 2020/2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#757575">
-        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
-    
-    
-    
       
         
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -63,18 +63,16 @@
     
     
     
-    
-    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
-      
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#gpu-e-numeros-aleatorios" class="md-skip">
+        <a href="#20-gpu-e-numeros-aleatorios" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +164,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              GPU e números aleatórios
+              20 - GPU e números aleatórios
             
           </span>
         </div>
@@ -232,6 +230,8 @@
     
     <div class="md-container" data-md-component="container">
       
+        
+      
       
         
       
@@ -242,9 +242,7 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2020/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2020/2">
       
@@ -276,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -288,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../sobre/" class="md-nav__link">
+    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -307,11 +305,15 @@
     
     <label class="md-nav__link" for="nav-3">
       Aulas
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="Aulas" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Aulas
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -323,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-introducao/" class="md-nav__link">
+    <a href="../01-introducao/" title="01 - Aquecimento" class="md-nav__link">
       01 - Aquecimento
     </a>
   </li>
@@ -335,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02-desempenho/" class="md-nav__link">
+    <a href="../02-desempenho/" title="02 - Iniciando C++11" class="md-nav__link">
       02 - Iniciando C++11
     </a>
   </li>
@@ -347,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03-profiling-e-projeto/" class="md-nav__link">
+    <a href="../03-profiling-e-projeto/" title="03 - Profiling" class="md-nav__link">
       03 - Profiling
     </a>
   </li>
@@ -359,7 +361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04-projeto-heuristicas/" class="md-nav__link">
+    <a href="../04-projeto-heuristicas/" title="04 - Heurísticas" class="md-nav__link">
       04 - Heurísticas
     </a>
   </li>
@@ -371,7 +373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05-algoritmos-aleatorios/" class="md-nav__link">
+    <a href="../05-algoritmos-aleatorios/" title="05 - Algoritmos Aleatorizados" class="md-nav__link">
       05 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -383,7 +385,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06-busca-local/" class="md-nav__link">
+    <a href="../06-busca-local/" title="06 - Busca local" class="md-nav__link">
       06 - Busca local
     </a>
   </li>
@@ -395,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07-busca-exaustiva/" class="md-nav__link">
+    <a href="../07-busca-exaustiva/" title="07 - Busca exaustiva" class="md-nav__link">
       07 - Busca exaustiva
     </a>
   </li>
@@ -407,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../08-busca-exaustiva-II/" class="md-nav__link">
+    <a href="../08-busca-exaustiva-II/" title="08 - Comparação de resultados" class="md-nav__link">
       08 - Comparação de resultados
     </a>
   </li>
@@ -419,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09-branch-and-bound/" class="md-nav__link">
+    <a href="../09-branch-and-bound/" title="09 - Branch and Bound" class="md-nav__link">
       09 - Branch and Bound
     </a>
   </li>
@@ -431,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../10-branch-and-bound-II/" class="md-nav__link">
+    <a href="../10-branch-and-bound-II/" title="10 - Branch and Bound II" class="md-nav__link">
       10 - Branch and Bound II
     </a>
   </li>
@@ -443,7 +445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../11-introducao-paralelismo/" class="md-nav__link">
+    <a href="../11-introducao-paralelismo/" title="11 - Introdução a paralelismo" class="md-nav__link">
       11 - Introdução a paralelismo
     </a>
   </li>
@@ -455,7 +457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../12-introducao-omp/" class="md-nav__link">
+    <a href="../12-introducao-omp/" title="12 - Introdução a OpenMP" class="md-nav__link">
       12 - Introdução a OpenMP
     </a>
   </li>
@@ -467,7 +469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../13-paralelismo-dados/" class="md-nav__link">
+    <a href="../13-paralelismo-dados/" title="13 - Paralelismo de dados" class="md-nav__link">
       13 - Paralelismo de dados
     </a>
   </li>
@@ -479,7 +481,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../14-efeitos-colaterais/" class="md-nav__link">
+    <a href="../14-efeitos-colaterais/" title="14 - Efeitos colaterais" class="md-nav__link">
       14 - Efeitos colaterais
     </a>
   </li>
@@ -491,7 +493,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../15-exercicio/" class="md-nav__link">
+    <a href="../15-exercicio/" title="15 - Exercício prático" class="md-nav__link">
       15 - Exercício prático
     </a>
   </li>
@@ -503,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../16-intro-gpu/" class="md-nav__link">
+    <a href="../16-intro-gpu/" title="16/17 - Introdução a GPU" class="md-nav__link">
       16/17 - Introdução a GPU
     </a>
   </li>
@@ -515,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../17-gpu-iteradores/" class="md-nav__link">
+    <a href="../17-gpu-iteradores/" title="18 - Iteradores em Thrust" class="md-nav__link">
       18 - Iteradores em Thrust
     </a>
   </li>
@@ -527,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../18-transformacoes-customizadas/" class="md-nav__link">
+    <a href="../18-transformacoes-customizadas/" title="19 - Operações customizadas" class="md-nav__link">
       19 - Operações customizadas
     </a>
   </li>
@@ -548,12 +550,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        GPU e números aleatórios
-        <span class="md-nav__icon md-icon"></span>
+        20 - GPU e números aleatórios
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
-    <a href="./" class="md-nav__link md-nav__link--active">
-      GPU e números aleatórios
+    <a href="./" title="20 - GPU e números aleatórios" class="md-nav__link md-nav__link--active">
+      20 - GPU e números aleatórios
     </a>
     
       
@@ -564,7 +568,9 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -572,6 +578,13 @@
         <li class="md-nav__item">
   <a href="#revisao-de-numeros-aleatorios" class="md-nav__link">
     Revisão de números aleatórios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeds-em-programas-paralelos" class="md-nav__link">
+    Seeds em programas paralelos
   </a>
   
 </li>
@@ -606,11 +619,15 @@
     
     <label class="md-nav__link" for="nav-4">
       Projeto
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="Projeto" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Projeto
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -622,7 +639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/" class="md-nav__link">
+    <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-nav__link">
       Travelling Sales Person (TSP)
     </a>
   </li>
@@ -634,7 +651,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/checklist/" class="md-nav__link">
+    <a href="../../projetos/checklist/" title="Checklist de projeto" class="md-nav__link">
       Checklist de projeto
     </a>
   </li>
@@ -646,7 +663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/heuristica/" class="md-nav__link">
+    <a href="../../projetos/heuristica/" title="Heurística da cidade mais próxima" class="md-nav__link">
       Heurística da cidade mais próxima
     </a>
   </li>
@@ -658,7 +675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-local/" class="md-nav__link">
+    <a href="../../projetos/busca-local/" title="Busca local" class="md-nav__link">
       Busca local
     </a>
   </li>
@@ -670,7 +687,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/busca-exaustiva/" class="md-nav__link">
+    <a href="../../projetos/busca-exaustiva/" title="Busca exaustiva" class="md-nav__link">
       Busca exaustiva
     </a>
   </li>
@@ -682,7 +699,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/desempenho-sequencial/" class="md-nav__link">
+    <a href="../../projetos/desempenho-sequencial/" title="Desempenho sequencial" class="md-nav__link">
       Desempenho sequencial
     </a>
   </li>
@@ -694,7 +711,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../projetos/multi-core/" class="md-nav__link">
+    <a href="../../projetos/multi-core/" title="Paralelismo multi-core" class="md-nav__link">
       Paralelismo multi-core
     </a>
   </li>
@@ -723,7 +740,9 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -731,6 +750,13 @@
         <li class="md-nav__item">
   <a href="#revisao-de-numeros-aleatorios" class="md-nav__link">
     Revisão de números aleatórios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeds-em-programas-paralelos" class="md-nav__link">
+    Seeds em programas paralelos
   </a>
   
 </li>
@@ -759,7 +785,10 @@
                   </a>
                 
                 
-                <h1 id="gpu-e-numeros-aleatorios">GPU e números aleatórios<a class="headerlink" href="#gpu-e-numeros-aleatorios" title="Permanent link">&para;</a></h1>
+                  
+                
+                
+                <h1 id="20-gpu-e-numeros-aleatorios">20 - GPU e números aleatórios<a class="headerlink" href="#20-gpu-e-numeros-aleatorios" title="Permanent link">&para;</a></h1>
 <h2 id="revisao-de-numeros-aleatorios">Revisão de números aleatórios<a class="headerlink" href="#revisao-de-numeros-aleatorios" title="Permanent link">&para;</a></h2>
 <p>Um gerador de números pseudo-aleatórios (RNG) é um algoritmo <strong>determinístico</strong> que gera uma sequência de números que <strong>parece</strong> aleatória. Essa frase possui dois termos importantes que precisamos destrinchar:</p>
 <ul>
@@ -781,7 +810,47 @@
 <p class="admonition-title">Question</p>
 <p>Consulte a documentação oficial da <code>thrust</code> e encontre as páginas que descrevem os <strong>engines</strong> e <strong>distributions</strong> implementados.</p>
 </div>
-<p>Vamos agora repetir o exercício da parte anterior em <code>thrust</code>.</p>
+<p>Vamos agora fazer um uso básico dessas funções.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie um programa que leia um inteiro <em>seed</em> do terminal e:</p>
+<ol>
+<li>crie um objeto <code>default_random_engine</code> que o utilize como seed.</li>
+<li>mostre no terminal uma sequência de 10 números fracionários tirados de uma distribuição uniforme <code>[25, 40]</code>.</li>
+</ol>
+<p>Seu programa deverá estar implementado usando os tipos definidos em <code>thrust::random</code>.</p>
+</div>
+<p>Um ponto importante da API <code>thrust</code> para geração de números aleatórios é que essas funções podem ser chamadas dentro de operações customizadas! Nosso próximo exercício trata justamente deste uso.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça um programa que cria um vetor com 10 elementos e aplica uma operação customizada que seta cada elemento com um valor aleatório. Use as mesmas configurações do exercício anterior. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Você pode prosseguir se seu vetor tem 10 números iguais.</p>
+</div>
+<h2 id="seeds-em-programas-paralelos">Seeds em programas paralelos<a class="headerlink" href="#seeds-em-programas-paralelos" title="Permanent link">&para;</a></h2>
+<p>Um desafio em programas paralelos é gerar sequências pseudo-aleatórias de qualidade. Se não tormarmos cuidado acabamos gerando os mesmos números em threads diferentes e desperdiçamos grande quantidade de trabalho! Em geral existem duas abordagens</p>
+<p><strong>Abordagem 1</strong>: usar <em>seeds</em> diferentes em cada thread.</p>
+<p><strong>Abordagem 2</strong>: usar a mesma <em>seed</em> em todas as threads, mas cada uma começa em um ponto diferente da sequência daquela seed.</p>
+<p>Note que em ambos os casos os resultados dependem do número de threads usadas! Como vimos em aulas anteriores, um <em>RNG</em> tem estado interno e não pode ser facilmente compartilhado entre várias threads.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente a abordagem 1 no exercício da parte anterior. Para isto você pode usar a estratégia de acesso direto aos dados (como foi feito no exercício da imagem) e usar o índice recebido como <em>seed</em>.</p>
+</div>
+<p>Você deve ter percebido que todos os números gerados são parecidos, mas não idênticos. Isso ocorre pois geradores com *seed*s próximos geram sequências que são inicialmente parecidas (e depois diferem). Podemos consertar isto usando seeds mais distantes.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Multiplique <code>i</code> por um valor grande e tente de novo. Verifique que agora os números são diferentes</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente a abordagem 2 no exercício da parte anterior. Para isto você pode <em>descartar</em> os <em>i</em> primeiros números aleatórios gerados. Procure na documentação oficial como fazer isto.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Agora compare o desempenho das duas abordagens. Ao invés de 10 valores, use <code>N=100 000</code>. Há diferença? Exite razão para preferir uma em relação a outra?</p>
+</div>
 <h2 id="exercicio-pratico">Exercício prático<a class="headerlink" href="#exercicio-pratico" title="Permanent link">&para;</a></h2>
 <p>Vamos trabalhar com um método probabilístico de estimação do <code>pi</code> neste último exercício. O algoritmo sequencial se baseia em sorteios de pontos dentro de um quadrado de lado <code>2</code>. Se a distância entre o ponto e o centro do quadrado for menor que 1 então o ponto cai dentro do círculo inscrito no quadrado. A quantidade de pontos que caem dentro do quadrado é proporcional a <span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>. </p>
 <ol>
@@ -796,6 +865,10 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Faça uma implementação sequencial deste algoritmo e rode-a para <code>N=100 000</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Paralelize o código acima em GPU. Use uma das duas abordagens acima para lidar com os geradores de números aleatórios.</p>
 </div>
                 
               
@@ -815,7 +888,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../18-transformacoes-customizadas/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../18-transformacoes-customizadas/" title="19 - Operações customizadas" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -830,7 +903,7 @@
           </a>
         
         
-          <a href="../../projetos/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Travelling Sales Person (TSP)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -863,15 +936,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
