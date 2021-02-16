@@ -1,4 +1,6 @@
 
+
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -8,32 +10,30 @@
       
       
       
-        <meta name="author" content="Igor Montagner, Lucianos Soares">
+        <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
       
       <link rel="shortcut icon" href="/supercomp/assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>SuperComputação - 2020/2</title>
+        <title>SuperComputação - 2021/1</title>
       
     
     
-      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="/supercomp/assets/stylesheets/main.63b94e9e.min.css">
       
-        
-        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.ab28b872.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#757575">
-        
+        <link rel="stylesheet" href="/supercomp/assets/stylesheets/palette.7f672a1f.min.css">
       
-    
-    
-    
       
         
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -61,11 +61,9 @@
     
     
     
-    
-    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
-      
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -114,6 +112,8 @@
 
 <script>
   window.site_url = "https://insper.github.io/supercomp/";
+  window.submissions_url = "http://localhost:8081";
+  window.course_id = "1";
 </script>
 
 <div class="md-printing-header">
@@ -122,8 +122,8 @@
 
   <div class="frontmatter">
     <div class="materia"> SuperComputação </div>
-    <div class="professor"> Igor Montagner, Luciano Soares </div>
-    <div class="semestre"> 2020/2 </div>
+    <div class="professor"> Igor Montagner, Antônio Selvatici </div>
+    <div class="semestre"> 2021/1 </div>
   </div>
 </div>
 
@@ -135,9 +135,9 @@
     <!-- Link to home -->
     <a
       href="https://insper.github.io/supercomp/"
-      title="SuperComputação - 2020/2"
+      title="SuperComputação - 2021/1"
       class="md-header-nav__button md-logo"
-      aria-label="SuperComputação - 2020/2"
+      aria-label="SuperComputação - 2021/1"
     >
       
   
@@ -155,7 +155,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            SuperComputação - 2020/2
+            SuperComputação - 2021/1
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -225,6 +225,8 @@
     
     <div class="md-container" data-md-component="container">
       
+        
+      
       
         
       
@@ -235,17 +237,15 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2020/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2020/2">
+    <a href="https://insper.github.io/supercomp/" title="SuperComputação - 2021/1" class="md-nav__button md-logo" aria-label="SuperComputação - 2021/1">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    SuperComputação - 2020/2
+    SuperComputação - 2021/1
   </label>
   
     <div class="md-nav__source">
@@ -269,7 +269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/." class="md-nav__link">
+    <a href="/supercomp/." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -281,7 +281,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/sobre/" class="md-nav__link">
+    <a href="/supercomp/sobre/" title="Burocracias" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -298,11 +298,15 @@
     
     <label class="md-nav__link" for="nav-3">
       Aulas
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="Aulas" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Aulas
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -314,8 +318,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/01-introducao/" class="md-nav__link">
-      01 - Aquecimento
+    <a href="/supercomp/aulas/01-introducao/" title="01 - Introdução" class="md-nav__link">
+      01 - Introdução
     </a>
   </li>
 
@@ -326,212 +330,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/aulas/02-desempenho/" class="md-nav__link">
-      02 - Iniciando C++11
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/03-profiling-e-projeto/" class="md-nav__link">
-      03 - Profiling
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/04-projeto-heuristicas/" class="md-nav__link">
-      04 - Heurísticas
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/05-algoritmos-aleatorios/" class="md-nav__link">
-      05 - Algoritmos Aleatorizados
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/06-busca-local/" class="md-nav__link">
-      06 - Busca local
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/07-busca-exaustiva/" class="md-nav__link">
-      07 - Busca exaustiva
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/08-busca-exaustiva-II/" class="md-nav__link">
-      08 - Comparação de resultados
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/09-branch-and-bound/" class="md-nav__link">
-      09 - Branch and Bound
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/10-branch-and-bound-II/" class="md-nav__link">
-      10 - Branch and Bound II
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/11-introducao-paralelismo/" class="md-nav__link">
-      11 - Introdução a paralelismo
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/12-introducao-omp/" class="md-nav__link">
-      12 - Introdução a OpenMP
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/13-paralelismo-dados/" class="md-nav__link">
-      13 - Paralelismo de dados
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/14-efeitos-colaterais/" class="md-nav__link">
-      14 - Efeitos colaterais
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/15-exercicio/" class="md-nav__link">
-      15 - Exercício prático
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/16-intro-gpu/" class="md-nav__link">
-      16/17 - Introdução a GPU
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/17-gpu-iteradores/" class="md-nav__link">
-      18 - Iteradores em Thrust
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/18-transformacoes-customizadas/" class="md-nav__link">
-      19 - Operações customizadas
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/aulas/19-gpu-random/" class="md-nav__link">
-      20 - GPU e números aleatórios
+    <a href="/supercomp/aulas/02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
+      02/03 - Implementação em C++
     </a>
   </li>
 
@@ -552,11 +352,15 @@
     
     <label class="md-nav__link" for="nav-4">
       Projeto
-      <span class="md-nav__icon md-icon"></span>
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
     <nav class="md-nav" aria-label="Projeto" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         Projeto
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -568,116 +372,8 @@
 
 
   <li class="md-nav__item">
-    <a href="/supercomp/projetos/" class="md-nav__link">
-      Travelling Sales Person (TSP)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/checklist/" class="md-nav__link">
-      Checklist de projeto
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/heuristica/" class="md-nav__link">
-      Heurística da cidade mais próxima
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-local/" class="md-nav__link">
-      Busca local
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/busca-exaustiva/" class="md-nav__link">
-      Busca exaustiva
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/desempenho-sequencial/" class="md-nav__link">
-      Desempenho sequencial
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/multi-core/" class="md-nav__link">
-      Paralelismo multi-core
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/gpu/" class="md-nav__link">
-      Paralelismo em GPU
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/relatorio/" class="md-nav__link">
-      Relatório de desempenho
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="/supercomp/projetos/desempenho-final/" class="md-nav__link">
-      Desempenho final
+    <a href="/supercomp/projetos/" title="TBA" class="md-nav__link">
+      TBA
     </a>
   </li>
 
@@ -729,15 +425,15 @@
       
     </div>
     
-      <script src="/supercomp/assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="/supercomp/assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="/supercomp/assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="/supercomp/assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "/supercomp/",
           features: [],
           search: Object.assign({
-            worker: "/supercomp/assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "/supercomp/assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
