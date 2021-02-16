@@ -9,23 +9,23 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/04-profiling/">
       
       
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>TBA - SuperComputação - 2021/1</title>
+        <title>04 - Medição de desempenho - SuperComputação - 2021/1</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.63b94e9e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -43,15 +43,15 @@
     
     
     
-      <link rel="stylesheet" href="../css/printing.css">
+      <link rel="stylesheet" href="../../css/printing.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-      <link rel="stylesheet" href="../css/ansi-colours.css">
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
     
-      <link rel="stylesheet" href="../css/jupyter-cells.css">
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
     
-      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
     
     
       
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tba" class="md-skip">
+        <a href="#04-medicao-de-desempenho" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              TBA
+              04 - Medição de desempenho
             
           </span>
         </div>
@@ -276,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -288,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sobre/" title="Burocracias" class="md-nav__link">
+    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -298,10 +298,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -325,7 +327,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aulas/01-introducao/" title="01 - Introdução" class="md-nav__link">
+    <a href="../01-introducao/" title="01 - Introdução" class="md-nav__link">
       01 - Introdução
     </a>
   </li>
@@ -337,7 +339,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aulas/02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
+    <a href="../02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
       02/03 - Implementação em C++
     </a>
   </li>
@@ -347,11 +349,67 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../aulas/04-profiling/" title="04 - Medição de desempenho" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        04 - Medição de desempenho
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="04 - Medição de desempenho" class="md-nav__link md-nav__link--active">
       04 - Medição de desempenho
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparacao" class="md-nav__link">
+    Preparação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medindo-os-tempos-no-seu-proprio-programa" class="md-nav__link">
+    Medindo os tempos no seu próprio programa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes-versao-2" class="md-nav__link">
+    Matrizes (versão 2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -364,12 +422,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Projeto
@@ -391,20 +447,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="TBA" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../projetos/" title="TBA" class="md-nav__link">
       TBA
     </a>
-    
   </li>
 
         
@@ -430,6 +477,37 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparacao" class="md-nav__link">
+    Preparação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medindo-os-tempos-no-seu-proprio-programa" class="md-nav__link">
+    Medindo os tempos no seu próprio programa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrizes-versao-2" class="md-nav__link">
+    Matrizes (versão 2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,7 +518,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/04-profiling/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -448,7 +526,101 @@
                   
                 
                 
-                <h1 id="tba">TBA<a class="headerlink" href="#tba" title="Permanent link">&para;</a></h1>
+                <h1 id="04-medicao-de-desempenho">04 - Medição de desempenho<a class="headerlink" href="#04-medicao-de-desempenho" title="Permanent link">&para;</a></h1>
+<p>Apesar de podermos medir o tempo que nosso programa demora usando o comando <code>time</code>, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de <strong>Profiling</strong>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Software</p>
+<p>Para esta aula precisaremos dos seguintes pacotes instalados. </p>
+<ul>
+<li><code>valgrind</code> - ferramenta de análise de código executável</li>
+<li><code>kcachegrind</code> - visualizador de resultados do <code>valgrind</code></li>
+</ul>
+</div>
+<h2 id="preparacao">Preparação<a class="headerlink" href="#preparacao" title="Permanent link">&para;</a></h2>
+<p>É preciso compilar um executável com profiling habilitado para medir os tempos. </p>
+<div class="highlight"><pre><span></span><code>g++ -g euclides-ingenuo.cpp -o euclides-ingenuo
+</code></pre></div>
+<p>Após este passo, devemos executar o programa usando o <code>valgrind</code> com as opções abaixo.</p>
+<div class="highlight"><pre><span></span><code>valgrind --tool=callgrind ./seu_exec &lt; entrada &gt; saida
+</code></pre></div>
+<p>Para mostrar os resultados usando o <code>kcachegrind</code> usamos o seguinte comando. </p>
+<div class="highlight"><pre><span></span><code>kcachegrind callgrind.out.(pid aqui)
+</code></pre></div>
+<h2 id="medindo-os-tempos-no-seu-proprio-programa">Medindo os tempos no seu próprio programa<a class="headerlink" href="#medindo-os-tempos-no-seu-proprio-programa" title="Permanent link">&para;</a></h2>
+<p>Na demonstração pudemos ver que grande parte do tempo do programa da Tarefa 1 é gasto mostrando a saída no terminal. Isto nos leva à primeira conclusão da atividade de hoje:</p>
+<div class="admonition info">
+<p class="admonition-title">Entrada e saída de dados são operações muito lentas</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça o teste da demonstração em seu próprio programa e anote abaixo, para as duas versões de <code>calcula_distancias</code>,</p>
+<ol>
+<li>o tempo relativo de execução </li>
+<li>o número absoluto de instruções executadas</li>
+</ol>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>O número absoluto de intruções executadas diminuiu significativamente depois de nossa otimização? Teoricamente só calculamos metade da matriz, esse número é quase metade da versão não otimizada? Você consegue dizer por que?</p>
+<details class="details"><summary>Resposta</summary><p>Deve ter havido uma diminuição, mas não chega nem perto de metade. Isso ocorre por várias razões:</p>
+<ol>
+<li>nosso <code>for</code> duplo continua percorrendo a matriz inteira, apesar de só fazer o cálculo em metade das posições. </li>
+<li>alocamos a matriz elemento a elemento enquanto fazemos os cálculos.</li>
+</ol>
+</details>
+</div>
+<p>Com isso em mente, vamos agora otimizar a função <code>calcula_distancias</code>. Já sabemos que o efeito no tempo final não será grande. Nosso objetivo então será verificar a seguinte afirmação. </p>
+<div class="admonition info">
+<p class="admonition-title">Dois algoritmos de mesma complexidade computacional podem ter tempos de execução muito diferentes</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>A resposta da questão anterior indica que só usar um <code>if</code> para evitar o cálculo repetido não é suficiente. Precisamos efetivamente fazer um <code>for</code> que percorre só metade da matriz. Supondo que a matriz já esteja inteira alocada, escreva em pseudo-código como fazê-lo.</p>
+<details class="note"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>para i=1..N:
+    para j=i..N:
+        DX = X[i] - X[j]
+        DY = Y[i] - Y[j]
+        DIST = sqrt(DX*DX + DY*DY)
+        D[i,j] = DIST
+        D[j,i] = DIST
+</code></pre></div>
+</details>
+</div>
+<h2 id="matrizes-versao-2">Matrizes (versão 2)<a class="headerlink" href="#matrizes-versao-2" title="Permanent link">&para;</a></h2>
+<p>Nossa implementação usando <code>vector&lt;vector&lt;double&gt;&gt;</code> tem um problema sério: ela aloca elemento a elemento uma estrutura grande que já sabemos o tamanho de início. Seria muito melhor se pudéssemos alocar todas as <span><span class="MathJax_Preview">N^2</span><script type="math/tex">N^2</script></span> posições da matriz de  uma só vez!</p>
+<p>Fazemos isso trabalhando com um layout de memória contínuo. Ou seja, armazenaremos a matriz linha a linha como um único vetor de tamanho <code>n*n</code>. Temos várias vantagens:</p>
+<ol>
+<li>tempo de alocação de memória é reduzido, já que só fazemos uma chamada</li>
+<li>podemos acessar qualquer posição a qualquer momento</li>
+<li>melhor desempenho de cache</li>
+</ol>
+<p>A figura abaixo exemplifica esse layout de memória:</p>
+<p><img alt="Matriz &quot;deitada&quot; linha a linha" src="matriz.png" /></p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Em uma matriz de tamanho <code>4x7</code> (4 linhas, 7 colunas), qual é o elemento do vetor que representa a posição <code>2x5</code> (linha 3, coluna 6)?</p>
+<details class="details"><summary>Details</summary><p>Estamos considerando que começamos a contar as linhas e colunas do zero. A posição do vetor é <code>19</code>. Este número é obtido pela expressão</p>
+<p><code>i * c + j</code></p>
+<ul>
+<li><code>i</code> é a linha a ser acessada</li>
+<li><code>j</code> é a coluna</li>
+<li><code>c</code> é o número de colunas da matriz</li>
+</ul>
+<p><code>19 = 2 * 7 + 5</code></p>
+</details>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Conseguimos redimensionar um vetor usando o método <code>resize</code>, que recebe o novo número de elementos do vetor. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma terceira versão de <code>calcula_distancias</code>, desta vez usando o layout de memória acima. Verifique que o programa continua retornando os mesmos resultados que as versões anteriores. </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Rode novamente os testes de profiling e verifique o número de instruções para esta nova versão. Compare este valor com os anteriores e comente. </p>
+</div>
                 
               
               
@@ -467,7 +639,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../aulas/04-profiling/" title="04 - Medição de desempenho" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -476,11 +648,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                04 - Medição de desempenho
+                02/03 - Implementação em C++
               </div>
             </div>
           </a>
         
+        
+          <a href="../../projetos/" title="TBA" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TBA
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
@@ -501,22 +687,22 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
-        <script src="../translate-admonitions.js"></script>
+        <script src="../../translate-admonitions.js"></script>
       
     
   </body>
