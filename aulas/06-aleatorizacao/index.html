@@ -9,23 +9,23 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/06-aleatorizacao/">
       
       
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>TBA - SuperComputação - 2021/1</title>
+        <title>06 - Algoritmos Aleatorizados - SuperComputação - 2021/1</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.63b94e9e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -43,15 +43,15 @@
     
     
     
-      <link rel="stylesheet" href="../css/printing.css">
+      <link rel="stylesheet" href="../../css/printing.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-      <link rel="stylesheet" href="../css/ansi-colours.css">
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
     
-      <link rel="stylesheet" href="../css/jupyter-cells.css">
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
     
-      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
     
     
       
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tba" class="md-skip">
+        <a href="#06-algoritmos-aleatorizados" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              TBA
+              06 - Algoritmos Aleatorizados
             
           </span>
         </div>
@@ -276,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -288,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../sobre/" title="Burocracias" class="md-nav__link">
+    <a href="../../sobre/" title="Burocracias" class="md-nav__link">
       Burocracias
     </a>
   </li>
@@ -325,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aulas/01-introducao/" title="01 - Introdução" class="md-nav__link">
+    <a href="../01-introducao/" title="01 - Introdução" class="md-nav__link">
       01 - Introdução
     </a>
   </li>
@@ -337,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aulas/02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
+    <a href="../02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
       02/03 - Implementação em C++
     </a>
   </li>
@@ -349,7 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../aulas/04-profiling/" title="04 - Medição de desempenho" class="md-nav__link">
+    <a href="../04-profiling/" title="04 - Medição de desempenho" class="md-nav__link">
       04 - Medição de desempenho
     </a>
   </li>
@@ -364,12 +364,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Projeto
@@ -391,20 +389,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="TBA" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../projetos/" title="TBA" class="md-nav__link">
       TBA
     </a>
-    
   </li>
 
         
@@ -430,6 +419,30 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-com-rngs" class="md-nav__link">
+    Iniciando com RNGs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#construindo-uma-solucao-inteira-aleatoria" class="md-nav__link">
+    Construindo uma solução inteira aleatória
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -440,7 +453,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/projetos/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/06-aleatorizacao/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -448,7 +461,99 @@
                   
                 
                 
-                <h1 id="tba">TBA<a class="headerlink" href="#tba" title="Permanent link">&para;</a></h1>
+                <h1 id="06-algoritmos-aleatorizados">06 - Algoritmos Aleatorizados<a class="headerlink" href="#06-algoritmos-aleatorizados" title="Permanent link">&para;</a></h1>
+<p>Um gerador de números pseudo-aleatórios (RNG) é um algoritmo <strong>determinístico</strong> que gera uma sequência de números que <strong>parece</strong> aleatória. Essa frase possui dois termos importantes que precisamos destrinchar:</p>
+<ul>
+<li><strong>determinístico</strong>: Um <em>RNG</em> tipicamente recebe como entrada um inteiro <em>seed</em> (que representa uma sequência de bits "aleatória") e gera uma sequência de números baseada no <em>seed</em>. Ou seja, o algoritmo é <strong>determinístico</strong> pois gera sempre a mesma sequência para uma determinada entrada (<em>seed</em>).</li>
+<li><strong>parece aleatória</strong>: Se compararmos duas sequências de números, uma gerada por um <em>RNG</em> e outra por uma distribuição uniforme de verdade, não conseguimos dizer qual sequência foi gerada pelo <em>RNG</em>.</li>
+</ul>
+<p>Ou seja, ao escolhermos um <em>seed</em> a sequência gerada será sempre a mesma, mesmo se executarmos o programa em outras máquinas. Isso torna a utilização de <em>RNGs</em> para experimentos bastante interessante: é possível <strong>reproduzir</strong> os resultados feitos por outros desenvolvedores/cientistas. Para isto é necessário</p>
+<ol>
+<li>que o programa permita escolher o <em>seed</em> da simulação;</li>
+<li>que o <em>seed</em> usado seja publicado junto com os resultados.</li>
+</ol>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>E se quisermos gerar uma sequência diferente a cada execução do programa? Como poderíamos configurar o <em>seed</em> para que isto aconteça?</p>
+</div>
+<h2 id="iniciando-com-rngs">Iniciando com RNGs<a class="headerlink" href="#iniciando-com-rngs" title="Permanent link">&para;</a></h2>
+<p>Muitas implementações de <em>RNGs</em>  são divididas em duas partes:</p>
+<ol>
+<li><strong>engine</strong>/<strong>random state</strong>: algoritmo que gera um inteiro cujos bits formam uma sequência pseudo-aleatória.</li>
+<li><strong>distribution</strong>: utiliza os bits acima para retornar números que sigam alguma distribuição estatística (como normal ou uniforme).</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>A biblioteca padrão de <em>C++</em> disponibiliza diversas funções para utilização de *RNG*s (cabeçalho <code>&lt;random&gt;</code> - documentação <a href="http://cplusplus.com/reference/random/">neste link</a>). Se você quisesse sortear números aleatórios inteiros entre <code>-2</code> e <code>5</code> quais funções usaria?</p>
+<details class="details"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>#include &lt;random&gt;
+
+...
+
+std::default_random_engine generator;
+std::uniform_int_distribution&lt;int&gt; distribution(-2,5);
+distribution(generator); // gera número
+</code></pre></div>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>E se você quisesse sortear um número real entre <code>0</code> e <code>1</code>?</p>
+<details class="details"><summary>Resposta</summary><div class="highlight"><pre><span></span><code>#include &lt;random&gt;
+
+...
+
+std::default_random_engine generator;
+std::uniform_real_distribution&lt;double&gt; distribution(0.0, 1.0);
+distribution(generator); // gera número
+</code></pre></div>
+</details>
+</div>
+<p>Agora que você já consegue gerar números aleatórios, vamos implementar nossa primeira versão de uma heurística aleatorizada.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Adicionaremos a seguinte variação na nossa heurística: a cada passo de seleção temos <code>25%</code> de chance de selecionar um objeto aleatório que ainda não foi utilizado. Ou seja, cada passo do algoritmo segue a seguinte regra</p>
+<ol>
+<li>Faça um sorteio aleatório</li>
+<li>Com probabilidade <code>75%</code> pegue o próximo objeto não selecionado de acordo com a heurística (mais leve ou mais caro)</li>
+<li>Com probabilidade <code>25%</code> selecione um objeto qualquer dos que não foram analisados ainda.</li>
+</ol>
+<p>Note que não mudamos o próximo elemento ao fazer a seleção aleatória. Adote <code>seed=10</code> nesta tarefa.</p>
+<p><strong>Dica</strong>: agora é possível que eu olhe um produto mais de uma vez. Você precisará checar isso no seu programa!</p>
+<details class="details"><summary>Resposta</summary><p>Os arquivos <code>in-*.txt</code> contém entradas para teste. Os arquivos <code>out-caro-(rand-?)*.txt</code> contém as saídas esperadas para as heurísticas do mais caro. Note que como estamos falando de uma probabilidade, o sorteio deverá ser feito no intervalo <code>[0, 1]</code>.</p>
+</details>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Rode a heurística aleatorizada 10 vezes (como fazer isso?) e anote os valores das mochilas obtidas. Em média, é melhor ou pior que a heuristca sem aleatorização?</p>
+</div>
+<h2 id="construindo-uma-solucao-inteira-aleatoria">Construindo uma solução inteira aleatória<a class="headerlink" href="#construindo-uma-solucao-inteira-aleatoria" title="Permanent link">&para;</a></h2>
+<p>Vamos agora fazer algo mais absurdo: e se criarmos uma solução toda aleatória?</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Como você criaria uma solução aleatoriamente?</p>
+<details class="details"><summary>Resposta</summary><p>Não existe uma resposta certa aqui. Duas soluções são mais comuns:</p>
+<ol>
+<li>passando por cada objeto, pegue-o com probabilidade <code>50%</code>.</li>
+<li>percorra a lista em ordem aleatória, fazendo o mesmo algoritmo do mais caro/leve.</li>
+</ol>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Tente implementar a abordagem 1 da resposta acima.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Tente implementar a abordagem 2 da resposta acima.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Rode ambos programas acima com vários seeds diferentes e anote abaixo os resultados.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Iremos discutir esses resultados na próxima aula.</p>
+</div>
                 
               
               
@@ -463,27 +568,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../aulas/04-profiling/" title="04 - Medição de desempenho" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                04 - Medição de desempenho
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -501,22 +585,22 @@
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
-        <script src="../translate-admonitions.js"></script>
+        <script src="../../translate-admonitions.js"></script>
       
     
   </body>
