@@ -408,92 +408,6 @@
   </li>
 
     
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
-    
-    <label class="md-nav__link" for="nav-4">
-      Projeto
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Projeto" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Projeto
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Maximin Share
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Maximin Share" class="md-nav__link md-nav__link--active">
-      Maximin Share
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#entrada-e-saida" class="md-nav__link">
-    Entrada e saída
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -526,6 +440,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tecnicas-estudadas-e-correcao-automatica" class="md-nav__link">
+    Técnicas estudadas e correção automática
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
+  </a>
+  
+    <nav class="md-nav" aria-label="Avaliação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceito-d" class="md-nav__link">
+    Conceito D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c" class="md-nav__link">
+    Conceito C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c_1" class="md-nav__link">
+    Conceito C+
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-avancados" class="md-nav__link">
+    Conceitos avançados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -548,7 +510,7 @@
                 
                 <h1 id="maximin-share">Maximin Share<a class="headerlink" href="#maximin-share" title="Permanent link">&para;</a></h1>
 <p>Dados <code>M</code> objetos com valor <code>V[i], i=1..M</code> e <code>N</code> pessoas, desejamos dividir estes objetos de maneira mais igualitária possível. Como não é possível "quebrar" objetos, naturalmente alguns ficarão com objetos de maior valor que os outros. Nosso objetivo neste projeto é definir qual seria o <em>menor valor que uma pessoa deveria aceitar nesta divisão</em>.</p>
-<p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa do grupo será responsável por fazer a divisão dos objetos em <code>N</code> grupos. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual grupo elas desejam</strong>. Ou seja, a pessoa que fez a divisão naturalmente ficará com o grupo de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor do grupo de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e o a atribuição que o gera de <em>divisão 1 de n</em>.</p>
+<p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa do grupo será responsável por fazer a divisão dos objetos em <code>N</code> grupos. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual grupo elas desejam</strong>. Ou seja, a pessoa que fez a divisão naturalmente ficará com o grupo de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor do grupo de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e o a atribuição que o gera de <em>parte 1 de n</em>.</p>
 <p>Vejamos um exemplo: separaremos 6 objetos para 3 pessoas. Os valores dos objetos são <code>{20, 11, 9, 13, 14, 37}</code>. Uma possível divisão seria</p>
 <div class="highlight"><pre><span></span><code>{37}
 {20, 11}
@@ -565,7 +527,7 @@
 <p>As entradas e saídas das implementações serão padronizadas como abaixo.</p>
 <p><strong>Entrada</strong>:</p>
 <div class="highlight"><pre><span></span><code>N M
-p1 ... pN
+v1 ...vN
 </code></pre></div>
 <p><strong>Saída</strong>:</p>
 <div class="highlight"><pre><span></span><code>MMS O
@@ -577,11 +539,54 @@ objetos da pessoa M
 <ul>
 <li><code>N</code> = número de objetos</li>
 <li><code>M</code> = número de pessoas</li>
-<li><code>pi</code> = peso do objeto i</li>
+<li><code>vi</code> = valor do objeto i</li>
 <li><code>MMS</code> = valor do grupo menos valioso</li>
 <li><code>objetos da pessoa i</code> = lista dos índices dos objetos que estão com a pessoa i.</li>
 </ul>
 <p>Veja os exemplos de entrada e saída na pasta <code>entradas</code> do repositório do projeto.</p>
+<h2 id="tecnicas-estudadas-e-correcao-automatica">Técnicas estudadas e correção automática<a class="headerlink" href="#tecnicas-estudadas-e-correcao-automatica" title="Permanent link">&para;</a></h2>
+<p>Para cada técnica estudada em aula implementaremos versões básicas e avançadas. Também será necessário implementar versões paralelas em CPU e GPU. Veja abaixo as datas de entrega e descrições de cada técnica implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.</p>
+<ol>
+<li><a href="heuristico">Solução Heurística</a> (23/03)</li>
+<li>Busca local (30/03)</li>
+<li>Busca exaustiva (06/04)</li>
+<li>Relatório preliminar (06/04)</li>
+</ol>
+<p>Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até <strong>15/03</strong> para ser convidado para seu repositório de entregas.</p>
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=wKZwY5B7CUe9blnCjt6DO36bxJ3XetxChDUDKdweTOJURUNKWkFLSklHNk1RWlVBTUNHWEszVExOViQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Fique atento a atualizações no seu repositório de projeto. Atualizações no corretor serão feitas ao longo do semestre, assim como serão disponibilizados novos arquivos de entrada/saída para cada parte a ser implementada.</p>
+</div>
+<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<p>O projeto será avaliado usando rubricas para as entregas básicas. As rubricas de avaliação dos relatórios estarão descritas em suas páginas de entrega.</p>
+<h3 id="conceito-d">Conceito D<a class="headerlink" href="#conceito-d" title="Permanent link">&para;</a></h3>
+<p>Algum dos seguintes itens não foi entregue corretamente ou possui problemas sérios (no caso do relatório final).</p>
+<ol>
+<li>Solução heurística</li>
+<li>Busca local</li>
+<li>Busca exaustiva</li>
+<li>Busca local paralela (CPU)</li>
+<li>Busca local paralela (GPU)</li>
+<li>Relatório preliminar</li>
+<li>Relatório final</li>
+</ol>
+<h3 id="conceito-c">Conceito C<a class="headerlink" href="#conceito-c" title="Permanent link">&para;</a></h3>
+<p>Todas as atividades abaixo foram validadas pelo corretor e (no caso do relatório final) alcançaram qualidade mínima exigida.</p>
+<ol>
+<li>Solução heurística</li>
+<li>Busca local</li>
+<li>Busca exaustiva</li>
+<li>Busca local paralela (CPU)</li>
+<li>Busca local paralela (GPU)</li>
+<li>Relatório preliminar</li>
+<li>Relatório final</li>
+</ol>
+<h3 id="conceito-c_1">Conceito C+<a class="headerlink" href="#conceito-c_1" title="Permanent link">&para;</a></h3>
+<p>Além do já validado no conceito <strong>C</strong>, os relatórios entregues não tinham nenhum ponto <strong>em desenvolvimento</strong> ou <strong>insatisfatório</strong> na rubrica do relatório.</p>
+<h3 id="conceitos-avancados">Conceitos avançados<a class="headerlink" href="#conceitos-avancados" title="Permanent link">&para;</a></h3>
+<p>A partir do  conceito <strong>C+</strong> cada atividade avançada vale meio conceito. Elas serão listadas aqui conforme o semestre avança e serão testadas pela checagem de resultados disponível no repositório de entregas.</p>
                 
               
               
@@ -596,27 +601,6 @@ objetos da pessoa M
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../aulas/08-busca-global/" title="08 - Busca exaustiva" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                08 - Busca exaustiva
-              </div>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
