@@ -19,7 +19,7 @@
     
     
       
-        <title>TBA - SuperComputação - 2021/1</title>
+        <title>Maximin Share - SuperComputação - 2021/1</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tba" class="md-skip">
+        <a href="#maximin-share" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              TBA
+              Maximin Share
             
           </span>
         </div>
@@ -379,6 +379,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aulas/07-busca-local/" title="07 - Busca local" class="md-nav__link">
+      07 - Busca local
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../aulas/08-busca-global/" title="08 - Busca exaustiva" class="md-nav__link">
+      08 - Busca exaustiva
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -425,9 +449,42 @@
       
     
     
-    <a href="./" title="TBA" class="md-nav__link md-nav__link--active">
-      TBA
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Maximin Share
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Maximin Share" class="md-nav__link md-nav__link--active">
+      Maximin Share
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida" class="md-nav__link">
+    Entrada e saída
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -454,6 +511,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida" class="md-nav__link">
+    Entrada e saída
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -472,7 +546,42 @@
                   
                 
                 
-                <h1 id="tba">TBA<a class="headerlink" href="#tba" title="Permanent link">&para;</a></h1>
+                <h1 id="maximin-share">Maximin Share<a class="headerlink" href="#maximin-share" title="Permanent link">&para;</a></h1>
+<p>Dados <code>M</code> objetos com valor <code>V[i], i=1..M</code> e <code>N</code> pessoas, desejamos dividir estes objetos de maneira mais igualitária possível. Como não é possível "quebrar" objetos, naturalmente alguns ficarão com objetos de maior valor que os outros. Nosso objetivo neste projeto é definir qual seria o <em>menor valor que uma pessoa deveria aceitar nesta divisão</em>.</p>
+<p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa do grupo será responsável por fazer a divisão dos objetos em <code>N</code> grupos. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual grupo elas desejam</strong>. Ou seja, a pessoa que fez a divisão naturalmente ficará com o grupo de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor do grupo de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e o a atribuição que o gera de <em>divisão 1 de n</em>.</p>
+<p>Vejamos um exemplo: separaremos 6 objetos para 3 pessoas. Os valores dos objetos são <code>{20, 11, 9, 13, 14, 37}</code>. Uma possível divisão seria</p>
+<div class="highlight"><pre><span></span><code>{37}
+{20, 11}
+{14, 13, 9}
+</code></pre></div>
+<p>Com esta divisão, o menor valor seria o do segundo grupo (31). Note que várias divisões são possíveis:</p>
+<div class="highlight"><pre><span></span><code>{37}
+{20, 14}
+{13, 11, 9}
+</code></pre></div>
+<p>Nesta outra divisão o menor valor é o do terceiro grupo (33). Portanto, entre essas duas divisões a segunda é melhor, já que a pessoa que dividiu ganharia um valor maior.</p>
+<p>Usaremos este problema na disciplina por uma razão bem simples: encontrar o <em>MMS</em> é uma tarefa <em>NP-difícil</em>. Ou seja, o melhor que podemos fazer neste caso para garantir a melhor solução é, no pior caso, testar todas as alocações possíveis. Claramente isso é lento, então é uma bom exemplo de aplicação de SuperComputação!</p>
+<h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
+<p>As entradas e saídas das implementações serão padronizadas como abaixo.</p>
+<p><strong>Entrada</strong>:</p>
+<div class="highlight"><pre><span></span><code>N M
+p1 ... pN
+</code></pre></div>
+<p><strong>Saída</strong>:</p>
+<div class="highlight"><pre><span></span><code>MMS O
+objetos da pessoa 1
+...
+objetos da pessoa M
+</code></pre></div>
+<p>Nos esquemas acima,</p>
+<ul>
+<li><code>N</code> = número de objetos</li>
+<li><code>M</code> = número de pessoas</li>
+<li><code>pi</code> = peso do objeto i</li>
+<li><code>MMS</code> = valor do grupo menos valioso</li>
+<li><code>objetos da pessoa i</code> = lista dos índices dos objetos que estão com a pessoa i.</li>
+</ul>
+<p>Veja os exemplos de entrada e saída na pasta <code>entradas</code> do repositório do projeto.</p>
                 
               
               
@@ -491,7 +600,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../aulas/06-aleatorizacao/" title="06 - Algoritmos Aleatorizados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../aulas/08-busca-global/" title="08 - Busca exaustiva" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -500,7 +609,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                06 - Algoritmos Aleatorizados
+                08 - Busca exaustiva
               </div>
             </div>
           </a>
