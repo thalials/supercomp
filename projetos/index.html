@@ -298,10 +298,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -403,6 +405,133 @@
   </li>
 
         
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Maximin Share
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Maximin Share" class="md-nav__link md-nav__link--active">
+      Maximin Share
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida" class="md-nav__link">
+    Entrada e saída
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnicas-estudadas-e-correcao-automatica" class="md-nav__link">
+    Técnicas estudadas e correção automática
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas estudadas e correção automática">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrucoes-de-correcao" class="md-nav__link">
+    Instruções de correção
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
+  </a>
+  
+    <nav class="md-nav" aria-label="Avaliação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceito-d" class="md-nav__link">
+    Conceito D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c" class="md-nav__link">
+    Conceito C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c_1" class="md-nav__link">
+    Conceito C+
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-avancados" class="md-nav__link">
+    Conceitos avançados
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="heuristico/" title="Solução heurística" class="md-nav__link">
+      Solução heurística
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -444,6 +573,19 @@
   <a href="#tecnicas-estudadas-e-correcao-automatica" class="md-nav__link">
     Técnicas estudadas e correção automática
   </a>
+  
+    <nav class="md-nav" aria-label="Técnicas estudadas e correção automática">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instrucoes-de-correcao" class="md-nav__link">
+    Instruções de correção
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -509,19 +651,19 @@
                 
                 
                 <h1 id="maximin-share">Maximin Share<a class="headerlink" href="#maximin-share" title="Permanent link">&para;</a></h1>
-<p>Dados <code>M</code> objetos com valor <code>V[i], i=1..M</code> e <code>N</code> pessoas, desejamos dividir estes objetos de maneira mais igualitária possível. Como não é possível "quebrar" objetos, naturalmente alguns ficarão com objetos de maior valor que os outros. Nosso objetivo neste projeto é definir qual seria o <em>menor valor que uma pessoa deveria aceitar nesta divisão</em>.</p>
-<p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa do grupo será responsável por fazer a divisão dos objetos em <code>N</code> grupos. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual grupo elas desejam</strong>. Ou seja, a pessoa que fez a divisão naturalmente ficará com o grupo de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor do grupo de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e o a atribuição que o gera de <em>parte 1 de n</em>.</p>
-<p>Vejamos um exemplo: separaremos 6 objetos para 3 pessoas. Os valores dos objetos são <code>{20, 11, 9, 13, 14, 37}</code>. Uma possível divisão seria</p>
+<p>Dados <code>M</code> objetos com valor <code>V[i], i=1..M</code> e <code>N</code> pessoas, desejamos dividir estes objetos de maneira mais igualitária possível. Como não é possível "quebrar" objetos, naturalmente alguns ficarão com objetos de maior valor que os outros. Nosso objetivo neste projeto é definir qual seria o <em>menor valor que uma pessoa deveria aceitar nesta partição</em>.</p>
+<p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa será responsável por fazer a partição dos objetos em <code>N</code> partes. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual parte elas desejam</strong>. Ou seja, a pessoa que fez a partição naturalmente ficará com a parte de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor da parte de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e a atribuição que o gera de <em>parte 1-de-n</em>.</p>
+<p>Vejamos um exemplo: separaremos 6 objetos para 3 pessoas. Os valores dos objetos são <code>{20, 11, 9, 13, 14, 37}</code>. Uma possível partição seria</p>
 <div class="highlight"><pre><span></span><code>{37}
 {20, 11}
 {14, 13, 9}
 </code></pre></div>
-<p>Com esta divisão, o menor valor seria o do segundo grupo (31). Note que várias divisões são possíveis:</p>
+<p>Com esta partição, o menor valor seria o do segundo grupo (31). Note que várias divisões são possíveis:</p>
 <div class="highlight"><pre><span></span><code>{37}
 {20, 14}
 {13, 11, 9}
 </code></pre></div>
-<p>Nesta outra divisão o menor valor é o do terceiro grupo (33). Portanto, entre essas duas divisões a segunda é melhor, já que a pessoa que dividiu ganharia um valor maior.</p>
+<p>Nesta outra partição o menor valor é o do terceiro grupo (33). Portanto, entre essas duas divisões a segunda é melhor, já que a pessoa que dividiu ganharia um valor maior.</p>
 <p>Usaremos este problema na disciplina por uma razão bem simples: encontrar o <em>MMS</em> é uma tarefa <em>NP-difícil</em>. Ou seja, o melhor que podemos fazer neste caso para garantir a melhor solução é, no pior caso, testar todas as alocações possíveis. Claramente isso é lento, então é uma bom exemplo de aplicação de SuperComputação!</p>
 <h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
 <p>As entradas e saídas das implementações serão padronizadas como abaixo.</p>
@@ -555,6 +697,16 @@ objetos da pessoa M
 <p>Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até <strong>15/03</strong> para ser convidado para seu repositório de entregas.</p>
 <iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=wKZwY5B7CUe9blnCjt6DO36bxJ3XetxChDUDKdweTOJURUNKWkFLSklHNk1RWlVBTUNHWEszVExOViQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
+<h3 id="instrucoes-de-correcao">Instruções de correção<a class="headerlink" href="#instrucoes-de-correcao" title="Permanent link">&para;</a></h3>
+<p>O corretor automático depende do pacote <code>grading-tools</code>, que deverá ser instalado como abaixo.</p>
+<div class="highlight"><pre><span></span><code>$&gt; python3.8 -m pip install --user git+https://github.com/igordsm/grading-tools
+</code></pre></div>
+<details class="tip"><summary>Python 3.8 no Ubuntu</summary><p>Se seu <code>python3</code> é uma versão inferior ao 3.8, você pode instalá-lo com os pacotes abaixo:</p>
+<div class="highlight"><pre><span></span><code>python3.8 python3.8-dev
+</code></pre></div>
+<p>A partir daí poderá seguir normalmente as instruções desta página.</p>
+</details>
+<p>Com isso configurado, é só compilar seu programa e rodar <code>python3.8 corretor.py executavel</code>. Para baixar os novos exercícios é só rodar <code>git pull</code>. Os exercícios serão entregues criando um commit com sua resposta e dando <code>git push</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Fique atento a atualizações no seu repositório de projeto. Atualizações no corretor serão feitas ao longo do semestre, assim como serão disponibilizados novos arquivos de entrada/saída para cada parte a ser implementada.</p>
@@ -601,6 +753,41 @@ objetos da pessoa M
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../aulas/08-busca-global/" title="08 - Busca exaustiva" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                08 - Busca exaustiva
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="heuristico/" title="Solução heurística" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Solução heurística
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
