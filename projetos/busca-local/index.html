@@ -409,6 +409,60 @@
 
 
   <li class="md-nav__item">
+    <a href="../../aulas/09-busca-global-II/" title="09 - Comparação de resultados" class="md-nav__link">
+      09 - Comparação de resultados
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../aulas/10-branch-and-bound/" title="10 - Branch and Bound" class="md-nav__link">
+      10 - Branch and Bound
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Projeto
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Projeto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../" title="Maximin Share" class="md-nav__link">
       Maximin Share
     </a>
@@ -449,6 +503,30 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    Variáveis de ambiente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacao-de-resultados" class="md-nav__link">
+    Validação de resultados
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -468,13 +546,65 @@
                 
                 
                 <h1 id="solucao-busca-local">Solução Busca local<a class="headerlink" href="#solucao-busca-local" title="Permanent link">&para;</a></h1>
-<p>Vamos agora implementar uma estratégia de <strong>Busca local</strong> como fizemos na <a href="/aulas/07-busca-local">aula 05</a>. Nossa estratégia para será composta por dois passos:</p>
+<p>Vamos agora implementar uma estratégia de <strong>Busca local</strong> como fizemos na <a href="/aulas/07-busca-local">aula 07</a>. Nossa estratégia de busca local será composta por três passos:</p>
 <div class="admonition quote">
-<p class="admonition-title">Passo 1: sdflkj</p>
+<p class="admonition-title">Passo 1</p>
+<p>Cada objeto é atribuído para uma pessoa aleatória.</p>
 </div>
 <div class="admonition quote">
-<p class="admonition-title">Passo 2: sdlkf</p>
+<p class="admonition-title">Passo 2</p>
+<ol>
+<li>Selecione a pessoa <code>P</code> com o menor valor.</li>
+<li>Passe por todos os outros objetos e verifique se esse objeto poderia ser doado para <code>P</code>.<ul>
+<li><strong>Um objeto pode ser doado se o valor total do doador tirando o objeto doado é maior que o valor total da pessoa <code>P</code>.</strong></li>
+<li>Se for possível, faça a doação, calcule o novo <em>MMS</em>.</li>
+</ul>
+</li>
+</ol>
 </div>
+<div class="admonition quote">
+<p class="admonition-title">Passo 3</p>
+<p>Repita o <em>Passo 2</em> até que não seja mais possível.</p>
+</div>
+<p>Para auxiliar o entendimento desta busca local, responda as seguintes perguntas.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>O <em>Passo 2</em> da nossa estratégia nunca diminui o <em>MMS</em>. Por que?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Conseguimos saber de antemão quantas vezes repetiremos <em>Passo 2</em>?</p>
+</div>
+<h2 id="variaveis-de-ambiente">Variáveis de ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<p>Nosso programa será controlado por três variáveis de ambiente:</p>
+<ul>
+<li><code>SEED</code> controla o seed usado em nosso gerador de números aleatórios</li>
+<li><code>ITER</code> controla o número de vezes que repetimos a estratégia delineada acima.</li>
+<li><code>DEBUG</code>: mostra informações auxiliares para ajudar a correção automática.</li>
+</ul>
+<p>Ao rodar com <code>DEBUG=1</code> seu programa deverá mostrar na saída de erros <code>cerr</code> uma linha para cada resultado final do processo de busca local. Ou seja, deverá mostrar <code>ITER</code> linhas no formato abaixo:</p>
+<div class="highlight"><pre><span></span><code>valor a1 ... aN
+</code></pre></div>
+<ul>
+<li><code>valor</code> contém o valor do <em>MMS</em> da solução</li>
+<li><code>aI</code> contém a pessoa que possui o objeto <code>I</code></li>
+</ul>
+<p>Note que o formato dessa saída é diferente da saída final do programa, porém a informação representada é a mesma.</p>
+<h2 id="validacao-de-resultados">Validação de resultados<a class="headerlink" href="#validacao-de-resultados" title="Permanent link">&para;</a></h2>
+<p>A pasta <code>heuristica</code> do repositório de entregas contém arquivos de exemplo <code>in*.txt/out*.txt</code> com as entradas e saídas possíveis para esta parte do projeto. Use-os para validar seu programa junto com <code>corretor.py</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Esta validação não espera resultados idênticos aos das saídas de exemplo.</p>
+</div>
+<p>A validação testará se seu programa tem as seguintes propriedades:</p>
+<ul>
+<li>a solução final é ótima local. Ou seja, não é possível repetir o <em>Passo 2</em> e conseguir uma solução melhor</li>
+<li>a solução final é valida.</li>
+<li>as soluções de cada busca local mostradas quando <code>DEBUG=1</code> também são ótimos locais</li>
+<li>a solução final é a melhor entre todas as soluções calculadas</li>
+<li>soluções diferentes são geradas quando valores de <code>SEED</code> diferentes são passados</li>
+<li>são mostradas <code>ITER</code> linhas na saída de erros e cada linha corresponde a uma solução válida</li>
+</ul>
                 
               
               
