@@ -436,10 +436,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Projeto
@@ -478,6 +480,67 @@
     <a href="../heuristico/" title="Solução heurística" class="md-nav__link">
       Solução heurística
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Solução Busca local
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Solução Busca local" class="md-nav__link md-nav__link--active">
+      Solução Busca local
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    Variáveis de ambiente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacao-de-resultados" class="md-nav__link">
+    Validação de resultados
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -578,9 +641,9 @@
 <h2 id="variaveis-de-ambiente">Variáveis de ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
 <p>Nosso programa será controlado por três variáveis de ambiente:</p>
 <ul>
-<li><code>SEED</code> controla o seed usado em nosso gerador de números aleatórios</li>
-<li><code>ITER</code> controla o número de vezes que repetimos a estratégia delineada acima.</li>
-<li><code>DEBUG</code>: mostra informações auxiliares para ajudar a correção automática.</li>
+<li><code>SEED</code> controla o seed usado em nosso gerador de números aleatórios. Se não for passado, assuma <code>SEED = 0</code>;</li>
+<li><code>ITER</code> controla o número de vezes que repetimos a estratégia delineada acima. Se não for passado, assuma <code>ITER = 100000</code>;</li>
+<li><code>DEBUG</code>: mostra informações auxiliares para ajudar a correção automática. Se não for passado, assuma <code>DEBUG = 0</code>;</li>
 </ul>
 <p>Ao rodar com <code>DEBUG=1</code> seu programa deverá mostrar na saída de erros <code>cerr</code> uma linha para cada resultado final do processo de busca local. Ou seja, deverá mostrar <code>ITER</code> linhas no formato abaixo:</p>
 <div class="highlight"><pre><span></span><code>valor a1 ... aN
@@ -619,6 +682,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../heuristico/" title="Solução heurística" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Solução heurística
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

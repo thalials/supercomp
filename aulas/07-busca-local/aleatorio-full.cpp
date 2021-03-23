@@ -66,8 +66,6 @@ int main () {
             peso_melhor = peso_atual;
             usados_melhor = usados;
         }
-
-
     }
     
     
