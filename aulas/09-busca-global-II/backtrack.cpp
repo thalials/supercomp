@@ -18,40 +18,40 @@ struct solucao {
         usado.resize(N, false);
         valor = peso = 0;
     }
-
-    void add_objeto(objeto &o) {
-        usado[o.id] = true;
-        peso += o.peso;
-        valor += o.valor;
-    }
-
-    void tira_objeto(objeto &o) {
-        peso -= o.peso;
-        valor -= o.valor;
-        usado[o.id] = false;
-    }
 };
 
-long num_hit = 0, num_copy = 0, num_bound = 0;
+long num_copy = 0, num_leafs = 0;
 
-int busca_exaustiva(std::vector<objeto> &obj, int C, solucao &melhor, solucao &atual, int i = 0) {
+void busca_exaustiva(const std::vector<objeto> &obj, int C, 
+                    solucao &melhor, 
+                    solucao &atual, int i = 0) {
+
+INICIO:
     if (i == obj.size()) {
+        num_leafs++;
         if (atual.valor > melhor.valor) {
             melhor = atual;
             num_copy++;
         }
-        return atual.valor;
+        return;
     }
 
-    int com, sem;
-    sem = busca_exaustiva(obj, C, melhor, atual, i+1);
     if (obj[i].peso <= C) {
-        atual.add_objeto(obj[i]);
-        com = busca_exaustiva(obj, C - obj[i].peso, melhor, atual, i+1);
-        atual.tira_objeto(obj[i]);
+        atual.usado[i] = true;
+        atual.valor += obj[i].valor;
+        atual.peso += obj[i].peso;
+
+        busca_exaustiva(
+            obj, C - obj[i].peso, melhor, atual, i+1);
+
+        atual.usado[i] = false;
+        atual.valor -= obj[i].valor;
+        atual.peso -= obj[i].peso;
     }
 
-    return (com > sem)? com : sem;
+    atual.usado[i] = false;
+    i+1;
+    goto INICIO;
 }
 
 int main() {
@@ -74,8 +74,10 @@ int main() {
             std::cout << i << " ";
         }
     }
+
     std::cout << "\n";
-    std::cerr << "num_hit: " << num_hit << " num_copy " << num_copy << " num_bound: " << num_bound << "\n";
+    std::cerr << "num copy"<< num_copy << "\n";
+    std::cerr << "num leafs"<< num_leafs << "\n";
 
     return 0;
 }
