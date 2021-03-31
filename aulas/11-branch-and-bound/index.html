@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/guias-tecnicos/container-remoto/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/11-branch-and-bound/">
       
       
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Tutorial Acesso à maquina Monstrão via VsCode - SuperComputação - 2021/1</title>
+        <title>11 - Branch and Bound II - SuperComputação - 2021/1</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorial-acesso-a-maquina-monstrao-via-vscode" class="md-skip">
+        <a href="#11-branch-and-bound-ii" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Tutorial Acesso à maquina Monstrão via VsCode
+              11 - Branch and Bound II
             
           </span>
         </div>
@@ -298,10 +298,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Aulas
@@ -325,7 +327,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/01-introducao/" title="01 - Introdução" class="md-nav__link">
+    <a href="../01-introducao/" title="01 - Introdução" class="md-nav__link">
       01 - Introdução
     </a>
   </li>
@@ -337,7 +339,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
+    <a href="../02-03-implementacao-c%2B%2B/" title="02/03 - Implementação em C++" class="md-nav__link">
       02/03 - Implementação em C++
     </a>
   </li>
@@ -349,7 +351,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/04-profiling/" title="04 - Medição de desempenho" class="md-nav__link">
+    <a href="../04-profiling/" title="04 - Medição de desempenho" class="md-nav__link">
       04 - Medição de desempenho
     </a>
   </li>
@@ -361,7 +363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/05-heuristicas/" title="05 - Heurísticas" class="md-nav__link">
+    <a href="../05-heuristicas/" title="05 - Heurísticas" class="md-nav__link">
       05 - Heurísticas
     </a>
   </li>
@@ -373,7 +375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/06-aleatorizacao/" title="06 - Algoritmos Aleatorizados" class="md-nav__link">
+    <a href="../06-aleatorizacao/" title="06 - Algoritmos Aleatorizados" class="md-nav__link">
       06 - Algoritmos Aleatorizados
     </a>
   </li>
@@ -385,7 +387,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/07-busca-local/" title="07 - Busca local" class="md-nav__link">
+    <a href="../07-busca-local/" title="07 - Busca local" class="md-nav__link">
       07 - Busca local
     </a>
   </li>
@@ -397,7 +399,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/08-busca-global/" title="08 - Busca exaustiva" class="md-nav__link">
+    <a href="../08-busca-global/" title="08 - Busca exaustiva" class="md-nav__link">
       08 - Busca exaustiva
     </a>
   </li>
@@ -409,7 +411,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/09-busca-global-II/" title="09 - Comparação de resultados" class="md-nav__link">
+    <a href="../09-busca-global-II/" title="09 - Comparação de resultados" class="md-nav__link">
       09 - Comparação de resultados
     </a>
   </li>
@@ -421,7 +423,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aulas/10-branch-and-bound/" title="10 - Branch and Bound" class="md-nav__link">
+    <a href="../10-branch-and-bound/" title="10 - Branch and Bound" class="md-nav__link">
       10 - Branch and Bound
     </a>
   </li>
@@ -431,11 +433,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../aulas/11-branch-and-bound/" title="11 - Branch and Bound II" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        11 - Branch and Bound II
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="11 - Branch and Bound II" class="md-nav__link md-nav__link--active">
       11 - Branch and Bound II
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-mochila-fracionaria" class="md-nav__link">
+    A mochila fracionária
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-ordem-importa-estrategia-best-first" class="md-nav__link">
+    A ordem importa? Estratégia Best-first
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-bound-mochila-fracionaria" class="md-nav__link">
+    O bound Mochila fracionária
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analisando-o-bound" class="md-nav__link">
+    Analisando o bound
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -548,42 +613,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalar-extensao-ssh-remote-no-vscode" class="md-nav__link">
-    Instalar extensão SSH Remote no VScode
+  <a href="#a-mochila-fracionaria" class="md-nav__link">
+    A mochila fracionária
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acesso-ssh" class="md-nav__link">
-    Acesso SSH
+  <a href="#a-ordem-importa-estrategia-best-first" class="md-nav__link">
+    A ordem importa? Estratégia Best-first
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#como-instalar-e-iniciar-o-jupyter-notebook-com-python-no-ubuntu-2004" class="md-nav__link">
-    Como instalar e iniciar o Jupyter Notebook com Python no Ubuntu 20.04
+  <a href="#o-bound-mochila-fracionaria" class="md-nav__link">
+    O bound Mochila fracionária
   </a>
-  
-    <nav class="md-nav" aria-label="Como instalar e iniciar o Jupyter Notebook com Python no Ubuntu 20.04">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pronto" class="md-nav__link">
-    PRONTO.
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#outra-dica" class="md-nav__link">
-    Outra dica
+  <a href="#analisando-o-bound" class="md-nav__link">
+    Analisando o bound
   </a>
   
 </li>
@@ -600,7 +652,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/guias-tecnicos/container-remoto.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/11-branch-and-bound/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -608,61 +660,74 @@
                   
                 
                 
-                <h1 id="tutorial-acesso-a-maquina-monstrao-via-vscode">Tutorial Acesso à maquina Monstrão via VsCode<a class="headerlink" href="#tutorial-acesso-a-maquina-monstrao-via-vscode" title="Permanent link">&para;</a></h1>
-<ul>
-<li>Você deve ter acesso a sua maquina virtual no monstrão e o VsCode instalado.</li>
-<li>
-<p>Este Tutorial irá seguir as seguintes etapas. </p>
-</li>
-<li>
-<p><strong>Etapas</strong>: </p>
-<ul>
-<li>Instalar extensão no VsCode;</li>
-<li>Fazer acesso ssh;</li>
-<li>Instalar o Jupyter notebook; </li>
-<li>Rodar o notebook na pasta alvo.</li>
-</ul>
-</li>
-</ul>
-<h2 id="instalar-extensao-ssh-remote-no-vscode">Instalar extensão SSH Remote no VScode<a class="headerlink" href="#instalar-extensao-ssh-remote-no-vscode" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Dentro do aplicativo do VsCode <code>Ctrl+Shift+X</code></li>
-<li>Buscar e instalar os pacotes do Remote-SSH</li>
-</ul>
-<h2 id="acesso-ssh">Acesso SSH<a class="headerlink" href="#acesso-ssh" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Clicar no icone a esquerda Remote Explorer</li>
-<li>Adicionar um novo SSH TARGET</li>
-<li>Na linha de comando digitar <code>ssh user@&lt;seu IP do monstrão&gt;</code></li>
-<li>Clicar <code>Enter</code> para ignorar o acesso via par de chaves </li>
-<li>O VsCode irá conectar na sua Máquina virtual e pedir a senha</li>
-<li>Digite a senha de acesso do seu usuário</li>
-</ul>
-<h2 id="como-instalar-e-iniciar-o-jupyter-notebook-com-python-no-ubuntu-2004">Como instalar e iniciar o Jupyter Notebook com Python no Ubuntu 20.04<a class="headerlink" href="#como-instalar-e-iniciar-o-jupyter-notebook-com-python-no-ubuntu-2004" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p><strong>Instalações iniciais</strong>: </p>
-<ul>
-<li>sudo apt update</li>
-<li>sudo apt upgrade -y</li>
-<li>sudo apt install build-essential</li>
-<li>sudo snap install jupyter</li>
-</ul>
-</li>
-<li>
-<p>clonar via git, o repositório da disciplina </p>
-</li>
-<li>Acessar a pasta com o projeto e rodar o comando: <code>jupyter notebook</code></li>
-<li>Neste momento o Jupyter irá iniciar o servidor na máquina virtual e o VsCode irá mostrar uma mensagem perguntando se deseja abrir via Browser. Aceitar</li>
-<li>Copiar o token gerado no terminal e colar na aba aberta no Browser.</li>
-</ul>
-<h3 id="pronto">PRONTO.<a class="headerlink" href="#pronto" title="Permanent link">&para;</a></h3>
-<h2 id="outra-dica">Outra dica<a class="headerlink" href="#outra-dica" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Se quiser fazer via Tunel SSH, pode rodar o comando abaixo no seu terminal e acessar o Browser na porta 8888</li>
-</ul>
-<p><code>ssh -L 8888:localhost:8888 user@&lt; digite aqui ip da sua maquina virtual no monstrão &gt;</code>
-* Acesse o localhost:8888 no seu Browser.</p>
+                <h1 id="11-branch-and-bound-ii">11 - Branch and Bound II<a class="headerlink" href="#11-branch-and-bound-ii" title="Permanent link">&para;</a></h1>
+<p>Vimos na expositiva que um bound justo é importante para conseguir ganhos grandes de desempenho no Branch and Bound.</p>
+<h2 id="a-mochila-fracionaria">A mochila fracionária<a class="headerlink" href="#a-mochila-fracionaria" title="Permanent link">&para;</a></h2>
+<p>Nosso relaxamento de restrição permite que um objeto seja incluido em frações. Como vimos na aula, existe um algoritmo simples que dá a solução ótima:</p>
+<ol>
+<li>ordene os objetos por proporção valor/kg.</li>
+<li>pegue os objetos nesta ordem até não caber mais na mochila</li>
+<li>se um objeto não couber inteiro, pegue a maior fração possível</li>
+</ol>
+<p>A resposta da <em>Mochila fracionária</em> provavelmente não será uma <em>Mochila binária</em> viável. Mesmo assim, provamos na aula que ela é um <strong>limitante superior</strong> para a <em>Mochila binária</em>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente a mochila fracionária e execute-a para nossa entrada <code>in150.txt</code>. Sua saída deve estar no formato abaixo.</p>
+<div class="highlight"><pre><span></span><code>valor
+(fracao_do_objeto1) .... (fracao_do_objetoN)
+</code></pre></div>
+<p>Veja o arquivo <code>out150.txt</code> para a resposta esperada neste exercício.</p>
+</div>
+<h2 id="a-ordem-importa-estrategia-best-first">A ordem importa? Estratégia <em>Best-first</em><a class="headerlink" href="#a-ordem-importa-estrategia-best-first" title="Permanent link">&para;</a></h2>
+<p>Antes de incorporar o bound usando mochila fracionária vamos observar o efeito da ordem de análise das soluções. Na nossa primeira tentativa fizemos a busca exaustiva na ordem que os objetos foram apresentados na entrada. Isso resultava nos seguintes indicadores</p>
+<div class="highlight"><pre><span></span><code>num_leaf 770786731 num_copy 44
+</code></pre></div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Suponha que agora você irá analisar os objetos na ordem usada na <em>Mochila fracionária</em>. Você espera que <code>num_leaf</code> continue igual, aumente ou diminua?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Suponha que agora você irá analisar os objetos na ordem usada na <em>Mochila fracionária</em>. Você espera que <code>num_copy</code> continue igual, aumente ou diminua?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente esta estratégia e verifique se os seus resultados se confirmaram.</p>
+<details class="details"><summary>Resposta</summary><p>Assim como você deve ter respondido nas duas primeiras questões, <code>num_leaf</code> deve continuar igual, mas <code>num_copy</code> vai diminuir muito.</p>
+</details>
+</div>
+<h2 id="o-bound-mochila-fracionaria">O bound <em>Mochila fracionária</em><a class="headerlink" href="#o-bound-mochila-fracionaria" title="Permanent link">&para;</a></h2>
+<p>Vamos agora juntar tudo e implementar o bound <em>Mochila fracionária</em> examinando os objetos na ordem da parte anterior.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Levando em conta que a ordem anterior fez apenas 3 cópias, qual sua expectativa em relação aos possíveis ganhos de desempenho que implementar o bound <em>Mochila fracionária</em> pode trazer?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente o bound.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Quais os valores de <code>num_leaf</code>, <code>num_copy</code> e <code>num_bound</code> para <code>in150.txt</code>?</p>
+</div>
+<h2 id="analisando-o-bound">Analisando o bound<a class="headerlink" href="#analisando-o-bound" title="Permanent link">&para;</a></h2>
+<p>Vamos agora analisar nossas medidas de efetividade do bound.</p>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>Compare os valores de <code>num_bound</code> para <em>Ignorar peso</em> e <em>Mochila fracionária</em>. Você consegue tirar conclusões a partir deste valor?</p>
+<details class="details"><summary>Resposta</summary><p>A dica de que tem algo estranho é que <code>num_bound</code> é muito menor. Ou seja, a conclusão de que quanto menor o <code>num_bound</code> melhor é claramente problemática, já que contraria a intuição de que um bound teria que estar ocorrendo várias vezes. Por outro lado, o programa é realmente muito mais rápido, então deve haver algo que não está sendo medido corretamente.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente no seu código a contagem de quantas vezes o bound foi feito por nível da recursão.</p>
+</div>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>Compare o resultado acima com o obtido no mesmo teste na aula anterior. Agora você consegue explicar a razão do desempenho da nova implementação ter sido tão melhor?</p>
+<details class="details"><summary>Resposta para a aula anterior</summary><p><code>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 43 32830 536970 250518 792810 1550819 2119857 2475746 2710403 56370234 16347241 14514859 63885823 22061564 111961043 25164499 79575293 47368277 2373877 0 17059720 2265050 423517</code></p>
+</details>
+</div>
                 
               
               
@@ -677,6 +742,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../10-branch-and-bound/" title="10 - Branch and Bound" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                10 - Branch and Bound
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../projetos/" title="Maximin Share" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Maximin Share
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
