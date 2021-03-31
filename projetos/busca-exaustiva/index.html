@@ -19,7 +19,7 @@
     
     
       
-        <title>Busca exaustiva - SuperComputação - 2021/1</title>
+        <title>Solução Busca exaustiva - SuperComputação - 2021/1</title>
       
     
     
@@ -70,6 +70,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#solucao-busca-exaustiva" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -161,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Busca exaustiva
+              Solução Busca exaustiva
             
           </span>
         </div>
@@ -500,6 +505,45 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-de-ambiente" class="md-nav__link">
+    Variáveis de ambiente
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacao-de-resultados" class="md-nav__link">
+    Validação de resultados
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -513,9 +557,24 @@
                   
                 
                 
-                  <h1>Busca exaustiva</h1>
-                
-                
+                <h1 id="solucao-busca-exaustiva">Solução Busca exaustiva<a class="headerlink" href="#solucao-busca-exaustiva" title="Permanent link">&para;</a></h1>
+<p>Vamos agora encontrar a melhor solução possível usando uma estratégia de busca global. Nosso trabalho será parecido com o da aula <a href="/aulas/08-busca-global">08-busca-global</a>, mas agora aplicaremos essa estratégia recursiva para o problema de interesse no projeto.</p>
+<p>Para ajudar em sua implementação, responda as perguntas abaixo.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Quais são as escolhas que podem ser feitas? Quais as possibilidades de cada escolha?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Quantas soluções válidas existem?</p>
+</div>
+<h2 id="variaveis-de-ambiente">Variáveis de ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<p>Caso <code>DEBUG=1</code> seu programa deverá mostra, na saída de erros, o número de soluções válidas analisadas pelo seu programa.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tome cuidado com o tamanho da variável usada para guardar este número.</p>
+</div>
+<h2 id="validacao-de-resultados">Validação de resultados<a class="headerlink" href="#validacao-de-resultados" title="Permanent link">&para;</a></h2>
+<p>A pasta <code>busca-global</code> do repositório de entregas contém arquivos de exemplo <code>in*.txt/out*.txt/err*.txt</code> com as entradas e saídas esperadas para esta parte do projeto. Use-os para validar seu programa junto com <code>corretor.py</code>.</p>
                 
               
               
