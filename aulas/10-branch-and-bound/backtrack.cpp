@@ -20,11 +20,13 @@ struct solucao {
     }
 };
 
-long num_copy = 0, num_leafs = 0;
+long num_copy = 0, num_leafs = 0, num_bounds = 0;
+std::vector<long> bound_level;
 
 void busca_exaustiva(const std::vector<objeto> &obj, int C, 
                     solucao &melhor, 
-                    solucao &atual, int i = 0) {
+                    solucao &atual,
+                    int limite_superior_valor, int i = 0) {
 
     if (i == obj.size()) {
         num_leafs++;
@@ -35,23 +37,32 @@ void busca_exaustiva(const std::vector<objeto> &obj, int C,
         return;
     }
 
+    // VALE A PENA CONTINUAR?
+    int inclui_todos = atual.valor + limite_superior_valor;
+    if (inclui_todos <= melhor.valor) {
+        num_bounds++;
+        bound_level[i]++;
+
+        return;
+    } 
+
+
     if (obj[i].peso <= C) {
         atual.usado[i] = true;
         atual.valor += obj[i].valor;
         atual.peso += obj[i].peso;
 
         busca_exaustiva(
-            obj, C - obj[i].peso, melhor, atual, i+1);
+            obj, C - obj[i].peso, melhor, atual,
+            limite_superior_valor - obj[i].valor, i+1);
 
         atual.usado[i] = false;
         atual.valor -= obj[i].valor;
         atual.peso -= obj[i].peso;
     }
 
-    atual.usado[i] = false;
-    i+1;
-    
-    busca_exaustiva(obj, C, melhor, atual, i+1);
+    atual.usado[i] = false;    
+    busca_exaustiva(obj, C, melhor, atual, limite_superior_valor - obj[i].valor, i+1);
 }
 
 int main() {
@@ -59,14 +70,18 @@ int main() {
     std::cin >> N >> W;
     std::vector<objeto> objetos(N);
     
+    int valor_total = 0;
     for (int i = 0; i < N; i++) {
         objetos[i].id = i;
         std::cin >> objetos[i].peso >> objetos[i].valor;
+        valor_total += objetos[i].valor;
     }
+
+    bound_level.resize(N, 0);
 
     solucao melhor(N);
     solucao atual(N);
-    busca_exaustiva(objetos, W, melhor, atual);
+    busca_exaustiva(objetos, W, melhor, atual, valor_total);
 
     std::cout << melhor.peso << " " << melhor.valor << " 1\n";
     for (int i = 0; i < N; i++) {
@@ -76,8 +91,15 @@ int main() {
     }
 
     std::cout << "\n";
-    std::cerr << "num copy"<< num_copy << "\n";
-    std::cerr << "num leafs"<< num_leafs << "\n";
+    std::cerr << "num copy "<< num_copy << "\n";
+    std::cerr << "num leafs "<< num_leafs << "\n";
+    std::cerr << "num bounds "<< num_bounds << "\n";
+
+    for (int i = 0; i < N; i++) {
+        std::cout << bound_level[i] << " ";
+    }
+    std::cout << "\n";
+
 
     return 0;
 }

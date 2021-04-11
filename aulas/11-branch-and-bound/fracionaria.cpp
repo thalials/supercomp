@@ -1,67 +1,49 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <random>
-#include <cassert>
 
 struct objeto {
-    int id;
-    int peso;
-    int valor;
-};
+    int peso, valor, id;
 
-struct solucao {
-    std::vector<double> usado;
-    double valor;
-    double peso;
-
-    solucao(int N) {
-        usado.resize(N, 0);
-        valor = peso = 0;
-    }
-
-    void add_objeto(objeto &o, double fracao=1) {
-        usado[o.id] = fracao;
-        peso += o.peso * fracao;
-        valor += o.valor * fracao;
-    }
-
-    void tira_objeto(objeto &o) {
-        peso -= o.peso;
-        valor -= o.valor;
-        usado[o.id] = 0;
+    bool operator <(objeto &a) {
+        return double(valor)/peso > double(a.valor)/a.peso;
     }
 };
 
-int main() {
-    int N, W;
-    std::cin >> N >> W;
+
+int main () {
+    int N, peso_maximo;
+    std::cin >> N >> peso_maximo;
     std::vector<objeto> objetos(N);
+    std::vector<double> usados(N, 0);
 
     for (int i = 0; i < N; i++) {
         objetos[i].id = i;
         std::cin >> objetos[i].peso >> objetos[i].valor;
     }
 
-    std::sort(objetos.begin(), objetos.end(), [](auto &a, auto &b) -> bool {
-        return double(a.valor) / a.peso > double(b.valor) / b.peso;
-    });
+    std::sort(objetos.begin(), objetos.end());
 
-    solucao fracionaria(N);
-    for (objeto &o : objetos) {
-        if (o.peso + fracionaria.peso <= W) {
-            fracionaria.add_objeto(o);
-        } else if (fracionaria.peso < W) {
-            double capacidade_sobrando = W - fracionaria.peso;
-            fracionaria.add_objeto(o, capacidade_sobrando / o.peso);
+    int peso_atual = 0;
+    int valor_atual = 0;
+    for (auto &obj : objetos) {
+        if (peso_atual + obj.peso <= peso_maximo) {
+            peso_atual += obj.peso;
+            valor_atual += obj.valor;
+            usados[obj.id] = 1.0;
+        } else if (peso_atual < peso_maximo) {
+            double frac = double(peso_maximo - peso_atual) / obj.peso;
+            peso_atual += frac * obj.peso;
+            valor_atual += frac * obj.valor;
+            usados[obj.id] = frac;
         }
     }
-
-
-    std::cout << fracionaria.peso << " " << fracionaria.valor << " 1\n";
+    
+    std::cout << peso_atual << " " << valor_atual << "\n";
     for (int i = 0; i < N; i++) {
-        std::cout << "(" << fracionaria.usado[i] << ") ";
+        std::cout << usados[i] << " ";
     }
     std::cout << "\n";
+
     return 0;
 }
