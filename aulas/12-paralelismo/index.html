@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/10-branch-and-bound/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/12-paralelismo/">
       
       
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
@@ -19,7 +19,7 @@
     
     
       
-        <title>10 - Branch and Bound - SuperComputação - 2021/1</title>
+        <title>12 - Introdução a paralelismo - SuperComputação - 2021/1</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-branch-and-bound" class="md-skip">
+        <a href="#12-introducao-a-paralelismo" class="md-skip">
           Skip to content
         </a>
       
@@ -166,7 +166,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              10 - Branch and Bound
+              12 - Introdução a paralelismo
             
           </span>
         </div>
@@ -421,74 +421,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        10 - Branch and Bound
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="10 - Branch and Bound" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../10-branch-and-bound/" title="10 - Branch and Bound" class="md-nav__link">
       10 - Branch and Bound
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
-    Um bound simples: ignorar peso
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analisando-nosso-bound" class="md-nav__link">
-    Analisando nosso bound
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementacao-eficiente-do-bound" class="md-nav__link">
-    Implementação eficiente do bound
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avancado-o-quao-justo-e-um-bound" class="md-nav__link">
-    Avançado: o quão justo é um bound?
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -508,11 +445,80 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../12-paralelismo/" title="12 - Introdução a paralelismo" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        12 - Introdução a paralelismo
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="12 - Introdução a paralelismo" class="md-nav__link md-nav__link--active">
       12 - Introdução a paralelismo
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primeiros-passos" class="md-nav__link">
+    Primeiros passos
+  </a>
+  
+    <nav class="md-nav" aria-label="Primeiros passos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-de-variaveis" class="md-nav__link">
+    Escopo de variáveis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avancado" class="md-nav__link">
+    Avançado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paralelismo-de-tarefas" class="md-nav__link">
+    Paralelismo de tarefas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -625,29 +631,35 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#um-bound-simples-ignorar-peso" class="md-nav__link">
-    Um bound simples: ignorar peso
+  <a href="#primeiros-passos" class="md-nav__link">
+    Primeiros passos
   </a>
+  
+    <nav class="md-nav" aria-label="Primeiros passos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-de-variaveis" class="md-nav__link">
+    Escopo de variáveis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avancado" class="md-nav__link">
+    Avançado
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#analisando-nosso-bound" class="md-nav__link">
-    Analisando nosso bound
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementacao-eficiente-do-bound" class="md-nav__link">
-    Implementação eficiente do bound
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#avancado-o-quao-justo-e-um-bound" class="md-nav__link">
-    Avançado: o quão justo é um bound?
+  <a href="#paralelismo-de-tarefas" class="md-nav__link">
+    Paralelismo de tarefas
   </a>
   
 </li>
@@ -664,7 +676,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/10-branch-and-bound/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/12-paralelismo/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -672,91 +684,205 @@
                   
                 
                 
-                <h1 id="10-branch-and-bound">10 - Branch and Bound<a class="headerlink" href="#10-branch-and-bound" title="Permanent link">&para;</a></h1>
-<p>Vamos começar nossa atividade instrumentando nossa busca exaustiva. Dado que a promessa do nosso algoritmo <em>Branch and Bound</em> é evitar chegar até o fim de uma solução parcial que não tem chance de ser ótima, faz todo sentido então contarmos quantas vezes chegamos até o fim.</p>
+                <h1 id="12-introducao-a-paralelismo">12 - Introdução a paralelismo<a class="headerlink" href="#12-introducao-a-paralelismo" title="Permanent link">&para;</a></h1>
+<p>OpenMP é uma tecnologia de computação multi-core usada para paralelizar programas. Sua principal vantagem é oferecer uma transição suave entre código sequencial e código paralelo.</p>
+<h2 id="primeiros-passos">Primeiros passos<a class="headerlink" href="#primeiros-passos" title="Permanent link">&para;</a></h2>
+<p>Nesta parte do roteiro usaremos 4 chamadas do OpenMP para criar nossas primeiras threads.</p>
+<ol>
+<li><code>#pragma omp parallel</code> cria um conjunto de threads. Deve ser aplicado acima de um bloco de código limitado por <code>{  }</code></li>
+<li><code>int omp_get_num_threads();</code> retorna o número de threads criadas (dentro de uma região paralela)</li>
+<li><code>int omp_get_max_threads();</code> retorna o número de máximo de threads (fora de uma região paralela)</li>
+<li><code>int omp_get_thread_num();</code> retorna o id da thread atual (entre 0 e o valor acima, dentro de uma região paralela)</li>
+</ol>
+<p>O código abaixo (<em>exemplo1.cpp</em>) ilustra como utilizar OpenMP para criar um conjunto de <em>threads</em> que rodam em paralelo.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ID:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&quot;</span> <span class="o">&lt;&lt;</span>
+                        <span class="n">omp_get_num_threads</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vamos agora fazer alguns experimentos com esse exemplo básico para entender como OpenMP funciona.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Vamos adicionar dois contadores ao nosso programa</p>
-<ol>
-<li><code>num_leaf</code> conta quantas vezes uma solução completa foi comparada com a melhor possível</li>
-<li><code>num_copy</code> conta quantas vezes foi encontrada uma solução melhor que a atual.</li>
-</ol>
+<p>Compile o programa de exemplo usando a seguinte linha de comando e rode-o.</p>
+<blockquote>
+<p><code>$ g++ -O3 exemplo1.cpp -o exemplo1 -fopenmp</code></p>
+</blockquote>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Rode para o exemplo <code>in150.txt</code> e anote os valores obtidos abaixo.</p>
+<p>O OpenMP permite alterar o número máximo de threads criados usando a variável de ambiente <code>OMP_NUM_THREADS</code>. Rode <code>exemplo1</code> como abaixo.</p>
+<blockquote>
+<p><code>OMP_NUM_THREADS=2 ./exemplo1</code></p>
+</blockquote>
+<p>Quantas threads foram criadas?</p>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>2 threads.</p>
 </div>
-<h2 id="um-bound-simples-ignorar-peso">Um bound simples: ignorar peso<a class="headerlink" href="#um-bound-simples-ignorar-peso" title="Permanent link">&para;</a></h2>
-<p>Nesta seção implementaremos um <em>Branch and Bound</em> simples com a seguinte ideia:</p>
-<div class="admonition quote">
-<p class="admonition-title">BOUND</p>
-<p>Complete uma solução parcial incluindo na mochila todos os objetos não selecionados. Isto é equivalente a <strong>relaxar a restrição do peso</strong>.</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Os contadores <code>num_leaf</code> e <code>num_copy</code> se modificariam ao implementar o <em>Branch and Bound</em>? Se sim, quais deles?</p>
-<details class="tip"><summary>Resposta</summary><p>Somente <code>num_leaf</code>, já que deixamos de chegar em folhas que não tem chance de serem ótimos globais. <code>num_copy</code> continua igual, já que conta o número de vezes que o melhor foi atualizado.</p>
+<p>Rode agora sem a variável de ambiente. Qual é o valor padrão assumido pelo OpenMP? É uma boa ideia usar mais threads que o valor padrão?</p>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>O valor padrão é o número de threads que o processador pode rodar simultâneamente.</p>
+</div>
+</div>
+<p>A utilização de <code>OMP_NUM_THREADS</code> ajuda a realizar testes de modo a compreender os ganhos de desempenho de um programa conforme mais threads são utilizadas.</p>
+<p>Quando uma região paralela inicia são criadas <code>OMP_NUM_THREADS</code> <em>threads</em> e cada uma roda o bloco de código imediatamente abaixo de maneira independents.</p>
+<h3 id="escopo-de-variaveis">Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Permanent link">&para;</a></h3>
+<p>Levando em conta o código abaixo, responda as questões abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">res</span> <span class="o">*=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>Quantas cópias da variável <code>res</code> existem?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1 para cada thread criada</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
+</ul>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>Só uma variável <code>res</code> existe, pois ela foi declarada fora da região paralela.</p>
+</div>
+</div>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>Quantas cópias da variável <code>temp</code> existem?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1 para cada thread criada</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
+</ul>
+<div class="admonition details">
+<p class="admonition-title">Resposta</p>
+<p>Existem <code>N</code> cópias de <code>temp</code>, uma criada para cada <em>thread</em> existente.</p>
+</div>
+</div>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>Qual o valor de <code>res</code> ao final do código abaixo?</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 10000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> N * 10000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Indefinido</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Rode o código acima (arquivo <em>exemplo2.cpp</em>) e veja se suas expectativas se cumprem. Aproveite e verifique se o programa retorna o mesmo resultado se executado várias vezes.  Chame o professor se você se surpreender com o resultado.</p>
+<details class="details"><summary>Resposta</summary><p>O código dará resultados estranhos, com <code>res</code> não assumindo o valor <code>N * 10000</code>. Quanto maior o número de threads mais distante do correto o valor resultante será.</p>
 </details>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Implemente no seu código o <em>Branch and Bound</em> usando o <em>Bound</em> acima. Ou seja, você deverá, ao chegar em um objeto</p>
-<ol>
-<li>Checar se a soma da solução atual mais o bound é melhor que o melhor possível.</li>
-<li>Se não for retorna</li>
-<li>Se for prossegue fazendo a escolha para o objeto atual.</li>
-</ol>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Adicione ao seu programa um contador <code>num_bounds</code> que conta o número de vezes em que evitamos de testar uma solução parcial até o fim.</p>
-</div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Teste seu programa novamente com a entrada <code>in150.txt</code>. Anote abaixo os contadores e interprete seu resultado.</p>
+<p>Mude o limite do <code>for</code> para <code>1000</code>. Os resultados agora são os esperados? Por que?</p>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>Nesse caso funciona, mas é por acaso. O valor pequeno do <code>N</code> faz com que a chance de conflitos diminua, mas ainda é possível. Este tipo de erro "escondido" assim é muito difícil de encontrar. </p>
 </div>
-<h2 id="analisando-nosso-bound">Analisando nosso bound<a class="headerlink" href="#analisando-nosso-bound" title="Permanent link">&para;</a></h2>
-<p>Conseguimos algum ganho de desempenho ao criar o último bound. Vamos agora descobrir se ele é bom mesmo.</p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
 </div>
-<p>Como você mediria a altura em que o bound agiu? Seria melhor cortar mais para cima ou mais para baixo?</p>
-<p>O valor <code>num_bound</code> não ajuda muito a entender se o bound é bom, já que cortar muito pode significar fazê-lo próximo das folhas (e isto gera ganho pequeno de desempenho).</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Nos dois exemplos acima as variáveis <code>res</code> eram usadas por múltiplas threads! Ou seja, cada thread possui uma <strong>dependência</strong> em relação a <code>res</code>. Escrever código sem levar em conta as dependências é um problema que será abordado nas próximas aulas, mas já podemos ver que se duas threads tem uma <strong>dependência de escrita</strong> na mesma variável coisas ruins acontecerão.</p>
 </div>
-<p>Faça seu programa contar o número de vezes em que o bound é ativado em cada nível da recursão. Mostre esses valores no terminal.</p>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-</div>
-<p>Interprete os resultados acima.</p>
-<h2 id="implementacao-eficiente-do-bound">Implementação eficiente do bound<a class="headerlink" href="#implementacao-eficiente-do-bound" title="Permanent link">&para;</a></h2>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>O bound <em>Ignorar peso</em> depende das escolhas feitas até o momento? Ou seja, se tenho 4 objetos, o bound da solução parcial <code>(1, 0, -, -)</code> é igual ou diferente do bound da solução parcial <code>(1, 1, -, -)</code>?</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Como você poderia economizar trabalho ao calcular o bound? É possível pré-calcular algo?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Reimplemente seu bound, desta vez pré-calculando tudo antes de iniciar a busca_exaustiva.</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Rode novamente com a entrada <code>in150.txt</code> e verifique se houve ganho de tempo de execução.</p>
-</div>
-<h2 id="avancado-o-quao-justo-e-um-bound">Avançado: o quão justo é um bound?<a class="headerlink" href="#avancado-o-quao-justo-e-um-bound" title="Permanent link">&para;</a></h2>
-<p>Podemos medir quão justo é um bound verificando a diferença entre seu valor e o valor <em>real</em> da melhor solução da subárvore de recursão atual. Ou seja, comparamos nossa estimativa otimista com o que aconteceu de verdade ao examinar todas essas soluções.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Faça seu programa guardar a diferença média entre o valor do bound (que é uma estimativa da qualidade final de uma solução) e o melhor valor encontrado para aquele ramo da recursão.</p>
-<p><strong>Dica</strong>: você vai precisar retornar o valor da melhor mochila encontrada em cada parte.</p>
-</div>
+<h3 id="avancado">Avançado<a class="headerlink" href="#avancado" title="Permanent link">&para;</a></h3>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>Interprete os resultados acima.</p>
+<p>Suponha que você tenha um <code>for</code> que percorre um vetor <code>vec</code> de 1000 elementos e que precisa chamar duas funções <code>func1</code>  e <code>func2</code> neste vetor. As duas funções não possuem dependências entre si, logo poderiam ser executadas simultâneamente. Como você usaria <code>omp parallel</code> para executá-las em paralelo?</p>
+<p><strong>Dica</strong>: use <code>omp_get_thread_num()</code>.</p>
+</div>
+<h2 id="paralelismo-de-tarefas">Paralelismo de tarefas<a class="headerlink" href="#paralelismo-de-tarefas" title="Permanent link">&para;</a></h2>
+<p>Vamos agora criar <em>tarefas</em> que podem ser executadas em paralelo.</p>
+<div class="admonition tip">
+<p class="admonition-title">Definição</p>
+<p>Uma <strong>tarefa</strong> é um bloco de código que é rodado de maneira paralela usando OpenMP. <em>Tarefas</em> são agendadas para cada uma das <em>threads</em> criadas em um região paralela. Não existe uma associação <strong>1-1</strong> entre <em>threads</em> e <em>tarefas</em>. Posso ter mais <em>tarefas</em> que <em>threads</em> e mais <em>threads</em> que <em>tarefas</em>.</p>
+</div>
+<p>Veja abaixo um exemplo de criação de tarefas.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+    <span class="cp">#pragma omp task</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na tarefa &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;eu só rodo quanto TODAS tarefas acabarem.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</code></pre></div>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>O exemplo acima cria quantas tarefas, supondo que <code>OMP_NUM_THREADS=4</code>?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 4, uma para cada thread</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
+</ul>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>Como cada thread roda o código da região paralela, cada uma cria exatamente um tarefa.</p>
+</div>
+</div>
+<p>Para controlar a criação de tarefas em geral usamos a diretiva <code>master</code>, que executa somente na thread de índice <code>0</code>. Assim conseguimos criar código legível e que deixa bem claro quantas e quais tarefas são criadas.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
+<span class="p">{</span>
+    <span class="cp">#pragma omp master</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;só roda uma vez na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="cp">#pragma omp task</span>
+        <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Somente lendo o código acima, responda as questões abaixo.</p>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>Quantas tarefas são criadas no exemplo acima?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> N, uma para cada thread</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
+</ul>
+</div>
+<div class="admonition question choice">
+<p class="admonition-title">Question</p>
+<p>A(s) tarefa(s) criada(s) roda(m) em qual thread?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Impossível dizer. Em cada execução rodará em uma thread diferente.</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Agora roda o código em <em>exemplo3.cpp</em> várias vezes e compare suas respostas com a execução do programa.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Complete <em>exercicio1.cpp</em> criando duas tarefas. A primeira deverá rodar <code>funcao1</code> e a segunda <code>funcao2</code>. Salve seus resultados nas variáveis indicadas no código.</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Leia o código e responda. Quanto tempo o código sequencial demora? E o paralelo? Verifique que sua implementação está de acordo com suas expectativas.</p>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>Sequencial demora a soma dos tempos das duas funções. Paralelo demora o tempo da maior delas.</p>
+</div>
 </div>
                 
               
@@ -776,7 +902,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../09-busca-global-II/" title="09 - Comparação de resultados" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../11-branch-and-bound/" title="11 - Branch and Bound II" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -785,19 +911,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                09 - Comparação de resultados
+                11 - Branch and Bound II
               </div>
             </div>
           </a>
         
         
-          <a href="../11-branch-and-bound/" title="11 - Branch and Bound II" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Maximin Share" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                11 - Branch and Bound II
+                Maximin Share
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
