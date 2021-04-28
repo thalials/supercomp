@@ -442,6 +442,19 @@
     O for paralelo
   </a>
   
+    <nav class="md-nav" aria-label="O for paralelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicando-for-paralelo" class="md-nav__link">
+    Aplicando for paralelo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -585,6 +598,19 @@
     O for paralelo
   </a>
   
+    <nav class="md-nav" aria-label="O for paralelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicando-for-paralelo" class="md-nav__link">
+    Aplicando for paralelo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -605,9 +631,9 @@
                 
                 
                 <h1 id="13-paralelismo-de-dados">13 - Paralelismo de dados<a class="headerlink" href="#13-paralelismo-de-dados" title="Permanent link">&para;</a></h1>
-<p>Nesta prática iremos usar a contrução <code>omp parallel for</code> para tratar casos de paralelismo de dados. </p>
+<p>Nesta prática iremos usar a contrução <code>omp parallel for</code> para tratar casos de paralelismo de dados.</p>
 <h2 id="revisao-tarefas">Revisão - tarefas<a class="headerlink" href="#revisao-tarefas" title="Permanent link">&para;</a></h2>
-<p>O código <em>pi-numeric-integration.cpp</em> calcula o <code>pi</code> usando uma técnica chamada integração numérica. </p>
+<p>O código <em>pi-numeric-integration.cpp</em> calcula o <code>pi</code> usando uma técnica chamada integração numérica.</p>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
 <p>Examine o arquivo acima. Onde haveriam oportunidades de paralelização?</p>
@@ -626,10 +652,10 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>Faça a divisão do cálculo do <code>pi</code> em duas tarefas. </p>
+<p>Faça a divisão do cálculo do <code>pi</code> em duas tarefas.</p>
 <ul>
-<li>Sua primeira tarefa deverá guardar seu resultado na variável <code>res_parte1</code>. </li>
-<li>A segunda tarefa deverá guardar seu resultado na variável <code>res_parte2</code>. </li>
+<li>Sua primeira tarefa deverá guardar seu resultado na variável <code>res_parte1</code>.</li>
+<li>A segunda tarefa deverá guardar seu resultado na variável <code>res_parte2</code>.</li>
 <li>Você deverá somar os dois resultados após as tarefas acabarem.</li>
 </ul>
 </div>
@@ -638,10 +664,10 @@
 <p>Meça o tempo do programa paralelizado e compare com o original. Verifique também que os resultados continuam iguais.</p>
 </div>
 <h2 id="o-for-paralelo">O <code>for</code> paralelo<a class="headerlink" href="#o-for-paralelo" title="Permanent link">&para;</a></h2>
-<p>Vamos começar nosso estudo do <code>for</code> paralelo executando alguns programas e entendendo como essa construção divide as iterações entre threads. </p>
+<p>Vamos começar nosso estudo do <code>for</code> paralelo executando alguns programas e entendendo como essa construção divide as iterações entre threads.</p>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Você consegue predizer o resultado do código abaixo? Se sim, qual seria sua saída? Se não, explique por que. </p>
+<p>Você consegue predizer o resultado do código abaixo? Se sim, qual seria sua saída? Se não, explique por que.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel for</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Eu rodei na thread: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
@@ -652,7 +678,7 @@
 <p class="admonition-title">Example</p>
 <p>O código acima está no programa <em>exemplo1.cpp</em>. Execute-o várias vezes e veja se sua resposta acima é condizente com a realidade.</p>
 <details class="details"><summary>Resposta</summary><p>Não é possível predizer. No caso acima o loop foi dividido igualmente entre as threads, mas isso é uma decisão do compilador e não temos controle sobre qual será seu comportamento. Isso pode variar de compilador para compilador.</p>
-<p>O comportamento automático funciona bem na maioria das vezes. </p>
+<p>O comportamento automático funciona bem na maioria das vezes.</p>
 </details>
 </div>
 <div class="admonition question medium">
@@ -693,6 +719,11 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>O código acima está no programa <em>exemplo3.cpp</em>. Execute-o várias vezes e veja se sua resposta acima é condizente com a realidade.</p>
+</div>
+<h3 id="aplicando-for-paralelo">Aplicando for paralelo<a class="headerlink" href="#aplicando-for-paralelo" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Agora que já vimos a construção <code>reduce</code>, use-a para paralelizar o problema do arquivo <code>pi-numeric-integration.cpp</code></p>
 </div>
                 
               
