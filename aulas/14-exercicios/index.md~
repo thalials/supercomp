@@ -1,17 +1,49 @@
-# 15 - Exercício prático
+# 14 - Exercício prático
 
-Nesta aula final de de paralelismo multi-core vamos fazer um exercício aberto. A única restrição é criar uma implementação do código no arquivo *pi_recursivo.cpp* usando tarefas e uma usando `for` paralelo. Esse roteiro tem apenas algumas perguntas que visam orientar seu trabalho. 
+Agora que já conseguimos resolver problemas simples usando duas abordagens diferentes, vamos aumentar a complexidade dos problemas tratados. Vimos duas abordagens
+
+* `parallel for` - útil para quando precisamos executar a mesma operação em um conjunto grande de dados
+* `tasks` - útil para paralelizar tarefas heterogêneas.
+
+Teremos então dois desafios relacionados a paralelizar programas que não são obviamente paralelizáveis.
+
+## Cálculo do `pi` recursivo
+
+Vamos iniciar com um código recursivo para cálculo do pi.
 
 !!! example
-    Examine o código. Procure entender bem o que está acontecendo antes de prosseguir. 
+    Examine o código em *pi_recursivo.cpp*. Procure entender bem o que está acontecendo antes de prosseguir.
+
+!!! question short
+    Onde estão as oportunidades de paralelismo? O código tem dependências?
 
 !!! question medium
-    O código tem efeitos colaterais? Existem variáveis que poderiam ser compartilhadas de maneira não intencional? Se sim, você conseguiria refatorar o código para minimizar ou até eliminar esses efeitos colaterais?
+    Se o código tiver dependências, é possível refatorá-lo para eliminá-las?
 
 !!! question medium
     Quantas níveis de chamadas recursivas são feitas? Quando o programa para de chamar recursivamente e faz sequencial?
 
-## Tarefas 
+Vamos agora tentar paralelizar o programa usando as duas técnicas.
+
+### Usando `for` paralelo
+
+!!! question short
+    Em quais linhas pode haver oportunidade para usar `parallel for`?
+
+!!! example
+    Crie uma implementação do *pi_recursivo* usando for paralelo. Meça seu tempo e anote.
+
+!!! example
+    O número `MIN_BLK` afeta seu algoritmo? É melhor aumentá-lo ou diminuí-lo? 
+
+!!! question short
+    Os ganhos de desempenho foram significativos?
+
+!!! question short
+    Como você fez o paralelismo? Precisou definir o número do `for` manualmente ou conseguiu realizar a divisão automaticamente? Comente abaixo sua implementação.
+
+
+### Usando `task`
 
 !!! example
     Crie uma implementação do *pi_recursivo* usando tarefas. Meça seu tempo e anote.
@@ -25,21 +57,11 @@ Nesta aula final de de paralelismo multi-core vamos fazer um exercício aberto. 
 !!! example
     Tente números diferentes de tarefas e verifique se o desempenho melhora ou piora. Anote suas conclusões abaixo. 
 
-## `for` paralelo
-
-!!! example
-    Crie uma implementação do *pi_recursivo* usando for paralelo. Meça seu tempo e anote.
-
-!!! question short
-    Os ganhos de desempenho foram significativos?
-
-!!! question short
-    Como você fez o paralelismo? Precisou definir o número do `for` manualmente ou conseguiu realizar a divisão automaticamente? Comente abaixo sua implementação.
-
-## Comparação
+### Comparação
 
 !!! question short
     Compare seus resultados das duas abordagens. Anote abaixo seus resultados.
 
 !!! warning
-    É possível conseguir tempos muito parecidos com ambas, então se uma delas ficou muito mais lenta é hora de rever o que foi feito. 
+    É possível conseguir tempos muito parecidos com ambas, então se uma delas ficou muito mais lenta é hora de rever o que foi feito.
+
