@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
-#include <cstdlib>
+#include <unistd.h>
+
 
 double conta_complexa(int i) {
 	sleep(1);
@@ -8,14 +9,21 @@ double conta_complexa(int i) {
 }
 
 int main() {
-	int N = 10000; 
+	int N = 10; 
+	double p;
 	std::vector<double> vec;
+	#pragma omp parallel for 
 	for (int i = 0; i < N; i++) {
-		vec.push_back(conta_complexa(i));
+		p = conta_complexa(i);
+		#pragma omp critical
+		{
+			vec.push_back(p);
+		
+		}		
 	}
 	
 	for (int i = 0; i < N; i++) {
-		std::cout << i << " ";
+		std::cout << vec[i] << " ";
 	}
 	
 	return 0;
