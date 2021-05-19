@@ -724,10 +724,10 @@
 <p class="admonition-title">Documentação oficial</p>
 <p>A documentação oficial da Thrust está disponível no endereço <a href="https://thrust.github.io/doc/modules.html">https://thrust.github.io/doc/modules.html</a>.</p>
 </div>
-<p>Também vamos focar em usar máquinas pré-configuradas. Instruções de instalação local estão disponíveis no <em>Anexo 1</em> deste roteiro.</p>
+<p>Também vamos focar em usar máquinas pré-configuradas.</p>
 <h2 id="compilacao-para-gpu">Compilação para GPU<a class="headerlink" href="#compilacao-para-gpu" title="Permanent link">&para;</a></h2>
 <p>Para compilar programas para rodar na GPU devemos usar o compilador <code>nvcc</code>. Ele identifica quais porções do código deverão ser compiladas para a GPU. O restante do código, que roda exclusivamente na CPU, é passado diretamente para um compilador <em>C++</em> regular e um único executável é gerado contendo o código para CPU e chamadas inseridas pelo <code>nvcc</code> para invocar as funções que rodam na GPU.</p>
-<p>O <code>nvcc</code> e todas as bibliotecas que precisamos estão disponíveis no pacote <code>nvidia-cuda-toolkit</code> pronto para instalação via <em>apt</em>. A versão disponibilizada não é a mais atual, mas tudo funciona de maneira integrada e não é necessário instalar nada manualmente. </p>
+<p>O <code>nvcc</code> e todas as bibliotecas que precisamos estão disponíveis no pacote <code>nvidia-cuda-toolkit</code> pronto para instalação via <em>apt</em>. A versão disponibilizada não é a mais atual, mas tudo funciona de maneira integrada e não é necessário instalar nada manualmente.</p>
 <div class="admonition warning">
 <p class="admonition-title">Se você usar as VMs do Insper então não precisa fazer nada. Todas as ferramentas já estão instaladas lá e a VM já vem pronta para uso.</p>
 </div>
