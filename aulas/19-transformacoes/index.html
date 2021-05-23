@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/12-paralelismo/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/19-transformacoes/">
       
       
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
@@ -19,7 +19,7 @@
     
     
       
-        <title>12 - Introdução a paralelismo - SuperComputação - 2021/1</title>
+        <title>19 - Operações customizadas - SuperComputação - 2021/1</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-introducao-a-paralelismo" class="md-skip">
+        <a href="#19-operacoes-customizadas" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              12 - Introdução a paralelismo
+              19 - Operações customizadas
             
           </span>
         </div>
@@ -365,76 +365,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        12 - Introdução a paralelismo
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="12 - Introdução a paralelismo" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../12-paralelismo/" title="12 - Introdução a paralelismo" class="md-nav__link">
       12 - Introdução a paralelismo
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#primeiros-passos" class="md-nav__link">
-    Primeiros passos
-  </a>
-  
-    <nav class="md-nav" aria-label="Primeiros passos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#escopo-de-variaveis" class="md-nav__link">
-    Escopo de variáveis
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#avancado" class="md-nav__link">
-    Avançado
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paralelismo-de-tarefas" class="md-nav__link">
-    Paralelismo de tarefas
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -514,11 +449,76 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../19-transformacoes/" title="19 - Operações customizadas" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        19 - Operações customizadas
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="19 - Operações customizadas" class="md-nav__link md-nav__link--active">
       19 - Operações customizadas
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operacoes-customizadas-em-transform" class="md-nav__link">
+    Operações customizadas em transform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-2d-matrizes-e-imagens" class="md-nav__link">
+    Estruturas 2D - matrizes e imagens
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas 2D - matrizes e imagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limiar" class="md-nav__link">
+    Limiar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtro-de-media-media" class="md-nav__link">
+    Filtro de média Média
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -649,36 +649,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#primeiros-passos" class="md-nav__link">
-    Primeiros passos
+  <a href="#operacoes-customizadas-em-transform" class="md-nav__link">
+    Operações customizadas em transform
   </a>
   
-    <nav class="md-nav" aria-label="Primeiros passos">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-2d-matrizes-e-imagens" class="md-nav__link">
+    Estruturas 2D - matrizes e imagens
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas 2D - matrizes e imagens">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#escopo-de-variaveis" class="md-nav__link">
-    Escopo de variáveis
+  <a href="#limiar" class="md-nav__link">
+    Limiar
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#avancado" class="md-nav__link">
-    Avançado
+  <a href="#filtro-de-media-media" class="md-nav__link">
+    Filtro de média Média
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paralelismo-de-tarefas" class="md-nav__link">
-    Paralelismo de tarefas
-  </a>
   
 </li>
       
@@ -694,7 +694,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/12-paralelismo/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/insper/supercomp/edit/master/docs/aulas/19-transformacoes/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -702,205 +702,185 @@
                   
                 
                 
-                <h1 id="12-introducao-a-paralelismo">12 - Introdução a paralelismo<a class="headerlink" href="#12-introducao-a-paralelismo" title="Permanent link">&para;</a></h1>
-<p>OpenMP é uma tecnologia de computação multi-core usada para paralelizar programas. Sua principal vantagem é oferecer uma transição suave entre código sequencial e código paralelo.</p>
-<h2 id="primeiros-passos">Primeiros passos<a class="headerlink" href="#primeiros-passos" title="Permanent link">&para;</a></h2>
-<p>Nesta parte do roteiro usaremos 4 chamadas do OpenMP para criar nossas primeiras threads.</p>
+                <h1 id="19-operacoes-customizadas">19 - Operações customizadas<a class="headerlink" href="#19-operacoes-customizadas" title="Permanent link">&para;</a></h1>
+<p>Na última aula programamos funções simples que rodam em GPU e as plugamos em <code>count_if</code> e <code>replace_if</code>. Vamos agora generalizar este conhecimento para <code>transform</code> e criar funções mais complexas. </p>
+<h2 id="operacoes-customizadas-em-transform">Operações customizadas em <code>transform</code><a class="headerlink" href="#operacoes-customizadas-em-transform" title="Permanent link">&para;</a></h2>
+<p>Para criar nossas próprias operações usamos a seguinte sintaxe:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">custom_transform</span>
+<span class="p">{</span>
+    <span class="c1">// essas marcações indicam que o código deve ser compilado para CPU (host) </span>
+    <span class="c1">// e GPU (device)</span>
+    <span class="c1">// IMPORTANTE: somente código com a marcação __device__ é compilado para GPU</span>
+    <span class="n">__host__</span> <span class="n">__device__</span>
+
+        <span class="kt">double</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">,</span> <span class="k">const</span> <span class="kt">double</span><span class="o">&amp;</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// isto pode ser usado com um transform que usa dois vetores </span>
+            <span class="c1">// e coloca o resultado em um terceiro.</span>
+
+            <span class="c1">// x é um elemento do primeiro vetor</span>
+            <span class="c1">// y é o elemento correspondente do segundo vetor</span>
+
+            <span class="c1">// o valor retornado é colocado no vetor de resultados</span>
+
+            <span class="c1">// para fazer operações unárias basta receber somente um argumento.</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>A operação acima seria aceita em um transform como o abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">;</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">B</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">C</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">custom_transform</span><span class="p">());</span>
+</code></pre></div>
+<p>Note que os tipos dos vetores devem bater com os tipos declarados no <code>struct</code>. Por vezes precisamos receber parâmetros para a operação customizada funcionar. Um truque comum é adicionar atributos no <code>struct</code> usado como operação:</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">T</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">attr</span><span class="p">;</span>
+
+    <span class="n">T</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{};</span>
+
+    <span class="c1">// TODO: operação customizada aqui</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>O valor <code>attr</code> estará disponível para uso dentro da operação customizada. A linha <code>T(int a): attr(a) {}</code> declara o construtor do <code>struct T</code>. Ela faz com que o atributo <code>attr</code> seja inicializado com o valor do parâmetro <code>a</code>. Se houver mais de uma atribuição parâmetro - atributo é só usar <code>,</code> para separar as inicializações. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Em GPU não possuimos acesso às APIs padrão de C++, então só podemos passar tipos simples de C++. Ou seja, nada de <code>std::vector</code>, <code>new</code>, <code>std::cout</code> ou <code>malloc</code>. </p>
+</div>
+<p>Vamos agora usar esta nova sintaxe para escrever código mais sucinto (e complexo) em <code>thrust</code>. </p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Agora que podemos usar operações customizadas para cálculos complexos, qual parte da variância você poderia computar de uma vez? Ou seja, o que você colocaria dentro de  <code>operator()</code>?</p>
+<div class="admonition details">
+<p class="admonition-title">Details</p>
+<p>Podemos fazer a conta <span><span class="MathJax_Preview">(x_i - \mu)^2 / N</span><script type="math/tex">(x_i - \mu)^2 / N</script></span> inteiramente dentro do <code>operator()</code>.</p>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Faça uma nova implementação da variância, dessa vez usando uma operação customizada e com a chamada <code>transform</code>. </p>
+<p><strong>Dica</strong>: passe a média do vetor como parâmetro para seu <code>struct</code>. Você ainda precisará computar a média com um <code>transform_reduce</code> e isso é inevitável.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Chamadas a GPU tem um custo fixo. Ao usar a operação customizada evitamos incorrer esse custo várias vezes. Também podemos economizar memória ao deixar de usar vetores auxiliares. </p>
+</div>
+<h2 id="estruturas-2d-matrizes-e-imagens">Estruturas 2D - matrizes e imagens<a class="headerlink" href="#estruturas-2d-matrizes-e-imagens" title="Permanent link">&para;</a></h2>
+<p>Assim como na CPU, podemos representar imagens como um vetor "deitado". O acesso ao elemento <code>(i, j)</code> é feito como abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="n">img</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">width</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+<p>Logo, podemos guardar matrizes na GPU apesar de só temos vetores 1D: basta sempre fazer a conta acima para descobrir o elemento 1D a partir das coordenadas <code>(x,y)</code>.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Como descobrir as coordenadas <code>(x,y)</code> a partir do índice 1D?</p>
+<details class="details"><summary>Resposta</summary><p>Sendo <code>k</code> o índice 1D:
+<div class="highlight"><pre><span></span><code>y = k / largura
+x = k % largura
+</code></pre></div></p>
+</details>
+</div>
+<h3 id="limiar">Limiar<a class="headerlink" href="#limiar" title="Permanent link">&para;</a></h3>
+<p>Vamos começar com um processamento de imagens bem simples: o limiar.</p>
 <ol>
-<li><code>#pragma omp parallel</code> cria um conjunto de threads. Deve ser aplicado acima de um bloco de código limitado por <code>{  }</code></li>
-<li><code>int omp_get_num_threads();</code> retorna o número de threads criadas (dentro de uma região paralela)</li>
-<li><code>int omp_get_max_threads();</code> retorna o número de máximo de threads (fora de uma região paralela)</li>
-<li><code>int omp_get_thread_num();</code> retorna o id da thread atual (entre 0 e o valor acima, dentro de uma região paralela)</li>
+<li>Se o ponto atual for maior que <code>127</code>, coloque na saída <code>255</code> (branco)</li>
+<li>caso contrário, coloque na saída <code>0</code> (preto)</li>
 </ol>
-<p>O código abaixo (<em>exemplo1.cpp</em>) ilustra como utilizar OpenMP para criar um conjunto de <em>threads</em> que rodam em paralelo.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ID:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/&quot;</span> <span class="o">&lt;&lt;</span>
-                        <span class="n">omp_get_num_threads</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Vamos agora fazer alguns experimentos com esse exemplo básico para entender como OpenMP funciona.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Compile o programa de exemplo usando a seguinte linha de comando e rode-o.</p>
-<blockquote>
-<p><code>$ g++ -O3 exemplo1.cpp -o exemplo1 -fopenmp</code></p>
-</blockquote>
-</div>
+<p>Vamos usar o arquivo <code>imagem.hpp</code> disponível na pasta desta aula. </p>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>O OpenMP permite alterar o número máximo de threads criados usando a variável de ambiente <code>OMP_NUM_THREADS</code>. Rode <code>exemplo1</code> como abaixo.</p>
-<blockquote>
-<p><code>OMP_NUM_THREADS=2 ./exemplo1</code></p>
-</blockquote>
-<p>Quantas threads foram criadas?</p>
+<p>Abra o arquivo e explore as funções exportadas. Como você faria para abrir uma imagem?</p>
 <div class="admonition details">
 <p class="admonition-title">Details</p>
-<p>2 threads.</p>
+<p>Podemos usar a função <code>Imagem.read</code>, passando para ela uma string com o nome da imagem a ser carregada.</p>
 </div>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Rode agora sem a variável de ambiente. Qual é o valor padrão assumido pelo OpenMP? É uma boa ideia usar mais threads que o valor padrão?</p>
+<p>Como acessamos o pixel <code>y=10, x=20</code> de uma imagem com largura <code>300</code>? </p>
 <div class="admonition details">
 <p class="admonition-title">Details</p>
-<p>O valor padrão é o número de threads que o processador pode rodar simultâneamente.</p>
+<p><code>img-&gt;pixels[10 + 20 * 300]</code>.</p>
 </div>
 </div>
-<p>A utilização de <code>OMP_NUM_THREADS</code> ajuda a realizar testes de modo a compreender os ganhos de desempenho de um programa conforme mais threads são utilizadas.</p>
-<p>Quando uma região paralela inicia são criadas <code>OMP_NUM_THREADS</code> <em>threads</em> e cada uma roda o bloco de código imediatamente abaixo de maneira independents.</p>
-<h3 id="escopo-de-variaveis">Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Permanent link">&para;</a></h3>
-<p>Levando em conta o código abaixo, responda as questões abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="cp">#pragma omp parallel</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="n">res</span> <span class="o">*=</span> <span class="n">temp</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="admonition question choice">
+<div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Quantas cópias da variável <code>res</code> existem?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1 para cada thread criada</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
+<p>Quais operações da <code>thrust</code> você usaria para fazer a operação de limiar?</p>
 <div class="admonition details">
 <p class="admonition-title">Details</p>
-<p>Só uma variável <code>res</code> existe, pois ela foi declarada fora da região paralela.</p>
+<p>Apenas um <code>transform</code> já resolve o problema. Basta passar os mesmos dados na imagem de entrada e na de saída. </p>
 </div>
 </div>
-<div class="admonition question choice">
+<div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Quantas cópias da variável <code>temp</code> existem?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1 para cada thread criada</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
-<div class="admonition details">
-<p class="admonition-title">Resposta</p>
-<p>Existem <code>N</code> cópias de <code>temp</code>, uma criada para cada <em>thread</em> existente.</p>
-</div>
-</div>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>Qual o valor de <code>res</code> ao final do código abaixo?</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="cp">#pragma omp parallel</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 10000</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> N * 10000</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Indefinido</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Rode o código acima (arquivo <em>exemplo2.cpp</em>) e veja se suas expectativas se cumprem. Aproveite e verifique se o programa retorna o mesmo resultado se executado várias vezes.  Chame o professor se você se surpreender com o resultado.</p>
-<details class="details"><summary>Resposta</summary><p>O código dará resultados estranhos, com <code>res</code> não assumindo o valor <code>N * 10000</code>. Quanto maior o número de threads mais distante do correto o valor resultante será.</p>
+<p>Quais dados você precisaria copiar para a GPU? Quais dados seriam copiados de volta para a CPU ao finalizar?</p>
+<details class="details"><summary>Resposta</summary><p>É necessário copiar o vetor pixels e o tamanho total da imagem para a GPU, o que significa que teremos um vetor para a imagem de entrada. O vetor de saída também deve ser criado na GPU, mas não precisa ser inicializado. Após o cálculo ele deverá ser copiado de volta para a CPU.</p>
 </details>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Mude o limite do <code>for</code> para <code>1000</code>. Os resultados agora são os esperados? Por que?</p>
+<p>Quantos vetores usaremos na nossa operação <code>transform</code>?</p>
 <div class="admonition details">
 <p class="admonition-title">Details</p>
-<p>Nesse caso funciona, mas é por acaso. O valor pequeno do <code>N</code> faz com que a chance de conflitos diminua, mas ainda é possível. Este tipo de erro "escondido" assim é muito difícil de encontrar. </p>
+<p>Um para entrada e outro para saída. </p>
 </div>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>Nos dois exemplos acima as variáveis <code>res</code> eram usadas por múltiplas threads! Ou seja, cada thread possui uma <strong>dependência</strong> em relação a <code>res</code>. Escrever código sem levar em conta as dependências é um problema que será abordado nas próximas aulas, mas já podemos ver que se duas threads tem uma <strong>dependência de escrita</strong> na mesma variável coisas ruins acontecerão.</p>
-</div>
-<h3 id="avancado">Avançado<a class="headerlink" href="#avancado" title="Permanent link">&para;</a></h3>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Suponha que você tenha um <code>for</code> que percorre um vetor <code>vec</code> de 1000 elementos e que precisa chamar duas funções <code>func1</code>  e <code>func2</code> neste vetor. As duas funções não possuem dependências entre si, logo poderiam ser executadas simultâneamente. Como você usaria <code>omp parallel</code> para executá-las em paralelo?</p>
-<p><strong>Dica</strong>: use <code>omp_get_thread_num()</code>.</p>
-</div>
-<h2 id="paralelismo-de-tarefas">Paralelismo de tarefas<a class="headerlink" href="#paralelismo-de-tarefas" title="Permanent link">&para;</a></h2>
-<p>Vamos agora criar <em>tarefas</em> que podem ser executadas em paralelo.</p>
-<div class="admonition tip">
-<p class="admonition-title">Definição</p>
-<p>Uma <strong>tarefa</strong> é um bloco de código que é rodado de maneira paralela usando OpenMP. <em>Tarefas</em> são agendadas para cada uma das <em>threads</em> criadas em um região paralela. Não existe uma associação <strong>1-1</strong> entre <em>threads</em> e <em>tarefas</em>. Posso ter mais <em>tarefas</em> que <em>threads</em> e mais <em>threads</em> que <em>tarefas</em>.</p>
-</div>
-<p>Veja abaixo um exemplo de criação de tarefas.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
-<span class="p">{</span>
-    <span class="cp">#pragma omp task</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na tarefa &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;eu só rodo quanto TODAS tarefas acabarem.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</code></pre></div>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>O exemplo acima cria quantas tarefas, supondo que <code>OMP_NUM_THREADS=4</code>?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 4, uma para cada thread</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
-<div class="admonition details">
-<p class="admonition-title">Details</p>
-<p>Como cada thread roda o código da região paralela, cada uma cria exatamente um tarefa.</p>
-</div>
-</div>
-<p>Para controlar a criação de tarefas em geral usamos a diretiva <code>master</code>, que executa somente na thread de índice <code>0</code>. Assim conseguimos criar código legível e que deixa bem claro quantas e quais tarefas são criadas.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
-<span class="p">{</span>
-    <span class="cp">#pragma omp master</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;só roda uma vez na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-        <span class="cp">#pragma omp task</span>
-        <span class="p">{</span>
-            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Estou rodando na thread:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">omp_get_thread_num</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Somente lendo o código acima, responda as questões abaixo.</p>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>Quantas tarefas são criadas no exemplo acima?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> N, uma para cada thread</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
-</div>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>A(s) tarefa(s) criada(s) roda(m) em qual thread?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 0</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Impossível dizer. Em cada execução rodará em uma thread diferente.</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Agora roda o código em <em>exemplo3.cpp</em> várias vezes e compare suas respostas com a execução do programa.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Complete <em>exercicio1.cpp</em> criando duas tarefas. A primeira deverá rodar <code>funcao1</code> e a segunda <code>funcao2</code>. Salve seus resultados nas variáveis indicadas no código.</p>
 </div>
 <div class="admonition question short">
 <p class="admonition-title">Question</p>
-<p>Leia o código e responda. Quanto tempo o código sequencial demora? E o paralelo? Verifique que sua implementação está de acordo com suas expectativas.</p>
+<p>Sabendo que precisaremos copiar dados do vetor <code>pixels</code> e que nossa transformação irá receber elementos desse vetor, qual seria a assinatura da função <code>operator()</code> usada no <code>struct</code>?</p>
 <div class="admonition details">
 <p class="admonition-title">Details</p>
-<p>Sequencial demora a soma dos tempos das duas funções. Paralelo demora o tempo da maior delas.</p>
+<p><code>unsigned char operator() (const unsigned char &amp;p)</code></p>
 </div>
+</div>
+<p>Podemos copiar dados de ponteiros "crus" para a GPU com uma sintaxe parecida com os nossos <code>host_vector</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="o">*</span><span class="n">dados</span><span class="p">;</span> <span class="c1">// possui N elementos</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dados_gpu</span><span class="p">(</span><span class="n">dados</span><span class="p">,</span> <span class="n">dados</span> <span class="o">+</span> <span class="n">N</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Vimos que podemos fazer cópias de um array "puro" em <em>C++</em> ao criar um <code>thrust::device_vector</code>. Para copiar os dados de volta para a CPU podemos usar a função <code>thrust::copy</code>. Consulte <a href="https://thrust.github.io/doc/group__copying.html">sua documentação</a> e escreva abaixo como você a usaria para fazer a cópia de um <code>thrust::device_vector&lt;double&gt; a</code> para um vetor <code>double *a_cpu</code>. Você pode supor que o <code>a_cpu</code> tem o mesmo tamanho que <code>a</code>.</p>
+<details class="details"><summary>Resposta</summary><p>Existem várias possibilidades, mas a mais fácil seria <code>thrust::copy(a.begin(), a.end(), a_cpu)</code>.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Use uma transformação customizada para implementar o filtro do limiar. Use os arquivos examinados na pergunta anterior. </p>
+</div>
+<h3 id="filtro-de-media-media">Filtro de média Média<a class="headerlink" href="#filtro-de-media-media" title="Permanent link">&para;</a></h3>
+<p>A operação acima encaixa bem na <code>thrust</code> pois é ponto a ponto: cada processamento só leva em conta o valor do ponto atual. A maioria dos filtros, porém, usa informações da vizinhança de um ponto. Um exemplo é o <em>filtro de média</em> mostrado abaixo.</p>
+<p>Dada uma imagem de entrada <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span>, a imagem de saída <span><span class="MathJax_Preview">O</span><script type="math/tex">O</script></span> é dada pela seguinte expressão.</p>
+<div>
+<div class="MathJax_Preview">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</div>
+<script type="math/tex; mode=display">
+O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
+</script>
+</div>
+<p>Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área válida da imagem ele deve ser considerado 0. </p>
+<p>Apesar da <code>thrust</code> nos permitir acessar os dados de cada iteração, o acesso a elementos arbitrários do vetor não é diretamente suportado. Vamos contornar essa limitação com uma estratégia alternativa: acessar o vetor diretamente e usar a <code>thrust</code> para fornecer ao nossa transformação customizada o índice a ser usado. Vejamos abaixo um exemplo (arquivo <em>raw_access.cu</em>):</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">raw_access</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+
+    <span class="n">raw_access</span> <span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="o">:</span> <span class="n">ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{};</span>
+
+    <span class="n">__device__</span> <span class="n">__host__</span>
+    <span class="kt">double</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="p">...</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">counting_iterator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">raw_access</span> <span class="nf">ra</span><span class="p">(</span><span class="n">thrust</span><span class="o">::</span><span class="n">raw_pointer_cast</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">data</span><span class="p">()));</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">iter</span><span class="o">+</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ra</span><span class="p">);</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>No código acima nossa operação customizada recebe o vetor como parâmetro de criação do <code>struct</code>. O valor passado pelo <code>transform</code> agora é o <strong>índice a ser preenchido no vetor de saída</strong>. Para simplificar, em geral vamos entender que o vetor de entrada e o de saída são do mesmo tamanho. Ou seja, conseguimos escrever código em GPU trabalhando somente com ponteiros e índices. Código arbitrariamente complexo pode estar dentro do <code>operator()</code>, desde que seja retornado o valor a ser colocado no vetor de saída na posição <code>i</code>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>No Limiar o vetor de entrada e saída eram o mesmo. Não há problema pois a operação só acessa o elemento <code>i</code>. Porém, se acessasse outros não conseguimos garantir a ordem das operações e os resultados seriam imprevisíveis. Na dúvida, sempre envie os dados para um vetor de saída diferente.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Implemente um programa <code>media_gpu</code> que faz o processamento descrito acima usando <code>thrust</code>. Seu programa deverá funcionar como abaixo. </p>
 </div>
                 
               
@@ -920,7 +900,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../11-branch-and-bound/" title="11 - Branch and Bound II" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../18-iteradores/" title="18 - Iteradores em Thrust" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -929,19 +909,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                11 - Branch and Bound II
+                18 - Iteradores em Thrust
               </div>
             </div>
           </a>
         
         
-          <a href="../13-paralelismo-tarefas-dados/" title="13 - Paralelismo de dados" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../projetos/" title="Maximin Share" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                13 - Paralelismo de dados
+                Maximin Share
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
