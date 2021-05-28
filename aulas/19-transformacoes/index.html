@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -15,7 +13,7 @@
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
     
     
       
@@ -23,19 +21,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
         
-        <meta name="theme-color" content="#757575">
+          
+          
+          <meta name="theme-color" content="#757575">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -63,9 +63,11 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
-  
     
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -155,8 +157,6 @@
 </header>
     
     <div class="md-container" data-md-component="container">
-      
-        
       
       
         
@@ -620,6 +620,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projetos/paralelismo-gpu/" title="Paralelismo em GPU" class="md-nav__link">
+      Paralelismo em GPU
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -699,14 +711,11 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="19-operacoes-customizadas">19 - Operações customizadas<a class="headerlink" href="#19-operacoes-customizadas" title="Permanent link">&para;</a></h1>
 <p>Na última aula programamos funções simples que rodam em GPU e as plugamos em <code>count_if</code> e <code>replace_if</code>. Vamos agora generalizar este conhecimento para <code>transform</code> e criar funções mais complexas. </p>
 <h2 id="operacoes-customizadas-em-transform">Operações customizadas em <code>transform</code><a class="headerlink" href="#operacoes-customizadas-em-transform" title="Permanent link">&para;</a></h2>
 <p>Para criar nossas próprias operações usamos a seguinte sintaxe:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">custom_transform</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">custom_transform</span>
 <span class="p">{</span>
     <span class="c1">// essas marcações indicam que o código deve ser compilado para CPU (host) </span>
     <span class="c1">// e GPU (device)</span>
@@ -731,7 +740,7 @@
 <span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">B</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">C</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">custom_transform</span><span class="p">());</span>
 </code></pre></div>
 <p>Note que os tipos dos vetores devem bater com os tipos declarados no <code>struct</code>. Por vezes precisamos receber parâmetros para a operação customizada funcionar. Um truque comum é adicionar atributos no <code>struct</code> usado como operação:</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">T</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">T</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">attr</span><span class="p">;</span>
 
     <span class="n">T</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{};</span>
@@ -856,13 +865,13 @@ O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
 </div>
 <p>Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área válida da imagem ele deve ser considerado 0. </p>
 <p>Apesar da <code>thrust</code> nos permitir acessar os dados de cada iteração, o acesso a elementos arbitrários do vetor não é diretamente suportado. Vamos contornar essa limitação com uma estratégia alternativa: acessar o vetor diretamente e usar a <code>thrust</code> para fornecer ao nossa transformação customizada o índice a ser usado. Vejamos abaixo um exemplo (arquivo <em>raw_access.cu</em>):</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">raw_access</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">raw_access</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
 
     <span class="n">raw_access</span> <span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="o">:</span> <span class="n">ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{};</span>
 
     <span class="n">__device__</span> <span class="n">__host__</span>
-    <span class="kt">double</span> <span class="nf">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">};</span>
@@ -948,15 +957,15 @@ O[i, j] = \frac{I[i, j] + I[i-1, j] + I[i+1, j] + I[i, j-1] + I[i,j+1]}{5}
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

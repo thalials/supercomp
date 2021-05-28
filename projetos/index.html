@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -15,7 +13,7 @@
         <meta name="author" content="Igor Montagner, Luciano Soares, Antônio Selvatici">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
     
     
       
@@ -23,19 +21,21 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
-      
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
       
         
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
         
-        <meta name="theme-color" content="#757575">
+          
+          
+          <meta name="theme-color" content="#757575">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -63,9 +63,11 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
-  
     
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="red">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -155,8 +157,6 @@
 </header>
     
     <div class="md-container" data-md-component="container">
-      
-        
       
       
         
@@ -654,6 +654,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="paralelismo-gpu/" title="Paralelismo em GPU" class="md-nav__link">
+      Paralelismo em GPU
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -767,9 +779,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="maximin-share">Maximin Share<a class="headerlink" href="#maximin-share" title="Permanent link">&para;</a></h1>
 <p>Dados <code>M</code> objetos com valor <code>V[i], i=1..M</code> e <code>N</code> pessoas, desejamos dividir estes objetos de maneira mais igualitária possível. Como não é possível "quebrar" objetos, naturalmente alguns ficarão com objetos de maior valor que os outros. Nosso objetivo neste projeto é definir qual seria o <em>menor valor que uma pessoa deveria aceitar nesta partição</em>.</p>
 <p>Para fazer isso vamos usar o seguinte procedimento: uma pessoa será responsável por fazer a partição dos objetos em <code>N</code> partes. Porém, ela deverá permitir que <strong>todas as outras <code>N-1</code> pessoas escolham primeiro qual parte elas desejam</strong>. Ou seja, a pessoa que fez a partição naturalmente ficará com a parte de menor valor. Portanto nosso objetivo será <strong>maximizar</strong> o valor da parte de <strong>menor</strong> valor. Chamaremos este valor de <em>MMS</em> e a atribuição que o gera de <em>parte 1-de-n</em>.</p>
@@ -814,6 +823,7 @@ objetos da pessoa M
 <li><a href="busca-exaustiva">Busca exaustiva</a> (16/04)</li>
 <li><a href="relatorio-1">Relatório preliminar</a> (30/04)</li>
 <li><a href="paralelismo-multicore">Paralelismo MultiCore</a> (21/05)</li>
+<li><a href="paralelismo-GPU">Paralelismo GPU</a> (14/06)</li>
 </ol>
 <p>Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até <strong>15/03</strong> para ser convidado para seu repositório de entregas.</p>
 <iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=wKZwY5B7CUe9blnCjt6DO36bxJ3XetxChDUDKdweTOJURUNKWkFLSklHNk1RWlVBTUNHWEszVExOViQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
@@ -859,7 +869,12 @@ objetos da pessoa M
 <h3 id="conceito-c_1">Conceito C+<a class="headerlink" href="#conceito-c_1" title="Permanent link">&para;</a></h3>
 <p>Além do já validado no conceito <strong>C</strong>, os relatórios entregues não tinham nenhum ponto <strong>em desenvolvimento</strong> ou <strong>insatisfatório</strong> na rubrica do relatório.</p>
 <h3 id="conceitos-avancados">Conceitos avançados<a class="headerlink" href="#conceitos-avancados" title="Permanent link">&para;</a></h3>
-<p>A partir do  conceito <strong>C+</strong> cada atividade avançada vale meio conceito. Elas serão listadas aqui conforme o semestre avança e serão testadas pela checagem de resultados disponível no repositório de entregas.</p>
+<p>Além do básico, temos 7 testes extras que checam o desempenho das implementações de vocês. Cada um vale <strong>4,0/7</strong> pontos na nota final do projeto.</p>
+<ul>
+<li>busca local: 3 níveis</li>
+<li>busca global: 3 níveis</li>
+<li>busca local em GPU: 1 nível</li>
+</ul>
                 
               
               
@@ -926,15 +941,15 @@ objetos da pessoa M
       
     </div>
     
-      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
