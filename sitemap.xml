@@ -2,62 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://insper.github.io/supercomp/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/sobre/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/aulas/01-introducao/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/aulas/02-03-implementacao-c%2B%2B/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://insper.github.io/supercomp/aulas/04-profiling/</loc>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/busca-exaustiva/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/busca-local/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/heuristico/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/paralelismo-gpu/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/paralelismo-multicore/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/relatorio-1/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://insper.github.io/supercomp/projetos/relatorio-2/</loc>
-         <lastmod>2021-08-21</lastmod>
+         <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
