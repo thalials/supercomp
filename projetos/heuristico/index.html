@@ -323,12 +323,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         Projeto
@@ -349,6 +351,28 @@
       <a href="../" class="md-nav__link">
         Min-set-cover
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Solução heurística
+      </a>
+      
     </li>
   
 
@@ -396,7 +420,7 @@
                 <h1 id="solucao-heuristica">Solução heurística<a class="headerlink" href="#solucao-heuristica" title="Permanent link">&para;</a></h1>
 <p>Um dos melhores estratégias para resolução do problema min-set-cover é a estratégia gulosa. O algoritmo guloso encontra uma solução para o problema de cobertura de conjunto escolhendo iterativamente um conjunto que cobre o maior número possível de variáveis descobertas restantes.</p>
 <p>Sua tarefa: implemente a estratégia gulosa para o problema do min-set-cover. A cada iteração, <strong>o algoritmo deve selecionar o subconjunto de F que irá cobrir o maior número de elementos de U que estavam descobertos</strong>.</p>
-<p>Veja abaixo um pseudo-código de implementação da estratégia gulosa que você deve implementar.</p>
+<p>Veja abaixo um pseudo-código da estratégia gulosa que você deve implementar.</p>
 <p><img alt="greedy" src="https://i.stack.imgur.com/v55Gn.png" /></p>
 <p>Faça testes para diversos tipos de entradas, e foque principalmente em uma grande quantidade de elementos e subconjuntos (n &gt; 250).</p>
 <p>Você deve entregar, além de código-fonte e todas as entradas e saídas geradas para o seu programa, um arquivo contendo o resultado do programa <code>verify</code> ( que você implementou ) e comentar sobre o número de vezes em que você conseguiu encontrar uma solução para o problema. Comente também sobre o tempo de execução de sua implementação. </p>
@@ -416,6 +440,26 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Min-set-cover" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Min-set-cover
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
