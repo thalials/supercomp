@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://insper.github.io/supercomp/projetos/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -347,6 +347,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aulas/09-busca-global-II/" class="md-nav__link">
+        09 - Comparação de desempenho
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -491,6 +503,18 @@
     <li class="md-nav__item">
       <a href="busca-local/" class="md-nav__link">
         Solução Busca local
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="busca-exaustiva/" class="md-nav__link">
+        Solução Busca exaustiva - Branch and Bound
       </a>
     </li>
   
@@ -649,9 +673,9 @@ Usaremos este problema na disciplina por uma razão bem simples: encontrar o *MM
 <h2 id="tecnicas-estudadas-e-correcao-automatica">Técnicas estudadas e correção automática<a class="headerlink" href="#tecnicas-estudadas-e-correcao-automatica" title="Permanent link">&para;</a></h2>
 <p>Para cada técnica estudada em aula implementaremos versões básicas e avançadas. Também será necessário implementar versões paralelas em CPU e GPU. Veja abaixo as datas de entrega e descrições de cada técnica implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.</p>
 <ol>
-<li><a href="heuristico">Solução Heurística</a> (15/08)</li>
+<li><a href="heuristico">Solução Heurística</a> (15/09)</li>
 <li><a href="busca-local">Busca Local</a>(22/09)</li>
-<li>Busca Exaustiva</li>
+<li><a href="busca-exaustiva">Busca Exaustiva</a>(27/09)</li>
 <li>Relatório Preliminar</li>
 <li>Paralelismo Multicore</li>
 </ol>
@@ -733,7 +757,7 @@ Com isso configurado, é só compilar seu programa e rodar `python3.8 corretor.p
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../aulas/08-busca-global/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 08 - Busca Exaustiva" rel="prev">
+        <a href="../aulas/09-busca-global-II/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 09 - Comparação de desempenho" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -742,7 +766,7 @@ Com isso configurado, é só compilar seu programa e rodar `python3.8 corretor.p
               <span class="md-footer__direction">
                 Previous
               </span>
-              08 - Busca Exaustiva
+              09 - Comparação de desempenho
             </div>
           </div>
         </a>
@@ -784,10 +808,10 @@ Com isso configurado, é só compilar seu programa e rodar `python3.8 corretor.p
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
