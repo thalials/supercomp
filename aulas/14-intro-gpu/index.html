@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://insper.github.io/supercomp/aulas/14-intro-gpu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -20,10 +20,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
         
           
           
@@ -501,6 +501,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-gpu-customizacao/" class="md-nav__link">
+        16 - GPU - Customização
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -753,25 +765,25 @@ Device vector 0 0 0 0 35
 </div>
 <h2 id="transferencia-de-dados">Transferência de dados<a class="headerlink" href="#transferencia-de-dados" title="Permanent link">&para;</a></h2>
 <p>Como visto na expositiva, a CPU e a GPU possuem espaços de endereçamento completamente distintos. Ou seja, a CPU não consegue acessar os dados na memória da GPU e vice-versa. A <code>thrust</code> disponibiliza somente um tipo de container (<code>vector</code>) e facilita este gerenciamento deixando explícito se ele está alocado na CPU (<code>host</code>) ou na GPU (<code>device</code>).  A cópia CPU<span><span class="MathJax_Preview">\leftrightarrow</span><script type="math/tex">\leftrightarrow</script></span> GPU é feita implicitamente quando criamos um <code>device_vector</code> ou quando usamos a operação de atribuição entre <code>host_vector</code> e <code>device_vector</code>. Veja o exemplo abaixo:</p>
-<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">host_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec_cpu</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// alocado na CPU</span>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">host_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec_cpu</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// alocado na CPU</span>
 
-<span class="n">vec1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
-<span class="n">vec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"></span>
+<span class="n">vec1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="n">vec2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
 
 <span class="c1">// aloca vetor na GPU e transfere dados CPU-&gt;GPU</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec_gpu</span><span class="w"> </span><span class="p">(</span><span class="n">vec_cpu</span><span class="p">);</span><span class="w"></span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec_gpu</span> <span class="p">(</span><span class="n">vec_cpu</span><span class="p">);</span>
 
 <span class="c1">//processa vec_gpu</span>
 
-<span class="n">vec_cpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec_gpu</span><span class="p">;</span><span class="w"> </span><span class="c1">// copia dados GPU -&gt; CPU</span>
+<span class="n">vec_cpu</span> <span class="o">=</span> <span class="n">vec_gpu</span><span class="p">;</span> <span class="c1">// copia dados GPU -&gt; CPU</span>
 </code></pre></div>
 <p>A <code>thrust</code> usa iteradores em todas as suas funções. Pense em um iterador como um ponteiro para os elementos do array. Porém, um iterador é mais esperto: ele guarda também o tipo do vetor original e suporta operações <code>++</code> e <code>*</code> para qualquer tipo de dado iterado de maneira transparente.</p>
 <p>Vetores <code>thrust</code> aceitam os métodos <code>v.begin()</code> para retornar um iterador para o começo do vetor e <code>v.end()</code> para um iterador para o fim (depois do último elemento). Podemos também somar um valor <code>n</code> a um iterador. Isto é equivalente a fazer <code>n</code> vezes a operação <code>++</code>.  Veja abaixo um exemplo de uso das funções <code>fill</code> e <code>sequence</code> para preencher valores em um vetor de maneira eficiente.</p>
-<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// vetor de 5 ints zerado</span>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// vetor de 5 ints zerado</span>
 <span class="c1">// v = {0, 0, 0, 0, 0}</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">sequence</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span><span class="w"> </span><span class="c1">// preenche com 0, 1, 2, ....</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">sequence</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// preenche com 0, 1, 2, ....</span>
 <span class="c1">// v = {0, 1, 2, 3, 4}</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">);</span><span class="w"> </span><span class="c1">// dois primeiros elementos = 13</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span> <span class="c1">// dois primeiros elementos = 13</span>
 <span class="c1">// v = {13, 13, 2, 3, 4}</span>
 </code></pre></div>
 <div class="admonition question">
@@ -789,7 +801,7 @@ Device vector 0 0 0 0 35
 <h2 id="operacoes-de-reducao">Operações de redução<a class="headerlink" href="#operacoes-de-reducao" title="Permanent link">&para;</a></h2>
 <p>Uma operação genérica de <em>redução</em> transforma um vetor em um único valor. Exemplos clássicos de operações de redução incluem <em>soma</em>, <em>média</em> e <em>mínimo/máximo</em> de um vetor.</p>
 <p>A <code>thrust</code> disponibiliza este tipo de operação otimizada em <em>GPU</em> usando a função <code>thrust::reduce</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thrust</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">iter_comeco</span><span class="p">,</span><span class="w"> </span><span class="n">iter_fim</span><span class="p">,</span><span class="w"> </span><span class="n">inicial</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">val</span> <span class="o">=</span> <span class="n">thrust</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="n">iter_comeco</span><span class="p">,</span> <span class="n">iter_fim</span><span class="p">,</span> <span class="n">inicial</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
 <span class="c1">// iter_comeco: iterador para o começo dos dados</span>
 <span class="c1">// iter_fim: iterador para o fim dos dados</span>
 <span class="c1">// inicial: valor inicial</span>
@@ -809,7 +821,7 @@ Device vector 0 0 0 0 35
 <h2 id="transformacoes-ponto-a-ponto">Transformações ponto a ponto<a class="headerlink" href="#transformacoes-ponto-a-ponto" title="Permanent link">&para;</a></h2>
 <p>Além de operações de redução também podemos fazer operações ponto a ponto em somente um vetor (como negar todas as componentes ou calcular os quadrados) quanto entre dois vetores (como somar dois vetores componente por componente ou comparar cada elemento com seu correspondente em outro vetor). A <code>thrust</code> dá o nome de <code>transformation</code> para este tipo de operação.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// para operações entre dois vetores iter1 e iter2. resultado armazenado em out</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter1_comeco</span><span class="p">,</span><span class="w"> </span><span class="n">iter1_fim</span><span class="p">,</span><span class="w"> </span><span class="n">iter2_comeco</span><span class="p">,</span><span class="w"> </span><span class="n">out_comeco</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">);</span><span class="w"></span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">iter1_comeco</span><span class="p">,</span> <span class="n">iter1_fim</span><span class="p">,</span> <span class="n">iter2_comeco</span><span class="p">,</span> <span class="n">out_comeco</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
 <span class="c1">// iter1_comeco: iterador para o começo de iter1</span>
 <span class="c1">// iter1_fim: iterador para o fim de iter1</span>
 <span class="c1">// iter2_comeco: iterador para o começo de iter2</span>
@@ -817,19 +829,19 @@ Device vector 0 0 0 0 35
 <span class="c1">// op: operação a ser realizada.</span>
 </code></pre></div>
 <p>Um exemplo concreto pode ser visto abaixo. O código completo está em <code>exemplo2-transform.cu</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">V1</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">V2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">V3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">V4</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V1</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V2</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V3</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">device_vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">V4</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 <span class="c1">// inicializa V1 e V2 aqui</span>
 
 <span class="c1">//soma V1 e V2</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">V2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">V3</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">thrust</span><span class="o">::</span><span class="n">plus</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span><span class="w"></span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">V2</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V3</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">thrust</span><span class="o">::</span><span class="n">plus</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
 
 <span class="c1">// multiplica V1 por 0.5</span>
-<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"></span>
-<span class="w">                  </span><span class="n">thrust</span><span class="o">::</span><span class="n">constant_iterator</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span><span class="w"></span>
-<span class="w">                  </span><span class="n">V4</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">thrust</span><span class="o">::</span><span class="n">multiplies</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span><span class="w"></span>
+<span class="n">thrust</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">V1</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">V1</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+                  <span class="n">thrust</span><span class="o">::</span><span class="n">constant_iterator</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+                  <span class="n">V4</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">thrust</span><span class="o">::</span><span class="n">multiplies</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">());</span>
 </code></pre></div>
 <p>As operações que foram usadas no <code>reduce</code> também podem ser usadas em um <code>transform</code>. Não se esqueça de consultar <a href="http://thrust.github.io/doc/group__predefined__function__objects.html">a lista de operações</a> para fazer este exercício.</p>
 <div class="admonition example">
@@ -907,10 +919,10 @@ Device vector 0 0 0 0 35
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
