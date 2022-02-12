@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/07-busca-local/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/2022-1/SequenceGenerator/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>07 - Busca local - SuperComputação - 2021/2</title>
+        <title>SequenceGenerator - SuperComputação - 2021/2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50e68009.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../../css/printing.css">
+      <link rel="stylesheet" href="../../../css/printing.css">
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-      <link rel="stylesheet" href="../../css/ansi-colours.css">
+      <link rel="stylesheet" href="../../../css/ansi-colours.css">
     
-      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+      <link rel="stylesheet" href="../../../css/jupyter-cells.css">
     
-      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+      <link rel="stylesheet" href="../../../css/pandas-dataframe.css">
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#07-busca-local" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="SuperComputação - 2021/2" class="md-header__button md-logo" aria-label="SuperComputação - 2021/2" data-md-component="logo">
+    <a href="../../.." title="SuperComputação - 2021/2" class="md-header__button md-logo" aria-label="SuperComputação - 2021/2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -107,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              07 - Busca local
+              SequenceGenerator
             
           </span>
         </div>
@@ -186,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="SuperComputação - 2021/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2021/2" data-md-component="logo">
+    <a href="../../.." title="SuperComputação - 2021/2" class="md-nav__button md-logo" aria-label="SuperComputação - 2021/2" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -217,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -232,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sobre/" class="md-nav__link">
+      <a href="../../../sobre/" class="md-nav__link">
         Burocracias
       </a>
     </li>
@@ -273,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introducao/" class="md-nav__link">
+      <a href="../../../aulas/01-introducao/" class="md-nav__link">
         01 - Introdução
       </a>
     </li>
@@ -287,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-03-implementacao-c%2B%2B/" class="md-nav__link">
+      <a href="../../../aulas/02-03-implementacao-c%2B%2B/" class="md-nav__link">
         02 e 03 - C++
       </a>
     </li>
@@ -335,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projetos/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         Alinhamento de Sequencias de DNA
       </a>
     </li>
@@ -356,152 +351,93 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#solucao-aleatorizada" class="md-nav__link">
-    Solução aleatorizada
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#busca-local" class="md-nav__link">
-    Busca local
-  </a>
-  
-    <nav class="md-nav" aria-label="Busca local">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mochila-cheia" class="md-nav__link">
-    Mochila cheia
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fechamento" class="md-nav__link">
-    Fechamento
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/insper/supercomp/edit/master/docs/aulas/07-busca-local/index.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/insper/supercomp/edit/master/docs/projetos/2022-1/SequenceGenerator.ipynb" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="07-busca-local">07 - Busca local<a class="headerlink" href="#07-busca-local" title="Permanent link">&para;</a></h1>
-<p>Nesta aula trabalharemos com um algoritmo chamado "Busca local", que consiste basicamente em fazer pequenas atualizações que melhoram sucessivamente uma solução.</p>
-<h2 id="solucao-aleatorizada">Solução aleatorizada<a class="headerlink" href="#solucao-aleatorizada" title="Permanent link">&para;</a></h2>
-<p>Vamos iniciar criando soluções aleatórias. Isto nos permitiria criar uma grande quantidade de soluções e, eventualmente, pegar a melhor delas. Apesar de ser muito mais simples que a busca heurística, a quantidade massiva de soluções geradas tem potencial de encontrar boas soluções.</p>
-<p>Vamos trabalhar com um algoritmo bem simples para gerar soluções aleatórias:</p>
-<ul>
-<li>Para cada objeto, selecione-o com probabilidade <code>0.5</code>.</li>
-<li>Se o objeto for selecionado, coloque-o na mochila se couber.</li>
-</ul>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Supondo que só existe uma solução ótima global, qual é a chance de a encontrarmos repetindo o algoritmo acima?</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Supondo que todos os objetos caibam na mochila, quantos são selecionados em média?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Implemente o algoritmo acima. Use <code>seed=10</code>.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Repita o algoritmo 10 vezes e pegue somente a melhor solução.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Use os arquivos de entrada/saída disponibilizados nas aulas passadas.</p>
-</div>
-<h2 id="busca-local">Busca local<a class="headerlink" href="#busca-local" title="Permanent link">&para;</a></h2>
-<p>Vamos agora implementar uma busca local para a Mochila Binária seguindo os dois algoritmos vistos na expositiva.</p>
-<h3 id="mochila-cheia">Mochila cheia<a class="headerlink" href="#mochila-cheia" title="Permanent link">&para;</a></h3>
-<p>Para implementar a <em>Mochila cheia</em> iremos adotar a seguinte estratégia:</p>
-<ol>
-<li>Gere uma solução aleatória.</li>
-<li>Percorra novamente todos os objetos (na ordem da entrada)</li>
-<li>Se um objeto couber na mochila, inclua-o.</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Implemente o algoritmo acima.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Rode a <em>Mochila cheia</em> 10 vezes e retorne a melhor solução.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Houve melhoria em relação ao aleatório sozinho? Foi significativa?</p>
-</div>
-<!--
-### Substituição de objeto
+  <h1>SequenceGenerator</h1>
 
-Para implementar a *Substituição de objeto* iremos adotar a seguinte estratégia:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var requireJsScript = document.createElement('script');
+    requireJsScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js';
 
-1. Gere uma solução aleatória.
-2. Execute *Mochila Cheia*
-3. Para cada objeto (em ordem da entrada):
-    1. Verifique, para cada objeto não usado, se uma troca aumentaria o valor da mochila
-    2. Em caso positivo, faça a troca e volte para o início do passo 2.
-3. Repita enquanto for possível.
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var jupyterWidgetsScript = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
 
-!!! example
-    Implemente o algoritmo acima.
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
 
-!!! example
-    Rode a *Substituição de objeto* 10 vezes e retorne a melhor solução.
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
 
-!!! question
-    Houve melhoria em relação ao aleatório sozinho? E a *Mochila Cheia*? Foi significativa?
--->
+    jupyterWidgetsScript.src = widgetRendererSrc;
 
-<h2 id="fechamento">Fechamento<a class="headerlink" href="#fechamento" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Como você avalia os ganhos obtidos pela busca local em relação ao aleatório? E em relação a heurística?</p>
+    document.body.appendChild(requireJsScript);
+    document.body.appendChild(jupyterWidgetsScript);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>GERADOR DE INSTÂNCIAS PARA COMPARAÇÃO DE SEQUENCIAS DE DNA</strong></p>
+<p>Para usar este gerador, você deve fornecer três parâmetros:</p>
+<p>n = tamanho da primeira sequencia </p>
+<p>m = tamanho da segunda instância </p>
+<p>file = nome do arquivo da instância a ser gerada</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;dna.seq&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="n">n</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="n">m</span><span class="p">))]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
+</code></pre></div>
+
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<code>10
+40
+TGGCGAT--C
+AGC-TCTCTTC--ATT--CAC-TACACCGACA-CGC-G-A
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 
               
@@ -533,18 +469,18 @@ Para implementar a *Substituição de objeto* iremos adotar a seguinte estratég
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5a9542cf.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
       
-        <script src="../../js/markdown-enhancer.js"></script>
+        <script src="../../../js/markdown-enhancer.js"></script>
       
-        <script src="../../js/slides.js"></script>
+        <script src="../../../js/slides.js"></script>
       
     
   </body>

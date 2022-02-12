@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/aulas/11-paralelismo/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/2021-2/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>12 - Introdução a paralelismo - SuperComputação - 2021/2</title>
+        <title>Alinhamento de Sequencias de DNA - SuperComputação - 2021/2</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-introducao-a-paralelismo" class="md-skip">
+        <a href="#alinhamento-de-sequencias-de-dna" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12 - Introdução a paralelismo
+              Alinhamento de Sequencias de DNA
             
           </span>
         </div>
@@ -273,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-introducao/" class="md-nav__link">
+      <a href="../../aulas/01-introducao/" class="md-nav__link">
         01 - Introdução
       </a>
     </li>
@@ -287,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-03-implementacao-c%2B%2B/" class="md-nav__link">
+      <a href="../../aulas/02-03-implementacao-c%2B%2B/" class="md-nav__link">
         02 e 03 - C++
       </a>
     </li>
@@ -335,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projetos/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Alinhamento de Sequencias de DNA
       </a>
     </li>
@@ -376,29 +376,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#calculo-do-pi-por-meio-de-uma-serie-infinita-de-leibniz" class="md-nav__link">
-    Cálculo do PI por meio de uma série infinita de Leibniz
+  <a href="#estrategias-a-serem-estudadas-e-correcao-automatica" class="md-nav__link">
+    Estratégias a serem estudadas e correção automática
   </a>
   
-    <nav class="md-nav" aria-label="Cálculo do PI por meio de uma série infinita de Leibniz">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
+  </a>
+  
+    <nav class="md-nav" aria-label="Avaliação">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sua-tarefa" class="md-nav__link">
-    Sua tarefa
+  <a href="#conceito-d" class="md-nav__link">
+    Conceito D
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c" class="md-nav__link">
+    Conceito C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceito-c_1" class="md-nav__link">
+    Conceito C+
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceitos-avancados" class="md-nav__link">
+    Conceitos avançados
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tasks-tarefas-em-openmp" class="md-nav__link">
-    Tasks (tarefas) em OpenMP
-  </a>
   
 </li>
       
@@ -414,104 +435,120 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/insper/supercomp/edit/master/docs/aulas/11-paralelismo/index.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/insper/supercomp/edit/master/docs/projetos/2021-2/index.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="12-introducao-a-paralelismo">12 - Introdução a paralelismo<a class="headerlink" href="#12-introducao-a-paralelismo" title="Permanent link">&para;</a></h1>
-<p>OpenMP é uma tecnologia de computação multi-core usada para paralelizar programas. Sua principal vantagem é oferecer uma transição suave entre código sequencial e código paralelo.</p>
-<p>Fizemos em sala de aula uma série de programas básicos no OpenMP e agora é a hora de praticar.</p>
-<h2 id="calculo-do-pi-por-meio-de-uma-serie-infinita-de-leibniz">Cálculo do PI por meio de uma série infinita de Leibniz<a class="headerlink" href="#calculo-do-pi-por-meio-de-uma-serie-infinita-de-leibniz" title="Permanent link">&para;</a></h2>
-<p>Você sabia que é possível calcular o valor do PI por meio de uma série infinita de Leibniz? Veja abaixo:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview"> 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dots  = \frac{\pi}{4} </div>
-<script type="math/tex; mode=display"> 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \dots  = \frac{\pi}{4} </script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">  \sum_{0}^{\infty} = \frac{(-1)^n}{2n + 1} = \frac{\pi}{4} </div>
-<script type="math/tex; mode=display">  \sum_{0}^{\infty} = \frac{(-1)^n}{2n + 1} = \frac{\pi}{4} </script>
-</div>
-<p>Essa série converge muito lentamente, o que é bom para nós. </p>
-<h3 id="sua-tarefa">Sua tarefa<a class="headerlink" href="#sua-tarefa" title="Permanent link">&para;</a></h3>
-<p>Implemente a versão serial do cálculo do PI a partir da série infinita de Leibniz. Faça <code>n = 1000000000</code>. </p>
-<p>Após implementar a versão serial e calcular o tempo de sua execução, implemente a versão em <code>openmp</code>. Você deve fazer sua implementação de duas formas:</p>
-<p>a) A primeira implementação você deve trabalhar com <code>2</code> threads e a partir do <code>id</code> da thread, você deve dividir a soma em duas partes, cada thread executando a sua porção.</p>
-<p>b) A segunda implementação você deve trabalhar com <code>for</code> do openmp e tratar como uma <code>redução</code> do valor de PI. Calcule o tempo de execução.  </p>
-<p>O speedup é uma métrica que representa a razão entre o tempo de execução de um programa sequencial e o tempo de execução de sua versão paralela. Por isso, trata-se de uma boa medida para avaliarmos quantitativamente a melhoria trazida pela versão paralela de um programa paralelo em relação à sua versão sequencial. Calcule também o speed up de cada uma das soluções.</p>
-<h2 id="tasks-tarefas-em-openmp">Tasks (tarefas) em OpenMP<a class="headerlink" href="#tasks-tarefas-em-openmp" title="Permanent link">&para;</a></h2>
-<p>Vamos agora criar <em>tarefas</em> que podem ser executadas em paralelo.</p>
-<div class="admonition tip">
-<p class="admonition-title">Definição</p>
-<p>Uma <strong>tarefa</strong> é um bloco de código que é rodado de maneira paralela usando OpenMP. <em>Tarefas</em> são agendadas para cada uma das <em>threads</em> criadas em um região paralela. Não existe uma associação <strong>1-1</strong> entre <em>threads</em> e <em>tarefas</em>. Posso ter mais <em>tarefas</em> que <em>threads</em> e mais <em>threads</em> que <em>tarefas</em>.</p>
-</div>
-<p>Veja abaixo um exemplo de criação de tarefas.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="cp">#pragma omp task</span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Estou rodando na tarefa &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;eu só rodo quanto TODAS tarefas acabarem.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
+<h1 id="alinhamento-de-sequencias-de-dna">Alinhamento de Sequencias de DNA<a class="headerlink" href="#alinhamento-de-sequencias-de-dna" title="Permanent link">&para;</a></h1>
+<p>Em Bioinformática, o problema de <strong>alinhamento de sequências de DNA</strong> consiste no processo de comparar duas ou mais sequências de bases de forma a se observar seu nível de similaridade. Trata-se de um problema extremamente importante no contexto atual, pois permite comparar sequencias virais de SARS-COV2 em bancos de dados genômicos para detecção de novas mutações.</p>
+<p>O nível de similaridade pode ser calculado com base em <strong>acertos (match)</strong> e <strong>erros (gap e mismatch)</strong>. Os acertos contribuem com sinal positivo (+) para o nível de similaridade e, os erros, com sinal negativo (-). Abaixo temos um exemplo de cálculo do nível similaridade:</p>
+<p><img alt="image" src="alignment.png" /></p>
+<p>Vamos associar a pontuação <strong>+1 (match)</strong> e as penalidades <strong>-1 (gap)</strong> e <strong>-4 (mismatch)</strong>. Assim, teremos o seguinte nível de similaridade:</p>
+<p>23 matches x (+1) + 4 gaps x (-1) + 3 mismatches x (-4) = 23-4-12 = 7</p>
+<p>Neste contexto, o problema de alinhamento de sequencias de DNA pode ser colocado da seguinte forma:</p>
+<div class="highlight"><pre><span></span><code>Dadas duas sequencias de DNA, com as bases A,T,G,C e - para indicar gap, 
+encontrar o alinhamento que maximize o nível de similaridade. 
 </code></pre></div>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>O exemplo acima cria quantas tarefas, supondo que <code>OMP_NUM_THREADS=4</code>?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 4, uma para cada thread</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
-<div class="admonition details">
-<p class="admonition-title">Details</p>
-<p>Como cada thread roda o código da região paralela, cada uma cria exatamente um tarefa.</p>
-</div>
-</div>
-<p>Para controlar a criação de tarefas em geral usamos a diretiva <code>master</code>, que executa somente na thread de índice <code>0</code>. Assim conseguimos criar código legível e que deixa bem claro quantas e quais tarefas são criadas.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#pragma omp parallel</span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="cp">#pragma omp master</span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;só roda uma vez na thread:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="cp">#pragma omp task</span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Estou rodando na thread:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p>Neste projeto, seu objetivo será construir programas para encontrar este alinhamento de nível máximo de similaridade, utilizando várias estratégias. </p>
+<p>Cada um dos seus programas tomará como entrada a seguinte estrutura: a primeira linha contém dois números <code>n</code> e <code>m</code>, onde <code>n</code> é o tamanho da primeira sequencia e, <code>m</code>, o tamanho da segunda. Assuma <code>n ≤ 200</code> e <code>m ≤ 200</code>. A segunda linha contém as bases da primeira sequencia e, a terceira linha, as bases da segunda.</p>
+<div class="highlight"><pre><span></span><code>5 7
+AT-CC
+TTTCCAA
 </code></pre></div>
-<p>Somente lendo o código acima, responda as questões abaixo.</p>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>Quantas tarefas são criadas no exemplo acima?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> N, uma para cada thread</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nenhuma das anteriores</li>
-</ul>
-</div>
-<div class="admonition question choice">
-<p class="admonition-title">Question</p>
-<p>A(s) tarefa(s) criada(s) roda(m) em qual thread?</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 0</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Impossível dizer. Em cada execução rodará em uma thread diferente.</li>
-</ul>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Complete <em>exercicio1.cpp</em> criando duas tarefas. A primeira deverá rodar <code>funcao1</code> e a segunda <code>funcao2</code>. Salve seus resultados nas variáveis indicadas no código.</p>
-</div>
-<div class="admonition question short">
-<p class="admonition-title">Question</p>
-<p>Leia o código e responda. Quanto tempo o código sequencial demora? E o paralelo? Verifique que sua implementação está de acordo com suas expectativas.</p>
-<div class="admonition details">
-<p class="admonition-title">Details</p>
-<p>Sequencial demora a soma dos tempos das duas funções. Paralelo demora o tempo da maior delas.</p>
-</div>
-</div>
+<p>A saída deve ser uma linha com um número inteiro indicando o nível máximo de similaridade.</p>
+<p><div class="highlight"><pre><span></span><code>2
+</code></pre></div>
+Neste caso, este nível máximo de similaridade pode ser associado ao alinhamento T-CC/TTCC (1-1+1+1=2) ou a CC/CC(1+1=2). Você pode usar o código python abaixo para gerar instâncias aleatórias para seus testes.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># tamanho da primeira sequência</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1"># tamanho da segunda sequência</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;dna.seq&#39;</span> <span class="c1"># nome do arquivo a ser gerado</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">seq</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="n">n</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">],</span><span class="n">k</span><span class="o">=</span><span class="n">m</span><span class="p">))]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seq</span><span class="p">))</span>
+</code></pre></div>
+<p>Um possível output para este código acima é:</p>
+<div class="highlight"><pre><span></span><code>10
+40
+TGGCGAT--C
+AGC-TCTCTTC--ATT--CAC-TACACCGACA-CGC-G-A
+</code></pre></div>
+<h2 id="estrategias-a-serem-estudadas-e-correcao-automatica">Estratégias a serem estudadas e correção automática<a class="headerlink" href="#estrategias-a-serem-estudadas-e-correcao-automatica" title="Permanent link">&para;</a></h2>
+<p>Para cada estratégia que vamos estudar, implementaremos um programa correspondente no projeto. Veja abaixo as datas de entrega e descrições de cada estratégia a ser implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.</p>
+<ol>
+<li>Solução Heurística (18/03)</li>
+<li>Busca Local (01/04)</li>
+<li>Busca Exaustiva (15/04)</li>
+<li>Relatório Preliminar (29/04)</li>
+<li>Paralelismo Multicore (13/05)</li>
+<li>Paralelismo GPU (27/05)</li>
+<li>Relatório Final (03/06)</li>
+</ol>
+<!-- 1. [Solução Heurística](heuristico) (23/03)
+2. [Busca local](busca-local) (09/04)
+3. [Busca exaustiva](busca-exaustiva) (16/04)
+4. [Relatório preliminar](relatorio-1) (30/04)
+5. [Paralelismo MultiCore](paralelismo-multicore) (21/05) -->
+<!-- 
+Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até **15/03** para ser convidado para seu repositório de entregas.
+
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=wKZwY5B7CUe9blnCjt6DO36bxJ3XetxChDUDKdweTOJURUNKWkFLSklHNk1RWlVBTUNHWEszVExOViQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+
+### Instruções de correção
+
+O corretor automático depende do pacote `grading-tools`, que deverá ser instalado como abaixo.
+
+<div class="highlight"><pre><span></span><code>$&gt; python3.8 -m pip install --user git+https://github.com/igordsm/grading-tools
+</code></pre></div>
+
+??? tip "Python 3.8 no Ubuntu"
+    Se seu `python3` é uma versão inferior ao 3.8, você pode instalá-lo com os pacotes abaixo:
+
+    <div class="highlight"><pre><span></span><code>python3.8 python3.8-dev
+</code></pre></div>
+
+    A partir daí poderá seguir normalmente as instruções desta página.
+
+Com isso configurado, é só compilar seu programa e rodar `python3.8 corretor.py executavel`. Para baixar os novos exercícios é só rodar `git pull`. Os exercícios serão entregues criando um commit com sua resposta e dando `git push`.
+
+
+!!! warning
+    Fique atento a atualizações no seu repositório de projeto. Atualizações no corretor serão feitas ao longo do semestre, assim como serão disponibilizados novos arquivos de entrada/saída para cada parte a ser implementada. -->
+
+<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<p>O projeto será avaliado usando rubricas para as entregas básicas. As rubricas de avaliação dos relatórios estarão descritas em suas páginas de entrega.</p>
+<h3 id="conceito-d">Conceito D<a class="headerlink" href="#conceito-d" title="Permanent link">&para;</a></h3>
+<p>Algum dos seguintes itens não foi entregue corretamente ou possui problemas sérios (no caso do relatório final).</p>
+<ol>
+<li>Solução heurística</li>
+<li>Busca local</li>
+<li>Busca exaustiva</li>
+<li>Busca local paralela (CPU)</li>
+<li>Busca local paralela (GPU)</li>
+<li>Relatório preliminar</li>
+<li>Relatório final</li>
+</ol>
+<h3 id="conceito-c">Conceito C<a class="headerlink" href="#conceito-c" title="Permanent link">&para;</a></h3>
+<p>Todas as atividades abaixo foram validadas pelo corretor e (no caso do relatório final) alcançaram qualidade mínima exigida.</p>
+<ol>
+<li>Solução heurística</li>
+<li>Busca local</li>
+<li>Busca exaustiva</li>
+<li>Busca local paralela (CPU)</li>
+<li>Busca local paralela (GPU)</li>
+<li>Relatório preliminar</li>
+<li>Relatório final</li>
+</ol>
+<h3 id="conceito-c_1">Conceito C+<a class="headerlink" href="#conceito-c_1" title="Permanent link">&para;</a></h3>
+<p>Além do já validado no conceito <strong>C</strong>, os relatórios entregues não tinham nenhum ponto <strong>em desenvolvimento</strong> ou <strong>insatisfatório</strong> na rubrica do relatório.</p>
+<h3 id="conceitos-avancados">Conceitos avançados<a class="headerlink" href="#conceitos-avancados" title="Permanent link">&para;</a></h3>
+<p>A partir do  conceito <strong>C+</strong> cada atividade avançada vale meio conceito. Elas serão listadas aqui conforme o semestre avança e serão testadas pela checagem de resultados disponível no repositório de entregas.</p>
 
               
             </article>
