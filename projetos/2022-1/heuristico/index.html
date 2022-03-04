@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/2021-2/busca-local/">
+        <link rel="canonical" href="https://insper.github.io/supercomp/projetos/2022-1/heuristico/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>Solução Busca local - SuperComputação - 2022/1</title>
+        <title>Heurística de Alinhamento Local de Smith-Waterman - SuperComputação - 2022/1</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#solucao-busca-local" class="md-skip">
+        <a href="#heuristica-de-alinhamento-local-de-smith-waterman" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Solução Busca local
+              Heurística de Alinhamento Local de Smith-Waterman
             
           </span>
         </div>
@@ -421,78 +421,60 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/insper/supercomp/edit/master/docs/projetos/2021-2/busca-local.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/insper/supercomp/edit/master/docs/projetos/2022-1/heuristico.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="solucao-busca-local">Solução Busca local<a class="headerlink" href="#solucao-busca-local" title="Permanent link">&para;</a></h1>
-<!-- Vamos agora implementar uma estratégia de **Busca local** como fizemos na [aula 07](/aulas/07-busca-local). Nossa estratégia de busca local será composta por três passos:
-
-!!! quote "Passo 1"
-    Cada objeto é atribuído para uma pessoa aleatória.
-
-!!! quote "Passo 2"
-    1. Selecione a pessoa `P` com o menor valor.
-    2. Passe por todos os outros objetos e verifique se esse objeto poderia ser doado para `P`.
-        * **Um objeto pode ser doado se o valor total do doador tirando o objeto doado é maior que o valor total da pessoa `P`.**
-        * Se for possível, faça a doação, calcule o novo *MMS*.
-
-!!! quote "Passo 3"
-    Repita o *Passo 2* até que não seja mais possível.
-
-Para auxiliar o entendimento desta busca local, responda as seguintes perguntas.
-
-!!! question short
-    O *Passo 2* da nossa estratégia nunca diminui o *MMS*. Por que?
-
-!!! question short
-    Conseguimos saber de antemão quantas vezes repetiremos *Passo 2*?
-
-## Variáveis de ambiente
-
-Nosso programa será controlado por três variáveis de ambiente:
-
-* `SEED` controla o seed usado em nosso gerador de números aleatórios. Se não for passado, assuma `SEED = 0`;
-* `ITER` controla o número de vezes que repetimos a estratégia delineada acima. Se não for passado, assuma `ITER = 100000`;
-* `DEBUG`: mostra informações auxiliares para ajudar a correção automática. Se não for passado, assuma `DEBUG = 0`;
-
-Ao rodar com `DEBUG=1` seu programa deverá mostrar na saída de erros `cerr` uma linha para cada resultado final do processo de busca local. Ou seja, deverá mostrar `ITER` linhas no formato abaixo:
-
-<div class="highlight"><pre><span></span><code>valor a1 ... aN
-</code></pre></div>
-
-* `valor` contém o valor do *MMS* da solução
-* `aI` contém a pessoa que possui o objeto `I`
-
-Note que o formato dessa saída é diferente da saída final do programa, porém a informação representada é a mesma.
-
-## Validação de resultados
-
-A pasta `heuristica` do repositório de entregas contém arquivos de exemplo `in*.txt/out*.txt` com as entradas e saídas possíveis para esta parte do projeto. Use-os para validar seu programa junto com `corretor.py`.
-
-!!! warning
-    Esta validação não espera resultados idênticos aos das saídas de exemplo.
-
-A validação testará se seu programa tem as seguintes propriedades:
-
-* a solução final é ótima local. Ou seja, não é possível repetir o *Passo 2* e conseguir uma solução melhor
-* a solução final é valida.
-* as soluções de cada busca local mostradas quando `DEBUG=1` também são ótimos locais
-* a solução final é a melhor entre todas as soluções calculadas
-* soluções diferentes são geradas quando valores de `SEED` diferentes são passados
-* são mostradas `ITER` linhas na saída de erros e cada linha corresponde a uma solução válida -->
-
-<p>A busca local consiste em uma metaheurística usada para resolver problemas de otimização computacionalmente difíceis. Esse tipo de algoritmo percorre o espaço de busca movendo-se iterativamente de uma solução candidata para outra, seguindo um caminho através da relação de vizinhança, até que uma solução considerada boa o suficiente seja encontrada ou um limite de tempo decorrido. Normalmente todo candidato possui mais de uma solução de vizinho e a escolha entre elas é feita com o auxílio de informações locais e experiência anterior.</p>
-<p>A solução por busca local  tenta maximizar o número de elementos com o mínimo de subconjuntos possível. Precisamos capturar esse critério por meio de uma função de <em>fitness</em>. Uma maneira possível de fazer isso é construir uma função de <em>fitness</em> calculando o número de elementos capturados pelos subconjuntos de uma solução candidata e, em seguida, dividindo-o pelo número de subconjuntos que contém. Essa função de pontuação favorecerá as soluções que acumulam a maioria dos elementos do universo U com o mínimo de subconjuntos.</p>
-<p>Para isso, implemente as seguintes alterações em seu projeto:</p>
+<h1 id="heuristica-de-alinhamento-local-de-smith-waterman">Heurística de Alinhamento Local de Smith-Waterman<a class="headerlink" href="#heuristica-de-alinhamento-local-de-smith-waterman" title="Permanent link">&para;</a></h1>
+<p>Um algoritmo ingênuo para fazer o alinhamento local de duas sequencias de DNA poderia ser:</p>
 <ol>
-<li>Gerar uma solução aleatória para o problema do min-set-cover;</li>
-<li>Percorra novamente os conjuntos os elementos da sua solução e, de maneira randômica, troque até r (r entre 1 e 3) elementos da sua solução por subconjuntos que ficaram de fora da solução. </li>
-<li>Se a solução tiver melhor escore, mantenha ela. </li>
+<li>Gere todas as subsequências, de tamanho 1 até o tamanho total de cada sequência</li>
+<li>Compare todos os pares de subsequencias, sempre escolhendo uma subsequencia de um DNA e do outro DNA, calculado seus scores</li>
+<li>Escolha uma que produza o score máximo</li>
 </ol>
-<p>Para verificar o desempenho, construa um cenário com ao menos 200 elementos e 80 subconjuntos, de até 40 elementos cada.  Faça três variações desse cenário (elementos, subconjuntos, número de elementos em subconjuntos) e avalie o desempenho e a efetividade em encontrar uma solução ótima.</p>
-<p>Para a entrega, usaremos o site <strong>codePost</strong>, você recebeu na sala de aula o link para criar sua conta. A submissão será feita unicamente por ele. Caso tenha alguma dúvida, entre em contato.</p>
+<p>Nao é difícil ver que este algoritmo ingênuo pode demorar muito tempo para executar quando aumentamos o tamanho das sequencias de DNA.</p>
+<p>Uma heurística sequencial bastante interessante para reduzir o tempo de obtenção dos alinhamentos foi proposta por Smith e Waterman (1981), utilizando programação dinâmica.
+Abaixo, temos a descrição do algoritmo desta estratégia:</p>
+<pre>
+ALGORITMO SMITH-WATERMAN
+Entrada: Duas sequencias de DNA a[i] e b[j], de tamanhos n e m respectivamente
+Saída: score máximo de alinhamento 
+
+1. Inicializar H[i,0]=0, 0≤i≤n
+2. Inicializar H[0,j]=0, 0≤j≤m
+3. Para cada 1≤i≤n e 1≤j≤m:
+4.     Calcular diagonal = H[i-1,j-1] + w(a[i],b[j]), onde w(a[i],b[j])=2 se houve match, 
+                           w(a[i],b[j])= -1 se houve mismatch e  
+                           w(a[i],b[j])= -1 se houve gap
+5.     Calcular deleção  = H[i-1,j] - 1
+6.     Calcular inserção = H[i,j-1] - 1
+7.     Calcular H[i,j]=máximo (0, diagonal, deleção, inserção)
+9. Retornar o máximo de H[_,_]
+</pre>
+
+<p>Os passos diagonal, deleção e inserção são chamados, respectivamente, de salto em diagonal, salto de cima para baixo e salto da esquerda para a direita, e representam movimentações para obtenção do alinhamento local ótimo. </p>
+<p>No link abaixo, é possível simular este algoritmo para diversos valores de pesos:</p>
+<p><a href="http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman">http://rna.informatik.uni-freiburg.de/Teaching/index.jsp?toolName=Smith-Waterman</a></p>
+<p>Abaixo temos um exemplo da matriz H calculada para as sequências AGCACACA e ACACACTA:</p>
+<p><img alt="image" src="../smith.png" /></p>
+<p>Para obter o alinhamento local ótimo, começamos com o maior valor na matriz (i,j). Então, nós vamos para trás para uma das posições (i-1,j), (i,j-1) ou (i-1,j-1), dependendo da direção de movimento usado para construir a matriz. Mantemos o processo até chegar a um célula da matriz com valor zero, ou o valor na posição (0,0).</p>
+<p>No exemplo, o valor mais alto corresponde à célula na posição (8,8). A caminhada de volta corresponde a (8,8), (7,7), (7,6), (6,5), (5,4), (4,3), (3,2), (2,1), (1,1), e (0,0),</p>
+<p>Uma vez que tenhamos terminado, reconstruimos o alinhamento da seguinte forma: Começando com o último valor, chegamos a (i,j) usando o caminho previamente calculado. Um salto na diagonal implica que há um alinhamento (ou uma correspondência ou uma não correspondência). Um salto de cima para baixo implica que há uma deleção. Um salto da esquerda para a direita implica que há uma inserção. <em>Assim, para a reconstrução, é importante guardar durante a montagem da tabela H qual o tipo de salto foi utilizado.</em></p>
+<p>Para o exemplo das sequencias acima, obtemos o seguinte alinhamento local ótimo (em relação aos pesos dados para match, mismatch e gap):</p>
+<pre>
+Sequência 1 = A-CACACTA
+Sequência 2 = AGCACAC-A
+</pre>
+
+<p>A partir desta descrição, nosso primeiro projeto terá duas tarefas:</p>
+<ul>
+  <li> Implementar um programa C++ para ler um arquivo contendo os tamanhos de duas sequencias de DNA, seguidos das duas sequencias, uma por linha. Calcular o score máximo de alinhamento local usando a heurística de Smith-Waterman. As informações para reconstrução deverão ser armazenadas no formato de struct.
+  <li> a partir do score máximo, reconstruir e exibir o alinhamento local ótimo das duas sequencias.
+</ul>
+
+<p>No diretório do projeto, há um gerador de entradas disponibilizado como um notebook Python.</p>
+<p>Para quem estiver interessado no artigo original da heurística de Smith-Waterman, basta consultar o link <a href="http://arep.med.harvard.edu/pdf/Smith81.pdf">http://arep.med.harvard.edu/pdf/Smith81.pdf</a>.</p>
 
               
             </article>
