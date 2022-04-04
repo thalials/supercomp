@@ -1,13 +1,14 @@
+using namespace std;
 #include <iostream>
 #include <vector>
 #include <cmath>
 
-typedef std::vector<std::vector<double>> matriz;
+typedef vector<vector<double>> matriz;
 
-void calcula_distancias(matriz &mat, std::vector<double> &x, std::vector<double> &y) {
+void calcula_distancias(matriz &mat, vector<double> &x, vector<double> &y) {
     int n = x.size();
     for (int i = 0; i < n; i++) {
-        std::vector<double> linha;
+        vector<double> linha;
         for (int j = 0; j < n; j++) {
             double dx = x[i] - x[j];
             double dy = y[i] - y[j];
@@ -19,15 +20,15 @@ void calcula_distancias(matriz &mat, std::vector<double> &x, std::vector<double>
 
 int main() {
     matriz mat;
-    std::vector<double> x, y;
+    vector<double> x, y;
     int n;
 
-    std::cin >> n;
+    cin >> n;
     x.reserve(n);
     y.reserve(n);
     for (int i = 0; i < n; i++) {
         double xt, yt;
-        std::cin >> xt >> yt;
+        cin >> xt >> yt;
         x.push_back(xt);
         y.push_back(yt);
     }
@@ -37,9 +38,9 @@ int main() {
 
     for (auto &linha : mat) {
         for (double el : linha) {
-            std::cout << el << " ";
+            cout << el << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 
     return 0;
